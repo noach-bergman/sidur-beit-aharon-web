@@ -359,21 +359,6 @@ body { padding: 0; }
 }
 
 
-.tap-zone {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 42%;
-  border: none;
-  background: transparent;
-  padding: 0;
-  cursor: pointer;
-  z-index: 4;
-}
-.tap-prev { right: 0; }   /* RTL: right half → previous */
-.tap-next { left: 0; }    /* RTL: left half → next */
-
-
 /* WhatsApp Status–style page taps */
 .tap-zone {
   position: absolute;
