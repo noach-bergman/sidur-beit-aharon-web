@@ -6,7 +6,7 @@
   var STORAGE_PAGE = 'sidur-bav-last-page';
   var A2HS_KEY = 'sidur-bai-a2hs-used';
   var PDFJS_CDN = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/';
-  var FLIP_MS = 400;
+  var FLIP_MS = 320;
 
   var HEB_VALUES = {
     'א': 1, 'ב': 2, 'ג': 3, 'ד': 4, 'ה': 5, 'ו': 6, 'ז': 7, 'ח': 8, 'ט': 9, 'י': 10,
@@ -163,12 +163,13 @@
     var bar = $('#reader-bar');
     var w = stage ? stage.clientWidth : window.innerWidth;
     var h = stage ? stage.clientHeight : (window.innerHeight - (bar ? bar.offsetHeight : 56));
-    return { w: Math.max(100, w - 8), h: Math.max(100, h - 8) };
+    return { w: Math.max(120, w - 12), h: Math.max(120, h - 12) };
   }
 
   function frontCanvas() { return $('#pdf-canvas'); }
   function backCanvas() { return $('#pdf-canvas-next'); }
   function pageLeaf() { return $('#page-leaf'); }
+
 
   /** Paint a PDF page onto a canvas; returns Promise resolving when done. */
   function paintPage(canvas, pdfPageNum) {
@@ -301,8 +302,8 @@
         finishPending();
       }
       function onAnimEnd(e) {
-        // Prefer front-layer animation end; accept any leaf child
-        if (e.target !== front && e.target !== back && !e.target.classList.contains('page-shade')) {
+        // Finish on first animationend from our layers
+        if (e.target !== front && e.target !== back && !(e.target && e.target.classList && e.target.classList.contains('page-shade'))) {
           return;
         }
         onDone();
@@ -335,11 +336,15 @@
 
   function openReader(pdfPage) {
     showView('reader');
-    goTo(pdfPage || loadLastPage());
-    setTimeout(function () { goTo(state.pdfPage); }, 50);
+    var target = pdfPage || loadLastPage();
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        goTo(target, null);
+      });
+    });
   }
 
-  function openToc() {
+function openToc() {
     showView('home');
   }
 
@@ -600,7 +605,7 @@
     setTimeout(function () { ensurePdf().catch(function () {}); }, 800);
 
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js?v=4').catch(function () {});
+      navigator.serviceWorker.register('./sw.js?v=5').catch(function () {});
     }
   }
 

@@ -243,12 +243,11 @@ body { padding: 0; }
   display: flex;
   align-items: center;
   justify-content: center;
-  transform-style: preserve-3d;
   max-width: 100%;
   max-height: 100%;
 }
 
-.pdf-layer {
+.pdf-layer, .pdf-layer {
   display: block;
   max-width: 100%;
   max-height: 100%;
@@ -256,8 +255,6 @@ body { padding: 0; }
   height: auto;
   background: #fffef8;
   border-radius: 1px;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
 }
 .pdf-front {
   position: relative;
@@ -267,8 +264,7 @@ body { padding: 0; }
     0 2px 8px rgba(0, 0, 0, 0.35),
     0 0 0 1px rgba(40, 28, 16, 0.1),
     3px 0 10px rgba(0, 0, 0, 0.12);
-  transform-origin: right center;
-  will-change: transform;
+  will-change: transform, opacity;
 }
 .pdf-back {
   position: absolute;
@@ -283,7 +279,6 @@ body { padding: 0; }
   z-index: 1;
   opacity: 0;
   pointer-events: none;
-  transform-origin: left center;
   will-change: transform, opacity;
   box-shadow:
     0 12px 32px rgba(0, 0, 0, 0.45),
@@ -301,92 +296,72 @@ body { padding: 0; }
   border-radius: 1px;
 }
 
-/* —— Page-turn states (RTL sefer: spine on right) —— */
-/* Next: current leaf flips toward spine (right); new page waits underneath / enters from left */
+/* —— Page-turn states (simple 2D — reliable on iOS) —— */
+.page-leaf {
+  overflow: hidden;
+}
 .page-leaf.turn-next .pdf-front {
-  animation: seferFlipNext var(--flip-ms) var(--flip-ease) forwards;
+  animation: slideOutNext 0.32s cubic-bezier(0.22, 0.8, 0.3, 1) forwards;
 }
 .page-leaf.turn-next .pdf-back {
   opacity: 1;
-  animation: seferRevealNext var(--flip-ms) var(--flip-ease) forwards;
+  z-index: 1;
+  animation: slideInNext 0.32s cubic-bezier(0.22, 0.8, 0.3, 1) forwards;
 }
-.page-leaf.turn-next .page-shade {
-  animation: seferShadeNext var(--flip-ms) var(--flip-ease) forwards;
-}
-
-/* Prev: new page swings in from the right over the current */
 .page-leaf.turn-prev .pdf-back {
   opacity: 1;
   z-index: 3;
-  transform-origin: left center;
-  animation: seferFlipPrevIn var(--flip-ms) var(--flip-ease) forwards;
+  animation: slideInPrev 0.32s cubic-bezier(0.22, 0.8, 0.3, 1) forwards;
 }
 .page-leaf.turn-prev .pdf-front {
-  animation: seferRevealPrev var(--flip-ms) var(--flip-ease) forwards;
+  animation: slideOutPrev 0.32s cubic-bezier(0.22, 0.8, 0.3, 1) forwards;
 }
+.page-leaf.turn-next .page-shade,
 .page-leaf.turn-prev .page-shade {
-  animation: seferShadePrev var(--flip-ms) var(--flip-ease) forwards;
+  animation: shadePulse 0.32s ease forwards;
 }
 
-@keyframes seferFlipNext {
-  0%   { transform: rotateY(0deg); }
-  100% { transform: rotateY(-92deg); }
+@keyframes slideOutNext {
+  from { transform: translateX(0); opacity: 1; }
+  to   { transform: translateX(28%); opacity: 0; }
 }
-@keyframes seferRevealNext {
-  0%   { transform: translateX(-6%) scale(0.985); opacity: 0.85; }
-  55%  { opacity: 1; }
-  100% { transform: translateX(0) scale(1); opacity: 1; }
+@keyframes slideInNext {
+  from { transform: translateX(-18%); opacity: 0.6; }
+  to   { transform: translateX(0); opacity: 1; }
 }
-@keyframes seferShadeNext {
-  0%   { opacity: 0; }
-  40%  { opacity: 0.55; }
+@keyframes slideOutPrev {
+  from { transform: translateX(0); opacity: 1; }
+  to   { transform: translateX(-22%); opacity: 0.5; }
+}
+@keyframes slideInPrev {
+  from { transform: translateX(30%); opacity: 0.7; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+@keyframes shadePulse {
+  0% { opacity: 0; }
+  40% { opacity: 0.25; }
   100% { opacity: 0; }
 }
 
-@keyframes seferFlipPrevIn {
-  0%   { transform: rotateY(92deg); }
-  100% { transform: rotateY(0deg); }
-}
-@keyframes seferRevealPrev {
-  0%   { transform: scale(1); }
-  100% { transform: scale(0.985); opacity: 0.9; }
-}
-@keyframes seferShadePrev {
-  0%   { opacity: 0; }
-  45%  { opacity: 0.45; }
-  100% { opacity: 0; }
-}
-
-/* Drag peek (scrub) */
-.page-leaf.dragging .pdf-front {
-  transition: transform 0s;
-}
-.page-leaf.dragging-next .pdf-back {
-  opacity: 1;
-}
-.page-leaf.dragging-prev .pdf-back {
-  opacity: 1;
-  z-index: 3;
-}
+.page-leaf.dragging .pdf-front { transition: transform 0s; }
+.page-leaf.dragging-next .pdf-back,
+.page-leaf.dragging-prev .pdf-back { opacity: 1; }
+.page-leaf.dragging-prev .pdf-back { z-index: 3; }
 
 @media (prefers-reduced-motion: reduce) {
-  :root { --flip-ms: 1ms; }
   .page-leaf.turn-next .pdf-front,
   .page-leaf.turn-next .pdf-back,
-  .page-leaf.turn-next .page-shade,
   .page-leaf.turn-prev .pdf-front,
   .page-leaf.turn-prev .pdf-back,
+  .page-leaf.turn-next .page-shade,
   .page-leaf.turn-prev .page-shade {
     animation: none !important;
   }
   .page-leaf.turn-next .pdf-back,
-  .page-leaf.turn-prev .pdf-back {
-    opacity: 1;
-  }
-  .page-leaf.turn-next .pdf-front {
-    opacity: 0;
-  }
+  .page-leaf.turn-prev .pdf-back { opacity: 1; }
+  .page-leaf.turn-next .pdf-front { opacity: 0; }
 }
+
 
 .tap-zone {
   position: absolute;
