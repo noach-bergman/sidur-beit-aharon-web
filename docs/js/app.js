@@ -539,7 +539,7 @@ function openToc() {
     setTimeout(function () { ensurePdf().catch(function () {}); }, 800);
 
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js?v=6').catch(function () {});
+      navigator.serviceWorker.register('./sw.js?v=7').catch(function () {});
     }
   }
 

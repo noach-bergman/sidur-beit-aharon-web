@@ -1,5 +1,5 @@
 /* Service worker — printed book reader */
-const CACHE = 'sidur-bav-book-v6';
+const CACHE = 'sidur-bav-book-v7';
 const PRECACHE = [
   './',
   './index.html',
