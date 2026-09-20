@@ -410,7 +410,7 @@
     setTimeout(function () { ensurePdf().catch(function () {}); }, 800);
 
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js').catch(function () {});
+      navigator.serviceWorker.register('./sw.js?v=3').catch(function () {});
     }
   }
 
