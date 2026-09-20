@@ -6,7 +6,7 @@
   var STORAGE_PAGE = 'sidur-bav-last-page';
   var A2HS_KEY = 'sidur-bai-a2hs-used';
   var PDFJS_CDN = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/';
-  var FLIP_MS = 320;
+  var FLIP_MS = 160;
 
   var HEB_VALUES = {
     'א': 1, 'ב': 2, 'ג': 3, 'ד': 4, 'ה': 5, 'ו': 6, 'ז': 7, 'ח': 8, 'ט': 9, 'י': 10,
@@ -208,22 +208,32 @@
 
   function resetLeafClasses() {
     var leaf = pageLeaf();
-    if (!leaf) return;
-    leaf.classList.remove(
-      'turn-next', 'turn-prev', 'dragging', 'dragging-next', 'dragging-prev'
-    );
+    if (leaf) {
+      leaf.classList.remove(
+        'turn-next', 'turn-prev', 'dragging', 'dragging-next', 'dragging-prev'
+      );
+    }
     var front = frontCanvas();
     var back = backCanvas();
+    var shade = $('#page-shade');
     if (front) {
       front.style.transform = '';
       front.style.opacity = '';
       front.style.zIndex = '';
+      front.style.visibility = '';
     }
     if (back) {
       back.style.transform = '';
-      back.style.opacity = '';
+      back.style.opacity = '0';
+      back.style.visibility = 'hidden';
       back.style.zIndex = '';
     }
+    if (shade) {
+      shade.style.opacity = '0';
+      shade.style.display = 'none';
+    }
+    var loading = $('#reader-loading');
+    if (loading) loading.classList.add('hidden');
   }
 
   function finishPending() {
@@ -381,116 +391,23 @@ function openToc() {
   function setupSwipe() {
     var stage = $('#page-stage');
     if (!stage) return;
-    var startX = 0, startY = 0, tracking = false, peeking = false;
-    var leaf = null;
-    var front = null;
-    var back = null;
-    var peekDir = null;
-    var peekReady = false;
-
-    function clearPeek() {
-      if (!leaf) return;
-      leaf.classList.remove('dragging', 'dragging-next', 'dragging-prev');
-      if (front) front.style.transform = '';
-      if (back) {
-        back.style.transform = '';
-        back.style.opacity = '';
-        back.style.zIndex = '';
-      }
-      peeking = false;
-      peekDir = null;
-      peekReady = false;
-    }
-
+    var x0 = 0, y0 = 0, on = false;
     stage.addEventListener('touchstart', function (e) {
       if (!e.touches || !e.touches.length) return;
       if (state.rendering || state.animating) return;
-      tracking = true;
-      peeking = false;
-      peekReady = false;
-      peekDir = null;
-      startX = e.touches[0].clientX;
-      startY = e.touches[0].clientY;
-      leaf = pageLeaf();
-      front = frontCanvas();
-      back = backCanvas();
+      on = true;
+      x0 = e.touches[0].clientX;
+      y0 = e.touches[0].clientY;
     }, { passive: true });
-
-    stage.addEventListener('touchmove', function (e) {
-      if (!tracking || !e.touches || !e.touches.length) return;
-      if (prefersReducedMotion() || state.rendering || state.animating) return;
-      var t = e.touches[0];
-      var dx = t.clientX - startX;
-      var dy = t.clientY - startY;
-      if (!peeking) {
-        if (Math.abs(dx) < 18 || Math.abs(dx) < Math.abs(dy) * 1.1) return;
-        peeking = true;
-        // RTL: dx < 0 (swipe left) → next; dx > 0 → prev
-        peekDir = dx < 0 ? 'next' : 'prev';
-        var targetPage = peekDir === 'next' ? state.pdfPage + 1 : state.pdfPage - 1;
-        if (targetPage < 1 || targetPage > PDF_PAGES) {
-          peeking = false;
-          peekDir = null;
-          return;
-        }
-        if (leaf) {
-          leaf.classList.add('dragging', peekDir === 'next' ? 'dragging-next' : 'dragging-prev');
-        }
-        // Pre-render target onto back for peek (async; scrub still works with empty)
-        paintPage(back, targetPage).then(function () {
-          peekReady = true;
-          if (back && front) {
-            back.style.width = front.style.width;
-            back.style.height = front.style.height;
-          }
-        }).catch(function () {});
-      }
-      if (!peeking || !front) return;
-      var w = front.clientWidth || stage.clientWidth || 300;
-      var progress = Math.max(-1, Math.min(1, dx / (w * 0.55)));
-      if (peekDir === 'next') {
-        // Swipe left: progress negative → rotate front toward spine
-        var ang = Math.max(-70, Math.min(0, progress * 75));
-        front.style.transform = 'rotateY(' + ang + 'deg)';
-        front.style.transformOrigin = 'right center';
-        if (back) {
-          back.style.opacity = String(Math.min(1, Math.abs(progress) * 1.4));
-          back.style.transform = 'translateX(' + ((1 - Math.abs(progress)) * -4) + '%)';
-        }
-      } else {
-        // Swipe right: incoming page from right
-        var angIn = Math.max(0, Math.min(85, (1 - progress) * 85));
-        if (back) {
-          back.style.opacity = '1';
-          back.style.zIndex = '3';
-          back.style.transformOrigin = 'left center';
-          back.style.transform = 'rotateY(' + angIn + 'deg)';
-        }
-      }
-    }, { passive: true });
-
     stage.addEventListener('touchend', function (e) {
-      if (!tracking) return;
-      tracking = false;
+      if (!on) return;
+      on = false;
       var t = e.changedTouches && e.changedTouches[0];
-      if (!t) { clearPeek(); return; }
-      var dx = t.clientX - startX;
-      var dy = t.clientY - startY;
-      var wasPeek = peeking;
-      var dir = peekDir;
-      clearPeek();
-
-      if (Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy)) return;
-      if (dx > 0) prevPage();
-      else nextPage();
-      // dir unused after clear — goTo handles animation from painted back if race;
-      // renderPage will re-paint target which is fine.
-      void wasPeek; void dir;
-    }, { passive: true });
-
-    stage.addEventListener('touchcancel', function () {
-      tracking = false;
-      clearPeek();
+      if (!t) return;
+      var dx = t.clientX - x0, dy = t.clientY - y0;
+      if (Math.abs(dx) < 70 || Math.abs(dx) < Math.abs(dy) * 1.2) return;
+      if (dx < 0) nextPage();
+      else prevPage();
     }, { passive: true });
   }
 
@@ -548,6 +465,14 @@ function openToc() {
     });
   }
 
+  function flashTap(el) {
+    if (!el) return;
+    el.classList.remove('flash');
+    void el.offsetWidth;
+    el.classList.add('flash');
+    setTimeout(function () { el.classList.remove('flash'); }, 200);
+  }
+
   function bindUI() {
     var btnOpen = $('#btn-open');
     if (btnOpen) btnOpen.addEventListener('click', function () {
@@ -560,15 +485,24 @@ function openToc() {
     var btnNext = $('#btn-next');
     if (btnNext) btnNext.addEventListener('click', nextPage);
     var tapPrev = $('#tap-prev');
-    if (tapPrev) tapPrev.addEventListener('click', prevPage);
+    if (tapPrev) tapPrev.addEventListener('click', function (e) {
+      e.preventDefault();
+      flashTap(tapPrev);
+      prevPage();
+    });
     var tapNext = $('#tap-next');
+    if (tapNext) tapNext.addEventListener('click', function (e) {
+      e.preventDefault();
+      flashTap(tapNext);
+      nextPage();
+    });
     if (tapNext) tapNext.addEventListener('click', nextPage);
 
     document.addEventListener('keydown', function (e) {
       var reader = $('#view-reader');
       if (!reader || reader.classList.contains('hidden')) return;
-      if (e.key === 'ArrowLeft' || e.key === 'PageDown') { e.preventDefault(); nextPage(); }
-      if (e.key === 'ArrowRight' || e.key === 'PageUp') { e.preventDefault(); prevPage(); }
+      if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); nextPage(); }
+      if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); prevPage(); }
       if (e.key === 'Escape') openToc();
     });
 
@@ -605,7 +539,7 @@ function openToc() {
     setTimeout(function () { ensurePdf().catch(function () {}); }, 800);
 
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js?v=5').catch(function () {});
+      navigator.serviceWorker.register('./sw.js?v=6').catch(function () {});
     }
   }
 

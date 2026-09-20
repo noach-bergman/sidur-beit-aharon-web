@@ -8,10 +8,10 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="סידור בא&quot;י" />
   <title>סידור בית אהרן וישראל</title>
-  <link rel="manifest" href="./manifest.webmanifest?v=5" />
+  <link rel="manifest" href="./manifest.webmanifest?v=6" />
   <link rel="icon" href="./icons/book.png" />
   <link rel="apple-touch-icon" href="./icons/icon-192.png" />
-  <link rel="stylesheet" href="./css/app.css?v=5" />
+  <link rel="stylesheet" href="./css/app.css?v=6" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700&family=David+Libre:wght@400;700&display=swap" rel="stylesheet" />
@@ -58,11 +58,11 @@
       <div id="page-leaf" class="page-leaf">
         <canvas id="pdf-canvas-next" class="pdf-layer pdf-back" aria-hidden="true"></canvas>
         <canvas id="pdf-canvas" class="pdf-layer pdf-front"></canvas>
-        <div id="page-shade" class="page-shade" aria-hidden="true"></div>
+        <div id="page-shade" class="page-shade" aria-hidden="true" style="display:none;opacity:0"></div>
       </div>
-      <button type="button" id="tap-next" class="tap-zone tap-next" aria-label="עמוד הבא"></button>
       <button type="button" id="tap-prev" class="tap-zone tap-prev" aria-label="עמוד קודם"></button>
-      <div id="reader-loading" class="reader-loading">טוען דף…</div>
+      <button type="button" id="tap-next" class="tap-zone tap-next" aria-label="עמוד הבא"></button>
+      <div id="reader-loading" class="reader-loading hidden">טוען דף…</div>
     </div>
 
     <div id="reader-bar" class="reader-bar">
@@ -87,7 +87,7 @@
     </div>
   </div>
 
-  <script src="./js/app.js?v=5"></script>
+  <script src="./js/app.js?v=6"></script>
 
 <script>
 (function () {
