@@ -6,6 +6,7 @@
   var STORAGE_PAGE = 'sidur-bav-last-page';
   var A2HS_KEY = 'sidur-bai-a2hs-used';
   var PDFJS_CDN = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/';
+  var FLIP_MS = 400;
 
   var HEB_VALUES = {
     'א': 1, 'ב': 2, 'ג': 3, 'ד': 4, 'ה': 5, 'ו': 6, 'ז': 7, 'ח': 8, 'ט': 9, 'י': 10,
@@ -20,11 +21,17 @@
     pdfDoc: null,
     pdfPage: 1,
     rendering: false,
+    animating: false,
     pendingPage: null,
+    pendingDir: null,
     loadingPdf: null,
   };
 
   var $ = function (sel) { return document.querySelector(sel); };
+
+  function prefersReducedMotion() {
+    return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
 
   function clamp(n, lo, hi) {
     return Math.max(lo, Math.min(hi, n));
@@ -84,7 +91,6 @@
     return out;
   }
 
-  // Expose helpers for debugging / tests
   window.hebToPdf = hebToPdf;
   window.pdfToHeb = pdfToHeb;
   window.parseHebNumeral = parseHebNumeral;
@@ -124,8 +130,10 @@
     el.innerHTML =
       '<span class="heb">עמוד ' + hebLabel + '</span>' +
       '<span class="pdf-pos">PDF ' + pdfPage + ' / ' + PDF_PAGES + '</span>';
-    $('#btn-prev').disabled = pdfPage <= 1;
-    $('#btn-next').disabled = pdfPage >= PDF_PAGES;
+    var prev = $('#btn-prev');
+    var next = $('#btn-next');
+    if (prev) prev.disabled = pdfPage <= 1;
+    if (next) next.disabled = pdfPage >= PDF_PAGES;
   }
 
   function ensurePdf() {
@@ -137,7 +145,6 @@
     pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS_CDN + 'pdf.worker.min.js';
     state.loadingPdf = pdfjsLib.getDocument({
       url: PDF_URL,
-      // Progressive loading helps on mobile
       disableAutoFetch: false,
       disableStream: false,
     }).promise.then(function (doc) {
@@ -156,35 +163,22 @@
     var bar = $('#reader-bar');
     var w = stage ? stage.clientWidth : window.innerWidth;
     var h = stage ? stage.clientHeight : (window.innerHeight - (bar ? bar.offsetHeight : 56));
-    // small padding
-    return { w: Math.max(100, w - 4), h: Math.max(100, h - 4) };
+    return { w: Math.max(100, w - 8), h: Math.max(100, h - 8) };
   }
 
-  function renderPage(pdfPage, flipDir) {
-    pdfPage = clamp(pdfPage, 1, PDF_PAGES);
-    if (state.rendering) {
-      state.pendingPage = pdfPage;
-      return;
-    }
-    state.rendering = true;
-    state.pdfPage = pdfPage;
-    saveLastPage(pdfPage);
-    updateLabel(pdfPage);
+  function frontCanvas() { return $('#pdf-canvas'); }
+  function backCanvas() { return $('#pdf-canvas-next'); }
+  function pageLeaf() { return $('#page-leaf'); }
 
-    var loading = $('#reader-loading');
-    if (loading) loading.classList.remove('hidden');
-
-    ensurePdf().then(function (doc) {
-      return doc.getPage(pdfPage);
+  /** Paint a PDF page onto a canvas; returns Promise resolving when done. */
+  function paintPage(canvas, pdfPageNum) {
+    return ensurePdf().then(function (doc) {
+      return doc.getPage(pdfPageNum);
     }).then(function (page) {
-      var canvas = $('#pdf-canvas');
       var ctx = canvas.getContext('2d', { alpha: false });
       var size = stageSize();
-
-      // PDF.js applies page.rotate in getViewport by default
       var base = page.getViewport({ scale: 1 });
       var scale = Math.min(size.w / base.width, size.h / base.height);
-      // Crisp on retina
       var outputScale = Math.min(window.devicePixelRatio || 1, 2);
       var viewport = page.getViewport({ scale: scale * outputScale });
 
@@ -193,21 +187,128 @@
       canvas.style.width = Math.floor(viewport.width / outputScale) + 'px';
       canvas.style.height = Math.floor(viewport.height / outputScale) + 'px';
 
-      var renderTask = page.render({
+      return page.render({
         canvasContext: ctx,
         viewport: viewport,
-      });
-      return renderTask.promise.then(function () {
-        if (flipDir && canvas) {
-          canvas.classList.remove('flipping-next', 'flipping-prev');
-          // force reflow
-          void canvas.offsetWidth;
-          canvas.classList.add(flipDir === 'next' ? 'flipping-next' : 'flipping-prev');
-          setTimeout(function () {
-            canvas.classList.remove('flipping-next', 'flipping-prev');
-          }, 240);
+      }).promise;
+    });
+  }
+
+  /** Copy bitmap from src canvas onto dst (same CSS size). */
+  function copyCanvas(src, dst) {
+    if (!src || !dst || !src.width) return;
+    dst.width = src.width;
+    dst.height = src.height;
+    dst.style.width = src.style.width;
+    dst.style.height = src.style.height;
+    var ctx = dst.getContext('2d', { alpha: false });
+    ctx.drawImage(src, 0, 0);
+  }
+
+  function resetLeafClasses() {
+    var leaf = pageLeaf();
+    if (!leaf) return;
+    leaf.classList.remove(
+      'turn-next', 'turn-prev', 'dragging', 'dragging-next', 'dragging-prev'
+    );
+    var front = frontCanvas();
+    var back = backCanvas();
+    if (front) {
+      front.style.transform = '';
+      front.style.opacity = '';
+      front.style.zIndex = '';
+    }
+    if (back) {
+      back.style.transform = '';
+      back.style.opacity = '';
+      back.style.zIndex = '';
+    }
+  }
+
+  function finishPending() {
+    state.rendering = false;
+    state.animating = false;
+    var loadingEl = $('#reader-loading');
+    if (loadingEl && state.pdfDoc) loadingEl.classList.add('hidden');
+    if (state.pendingPage != null && state.pendingPage !== state.pdfPage) {
+      var next = state.pendingPage;
+      var dir = state.pendingDir;
+      state.pendingPage = null;
+      state.pendingDir = null;
+      renderPage(next, dir);
+    } else {
+      state.pendingPage = null;
+      state.pendingDir = null;
+    }
+  }
+
+  /**
+   * Render pdfPage. If flipDir is 'next'|'prev' and motion is allowed,
+   * paint onto back canvas first, then run CSS sefer turn, then promote.
+   */
+  function renderPage(pdfPage, flipDir) {
+    pdfPage = clamp(pdfPage, 1, PDF_PAGES);
+    if (state.rendering || state.animating) {
+      state.pendingPage = pdfPage;
+      state.pendingDir = flipDir || null;
+      return;
+    }
+    state.rendering = true;
+    state.pdfPage = pdfPage;
+    saveLastPage(pdfPage);
+    updateLabel(pdfPage);
+
+    var front = frontCanvas();
+    var back = backCanvas();
+    var leaf = pageLeaf();
+    var loading = $('#reader-loading');
+    var hasContent = front && front.width > 0;
+    var animate = flipDir && hasContent && !prefersReducedMotion() && leaf && back;
+
+    if (!hasContent && loading) loading.classList.remove('hidden');
+
+    var targetCanvas = animate ? back : front;
+
+    paintPage(targetCanvas, pdfPage).then(function () {
+      if (!animate) {
+        // Instant / first paint — also keep back in sync for future peeks
+        if (back && front && front !== targetCanvas) copyCanvas(front, back);
+        else if (back && targetCanvas === front) copyCanvas(front, back);
+        resetLeafClasses();
+        finishPending();
+        return;
+      }
+
+      // Match back canvas CSS box to front so absolute stacking aligns
+      back.style.width = front.style.width;
+      back.style.height = front.style.height;
+
+      state.animating = true;
+      if (loading) loading.classList.add('hidden');
+
+      resetLeafClasses();
+      void leaf.offsetWidth; // reflow before adding turn class
+      leaf.classList.add(flipDir === 'next' ? 'turn-next' : 'turn-prev');
+
+      var done = false;
+      function onDone() {
+        if (done) return;
+        done = true;
+        leaf.removeEventListener('animationend', onAnimEnd);
+        // Promote back → front so current page stays visible without flash
+        copyCanvas(back, front);
+        resetLeafClasses();
+        finishPending();
+      }
+      function onAnimEnd(e) {
+        // Prefer front-layer animation end; accept any leaf child
+        if (e.target !== front && e.target !== back && !e.target.classList.contains('page-shade')) {
+          return;
         }
-      });
+        onDone();
+      }
+      leaf.addEventListener('animationend', onAnimEnd);
+      setTimeout(onDone, FLIP_MS + 80);
     }).catch(function (err) {
       console.error(err);
       var loadingEl = $('#reader-loading');
@@ -215,17 +316,8 @@
         loadingEl.textContent = 'שגיאה בטעינת הדף';
         loadingEl.classList.remove('hidden');
       }
-    }).then(function () {
       state.rendering = false;
-      var loadingEl = $('#reader-loading');
-      if (loadingEl && state.pdfDoc) loadingEl.classList.add('hidden');
-      if (state.pendingPage != null && state.pendingPage !== state.pdfPage) {
-        var next = state.pendingPage;
-        state.pendingPage = null;
-        renderPage(next);
-      } else {
-        state.pendingPage = null;
-      }
+      state.animating = false;
     });
   }
 
@@ -244,7 +336,6 @@
   function openReader(pdfPage) {
     showView('reader');
     goTo(pdfPage || loadLastPage());
-    // Re-render on orientation / resize
     setTimeout(function () { goTo(state.pdfPage); }, 50);
   }
 
@@ -285,24 +376,116 @@
   function setupSwipe() {
     var stage = $('#page-stage');
     if (!stage) return;
-    var startX = 0, startY = 0, tracking = false;
+    var startX = 0, startY = 0, tracking = false, peeking = false;
+    var leaf = null;
+    var front = null;
+    var back = null;
+    var peekDir = null;
+    var peekReady = false;
+
+    function clearPeek() {
+      if (!leaf) return;
+      leaf.classList.remove('dragging', 'dragging-next', 'dragging-prev');
+      if (front) front.style.transform = '';
+      if (back) {
+        back.style.transform = '';
+        back.style.opacity = '';
+        back.style.zIndex = '';
+      }
+      peeking = false;
+      peekDir = null;
+      peekReady = false;
+    }
+
     stage.addEventListener('touchstart', function (e) {
       if (!e.touches || !e.touches.length) return;
+      if (state.rendering || state.animating) return;
       tracking = true;
+      peeking = false;
+      peekReady = false;
+      peekDir = null;
       startX = e.touches[0].clientX;
       startY = e.touches[0].clientY;
+      leaf = pageLeaf();
+      front = frontCanvas();
+      back = backCanvas();
     }, { passive: true });
+
+    stage.addEventListener('touchmove', function (e) {
+      if (!tracking || !e.touches || !e.touches.length) return;
+      if (prefersReducedMotion() || state.rendering || state.animating) return;
+      var t = e.touches[0];
+      var dx = t.clientX - startX;
+      var dy = t.clientY - startY;
+      if (!peeking) {
+        if (Math.abs(dx) < 18 || Math.abs(dx) < Math.abs(dy) * 1.1) return;
+        peeking = true;
+        // RTL: dx < 0 (swipe left) → next; dx > 0 → prev
+        peekDir = dx < 0 ? 'next' : 'prev';
+        var targetPage = peekDir === 'next' ? state.pdfPage + 1 : state.pdfPage - 1;
+        if (targetPage < 1 || targetPage > PDF_PAGES) {
+          peeking = false;
+          peekDir = null;
+          return;
+        }
+        if (leaf) {
+          leaf.classList.add('dragging', peekDir === 'next' ? 'dragging-next' : 'dragging-prev');
+        }
+        // Pre-render target onto back for peek (async; scrub still works with empty)
+        paintPage(back, targetPage).then(function () {
+          peekReady = true;
+          if (back && front) {
+            back.style.width = front.style.width;
+            back.style.height = front.style.height;
+          }
+        }).catch(function () {});
+      }
+      if (!peeking || !front) return;
+      var w = front.clientWidth || stage.clientWidth || 300;
+      var progress = Math.max(-1, Math.min(1, dx / (w * 0.55)));
+      if (peekDir === 'next') {
+        // Swipe left: progress negative → rotate front toward spine
+        var ang = Math.max(-70, Math.min(0, progress * 75));
+        front.style.transform = 'rotateY(' + ang + 'deg)';
+        front.style.transformOrigin = 'right center';
+        if (back) {
+          back.style.opacity = String(Math.min(1, Math.abs(progress) * 1.4));
+          back.style.transform = 'translateX(' + ((1 - Math.abs(progress)) * -4) + '%)';
+        }
+      } else {
+        // Swipe right: incoming page from right
+        var angIn = Math.max(0, Math.min(85, (1 - progress) * 85));
+        if (back) {
+          back.style.opacity = '1';
+          back.style.zIndex = '3';
+          back.style.transformOrigin = 'left center';
+          back.style.transform = 'rotateY(' + angIn + 'deg)';
+        }
+      }
+    }, { passive: true });
+
     stage.addEventListener('touchend', function (e) {
       if (!tracking) return;
       tracking = false;
       var t = e.changedTouches && e.changedTouches[0];
-      if (!t) return;
+      if (!t) { clearPeek(); return; }
       var dx = t.clientX - startX;
       var dy = t.clientY - startY;
+      var wasPeek = peeking;
+      var dir = peekDir;
+      clearPeek();
+
       if (Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy)) return;
-      // RTL book: swipe right (finger moves right) → previous; swipe left → next
       if (dx > 0) prevPage();
       else nextPage();
+      // dir unused after clear — goTo handles animation from painted back if race;
+      // renderPage will re-paint target which is fine.
+      void wasPeek; void dir;
+    }, { passive: true });
+
+    stage.addEventListener('touchcancel', function () {
+      tracking = false;
+      clearPeek();
     }, { passive: true });
   }
 
@@ -361,17 +544,24 @@
   }
 
   function bindUI() {
-    $('#btn-open').addEventListener('click', function () {
+    var btnOpen = $('#btn-open');
+    if (btnOpen) btnOpen.addEventListener('click', function () {
       openReader(loadLastPage());
     });
-    $('#btn-toc').addEventListener('click', openToc);
-    $('#btn-prev').addEventListener('click', prevPage);
-    $('#btn-next').addEventListener('click', nextPage);
-    $('#tap-prev').addEventListener('click', prevPage);
-    $('#tap-next').addEventListener('click', nextPage);
+    var btnToc = $('#btn-toc');
+    if (btnToc) btnToc.addEventListener('click', openToc);
+    var btnPrev = $('#btn-prev');
+    if (btnPrev) btnPrev.addEventListener('click', prevPage);
+    var btnNext = $('#btn-next');
+    if (btnNext) btnNext.addEventListener('click', nextPage);
+    var tapPrev = $('#tap-prev');
+    if (tapPrev) tapPrev.addEventListener('click', prevPage);
+    var tapNext = $('#tap-next');
+    if (tapNext) tapNext.addEventListener('click', nextPage);
 
     document.addEventListener('keydown', function (e) {
-      if ($('#view-reader').classList.contains('hidden')) return;
+      var reader = $('#view-reader');
+      if (!reader || reader.classList.contains('hidden')) return;
       if (e.key === 'ArrowLeft' || e.key === 'PageDown') { e.preventDefault(); nextPage(); }
       if (e.key === 'ArrowRight' || e.key === 'PageUp') { e.preventDefault(); prevPage(); }
       if (e.key === 'Escape') openToc();
@@ -379,7 +569,8 @@
 
     var resizeTimer;
     window.addEventListener('resize', function () {
-      if ($('#view-reader').classList.contains('hidden')) return;
+      var reader = $('#view-reader');
+      if (!reader || reader.classList.contains('hidden')) return;
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(function () { goTo(state.pdfPage); }, 150);
     });
@@ -406,11 +597,10 @@
         }
       });
 
-    // Warm PDF cache in background after a short delay
     setTimeout(function () { ensurePdf().catch(function () {}); }, 800);
 
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js?v=3').catch(function () {});
+      navigator.serviceWorker.register('./sw.js?v=4').catch(function () {});
     }
   }
 

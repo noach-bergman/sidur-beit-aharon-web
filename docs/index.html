@@ -8,10 +8,10 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="סידור בא&quot;י" />
   <title>סידור בית אהרן וישראל</title>
-  <link rel="manifest" href="./manifest.webmanifest?v=3" />
+  <link rel="manifest" href="./manifest.webmanifest?v=4" />
   <link rel="icon" href="./icons/book.png" />
   <link rel="apple-touch-icon" href="./icons/icon-192.png" />
-  <link rel="stylesheet" href="./css/app.css?v=3" />
+  <link rel="stylesheet" href="./css/app.css?v=4" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700&family=David+Libre:wght@400;700&display=swap" rel="stylesheet" />
@@ -21,6 +21,7 @@
   <!-- HOME -->
   <section id="view-home" class="view">
     <header class="home-header">
+      <div class="home-header-glow" aria-hidden="true"></div>
       <img src="./icons/book.png" alt="" class="home-logo" width="120" height="120" />
       <h1>סידור בית אהרן וישראל</h1>
       <p class="subtitle">סטולין · קרלין · נוסח בית אהרן וישראל</p>
@@ -31,15 +32,15 @@
 
     <nav class="toc" aria-label="תוכן העניינים">
       <div class="toc-group" data-group="daily">
-        <h2>יום־יום</h2>
+        <h2><span class="toc-divider" aria-hidden="true"></span>יום־יום<span class="toc-divider" aria-hidden="true"></span></h2>
         <ul class="toc-list" id="toc-daily"></ul>
       </div>
       <div class="toc-group" data-group="moadim">
-        <h2>מועדים</h2>
+        <h2><span class="toc-divider" aria-hidden="true"></span>מועדים<span class="toc-divider" aria-hidden="true"></span></h2>
         <ul class="toc-list" id="toc-moadim"></ul>
       </div>
       <div class="toc-group" data-group="other">
-        <h2>אחר</h2>
+        <h2><span class="toc-divider" aria-hidden="true"></span>אחר<span class="toc-divider" aria-hidden="true"></span></h2>
         <ul class="toc-list" id="toc-other"></ul>
       </div>
     </nav>
@@ -53,8 +54,12 @@
   <!-- READER -->
   <section id="view-reader" class="view hidden" aria-label="קורא סידור">
     <div id="page-stage" class="page-stage">
-      <canvas id="pdf-canvas"></canvas>
-      <div id="page-flip" class="page-flip" aria-hidden="true"></div>
+      <div class="page-desk" aria-hidden="true"></div>
+      <div id="page-leaf" class="page-leaf">
+        <canvas id="pdf-canvas-next" class="pdf-layer pdf-back" aria-hidden="true"></canvas>
+        <canvas id="pdf-canvas" class="pdf-layer pdf-front"></canvas>
+        <div id="page-shade" class="page-shade" aria-hidden="true"></div>
+      </div>
       <button type="button" id="tap-next" class="tap-zone tap-next" aria-label="עמוד הבא"></button>
       <button type="button" id="tap-prev" class="tap-zone tap-prev" aria-label="עמוד קודם"></button>
       <div id="reader-loading" class="reader-loading">טוען דף…</div>
@@ -82,7 +87,7 @@
     </div>
   </div>
 
-  <script src="./js/app.js?v=3"></script>
+  <script src="./js/app.js?v=4"></script>
 
 <script>
 (function () {
