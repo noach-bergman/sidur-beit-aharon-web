@@ -23,19 +23,64 @@
 
   var HDate = H.HDate, HebrewCalendar = H.HebrewCalendar, Zmanim = H.Zmanim, flags = H.flags;
 
-  /* PDF page indexes — every one of these exists in data/toc.json */
-  var P = {
-    hashkama: 3, birchotHashachar: 4, talis: 12, tefillin: 13, shacharit: 14,
-    selichotBehab: 52, hagomel: 65, birchatHamazon: 85, birchatHailanot: 93,
-    tefillatHaderech: 94, mincha: 95, maariv: 107, omer: 118, shemaBed: 123,
-    kiddushLevana: 127, yomKippurKatan: 130, lulav: 140, hallel: 140,
-    musafRC: 144, nerChanukah: 150, mizmorimChanukah: 151, maozTzur: 160,
-    megillah: 161, hataratNedarim: 167, tashlich: 170, kaparot: 171,
-    selichot10Tevet: 173, selichotTaanitEsther: 181, selichot17Tammuz: 185,
-    kriahMonThu: 189, kriahRC: 219, kriahChanukah: 220, kriahPurim: 223,
-    kriahTaanit: 224, haftaraTaanit: 225, birchatHachama: 229,
-    tehillim: 232, minhagim: 304
+  /* Sections are looked up BY TITLE in data/toc.json, which carries the
+     verified printed→PDF mapping. Nothing here hardcodes a page number, so a
+     correction to the TOC flows through automatically. */
+  var TITLES = {
+    hashkama:              'סדר השכמת הבוקר',
+    birchotHashachar:      'ברכות השחר',
+    talis:                 'סדר לבישת טלית גדול',
+    tefillin:              'סדר הנחת תפילין',
+    shacharit:             'תפלת שחרית',
+    selichotBehab:         'סליחות לבה״ב ושובבי״ם',
+    birchatHamazon:        'ברכת המזון',
+    birchatHailanot:       'ברכת האילנות',
+    tefillatHaderech:      'תפלת הדרך',
+    mincha:                'תפלת מנחה לחול',
+    maariv:                'תפלת ערבית לחול',
+    omer:                  'ספירת העומר',
+    shemaBed:              'קריאת שמע שעל המטה',
+    kiddushLevana:         'סדר קידוש לבנה',
+    yomKippurKatan:        'סדר תפלת יום כיפור קטן',
+    lulav:                 'סדר נטילת לולב',
+    hallel:                'סדר הלל',
+    musafRC:               'תפלת מוסף לראש חודש',
+    nerChanukah:           'סדר הדלקת נר חנוכה',
+    mizmorimChanukah:      'סדר מזמורים לחנוכה',
+    maozTzur:              'מעוז צור',
+    megillah:              'סדר ברכות המגילה',
+    hataratNedarim:        'סדר התרת נדרים',
+    tashlich:              'סדר תשליך',
+    kaparot:               'סדר כפרות',
+    selichot10Tevet:       'סליחות לעשרה בטבת',
+    selichotTaanitEsther:  'סליחות לתענית אסתר',
+    selichot17Tammuz:      'סליחות לשבעה עשר בתמוז',
+    kriahMonThu:           'סדר הפרשיות לשני וחמישי',
+    kriahRC:               'קריאה לראש חודש',
+    kriahChanukah:         'קריאה לחנוכה',
+    kriahPurim:            'קריאה לפורים',
+    kriahTaanit:           'קריאה לתענית ציבור',
+    haftaraTaanit:         'הפטרה לתענית ציבור',
+    birchatHachama:        'סדר ברכת החמה',
+    tehillim:              'ספר תהלים',
+    minhagim:              'מנהגים מרבותינו הקדושים מסטולין קרלין'
   };
+
+  var P = {};   // key -> pdf page, filled by setPages()
+
+  /** Called once the TOC is loaded. Unknown or unscanned sections stay absent,
+      and anything that links to them is simply not offered. */
+  function setPages(toc) {
+    var byTitle = {};
+    (toc.entries || []).forEach(function (e) {
+      if (e.pdfPage && !(e.title in byTitle)) byTitle[e.title] = e.pdfPage;
+    });
+    Object.keys(TITLES).forEach(function (k) {
+      var pg = byTitle[TITLES[k]];
+      if (pg) P[k] = pg; else delete P[k];
+    });
+    return P;
+  }
 
   var MONTH = {
     TISHREI: 7, CHESHVAN: 8, KISLEV: 9, TEVET: 10, SHVAT: 11,
@@ -174,7 +219,10 @@
 
     /* ── today's specials, each linked only where the siddur has a section ── */
     var special = [];
-    var add = function (title, page, note) { special.push({ title: title, page: page || null, note: note || null }); };
+    var add = function (title, page, note) {
+      // page may be undefined when that section is not in the scan
+      special.push({ title: title, page: page || null, note: note || null });
+    };
 
     var omerEv = find(evs, flags.OMER_COUNT);
     if (omerEv) {
@@ -272,5 +320,5 @@
     };
   }
 
-  global.SiddurToday = { plan: plan, PAGES: P };
+  global.SiddurToday = { plan: plan, setPages: setPages, PAGES: P, TITLES: TITLES };
 })(window);

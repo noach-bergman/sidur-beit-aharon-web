@@ -37,8 +37,38 @@
 
   /* ── Hebrew numerals ─────────────────────────────── */
 
-  function hebToPdf(h) { return clamp(Number(h) - 1, 1, PDF_PAGES); }
-  function pdfToHeb(p) { return clamp(Number(p) + 1, 1, PDF_PAGES); }
+  /* The scan does NOT map linearly onto the printed folios: four printed pages
+     are missing, and תהלים and מנהגים each restart their own numbering. The
+     real runs live in data/toc.json under "sequences" (printed = pdf + offset)
+     and are verified against the folio printed on every scanned page. */
+  function seqForPdf(pdfPage) {
+    var seqs = (state.toc && state.toc.sequences) || [];
+    for (var i = 0; i < seqs.length; i++) {
+      if (pdfPage >= seqs[i].pdfFrom && pdfPage <= seqs[i].pdfTo) return seqs[i];
+    }
+    return null;
+  }
+  function seqForPrinted(section, printed) {
+    var seqs = (state.toc && state.toc.sequences) || [];
+    for (var i = 0; i < seqs.length; i++) {
+      var q = seqs[i];
+      if (q.section !== section) continue;
+      if (printed >= q.pdfFrom + q.offset && printed <= q.pdfTo + q.offset) return q;
+    }
+    return null;
+  }
+
+  /** Printed folio in `section` -> PDF page, or null when it is not in the scan. */
+  function printedToPdf(printed, section) {
+    var q = seqForPrinted(section || 'main', printed);
+    return q ? printed - q.offset : null;
+  }
+
+  /** PDF page -> {printed, section} or null for the unnumbered plates. */
+  function pdfToPrinted(pdfPage) {
+    var q = seqForPdf(pdfPage);
+    return q ? { printed: pdfPage + q.offset, section: q.section } : null;
+  }
 
   function parseHebNumeral(str) {
     if (str == null) return null;
@@ -81,7 +111,16 @@
     if (!s) return '';
     return s.length === 1 ? s + '׳' : s.slice(0, -1) + '״' + s.slice(-1);
   }
-  function pageLabel(pdfPage) { return gersh(toHebNumeral(pdfToHeb(pdfPage))); }
+
+  var SECTION_NAME = { tehillim: 'תהלים', minhagim: 'מנהגים' };
+
+  /** What the page calls itself, e.g. "עמוד ק״ג" or "תהלים ב׳". */
+  function pageLabel(pdfPage) {
+    var pr = pdfToPrinted(pdfPage);
+    if (!pr) return '';
+    var num = gersh(toHebNumeral(pr.printed));
+    return SECTION_NAME[pr.section] ? SECTION_NAME[pr.section] + ' ' + num : 'עמוד ' + num;
+  }
 
   /* ── location ────────────────────────────────────── */
 
@@ -282,17 +321,31 @@
         li.dataset.group = g;
         li.dataset.search = normalize(item.title);
         li.className = 'idx-row';
-        var b = document.createElement('button');
-        b.type = 'button';
-        b.className = 'row';
+
+        var b = document.createElement(item.pdfPage ? 'button' : 'div');
+        b.className = 'row' + (item.pdfPage ? '' : ' static');
+        if (item.pdfPage) b.type = 'button';
+
         var main = document.createElement('span');
         main.className = 'row-main';
-        main.textContent = item.title;
+        var t = document.createElement('span');
+        t.className = 'row-title';
+        t.textContent = item.title;
+        main.appendChild(t);
+        if (item.note) {
+          var n = document.createElement('span');
+          n.className = 'row-note';
+          n.textContent = item.note;
+          main.appendChild(n);
+        }
+
         var pg = document.createElement('span');
         pg.className = 'row-page';
-        pg.textContent = gersh(item.hebLabel || toHebNumeral(item.hebPage));
+        pg.textContent = item.printedLabel ? gersh(item.printedLabel) : '';
         b.appendChild(main); b.appendChild(pg);
-        b.onclick = function () { closeIndex(); openReader(item.pdfPage || hebToPdf(item.hebPage)); };
+        if (item.pdfPage) {
+          b.onclick = function () { closeIndex(); openReader(item.pdfPage); };
+        }
         li.appendChild(b);
         list.appendChild(li);
       });
@@ -373,7 +426,8 @@
 
   function updateLabel(pdfPage) {
     var el = $('#page-label');
-    if (el) el.innerHTML = '<span class="heb">עמוד ' + pageLabel(pdfPage) + '</span>' +
+    var lbl = pageLabel(pdfPage);
+    if (el) el.innerHTML = '<span class="heb">' + (lbl || '—') + '</span>' +
       '<span class="pos">' + pdfPage + '/' + PDF_PAGES + '</span>';
     var head = $('#running-head');
     if (head) { var s = sectionFor(pdfPage); head.textContent = s ? s.title : ''; }
@@ -438,7 +492,7 @@
 
   function gotoPreview(p) {
     p = clamp(p, 1, PDF_PAGES);
-    $('#goto-heb').textContent = 'עמוד ' + pageLabel(p);
+    $('#goto-heb').textContent = pageLabel(p) || ('עמוד ' + p);
     var s = sectionFor(p);
     $('#goto-sub').textContent = s ? s.title : (p + ' / ' + PDF_PAGES);
   }
@@ -488,8 +542,12 @@
     $('#tap-prev').onclick = function (e) { e.preventDefault(); prevPage(); };
     $('#tap-next').onclick = function (e) { e.preventDefault(); nextPage(); };
 
-    $$('[data-page]').forEach(function (el) {
-      el.onclick = function () { openReader(parseInt(el.dataset.page, 10)); };
+    // resolved from the TOC, so these can never drift from the real pages
+    $$('[data-key]').forEach(function (el) {
+      el.onclick = function () {
+        var pg = window.SiddurToday && window.SiddurToday.PAGES[el.dataset.key];
+        if (pg) openReader(pg);
+      };
     });
 
     $('#idx-search').oninput = function () { state.query = this.value; filterIndex(); };
@@ -509,12 +567,15 @@
       if (!raw) return;
       var heb = /^[0-9]+$/.test(raw) ? parseInt(raw, 10) : parseHebNumeral(raw);
       if (!heb) return;
-      closeGoto(); goTo(hebToPdf(heb));
+      var target = printedToPdf(heb, 'main');
+      if (!target) return;               // that folio is not in the scan
+      closeGoto(); goTo(target);
     };
     $('#goto-input').oninput = function () {
       var raw = this.value.trim();
       var heb = /^[0-9]+$/.test(raw) ? parseInt(raw, 10) : parseHebNumeral(raw);
-      if (heb) { $('#goto-range').value = String(hebToPdf(heb)); gotoPreview(hebToPdf(heb)); }
+      var t = heb && printedToPdf(heb, 'main');
+      if (t) { $('#goto-range').value = String(t); gotoPreview(t); }
     };
     $('#goto-cancel').onclick = closeGoto;
     $('#sheet-goto').onclick = function (e) { if (e.target === this) closeGoto(); };
@@ -605,10 +666,13 @@
       .then(function (r) { if (!r.ok) throw new Error('toc'); return r.json(); })
       .then(function (toc) {
         state.toc = toc;
-        state.entries = (toc.entries || []).slice().sort(function (a, b) {
-          return (a.pdfPage || hebToPdf(a.hebPage)) - (b.pdfPage || hebToPdf(b.hebPage));
-        });
+        state.entries = (toc.entries || []).filter(function (e) { return e.pdfPage; })
+          .sort(function (a, b) { return a.pdfPage - b.pdfPage; });
+        if (window.SiddurToday && window.SiddurToday.setPages) {
+          window.SiddurToday.setPages(toc);
+        }
         buildIndex();
+        renderToday();   // page links were unknown until now
       })
       .catch(function () {
         $('#idx-list').innerHTML = '<li class="empty">לא ניתן לטעון את התוכן.</li>';

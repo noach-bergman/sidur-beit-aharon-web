@@ -1,7 +1,47 @@
 {
   "source": "תוכן ומפתח — סידור בית אהרן וישראל (סטולין קרלין)",
   "pdfPages": 315,
-  "mapping": "hebToPdf(h) = clamp(h-1, 1, 315); pdfToHeb(p) = clamp(p+1, 1, 315)",
+  "note": "printed = pdfPage + offset, per sequence. Verified by reading the folio number printed on every scanned page.",
+  "sequences": [
+    {
+      "section": "main",
+      "pdfFrom": 3,
+      "pdfTo": 79,
+      "offset": 1
+    },
+    {
+      "section": "main",
+      "pdfFrom": 80,
+      "pdfTo": 230,
+      "offset": 5
+    },
+    {
+      "section": "tehillim",
+      "pdfFrom": 233,
+      "pdfTo": 302,
+      "offset": -231
+    },
+    {
+      "section": "minhagim",
+      "pdfFrom": 305,
+      "pdfTo": 315,
+      "offset": -303
+    }
+  ],
+  "unnumberedPdfPages": [
+    1,
+    2,
+    231,
+    232,
+    303,
+    304
+  ],
+  "missingPrintedPages": [
+    81,
+    82,
+    83,
+    84
+  ],
   "groups": {
     "daily": "יום־יום",
     "moadim": "מועדים",
@@ -10,465 +50,535 @@
   "entries": [
     {
       "title": "סדר אלף בית",
-      "hebPage": 3,
-      "hebLabel": "ג",
+      "group": "daily",
+      "section": "main",
       "pdfPage": 2,
-      "group": "daily"
+      "printed": 3,
+      "printedLabel": "ג",
+      "note": "עמוד ג׳ — באותו עמוד של התוכן והמפתח"
     },
     {
       "title": "סדר השכמת הבוקר",
-      "hebPage": 4,
-      "hebLabel": "ד",
-      "pdfPage": 3,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 4,
+      "printedLabel": "ד",
+      "pdfPage": 3
     },
     {
       "title": "ברכות השחר",
-      "hebPage": 5,
-      "hebLabel": "ה",
-      "pdfPage": 4,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 5,
+      "printedLabel": "ה",
+      "pdfPage": 4
     },
     {
       "title": "אני מאמין",
-      "hebPage": 8,
-      "hebLabel": "ח",
-      "pdfPage": 7,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 8,
+      "printedLabel": "ח",
+      "pdfPage": 7
     },
     {
       "title": "פסוקים שאומרים עם הפעוטים",
-      "hebPage": 12,
-      "hebLabel": "יב",
-      "pdfPage": 11,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 12,
+      "printedLabel": "יב",
+      "pdfPage": 11
     },
     {
       "title": "סדר לבישת טלית גדול",
-      "hebPage": 13,
-      "hebLabel": "יג",
-      "pdfPage": 12,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 13,
+      "printedLabel": "יג",
+      "pdfPage": 12
     },
     {
       "title": "סדר הנחת תפילין",
-      "hebPage": 14,
-      "hebLabel": "יד",
-      "pdfPage": 13,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 14,
+      "printedLabel": "יד",
+      "pdfPage": 13
     },
     {
       "title": "תפלת שחרית",
-      "hebPage": 15,
-      "hebLabel": "טו",
-      "pdfPage": 14,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 15,
+      "printedLabel": "טו",
+      "pdfPage": 14
     },
     {
       "title": "סליחות לבה״ב ושובבי״ם",
-      "hebPage": 53,
-      "hebLabel": "נג",
-      "pdfPage": 52,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 53,
+      "printedLabel": "נג",
+      "pdfPage": 52
     },
     {
       "title": "ברכת הגומל",
-      "hebPage": 66,
-      "hebLabel": "סו",
-      "pdfPage": 65,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 66,
+      "printedLabel": "סו",
+      "pdfPage": 65
     },
     {
       "title": "שש זכירות",
-      "hebPage": 77,
-      "hebLabel": "עז",
-      "pdfPage": 76,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 77,
+      "printedLabel": "עז",
+      "pdfPage": 76
     },
     {
       "title": "פרשת היראה",
-      "hebPage": 77,
-      "hebLabel": "עז",
-      "pdfPage": 76,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 77,
+      "printedLabel": "עז",
+      "pdfPage": 76
     },
     {
       "title": "פרשת התשובה",
-      "hebPage": 78,
-      "hebLabel": "עח",
-      "pdfPage": 77,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 78,
+      "printedLabel": "עח",
+      "pdfPage": 77
     },
     {
       "title": "פרשת המן",
-      "hebPage": 79,
-      "hebLabel": "עט",
-      "pdfPage": 78,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 79,
+      "printedLabel": "עט",
+      "pdfPage": 78
     },
     {
       "title": "ברכות אירוסין ונשואין",
-      "hebPage": 81,
-      "hebLabel": "פא",
-      "pdfPage": 80,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 81,
+      "printedLabel": "פא",
+      "pdfPage": null,
+      "note": "העמוד חסר בסריקה"
     },
     {
       "title": "סדר ברית מילה",
-      "hebPage": 82,
-      "hebLabel": "פב",
-      "pdfPage": 81,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 82,
+      "printedLabel": "פב",
+      "pdfPage": null,
+      "note": "העמוד חסר בסריקה"
     },
     {
       "title": "גאולה לברית מילה",
-      "hebPage": 84,
-      "hebLabel": "פד",
-      "pdfPage": 83,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 84,
+      "printedLabel": "פד",
+      "pdfPage": null,
+      "note": "העמוד חסר בסריקה"
     },
     {
       "title": "סדר פדיון הבן",
-      "hebPage": 84,
-      "hebLabel": "פד",
-      "pdfPage": 83,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 84,
+      "printedLabel": "פד",
+      "pdfPage": 80,
+      "note": "תחילת הסדר בעמוד פ״ד החסר בסריקה; כאן ההמשך"
     },
     {
       "title": "סדר נטילת ידים לסעודה",
-      "hebPage": 85,
-      "hebLabel": "פה",
-      "pdfPage": 84,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 85,
+      "printedLabel": "פה",
+      "pdfPage": 80
     },
     {
       "title": "ברכת המזון",
-      "hebPage": 86,
-      "hebLabel": "פו",
-      "pdfPage": 85,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 86,
+      "printedLabel": "פו",
+      "pdfPage": 81
     },
     {
       "title": "ברכות הנהנין",
-      "hebPage": 91,
-      "hebLabel": "צא",
-      "pdfPage": 90,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 91,
+      "printedLabel": "צא",
+      "pdfPage": 86
     },
     {
       "title": "ברכת מעין שלוש",
-      "hebPage": 92,
-      "hebLabel": "צב",
-      "pdfPage": 91,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 92,
+      "printedLabel": "צב",
+      "pdfPage": 87
     },
     {
       "title": "ברכה אחרונה",
-      "hebPage": 93,
-      "hebLabel": "צג",
-      "pdfPage": 92,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 93,
+      "printedLabel": "צג",
+      "pdfPage": 88
     },
     {
       "title": "ברכות הריח הראיה והשמיעה",
-      "hebPage": 93,
-      "hebLabel": "צג",
-      "pdfPage": 92,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 93,
+      "printedLabel": "צג",
+      "pdfPage": 88
     },
     {
       "title": "ברכת האילנות",
-      "hebPage": 94,
-      "hebLabel": "צד",
-      "pdfPage": 93,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 94,
+      "printedLabel": "צד",
+      "pdfPage": 89
     },
     {
       "title": "ברכות המצוות",
-      "hebPage": 94,
-      "hebLabel": "צד",
-      "pdfPage": 93,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 94,
+      "printedLabel": "צד",
+      "pdfPage": 89
     },
     {
       "title": "תפלת הדרך",
-      "hebPage": 95,
-      "hebLabel": "צה",
-      "pdfPage": 94,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 95,
+      "printedLabel": "צה",
+      "pdfPage": 90
     },
     {
       "title": "תפלת מנחה לחול",
-      "hebPage": 96,
-      "hebLabel": "צו",
-      "pdfPage": 95,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 96,
+      "printedLabel": "צו",
+      "pdfPage": 91
     },
     {
       "title": "תפלת ערבית לחול",
-      "hebPage": 108,
-      "hebLabel": "קח",
-      "pdfPage": 107,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 108,
+      "printedLabel": "קח",
+      "pdfPage": 103
     },
     {
       "title": "ספירת העומר",
-      "hebPage": 119,
-      "hebLabel": "קיט",
-      "pdfPage": 118,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 119,
+      "printedLabel": "קיט",
+      "pdfPage": 114
     },
     {
       "title": "קריאת שמע שעל המטה",
-      "hebPage": 124,
-      "hebLabel": "קכד",
-      "pdfPage": 123,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 124,
+      "printedLabel": "קכד",
+      "pdfPage": 119
     },
     {
       "title": "סדר קידוש לבנה",
-      "hebPage": 128,
-      "hebLabel": "קכח",
-      "pdfPage": 127,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 128,
+      "printedLabel": "קכח",
+      "pdfPage": 123
     },
     {
       "title": "סדר תפלת יום כיפור קטן",
-      "hebPage": 131,
-      "hebLabel": "קלא",
-      "pdfPage": 130,
-      "group": "daily"
+      "group": "daily",
+      "section": "main",
+      "printed": 131,
+      "printedLabel": "קלא",
+      "pdfPage": 126
     },
     {
       "title": "סדר נטילת לולב",
-      "hebPage": 141,
-      "hebLabel": "קמא",
-      "pdfPage": 140,
-      "group": "moadim"
+      "group": "moadim",
+      "section": "main",
+      "printed": 141,
+      "printedLabel": "קמא",
+      "pdfPage": 136
     },
     {
       "title": "סדר הלל",
-      "hebPage": 141,
-      "hebLabel": "קמא",
-      "pdfPage": 140,
-      "group": "moadim"
+      "group": "moadim",
+      "section": "main",
+      "printed": 141,
+      "printedLabel": "קמא",
+      "pdfPage": 136
     },
     {
       "title": "תפלת מוסף לראש חודש",
-      "hebPage": 145,
-      "hebLabel": "קמה",
-      "pdfPage": 144,
-      "group": "moadim"
+      "group": "moadim",
+      "section": "main",
+      "printed": 145,
+      "printedLabel": "קמה",
+      "pdfPage": 140
     },
     {
       "title": "סדר הדלקת נר חנוכה",
-      "hebPage": 151,
-      "hebLabel": "קנא",
-      "pdfPage": 150,
-      "group": "moadim"
+      "group": "moadim",
+      "section": "main",
+      "printed": 151,
+      "printedLabel": "קנא",
+      "pdfPage": 146
     },
     {
       "title": "סדר מזמורים לחנוכה",
-      "hebPage": 152,
-      "hebLabel": "קנב",
-      "pdfPage": 151,
-      "group": "moadim"
+      "group": "moadim",
+      "section": "main",
+      "printed": 152,
+      "printedLabel": "קנב",
+      "pdfPage": 147
     },
     {
       "title": "מעוז צור",
-      "hebPage": 161,
-      "hebLabel": "קסא",
-      "pdfPage": 160,
-      "group": "moadim"
+      "group": "moadim",
+      "section": "main",
+      "printed": 161,
+      "printedLabel": "קסא",
+      "pdfPage": 156
     },
     {
       "title": "סדר ברכות המגילה",
-      "hebPage": 162,
-      "hebLabel": "קסב",
-      "pdfPage": 161,
-      "group": "moadim"
+      "group": "moadim",
+      "section": "main",
+      "printed": 162,
+      "printedLabel": "קסב",
+      "pdfPage": 157
     },
     {
       "title": "זמירות לזאת חנוכה ופורים",
-      "hebPage": 163,
-      "hebLabel": "קסג",
-      "pdfPage": 162,
-      "group": "moadim"
+      "group": "moadim",
+      "section": "main",
+      "printed": 163,
+      "printedLabel": "קסג",
+      "pdfPage": 158
     },
     {
       "title": "זמירות לסעודות ההילולא",
-      "hebPage": 164,
-      "hebLabel": "קסד",
-      "pdfPage": 163,
-      "group": "moadim"
+      "group": "moadim",
+      "section": "main",
+      "printed": 164,
+      "printedLabel": "קסד",
+      "pdfPage": 159
     },
     {
       "title": "שירים לל״ג בעומר",
-      "hebPage": 165,
-      "hebLabel": "קסה",
-      "pdfPage": 164,
-      "group": "moadim"
+      "group": "moadim",
+      "section": "main",
+      "printed": 165,
+      "printedLabel": "קסה",
+      "pdfPage": 160
     },
     {
       "title": "סדר התרת נדרים",
-      "hebPage": 168,
-      "hebLabel": "קסח",
-      "pdfPage": 167,
-      "group": "moadim"
+      "group": "moadim",
+      "section": "main",
+      "printed": 168,
+      "printedLabel": "קסח",
+      "pdfPage": 163
     },
     {
       "title": "סדר תשליך",
-      "hebPage": 171,
-      "hebLabel": "קעא",
-      "pdfPage": 170,
-      "group": "moadim"
+      "group": "moadim",
+      "section": "main",
+      "printed": 171,
+      "printedLabel": "קעא",
+      "pdfPage": 166
     },
     {
       "title": "סדר כפרות",
-      "hebPage": 172,
-      "hebLabel": "קעב",
-      "pdfPage": 171,
-      "group": "moadim"
+      "group": "moadim",
+      "section": "main",
+      "printed": 172,
+      "printedLabel": "קעב",
+      "pdfPage": 167
     },
     {
       "title": "סליחות לעשרה בטבת",
-      "hebPage": 174,
-      "hebLabel": "קעד",
-      "pdfPage": 173,
-      "group": "moadim"
+      "group": "moadim",
+      "section": "main",
+      "printed": 174,
+      "printedLabel": "קעד",
+      "pdfPage": 169
     },
     {
       "title": "סליחות לתענית אסתר",
-      "hebPage": 182,
-      "hebLabel": "קפב",
-      "pdfPage": 181,
-      "group": "moadim"
+      "group": "moadim",
+      "section": "main",
+      "printed": 182,
+      "printedLabel": "קפב",
+      "pdfPage": 177
     },
     {
       "title": "סליחות לשבעה עשר בתמוז",
-      "hebPage": 186,
-      "hebLabel": "קפו",
-      "pdfPage": 185,
-      "group": "moadim"
+      "group": "moadim",
+      "section": "main",
+      "printed": 186,
+      "printedLabel": "קפו",
+      "pdfPage": 181
     },
     {
       "title": "סדר הפרשיות לשני וחמישי",
-      "hebPage": 190,
-      "hebLabel": "קצ",
-      "pdfPage": 189,
-      "group": "other"
+      "group": "other",
+      "section": "main",
+      "printed": 190,
+      "printedLabel": "קצ",
+      "pdfPage": 185
     },
     {
       "title": "קריאה לראש חודש",
-      "hebPage": 220,
-      "hebLabel": "רכ",
-      "pdfPage": 219,
-      "group": "other"
+      "group": "other",
+      "section": "main",
+      "printed": 220,
+      "printedLabel": "רכ",
+      "pdfPage": 215
     },
     {
       "title": "קריאה לחנוכה",
-      "hebPage": 221,
-      "hebLabel": "רכא",
-      "pdfPage": 220,
-      "group": "other"
+      "group": "other",
+      "section": "main",
+      "printed": 221,
+      "printedLabel": "רכא",
+      "pdfPage": 216
     },
     {
       "title": "קריאה לפורים",
-      "hebPage": 224,
-      "hebLabel": "רכד",
-      "pdfPage": 223,
-      "group": "other"
+      "group": "other",
+      "section": "main",
+      "printed": 224,
+      "printedLabel": "רכד",
+      "pdfPage": 219
     },
     {
       "title": "קריאה לתענית ציבור",
-      "hebPage": 225,
-      "hebLabel": "רכה",
-      "pdfPage": 224,
-      "group": "other"
+      "group": "other",
+      "section": "main",
+      "printed": 225,
+      "printedLabel": "רכה",
+      "pdfPage": 220
     },
     {
       "title": "הפטרה לתענית ציבור",
-      "hebPage": 226,
-      "hebLabel": "רכו",
-      "pdfPage": 225,
-      "group": "other"
+      "group": "other",
+      "section": "main",
+      "printed": 226,
+      "printedLabel": "רכו",
+      "pdfPage": 221
     },
     {
       "title": "מי שברך לחולה וליולדת",
-      "hebPage": 227,
-      "hebLabel": "רכז",
-      "pdfPage": 226,
-      "group": "other"
+      "group": "other",
+      "section": "main",
+      "printed": 227,
+      "printedLabel": "רכז",
+      "pdfPage": 222
     },
     {
       "title": "אל מלא להזכרת נשמות",
-      "hebPage": 228,
-      "hebLabel": "רכח",
-      "pdfPage": 227,
-      "group": "other"
+      "group": "other",
+      "section": "main",
+      "printed": 228,
+      "printedLabel": "רכח",
+      "pdfPage": 223
     },
     {
       "title": "סדר קבלת תענית",
-      "hebPage": 229,
-      "hebLabel": "רכט",
-      "pdfPage": 228,
-      "group": "other"
+      "group": "other",
+      "section": "main",
+      "printed": 229,
+      "printedLabel": "רכט",
+      "pdfPage": 224
     },
     {
       "title": "סדר הפרשת תרומות ומעשרות",
-      "hebPage": 229,
-      "hebLabel": "רכט",
-      "pdfPage": 228,
-      "group": "other"
+      "group": "other",
+      "section": "main",
+      "printed": 229,
+      "printedLabel": "רכט",
+      "pdfPage": 224
     },
     {
       "title": "סדר ברכת החמה",
-      "hebPage": 230,
-      "hebLabel": "רל",
-      "pdfPage": 229,
-      "group": "other"
+      "group": "other",
+      "section": "main",
+      "printed": 230,
+      "printedLabel": "רל",
+      "pdfPage": 225
     },
     {
       "title": "פסוקים לשמות אנשים",
-      "hebPage": 232,
-      "hebLabel": "רלב",
-      "pdfPage": 231,
-      "group": "other"
+      "group": "other",
+      "section": "main",
+      "printed": 232,
+      "printedLabel": "רלב",
+      "pdfPage": 227
     },
     {
       "title": "תפלת בית המדרש",
-      "hebPage": 235,
-      "hebLabel": "רלה",
-      "pdfPage": 234,
-      "group": "other"
+      "group": "other",
+      "section": "main",
+      "printed": 235,
+      "printedLabel": "רלה",
+      "pdfPage": 230
     },
     {
       "title": "לוח קביעת השנים",
-      "hebPage": 232,
-      "hebLabel": "רלב",
+      "group": "other",
+      "section": "main",
       "pdfPage": 231,
-      "group": "other"
+      "note": "עמוד ללא מספור"
     },
     {
       "title": "ספר תהלים",
-      "hebPage": 233,
-      "hebLabel": "רלג",
-      "pdfPage": 232,
-      "group": "other"
+      "group": "other",
+      "section": "tehillim",
+      "pdfPage": 233,
+      "printed": 2,
+      "printedLabel": "ב"
     },
     {
       "title": "מנהגים מרבותינו הקדושים מסטולין קרלין",
-      "hebPage": 305,
-      "hebLabel": "שה",
-      "pdfPage": 304,
-      "group": "other"
+      "group": "other",
+      "section": "minhagim",
+      "pdfPage": 305,
+      "printed": 2,
+      "printedLabel": "ב"
     },
     {
       "title": "דינים למי שטעה בתפלת שמו״ע",
-      "hebPage": 315,
-      "hebLabel": "שטו",
+      "group": "other",
+      "section": "minhagim",
       "pdfPage": 315,
-      "group": "other"
+      "printed": 12,
+      "printedLabel": "יב"
     }
   ]
 }
