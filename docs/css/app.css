@@ -532,3 +532,31 @@ body { padding: 0; }
   .pdf-layer { border-radius: 2px; }
   .page-desk { inset: 6% 8% 8%; }
 }
+
+
+/* WhatsApp Status–style taps */
+.tap-zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  border: none;
+  background: transparent;
+  padding: 0;
+  z-index: 8;
+  -webkit-tap-highlight-color: transparent;
+}
+.tap-prev { left: 0; }
+.tap-next { right: 0; }
+.tap-zone.flash::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.12);
+  animation: tapFlash 0.2s ease-out forwards;
+  pointer-events: none;
+}
+@keyframes tapFlash {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
