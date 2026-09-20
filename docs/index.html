@@ -58,9 +58,9 @@
   </section>
 
   <nav class="quick">
-    <button type="button" class="quick-btn primary" id="btn-index">כל התוכן</button>
+    <button type="button" class="quick-btn primary" id="btn-index">לבחירת תפילה</button>
+    <button type="button" class="quick-btn" id="btn-zmanim">זמני היום</button>
     <button type="button" class="quick-btn" data-key="tehillim">תהלים</button>
-    <button type="button" class="quick-btn" data-key="birchatHamazon">ברכת המזון</button>
   </nav>
 
   <footer class="foot">
@@ -106,23 +106,34 @@
 <!-- ══════════ INDEX SHEET ══════════ -->
 <section id="sheet-index" class="fullsheet hidden" aria-label="תוכן העניינים">
   <div class="fs-head">
-    <button type="button" class="ibtn" id="idx-close" aria-label="סגירה">
-      <svg viewBox="0 0 20 20" width="20" height="20" fill="none"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    <button type="button" class="ibtn" id="idx-back" aria-label="חזרה">
+      <svg id="idx-ico-close" viewBox="0 0 20 20" width="20" height="20" fill="none"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <svg id="idx-ico-up" class="hidden" viewBox="0 0 20 20" width="20" height="20" fill="none"><path d="M7.5 4l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </button>
-    <h2>כל התוכן</h2>
+    <h2 id="idx-title">לבחירת תפילה</h2>
     <span class="ibtn-spacer"></span>
   </div>
   <div class="fs-controls">
     <input type="search" id="idx-search" class="search" placeholder="חיפוש…" autocomplete="off" aria-label="חיפוש" />
-    <div class="segmented" id="idx-tabs">
-      <button type="button" class="seg is-on" data-filter="all">הכל</button>
-      <button type="button" class="seg" data-filter="daily">יום־יום</button>
-      <button type="button" class="seg" data-filter="moadim">מועדים</button>
-      <button type="button" class="seg" data-filter="other">אחר</button>
-    </div>
   </div>
   <ul class="rows scroller" id="idx-list"></ul>
   <p class="empty hidden" id="idx-empty">לא נמצא</p>
+</section>
+
+<!-- ══════════ ZMANIM ══════════ -->
+<section id="sheet-zmanim" class="fullsheet hidden" aria-label="זמני היום">
+  <div class="fs-head">
+    <button type="button" class="ibtn" id="zm-close" aria-label="סגירה">
+      <svg viewBox="0 0 20 20" width="20" height="20" fill="none"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <h2>זמני היום</h2>
+    <span class="ibtn-spacer"></span>
+  </div>
+  <div class="scroller">
+    <p class="zm-where" id="zm-where"></p>
+    <ul class="rows" id="zm-list"></ul>
+    <p class="fineprint">אין להסתמך על זמנים אלו להלכה למעשה — ייתכנו סטיות של כמה דקות.</p>
+  </div>
 </section>
 
 <!-- ══════════ GOTO ══════════ -->

@@ -316,7 +316,15 @@
       tefillot: tefillot,
       special: special,
       reminders: reminders,
-      zmanim: { alot: alot, chatzot: chatzot, minchaGedola: minchaGedola, sunset: sunset, tzeit: tzeit }
+      zmanim: {
+        alot: alot, sunrise: z.sunrise(), sofZmanShma: z.sofZmanShma(),
+        sofZmanTfilla: z.sofZmanTfilla(), chatzot: chatzot,
+        minchaGedola: minchaGedola, minchaKetana: z.minchaKetana(),
+        plag: z.plagHaMincha(), sunset: sunset, tzeit: tzeit,
+        chatzotNight: chatzotNight
+      },
+      hasMusaf: has(evs, flags.ROSH_CHODESH) || isYomTov,
+      hasYomKippurKatan: has(evs, flags.YOM_KIPPUR_KATAN)
     };
   }
 

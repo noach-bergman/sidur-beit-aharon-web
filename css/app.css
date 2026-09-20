@@ -435,3 +435,14 @@ input[type="range"]::-moz-range-thumb {
   #view-today { padding-top: calc(3rem + var(--safe-top)); }
   .page-stage { padding: 1rem; }
 }
+
+/* ─── menu & zmanim ─────────────────────────────────── */
+
+.fs-head .ibtn.hidden { display: none !important; }
+.zm-where {
+  margin: .9rem .2rem .8rem;
+  font-size: .88rem;
+  color: var(--ink-3);
+}
+.scroller .fineprint { padding: 0 .2rem; }
+.scroller .rows .row-page { font-variant-numeric: tabular-nums; direction: ltr; unicode-bidi: isolate; }

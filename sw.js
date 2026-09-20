@@ -9,6 +9,7 @@ const PRECACHE = [
   './js/vendor/hebcal.min.js',
   './manifest.webmanifest',
   './data/toc.json',
+  './data/menu.json',
   './icons/book.png',
   './icons/icon-192.png',
   './icons/icon-512.png',

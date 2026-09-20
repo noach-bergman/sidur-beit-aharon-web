@@ -28,7 +28,8 @@
     toc: null, entries: [], filter: 'all', query: '',
     pdfDoc: null, pdfPage: 1, rendering: false,
     pendingPage: null, loadingPdf: null,
-    location: null, plan: null, tickTimer: null
+    location: null, plan: null, tickTimer: null,
+    menu: { categories: [] }, cat: null
   };
 
   var $ = function (s) { return document.querySelector(s); };
@@ -304,72 +305,136 @@
 
   function normalize(s) { return String(s || '').replace(/[״"׳'֑-ׇ]/g, '').trim(); }
 
-  function buildIndex() {
+  /* Two levels, after the menu of the original JAR app: a short list of
+     what you actually daven, then the sections inside it. Searching flattens
+     both levels. */
+
+  function tocByTitle(title) {
+    for (var i = 0; i < (state.toc.entries || []).length; i++) {
+      if (state.toc.entries[i].title === title) return state.toc.entries[i];
+    }
+    return null;
+  }
+
+  /** The JAR appended context to a couple of entries; so do we. */
+  function categoryLabel(cat) {
+    var p = state.plan;
+    if (!p) return cat.title;
+    if (cat.key === 'shacharit' && p.hasMusaf) return cat.title + ' ומוסף';
+    if (cat.key === 'mincha' && p.hasYomKippurKatan) return cat.title + ' ותפילת יום כיפור קטן';
+    return cat.title;
+  }
+
+  function makeRow(title, note, pageLbl, onClick) {
+    var el = document.createElement(onClick ? 'button' : 'div');
+    el.className = 'row' + (onClick ? '' : ' static');
+    if (onClick) el.type = 'button';
+    var main = document.createElement('span');
+    main.className = 'row-main';
+    var t = document.createElement('span');
+    t.className = 'row-title';
+    t.textContent = title;
+    main.appendChild(t);
+    if (note) {
+      var n = document.createElement('span');
+      n.className = 'row-note';
+      n.textContent = note;
+      main.appendChild(n);
+    }
+    el.appendChild(main);
+    if (pageLbl) {
+      var pg = document.createElement('span');
+      pg.className = 'row-page';
+      pg.textContent = pageLbl;
+      el.appendChild(pg);
+    }
+    if (onClick) el.onclick = onClick;
+    var li = document.createElement('li');
+    li.appendChild(el);
+    return li;
+  }
+
+  /** The one header button is "back" when drilled in, "close" at the top. */
+  function setHeaderMode(drilled) {
+    $('#idx-ico-close').classList.toggle('hidden', drilled);
+    $('#idx-ico-up').classList.toggle('hidden', !drilled);
+    $('#idx-back').setAttribute('aria-label', drilled ? 'חזרה' : 'סגירה');
+  }
+
+  function renderMenu() {
     var list = $('#idx-list');
+    var title = $('#idx-title');
     list.innerHTML = '';
-    var groups = { daily: 'יום־יום', moadim: 'מועדים', other: 'אחר' };
-    ['daily', 'moadim', 'other'].forEach(function (g) {
-      var items = (state.toc.entries || []).filter(function (e) { return (groups[e.group] ? e.group : 'other') === g; });
-      if (!items.length) return;
-      var h = document.createElement('li');
-      h.className = 'idx-head';
-      h.dataset.group = g;
-      h.textContent = (state.toc.groups && state.toc.groups[g]) || groups[g];
-      list.appendChild(h);
-      items.forEach(function (item) {
-        var li = document.createElement('li');
-        li.dataset.group = g;
-        li.dataset.search = normalize(item.title);
-        li.className = 'idx-row';
+    $('#idx-empty').classList.add('hidden');
 
-        var b = document.createElement(item.pdfPage ? 'button' : 'div');
-        b.className = 'row' + (item.pdfPage ? '' : ' static');
-        if (item.pdfPage) b.type = 'button';
-
-        var main = document.createElement('span');
-        main.className = 'row-main';
-        var t = document.createElement('span');
-        t.className = 'row-title';
-        t.textContent = item.title;
-        main.appendChild(t);
-        if (item.note) {
-          var n = document.createElement('span');
-          n.className = 'row-note';
-          n.textContent = item.note;
-          main.appendChild(n);
-        }
-
-        var pg = document.createElement('span');
-        pg.className = 'row-page';
-        pg.textContent = item.printedLabel ? gersh(item.printedLabel) : '';
-        b.appendChild(main); b.appendChild(pg);
-        if (item.pdfPage) {
-          b.onclick = function () { closeIndex(); openReader(item.pdfPage); };
-        }
-        li.appendChild(b);
-        list.appendChild(li);
-      });
-    });
-    filterIndex();
-  }
-
-  function filterIndex() {
     var q = normalize(state.query).toLowerCase();
-    var seen = {}, visible = 0;
-    $$('#idx-list .idx-row').forEach(function (row) {
-      var okG = state.filter === 'all' || state.filter === row.dataset.group;
-      var okQ = !q || row.dataset.search.toLowerCase().indexOf(q) !== -1;
-      var show = okG && okQ;
-      row.classList.toggle('hidden', !show);
-      if (show) { visible++; seen[row.dataset.group] = true; }
+
+    if (q) {                                   // flat search across everything
+      title.textContent = 'חיפוש';
+      setHeaderMode(false);
+      var hits = 0;
+      (state.menu.categories || []).forEach(function (cat) {
+        cat.items.forEach(function (t) {
+          if (normalize(t).toLowerCase().indexOf(q) === -1) return;
+          var e = tocByTitle(t);
+          if (!e) return;
+          hits++;
+          list.appendChild(rowForEntry(e, cat.title));
+        });
+      });
+      $('#idx-empty').classList.toggle('hidden', hits > 0);
+      return;
+    }
+
+    if (state.cat) {                           // level 2
+      var cat = state.cat;
+      title.textContent = categoryLabel(cat);
+      setHeaderMode(true);
+      cat.items.forEach(function (t) {
+        var e = tocByTitle(t);
+        if (e) list.appendChild(rowForEntry(e, null));
+      });
+      return;
+    }
+
+    title.textContent = 'לבחירת תפילה';        // level 1
+    setHeaderMode(false);
+    (state.menu.categories || []).forEach(function (cat) {
+      var live = cat.items.filter(function (t) {
+        var e = tocByTitle(t); return e && e.pdfPage;
+      });
+      if (!live.length) return;
+      var note = cat.items.length > 1 ? cat.items.length + ' סדרים' : null;
+      list.appendChild(makeRow(categoryLabel(cat), note, null, function () {
+        if (live.length === 1 && cat.items.length === 1) {
+          var e = tocByTitle(cat.items[0]);
+          closeIndex(); openReader(e.pdfPage);
+          return;
+        }
+        state.cat = cat;
+        renderMenu();
+        $('#idx-list').scrollTop = 0;
+      }));
     });
-    $$('#idx-list .idx-head').forEach(function (h) {
-      h.classList.toggle('hidden', !(state.filter === 'all' && seen[h.dataset.group]));
-    });
-    $('#idx-empty').classList.toggle('hidden', visible > 0);
   }
 
-  function openIndex() { $('#sheet-index').classList.remove('hidden'); }
+  function rowForEntry(e, catName) {
+    var note = e.note || catName || null;
+    var lbl = e.printedLabel ? gersh(e.printedLabel) : '';
+    if (!e.pdfPage) return makeRow(e.title, e.note || 'חסר בסריקה', lbl, null);
+    return makeRow(e.title, note, lbl, function () {
+      closeIndex(); openReader(e.pdfPage);
+    });
+  }
+
+  function openIndex() {
+    state.cat = null;
+    state.query = '';
+    var srch = $('#idx-search');
+    if (srch) srch.value = '';
+    renderMenu();
+    $('#sheet-index').classList.remove('hidden');
+  }
   function closeIndex() { $('#sheet-index').classList.add('hidden'); }
 
   /* ── PDF reader (paint off-screen, then swap — do not reorder) ── */
@@ -504,6 +569,43 @@
   }
   function closeGoto() { $('#sheet-goto').classList.add('hidden'); }
 
+  /* ── zmanim ──────────────────────────────────────── */
+
+  var ZMANIM_ROWS = [
+    ['alot',          'עלות השחר'],
+    ['sunrise',       'הנץ החמה'],
+    ['sofZmanShma',   'סוף זמן קריאת שמע'],
+    ['sofZmanTfilla', 'סוף זמן תפילה'],
+    ['chatzot',       'חצות היום'],
+    ['minchaGedola',  'מנחה גדולה'],
+    ['minchaKetana',  'מנחה קטנה'],
+    ['plag',          'פלג המנחה'],
+    ['sunset',        'שקיעה'],
+    ['tzeit',         'צאת הכוכבים'],
+    ['chatzotNight',  'חצות הלילה']
+  ];
+
+  function openZmanim() {
+    var p = state.plan;
+    if (!p) return;
+    var fmt = function (d) {
+      try {
+        return d.toLocaleTimeString('he-IL', {
+          hour: '2-digit', minute: '2-digit', hour12: false, timeZone: state.location.tzid
+        });
+      } catch (e) { return '—'; }
+    };
+    $('#zm-where').textContent = state.location.name + ' · ' + p.hebrew;
+    var ul = $('#zm-list');
+    ul.innerHTML = '';
+    ZMANIM_ROWS.forEach(function (r) {
+      var d = p.zmanim[r[0]];
+      if (!d) return;
+      ul.appendChild(makeRow(r[1], null, fmt(d), null));
+    });
+    $('#sheet-zmanim').classList.remove('hidden');
+  }
+
   /* ── location sheet ──────────────────────────────── */
 
   function openLoc() {
@@ -534,7 +636,9 @@
 
   function bind() {
     $('#btn-index').onclick = openIndex;
-    $('#idx-close').onclick = closeIndex;
+    $('#idx-back').onclick = function () {
+      if (state.cat) { state.cat = null; renderMenu(); } else closeIndex();
+    };
     $('#btn-back').onclick = closeReader;
     $('#btn-goto').onclick = openGoto;
     $('#btn-prev').onclick = prevPage;
@@ -550,14 +654,9 @@
       };
     });
 
-    $('#idx-search').oninput = function () { state.query = this.value; filterIndex(); };
-    $$('#idx-tabs .seg').forEach(function (seg) {
-      seg.onclick = function () {
-        state.filter = seg.dataset.filter;
-        $$('#idx-tabs .seg').forEach(function (s) { s.classList.toggle('is-on', s === seg); });
-        filterIndex();
-      };
-    });
+    $('#idx-search').oninput = function () { state.query = this.value; renderMenu(); };
+    $('#btn-zmanim').onclick = openZmanim;
+    $('#zm-close').onclick = function () { $('#sheet-zmanim').classList.add('hidden'); };
 
     $('#goto-range').oninput = function () { gotoPreview(parseInt(this.value, 10)); };
     $('#goto-range').onchange = function () { closeGoto(); goTo(parseInt(this.value, 10) || 1); };
@@ -587,7 +686,14 @@
 
     document.addEventListener('keydown', function (e) {
       if (!$('#sheet-goto').classList.contains('hidden')) { if (e.key === 'Escape') closeGoto(); return; }
-      if (!$('#sheet-index').classList.contains('hidden')) { if (e.key === 'Escape') closeIndex(); return; }
+      if (!$('#sheet-zmanim').classList.contains('hidden')) {
+        if (e.key === 'Escape') $('#sheet-zmanim').classList.add('hidden');
+        return;
+      }
+      if (!$('#sheet-index').classList.contains('hidden')) {
+        if (e.key === 'Escape') { if (state.cat) { state.cat = null; renderMenu(); } else closeIndex(); }
+        return;
+      }
       if ($('#view-reader').classList.contains('hidden')) return;
       // RTL book: left goes forward, right goes back.
       if (e.key === 'ArrowLeft' || e.key === ' ') { e.preventDefault(); nextPage(); }
@@ -662,6 +768,11 @@
       setTimeout(askGeolocation, 600);
     }
 
+    fetch('./data/menu.json')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (m) { if (m) state.menu = m; })
+      .catch(function () {});
+
     fetch('./data/toc.json')
       .then(function (r) { if (!r.ok) throw new Error('toc'); return r.json(); })
       .then(function (toc) {
@@ -671,7 +782,6 @@
         if (window.SiddurToday && window.SiddurToday.setPages) {
           window.SiddurToday.setPages(toc);
         }
-        buildIndex();
         renderToday();   // page links were unknown until now
       })
       .catch(function () {
