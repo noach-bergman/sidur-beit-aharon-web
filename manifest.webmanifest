@@ -1,0 +1,27 @@
+{
+  "name": "סידור בית אהרן וישראל",
+  "short_name": "סידור בא\"י",
+  "description": "סידור תפילה לנוסח בית אהרן וישראל — מבוסס על סידור ה-MIDlet המקורי",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f7f1e4",
+  "theme_color": "#3d2914",
+  "lang": "he",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

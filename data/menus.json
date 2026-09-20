@@ -1,0 +1,141 @@
+{
+  "appName": "סידור בית אהרן וישראל",
+  "version": "2.0",
+  "firstMenu": [
+    {
+      "id": "pray",
+      "title": "לבחירת תפילה",
+      "action": "main"
+    },
+    {
+      "id": "tzahal",
+      "title": "תפילה לעת רצון",
+      "action": "page",
+      "entry": "tzahal"
+    },
+    {
+      "id": "yortzait",
+      "title": "לוח יארצייט",
+      "action": "page",
+      "entry": "yortzait"
+    },
+    {
+      "id": "prefs",
+      "title": "הגדרות",
+      "action": "prefs"
+    },
+    {
+      "id": "zmanim",
+      "title": "זמני היום",
+      "action": "zmanim"
+    },
+    {
+      "id": "help",
+      "title": "עזרה",
+      "action": "page",
+      "entry": "help"
+    },
+    {
+      "id": "about",
+      "title": "אודות",
+      "action": "about"
+    }
+  ],
+  "mainMenu": [
+    {
+      "id": "1",
+      "title": "השכמת הבוקר",
+      "entry": "s_ashkama"
+    },
+    {
+      "id": "2",
+      "title": "שחרית",
+      "entry": "s_shacharit"
+    },
+    {
+      "id": "3",
+      "title": "מנחה",
+      "entry": "s_mincha"
+    },
+    {
+      "id": "4",
+      "title": "ערבית",
+      "entry": "s_arvit"
+    },
+    {
+      "id": "5",
+      "title": "קריאת שמע שעל המיטה",
+      "entry": "s_mita"
+    },
+    {
+      "id": "6",
+      "title": "ברכת המזון",
+      "entry": "s_mazon"
+    },
+    {
+      "id": "7",
+      "title": "מעין שלוש",
+      "entry": "s_shalosh"
+    },
+    {
+      "id": "8",
+      "title": "שבע ברכות",
+      "entry": "s_shevaBrachot"
+    },
+    {
+      "id": "9",
+      "title": "סדר ברית מילה",
+      "entry": "s_brit"
+    },
+    {
+      "id": "10",
+      "title": "ברכות הנהנין",
+      "entry": "s_nefashot"
+    },
+    {
+      "id": "11",
+      "title": "אשר יצר",
+      "entry": "s_yatzar"
+    },
+    {
+      "id": "12",
+      "title": "תפילת הדרך",
+      "entry": "s_derech"
+    },
+    {
+      "id": "13",
+      "title": "תפילות והוספות",
+      "entry": "s_tfilot"
+    },
+    {
+      "id": "14",
+      "title": "קידוש לבנה",
+      "entry": "s_levana"
+    },
+    {
+      "id": "15a",
+      "title": "ספירת העומר",
+      "entry": "s_omer"
+    },
+    {
+      "id": "15b",
+      "title": "הדלקת נרות חנוכה ומזמורים",
+      "entry": "s_nerot"
+    }
+  ],
+  "nusach": [
+    {
+      "id": "s",
+      "title": "בית אהרן וישראל"
+    },
+    {
+      "id": "a",
+      "title": "בית אהרן וישראל (a)"
+    },
+    {
+      "id": "em",
+      "title": "בית אהרן וישראל (em)"
+    }
+  ],
+  "defaultNusach": "s"
+}

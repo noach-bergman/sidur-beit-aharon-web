@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#3d2914" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="סידור בא&quot;י" />
+  <title>סידור בית אהרן וישראל</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./icons/book.png" />
+  <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+  <link rel="stylesheet" href="./css/app.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700&family=David+Libre:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="app-header">
+    <button type="button" class="icon-btn" id="btn-back" aria-label="חזרה" title="חזרה">→</button>
+    <h1 id="header-title">סידור</h1>
+    <button type="button" class="icon-btn" id="btn-home" aria-label="בית" title="תפריט ראשי">⌂</button>
+  </header>
+
+  <main>
+    <!-- Home / first menu -->
+    <section id="view-home" class="view">
+      <div class="splash">
+        <img src="./icons/book.png" alt="" width="160" height="160" />
+        <h2>סידור בית אהרן וישראל</h2>
+        <p>נוסח אדמו״רי בית אהרן וישראל</p>
+      </div>
+      <ul id="home-menu" class="menu-list"></ul>
+    </section>
+
+    <!-- Main tefillah menu -->
+    <section id="view-main" class="view hidden">
+      <ul id="main-menu" class="menu-list"></ul>
+    </section>
+
+    <!-- Reader -->
+    <section id="view-reader" class="view hidden">
+      <article id="reader-content" class="reader"></article>
+    </section>
+
+    <!-- Prefs -->
+    <section id="view-prefs" class="view hidden">
+      <div class="panel">
+        <h3>הגדרות תצוגה</h3>
+        <label for="pref-font">גודל גופן (<span id="pref-font-val">125%</span>)</label>
+        <input type="range" id="pref-font" min="0.9" max="2.2" step="0.05" value="1.25" />
+        <div class="row">
+          <span>מצב לילה</span>
+          <button type="button" class="toggle" id="pref-night" aria-pressed="false"></button>
+        </div>
+        <div class="row">
+          <span>הסתרת שמות (צנזורה)</span>
+          <button type="button" class="toggle" id="pref-censor" aria-pressed="true"></button>
+        </div>
+        <div class="row">
+          <span>הצגת הוראות / הערות</span>
+          <button type="button" class="toggle" id="pref-notes" aria-pressed="true"></button>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>מיקום וזמן</h3>
+        <label for="pref-city">עיר</label>
+        <select id="pref-city"></select>
+        <div class="row">
+          <span>שעון קיץ</span>
+          <button type="button" class="toggle" id="pref-dst" aria-pressed="true"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Zmanim -->
+    <section id="view-zmanim" class="view hidden">
+      <div class="panel">
+        <h3 id="zmanim-city">—</h3>
+        <p id="zmanim-date" style="color:var(--ink-muted);margin:0 0 0.75rem"></p>
+        <table class="zmanim-table">
+          <tbody id="zmanim-body"></tbody>
+        </table>
+        <p id="zmanim-note" style="color:var(--ink-muted);font-size:0.9rem;margin-top:0.75rem"></p>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="view-about" class="view hidden">
+      <div class="panel">
+        <h3>אודות</h3>
+        <p>
+          אפליקציית אינטרנט (PWA) של <strong>סידור בית אהרן וישראל</strong>,
+          מומרת מסידור Java ME (MIDlet) המקורי.
+        </p>
+        <p>
+          נוסח התפילה נלקח מקבצי המשאבים של ה-JAR המקורי (קידוד Windows-1255),
+          ללא המצאת נוסח. סדר התפריטים והעמודים תואם את <code>Manager</code> / <code>MainMenu</code> / <code>Page</code>.
+        </p>
+        <p>
+          זמני היום מחושבים בקירוב (NOAA) לפי העיר שנבחרה — <strong>לא להלכה למעשה</strong>.
+        </p>
+        <p style="color:var(--ink-muted);font-size:0.9rem">
+          גרסת מקור MIDlet: 2.0 · יישום ווב: 2026
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <div id="reader-toolbar" class="toolbar hidden">
+    <button type="button" id="btn-font-minus" aria-label="הקטן גופן">א−</button>
+    <button type="button" id="btn-font-plus" aria-label="הגדל גופן">א+</button>
+    <button type="button" id="btn-night" aria-label="מצב לילה">☾</button>
+  </div>
+
+  <script src="./js/zmanim.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
