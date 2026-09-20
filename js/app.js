@@ -1,386 +1,309 @@
 (function () {
   'use strict';
 
-  const STORAGE_KEY = 'sidur-bai-prefs-v1';
-  const DEFAULTS = {
-    fontScale: 1.25,
-    night: false,
-    cityId: 35,
-    summerTime: true,
-    censorNames: true,
-    showNotes: true,
+  var PDF_URL = './siddur.pdf';
+  var PDF_PAGES = 315;
+  var STORAGE_PAGE = 'sidur-bav-last-page';
+  var A2HS_KEY = 'sidur-bai-a2hs-used';
+  var PDFJS_CDN = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/';
+
+  var HEB_VALUES = {
+    'א': 1, 'ב': 2, 'ג': 3, 'ד': 4, 'ה': 5, 'ו': 6, 'ז': 7, 'ח': 8, 'ט': 9, 'י': 10,
+    'כ': 20, 'ך': 20, 'ל': 30, 'מ': 40, 'ם': 40, 'נ': 50, 'ן': 50, 'ס': 60, 'ע': 70,
+    'פ': 80, 'ף': 80, 'צ': 90, 'ץ': 90, 'ק': 100, 'ר': 200, 'ש': 300, 'ת': 400
   };
 
-  const state = {
-    view: 'home',
-    menus: null,
-    cities: null,
-    prefs: loadPrefs(),
-    pageCache: {},
-    currentPage: null,
-    stack: [],
+  var GROUP_IDS = { daily: 'toc-daily', moadim: 'toc-moadim', other: 'toc-other' };
+
+  var state = {
+    toc: null,
+    pdfDoc: null,
+    pdfPage: 1,
+    rendering: false,
+    pendingPage: null,
+    loadingPdf: null,
   };
 
-  const $ = (sel, el) => (el || document).querySelector(sel);
-  const $$ = (sel, el) => Array.prototype.slice.call((el || document).querySelectorAll(sel));
+  var $ = function (sel) { return document.querySelector(sel); };
 
-  function loadPrefs() {
+  function clamp(n, lo, hi) {
+    return Math.max(lo, Math.min(hi, n));
+  }
+
+  /** Printed Hebrew page H → PDF page index (1-based). Verified: ד→3, ו→5, כא→20. */
+  function hebToPdf(h) {
+    return clamp(Number(h) - 1, 1, PDF_PAGES);
+  }
+
+  /** PDF page index → approximate printed Hebrew page. */
+  function pdfToHeb(p) {
+    return clamp(Number(p) + 1, 1, PDF_PAGES);
+  }
+
+  function parseHebNumeral(str) {
+    if (str == null) return null;
+    var s = String(str).replace(/[״"׳']/g, '').trim();
+    if (!s) return null;
+    if (s === 'טו') return 15;
+    if (s === 'טז') return 16;
+    var total = 0;
+    var i = 0;
+    while (i < s.length) {
+      if (s.slice(i, i + 2) === 'טו') { total += 15; i += 2; continue; }
+      if (s.slice(i, i + 2) === 'טז') { total += 16; i += 2; continue; }
+      var v = HEB_VALUES[s[i]];
+      if (v == null) { i += 1; continue; }
+      total += v;
+      i += 1;
+    }
+    return total || null;
+  }
+
+  function toHebNumeral(n) {
+    n = Math.floor(Number(n));
+    if (!n || n < 1) return '';
+    var out = '';
+    var hundreds = [['ת', 400], ['ש', 300], ['ר', 200], ['ק', 100]];
+    for (var hi = 0; hi < hundreds.length; hi++) {
+      while (n >= hundreds[hi][1]) {
+        out += hundreds[hi][0];
+        n -= hundreds[hi][1];
+      }
+    }
+    if (n === 15) return out + 'טו';
+    if (n === 16) return out + 'טז';
+    var tens = [['צ', 90], ['פ', 80], ['ע', 70], ['ס', 60], ['נ', 50], ['מ', 40], ['ל', 30], ['כ', 20]];
+    for (var ti = 0; ti < tens.length; ti++) {
+      if (n >= tens[ti][1]) {
+        out += tens[ti][0];
+        n -= tens[ti][1];
+      }
+    }
+    var ones = ' אבגדהוזחט';
+    if (n > 0) out += ones[n];
+    return out;
+  }
+
+  // Expose helpers for debugging / tests
+  window.hebToPdf = hebToPdf;
+  window.pdfToHeb = pdfToHeb;
+  window.parseHebNumeral = parseHebNumeral;
+  window.toHebNumeral = toHebNumeral;
+
+  function loadLastPage() {
     try {
-      return Object.assign({}, DEFAULTS, JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'));
-    } catch (e) {
-      return Object.assign({}, DEFAULTS);
-    }
+      var n = parseInt(localStorage.getItem(STORAGE_PAGE), 10);
+      if (n >= 1 && n <= PDF_PAGES) return n;
+    } catch (e) {}
+    return 3; // default: השכמת הבוקר (heb ד)
   }
 
-  function savePrefs() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state.prefs));
-    applyPrefs();
-  }
-
-  function applyPrefs() {
-    document.documentElement.style.setProperty('--font-size', state.prefs.fontScale + 'rem');
-    document.body.classList.toggle('night', !!state.prefs.night);
-  }
-
-  function fetchJSON(path) {
-    return fetch(path).then(function (res) {
-      if (!res.ok) throw new Error('טעינה נכשלה: ' + path);
-      return res.json();
-    });
-  }
-
-  function loadPage(entry) {
-    if (state.pageCache[entry]) return Promise.resolve(state.pageCache[entry]);
-    return fetchJSON('./data/pages/' + entry + '.json').then(function (page) {
-      state.pageCache[entry] = page;
-      return page;
-    });
-  }
-
-  function cityById(id) {
-    var list = state.cities || [];
-    for (var i = 0; i < list.length; i++) {
-      if (list[i].id === Number(id)) return list[i];
-    }
-    return list[0];
-  }
-
-  function formatShemot(text) {
-    if (!text) return '';
-    var t = text;
-    if (state.prefs.censorNames) {
-      t = t.replace(/י~הוה/g, 'ה׳');
-      t = t.replace(/אֱ~לֹהִים/g, 'אֱלֹקִים');
-      t = t.replace(/אֱ~לֹהֵינוּ/g, 'אֱלֹקֵינוּ');
-      t = t.replace(/אֱ~לֹה/g, 'אֱלֹק');
-      t = t.replace(/אֵ~ל/g, 'אֵ-ל');
-      t = t.replace(/~הוה/g, 'ה׳');
-      t = t.replace(/~/g, '');
-    } else {
-      t = t.replace(/י~הוה/g, 'יְהֹוָה');
-      t = t.replace(/אֱ~לֹה/g, 'אֱלֹה');
-      t = t.replace(/אֵ~ל/g, 'אֵל');
-      t = t.replace(/~/g, '');
-    }
-    return t;
-  }
-
-  function setHeader(title, showBack) {
-    $('#header-title').textContent = title;
-    $('#btn-back').classList.toggle('hidden', !showBack);
+  function saveLastPage(p) {
+    try { localStorage.setItem(STORAGE_PAGE, String(p)); } catch (e) {}
   }
 
   function showView(name) {
-    $$('.view').forEach(function (v) { v.classList.add('hidden'); });
-    var el = $('#view-' + name);
-    if (el) el.classList.remove('hidden');
-    $('#reader-toolbar').classList.toggle('hidden', name !== 'reader');
-    state.view = name;
-  }
-
-  function navigate(view, opts) {
-    opts = opts || {};
-    if (opts.push !== false && state.view) {
-      state.stack.push({
-        view: state.view,
-        page: state.currentPage,
-        title: $('#header-title').textContent,
-      });
+    var home = $('#view-home');
+    var reader = $('#view-reader');
+    if (name === 'reader') {
+      home.classList.add('hidden');
+      reader.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    } else {
+      reader.classList.add('hidden');
+      home.classList.remove('hidden');
+      document.body.style.overflow = '';
     }
-    if (view === 'home') renderHome();
-    else if (view === 'main') renderMainMenu();
-    else if (view === 'prefs') renderPrefs();
-    else if (view === 'zmanim') renderZmanim();
-    else if (view === 'about') renderAbout();
   }
 
-  function goBack() {
-    if (state.stack.length) {
-      var prev = state.stack.pop();
-      if (prev.view === 'reader' && prev.page) {
-        openReader(prev.page.entry, prev.page.title, { push: false });
-      } else {
-        navigate(prev.view || 'home', { push: false });
-      }
-      return;
-    }
-    navigate('home', { push: false });
-  }
-
-  function renderHome() {
-    setHeader((state.menus && (state.menus.appName || state.menus.appName)) || 'סידור', false);
-    showView('home');
-    var list = $('#home-menu');
-    list.innerHTML = '';
-    var items = (state.menus && state.menus.firstMenu) || [];
-    items.forEach(function (item) {
-      var li = document.createElement('li');
-      var btn = document.createElement('button');
-      btn.type = 'button';
-      btn.textContent = item.title;
-      btn.addEventListener('click', function () {
-        if (item.action === 'main') navigate('main');
-        else if (item.action === 'prefs') navigate('prefs');
-        else if (item.action === 'zmanim') navigate('zmanim');
-        else if (item.action === 'about') navigate('about');
-        else if (item.action === 'page') openReader(item.entry, item.title);
-      });
-      li.appendChild(btn);
-      list.appendChild(li);
-    });
-  }
-
-  function renderMainMenu() {
-    setHeader('בחירת תפילה', true);
-    showView('main');
-    var list = $('#main-menu');
-    list.innerHTML = '';
-    var items = (state.menus && state.menus.mainMenu) || [];
-    items.forEach(function (item) {
-      var li = document.createElement('li');
-      var btn = document.createElement('button');
-      btn.type = 'button';
-      btn.textContent = item.title;
-      btn.addEventListener('click', function () {
-        openReader(item.entry, item.title);
-      });
-      li.appendChild(btn);
-      list.appendChild(li);
-    });
-  }
-
-  function openReader(entry, title, opts) {
-    opts = opts || {};
-    if (opts.push !== false) {
-      state.stack.push({
-        view: state.view,
-        page: state.currentPage,
-        title: $('#header-title').textContent,
-      });
-    }
-    setHeader(title || entry, true);
-    showView('reader');
-    var root = $('#reader-content');
-    root.innerHTML = '<div class="loading">טוען…</div>';
-    loadPage(entry).then(function (page) {
-      state.currentPage = page;
-      root.innerHTML = '';
-      var blocks = page.blocks || [];
-      if (!blocks.length) {
-        var pre = document.createElement('div');
-        pre.className = 'block body';
-        pre.textContent = formatShemot(page.plain || '');
-        root.appendChild(pre);
-      } else {
-        blocks.forEach(function (b) {
-          if (b.role === 'note' && !state.prefs.showNotes) return;
-          var div = document.createElement('div');
-          var role = b.role || 'body';
-          div.className = 'block ' + (
-            role === 'note' ? 'note' :
-            role === 'special' ? 'special' :
-            role === 'section' ? 'section' :
-            role === 'dynamic' ? 'dynamic' : 'body'
-          );
-          if (role === 'dynamic' && (b.text === 'omer' || b.kind === 'omer')) {
-            div.textContent = '【ספירת העומר — לפי היום】';
-          } else {
-            div.textContent = formatShemot(b.text);
-          }
-          root.appendChild(div);
-        });
-      }
-      window.scrollTo(0, 0);
-    }).catch(function (e) {
-      root.innerHTML = '<div class="error">לא ניתן לטעון את הדף. ' + e.message + '</div>';
-    });
-  }
-
-  function setToggle(sel, on) {
-    var el = $(sel);
+  function updateLabel(pdfPage) {
+    var el = $('#page-label');
     if (!el) return;
-    el.classList.toggle('on', !!on);
-    el.setAttribute('aria-pressed', on ? 'true' : 'false');
+    var heb = pdfToHeb(pdfPage);
+    var hebLabel = toHebNumeral(heb);
+    el.innerHTML =
+      '<span class="heb">עמוד ' + hebLabel + '</span>' +
+      '<span class="pdf-pos">PDF ' + pdfPage + ' / ' + PDF_PAGES + '</span>';
+    $('#btn-prev').disabled = pdfPage <= 1;
+    $('#btn-next').disabled = pdfPage >= PDF_PAGES;
   }
 
-  function renderPrefs() {
-    setHeader('הגדרות', true);
-    showView('prefs');
-    var citySel = $('#pref-city');
-    if (citySel && citySel.options.length === 0 && state.cities) {
-      state.cities.forEach(function (c) {
-        var opt = document.createElement('option');
-        opt.value = c.id;
-        opt.textContent = c.name;
-        citySel.appendChild(opt);
-      });
+  function ensurePdf() {
+    if (state.pdfDoc) return Promise.resolve(state.pdfDoc);
+    if (state.loadingPdf) return state.loadingPdf;
+    if (typeof pdfjsLib === 'undefined') {
+      return Promise.reject(new Error('PDF.js לא נטען'));
     }
-    if (citySel) citySel.value = String(state.prefs.cityId);
-    var font = $('#pref-font');
-    if (font) font.value = String(state.prefs.fontScale);
-    var fontVal = $('#pref-font-val');
-    if (fontVal) fontVal.textContent = Math.round(state.prefs.fontScale * 100) + '%';
-    setToggle('#pref-night', state.prefs.night);
-    setToggle('#pref-dst', state.prefs.summerTime);
-    setToggle('#pref-censor', state.prefs.censorNames);
-    setToggle('#pref-notes', state.prefs.showNotes);
+    pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS_CDN + 'pdf.worker.min.js';
+    state.loadingPdf = pdfjsLib.getDocument({
+      url: PDF_URL,
+      // Progressive loading helps on mobile
+      disableAutoFetch: false,
+      disableStream: false,
+    }).promise.then(function (doc) {
+      state.pdfDoc = doc;
+      state.loadingPdf = null;
+      return doc;
+    }).catch(function (err) {
+      state.loadingPdf = null;
+      throw err;
+    });
+    return state.loadingPdf;
   }
 
-  function renderZmanim() {
-    setHeader('זמני היום', true);
-    showView('zmanim');
-    var city = cityById(state.prefs.cityId);
-    var cityEl = $('#zmanim-city');
-    if (cityEl) cityEl.textContent = city ? city.name : '';
-    var now = new Date();
-    var dateEl = $('#zmanim-date');
-    if (dateEl) {
-      dateEl.textContent = now.toLocaleDateString('he-IL', {
-        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
-      });
-    }
-    var tbody = $('#zmanim-body');
-    if (!city || !window.Zmanim) {
-      if (tbody) tbody.innerHTML = '<tr><td colspan="2">אין נתוני עיר</td></tr>';
+  function stageSize() {
+    var stage = $('#page-stage');
+    var bar = $('#reader-bar');
+    var w = stage ? stage.clientWidth : window.innerWidth;
+    var h = stage ? stage.clientHeight : (window.innerHeight - (bar ? bar.offsetHeight : 56));
+    // small padding
+    return { w: Math.max(100, w - 4), h: Math.max(100, h - 4) };
+  }
+
+  function renderPage(pdfPage, flipDir) {
+    pdfPage = clamp(pdfPage, 1, PDF_PAGES);
+    if (state.rendering) {
+      state.pendingPage = pdfPage;
       return;
     }
-    var z = Zmanim.computeZmanim({
-      date: now,
-      latitude: city.latitude,
-      longitude: city.longitude,
-      gmtOffset: city.gmtOffset,
-      summerTime: state.prefs.summerTime,
-      shabbatMinutes: city.shabbatTime,
-      elevation: city.elevation,
-    });
-    tbody.innerHTML = '';
-    z.items.forEach(function (item) {
-      var tr = document.createElement('tr');
-      tr.innerHTML = '<th scope="row">' + item.name + '</th><td>' + item.time + '</td>';
-      tbody.appendChild(tr);
-    });
-    var note = $('#zmanim-note');
-    if (note) {
-      note.textContent = z.meta.note +
-        (z.meta.shaahNofitMinutes ? ' · שעה זמנית ≈ ' + z.meta.shaahNofitMinutes + ' דק׳' : '');
-    }
-  }
+    state.rendering = true;
+    state.pdfPage = pdfPage;
+    saveLastPage(pdfPage);
+    updateLabel(pdfPage);
 
-  function renderAbout() {
-    setHeader('אודות', true);
-    showView('about');
-  }
+    var loading = $('#reader-loading');
+    if (loading) loading.classList.remove('hidden');
 
-  function bindUI() {
-    $('#btn-back').addEventListener('click', goBack);
-    $('#btn-home').addEventListener('click', function () {
-      state.stack = [];
-      navigate('home', { push: false });
-    });
+    ensurePdf().then(function (doc) {
+      return doc.getPage(pdfPage);
+    }).then(function (page) {
+      var canvas = $('#pdf-canvas');
+      var ctx = canvas.getContext('2d', { alpha: false });
+      var size = stageSize();
 
-    var citySel = $('#pref-city');
-    if (citySel) {
-      citySel.addEventListener('change', function (e) {
-        state.prefs.cityId = Number(e.target.value);
-        savePrefs();
-      });
-    }
-    var font = $('#pref-font');
-    if (font) {
-      font.addEventListener('input', function (e) {
-        state.prefs.fontScale = Number(e.target.value);
-        var fontVal = $('#pref-font-val');
-        if (fontVal) fontVal.textContent = Math.round(state.prefs.fontScale * 100) + '%';
-        savePrefs();
-      });
-    }
-    var minus = $('#btn-font-minus');
-    if (minus) {
-      minus.addEventListener('click', function () {
-        state.prefs.fontScale = Math.max(0.9, +(state.prefs.fontScale - 0.1).toFixed(2));
-        savePrefs();
-        if (font) font.value = state.prefs.fontScale;
-        var fontVal = $('#pref-font-val');
-        if (fontVal) fontVal.textContent = Math.round(state.prefs.fontScale * 100) + '%';
-      });
-    }
-    var plus = $('#btn-font-plus');
-    if (plus) {
-      plus.addEventListener('click', function () {
-        state.prefs.fontScale = Math.min(2.2, +(state.prefs.fontScale + 0.1).toFixed(2));
-        savePrefs();
-        if (font) font.value = state.prefs.fontScale;
-        var fontVal = $('#pref-font-val');
-        if (fontVal) fontVal.textContent = Math.round(state.prefs.fontScale * 100) + '%';
-      });
-    }
-    var nightBtn = $('#btn-night');
-    if (nightBtn) {
-      nightBtn.addEventListener('click', function () {
-        state.prefs.night = !state.prefs.night;
-        savePrefs();
-        setToggle('#pref-night', state.prefs.night);
-      });
-    }
+      // PDF.js applies page.rotate in getViewport by default
+      var base = page.getViewport({ scale: 1 });
+      var scale = Math.min(size.w / base.width, size.h / base.height);
+      // Crisp on retina
+      var outputScale = Math.min(window.devicePixelRatio || 1, 2);
+      var viewport = page.getViewport({ scale: scale * outputScale });
 
-    [
-      ['#pref-night', 'night'],
-      ['#pref-dst', 'summerTime'],
-      ['#pref-censor', 'censorNames'],
-      ['#pref-notes', 'showNotes'],
-    ].forEach(function (pair) {
-      var sel = pair[0];
-      var key = pair[1];
-      var el = $(sel);
-      if (!el) return;
-      el.addEventListener('click', function () {
-        state.prefs[key] = !state.prefs[key];
-        savePrefs();
-        setToggle(sel, state.prefs[key]);
-        if (key === 'censorNames' && state.view === 'reader' && state.currentPage) {
-          openReader(state.currentPage.entry, state.currentPage.title || $('#header-title').textContent, { push: false });
-        }
-        if (key === 'showNotes' && state.view === 'reader' && state.currentPage) {
-          openReader(state.currentPage.entry, state.currentPage.title || $('#header-title').textContent, { push: false });
+      canvas.width = Math.floor(viewport.width);
+      canvas.height = Math.floor(viewport.height);
+      canvas.style.width = Math.floor(viewport.width / outputScale) + 'px';
+      canvas.style.height = Math.floor(viewport.height / outputScale) + 'px';
+
+      var renderTask = page.render({
+        canvasContext: ctx,
+        viewport: viewport,
+      });
+      return renderTask.promise.then(function () {
+        if (flipDir && canvas) {
+          canvas.classList.remove('flipping-next', 'flipping-prev');
+          // force reflow
+          void canvas.offsetWidth;
+          canvas.classList.add(flipDir === 'next' ? 'flipping-next' : 'flipping-prev');
+          setTimeout(function () {
+            canvas.classList.remove('flipping-next', 'flipping-prev');
+          }, 240);
         }
       });
+    }).catch(function (err) {
+      console.error(err);
+      var loadingEl = $('#reader-loading');
+      if (loadingEl) {
+        loadingEl.textContent = 'שגיאה בטעינת הדף';
+        loadingEl.classList.remove('hidden');
+      }
+    }).then(function () {
+      state.rendering = false;
+      var loadingEl = $('#reader-loading');
+      if (loadingEl && state.pdfDoc) loadingEl.classList.add('hidden');
+      if (state.pendingPage != null && state.pendingPage !== state.pdfPage) {
+        var next = state.pendingPage;
+        state.pendingPage = null;
+        renderPage(next);
+      } else {
+        state.pendingPage = null;
+      }
     });
   }
 
-
-  var A2HS_KEY = 'sidur-bai-a2hs-used';
-
-  function isStandalone() {
-    return (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) ||
-      window.navigator.standalone === true;
+  function goTo(pdfPage, flipDir) {
+    renderPage(clamp(pdfPage, 1, PDF_PAGES), flipDir);
   }
 
-  function markA2HSUsed() {
-    try { localStorage.setItem(A2HS_KEY, '1'); } catch (e) {}
+  function nextPage() {
+    if (state.pdfPage < PDF_PAGES) goTo(state.pdfPage + 1, 'next');
   }
 
-  function a2hsAlreadyUsed() {
-    try { return localStorage.getItem(A2HS_KEY) === '1'; } catch (e) { return false; }
+  function prevPage() {
+    if (state.pdfPage > 1) goTo(state.pdfPage - 1, 'prev');
+  }
+
+  function openReader(pdfPage) {
+    showView('reader');
+    goTo(pdfPage || loadLastPage());
+    // Re-render on orientation / resize
+    setTimeout(function () { goTo(state.pdfPage); }, 50);
+  }
+
+  function openToc() {
+    showView('home');
+  }
+
+  function renderToc() {
+    var entries = (state.toc && state.toc.entries) || [];
+    Object.keys(GROUP_IDS).forEach(function (g) {
+      var ul = $('#' + GROUP_IDS[g]);
+      if (!ul) return;
+      ul.innerHTML = '';
+    });
+    entries.forEach(function (item) {
+      var ul = $('#' + GROUP_IDS[item.group]);
+      if (!ul) ul = $('#toc-other');
+      var li = document.createElement('li');
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      var title = document.createElement('span');
+      title.className = 'toc-title';
+      title.textContent = item.title;
+      var page = document.createElement('span');
+      page.className = 'toc-page';
+      page.textContent = item.hebLabel || toHebNumeral(item.hebPage);
+      btn.appendChild(title);
+      btn.appendChild(page);
+      btn.addEventListener('click', function () {
+        var pdf = item.pdfPage || hebToPdf(item.hebPage);
+        openReader(pdf);
+      });
+      li.appendChild(btn);
+      ul.appendChild(li);
+    });
+  }
+
+  function setupSwipe() {
+    var stage = $('#page-stage');
+    if (!stage) return;
+    var startX = 0, startY = 0, tracking = false;
+    stage.addEventListener('touchstart', function (e) {
+      if (!e.touches || !e.touches.length) return;
+      tracking = true;
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+    }, { passive: true });
+    stage.addEventListener('touchend', function (e) {
+      if (!tracking) return;
+      tracking = false;
+      var t = e.changedTouches && e.changedTouches[0];
+      if (!t) return;
+      var dx = t.clientX - startX;
+      var dy = t.clientY - startY;
+      if (Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy)) return;
+      // RTL book: swipe right (finger moves right) → previous; swipe left → next
+      if (dx > 0) prevPage();
+      else nextPage();
+    }, { passive: true });
   }
 
   function setupA2HS() {
@@ -389,8 +312,18 @@
     var done = $('#a2hs-done');
     if (!btn || !modal) return;
 
-    // Hide forever if already installed as app, or user already used the button
-    if (isStandalone() || a2hsAlreadyUsed()) {
+    function isStandalone() {
+      return (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) ||
+        window.navigator.standalone === true;
+    }
+    function markUsed() {
+      try { localStorage.setItem(A2HS_KEY, '1'); } catch (e) {}
+    }
+    function alreadyUsed() {
+      try { return localStorage.getItem(A2HS_KEY) === '1'; } catch (e) { return false; }
+    }
+
+    if (isStandalone() || alreadyUsed()) {
       btn.classList.add('hidden');
       return;
     }
@@ -403,53 +336,78 @@
     });
 
     btn.addEventListener('click', function () {
-      // Android/Chrome: native install if available
       if (deferredPrompt) {
         deferredPrompt.prompt();
         deferredPrompt.userChoice.then(function () {
           deferredPrompt = null;
-          markA2HSUsed();
+          markUsed();
           btn.classList.add('hidden');
           modal.classList.add('hidden');
         });
         return;
       }
-      // iPhone / Safari: show instructions once, then dismiss permanently
       modal.classList.remove('hidden');
     });
 
-    function finishA2HS() {
-      markA2HSUsed();
+    function finish() {
+      markUsed();
       btn.classList.add('hidden');
       modal.classList.add('hidden');
     }
-
-    if (done) done.addEventListener('click', finishA2HS);
+    if (done) done.addEventListener('click', finish);
     modal.addEventListener('click', function (e) {
-      if (e.target === modal) finishA2HS();
+      if (e.target === modal) finish();
     });
   }
 
-  function init() {
-    applyPrefs();
-    bindUI();
-    setupA2HS();
-    Promise.all([
-      fetchJSON('./data/menus.json'),
-      fetchJSON('./data/cities.json'),
-    ]).then(function (pair) {
-      state.menus = pair[0];
-      state.cities = pair[1];
-      navigate('home', { push: false });
-    }).catch(function (e) {
-      var home = $('#view-home');
-      if (home) {
-        home.innerHTML = '<div class="error">שגיאה בטעינת הנתונים. פתחו דרך שרת מקומי (לא file://).<br>' +
-          e.message + '</div>';
-      }
-      showView('home');
-      setHeader('סידור', false);
+  function bindUI() {
+    $('#btn-open').addEventListener('click', function () {
+      openReader(loadLastPage());
     });
+    $('#btn-toc').addEventListener('click', openToc);
+    $('#btn-prev').addEventListener('click', prevPage);
+    $('#btn-next').addEventListener('click', nextPage);
+    $('#tap-prev').addEventListener('click', prevPage);
+    $('#tap-next').addEventListener('click', nextPage);
+
+    document.addEventListener('keydown', function (e) {
+      if ($('#view-reader').classList.contains('hidden')) return;
+      if (e.key === 'ArrowLeft' || e.key === 'PageDown') { e.preventDefault(); nextPage(); }
+      if (e.key === 'ArrowRight' || e.key === 'PageUp') { e.preventDefault(); prevPage(); }
+      if (e.key === 'Escape') openToc();
+    });
+
+    var resizeTimer;
+    window.addEventListener('resize', function () {
+      if ($('#view-reader').classList.contains('hidden')) return;
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () { goTo(state.pdfPage); }, 150);
+    });
+
+    setupSwipe();
+    setupA2HS();
+  }
+
+  function init() {
+    bindUI();
+    fetch('./data/toc.json')
+      .then(function (r) {
+        if (!r.ok) throw new Error('toc');
+        return r.json();
+      })
+      .then(function (toc) {
+        state.toc = toc;
+        renderToc();
+      })
+      .catch(function () {
+        var daily = $('#toc-daily');
+        if (daily) {
+          daily.innerHTML = '<li style="padding:1rem;color:#a11">לא ניתן לטעון את התוכן. פתחו דרך שרת מקומי.</li>';
+        }
+      });
+
+    // Warm PDF cache in background after a short delay
+    setTimeout(function () { ensurePdf().catch(function () {}); }, 800);
 
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./sw.js').catch(function () {});

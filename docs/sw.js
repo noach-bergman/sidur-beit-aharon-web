@@ -1,18 +1,15 @@
-/* Service worker — cache-first for app shell + prayer data */
-const CACHE = 'sidur-bai-v2';
+/* Service worker — app shell + progressive PDF cache */
+const CACHE = 'sidur-bav-book-v1';
 const PRECACHE = [
   './',
   './index.html',
   './css/app.css',
   './js/app.js',
-  './js/zmanim.js',
   './manifest.webmanifest',
   './icons/icon-192.png',
   './icons/icon-512.png',
   './icons/book.png',
-  './data/menus.json',
-  './data/cities.json',
-  './data/pages-index.json',
+  './data/toc.json',
 ];
 
 self.addEventListener('install', (event) => {
@@ -33,20 +30,35 @@ self.addEventListener('fetch', (event) => {
   const req = event.request;
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
-  if (url.origin !== self.location.origin) return;
+
+  // Cache CDN pdf.js after first fetch
+  const isPdfJs = url.hostname.includes('jsdelivr.net') && url.pathname.includes('pdfjs-dist');
+  const isSameOrigin = url.origin === self.location.origin;
+  if (!isSameOrigin && !isPdfJs) return;
+
+  // Large PDF: cache-on-first-success (range requests pass through)
+  const isPdf = isSameOrigin && url.pathname.endsWith('siddur.pdf');
+  if (isPdf && req.headers.get('Range')) {
+    // Let browser handle byte-range streaming; still try to put full response later
+    event.respondWith(fetch(req).catch(() => caches.match('./siddur.pdf')));
+    return;
+  }
 
   event.respondWith(
     caches.open(CACHE).then(async (cache) => {
       const cached = await cache.match(req);
       if (cached) {
-        if (url.pathname.includes('/data/')) {
-          fetch(req).then((res) => { if (res.ok) cache.put(req, res.clone()); }).catch(() => {});
+        // Stale-while-revalidate for shell/data
+        if (!isPdf) {
+          fetch(req).then((res) => { if (res && res.ok) cache.put(req, res.clone()); }).catch(() => {});
         }
         return cached;
       }
       try {
         const res = await fetch(req);
-        if (res.ok) cache.put(req, res.clone());
+        if (res && res.ok && (isSameOrigin || isPdfJs)) {
+          cache.put(req, res.clone()).catch(() => {});
+        }
         return res;
       } catch (e) {
         if (req.mode === 'navigate') return cache.match('./index.html');
