@@ -238,6 +238,8 @@ body { padding: 0; }
 }
 
 .page-leaf {
+  background: #f7f1e4; /* underlay so no black peeks between paints */
+
   position: relative;
   z-index: 1;
   display: flex;
@@ -290,73 +292,19 @@ body { padding: 0; }
   display: none; /* disable ghost overlay that stuck as a white box */
 }
 
-/* —— Page-turn states (simple 2D — reliable on iOS) —— */
-.page-leaf {
-  overflow: hidden;
-}
-.page-leaf.turn-next .pdf-front {
-  animation: slideOutNext 0.16s cubic-bezier(0.22, 0.8, 0.3, 1) forwards;
-}
-.page-leaf.turn-next .pdf-back {
-  opacity: 1;
-  visibility: visible;
-  z-index: 1;
-  animation: slideInNext 0.16s cubic-bezier(0.22, 0.8, 0.3, 1) forwards;
-}
+/* Page changes are instant (WhatsApp Status style) — no turn animation */
+.page-leaf.turn-next .pdf-front,
+.page-leaf.turn-next .pdf-back,
+.page-leaf.turn-prev .pdf-front,
 .page-leaf.turn-prev .pdf-back {
-  opacity: 1;
-  visibility: visible;
-  z-index: 3;
-  animation: slideInPrev 0.16s cubic-bezier(0.22, 0.8, 0.3, 1) forwards;
+  animation: none !important;
 }
-.page-leaf.turn-prev .pdf-front {
-  animation: slideOutPrev 0.16s cubic-bezier(0.22, 0.8, 0.3, 1) forwards;
-}
-.page-leaf.turn-next .page-shade,
-.page-leaf.turn-prev .page-shade {
-  animation: shadePulse 0.16s ease forwards;
+.page-leaf.turn-next .pdf-back,
+.page-leaf.turn-prev .pdf-back {
+  opacity: 0;
+  visibility: hidden;
 }
 
-@keyframes slideOutNext {
-  from { transform: translateX(0); opacity: 1; }
-  to   { transform: translateX(28%); opacity: 0; }
-}
-@keyframes slideInNext {
-  from { transform: translateX(-18%); opacity: 0.6; }
-  to   { transform: translateX(0); opacity: 1; }
-}
-@keyframes slideOutPrev {
-  from { transform: translateX(0); opacity: 1; }
-  to   { transform: translateX(-22%); opacity: 0.5; }
-}
-@keyframes slideInPrev {
-  from { transform: translateX(30%); opacity: 0.7; }
-  to   { transform: translateX(0); opacity: 1; }
-}
-@keyframes shadePulse {
-  0% { opacity: 0; }
-  40% { opacity: 0.25; }
-  100% { opacity: 0; }
-}
-
-.page-leaf.dragging .pdf-front { transition: transform 0s; }
-.page-leaf.dragging-next .pdf-back,
-.page-leaf.dragging-prev .pdf-back { opacity: 1; }
-.page-leaf.dragging-prev .pdf-back { z-index: 3; }
-
-@media (prefers-reduced-motion: reduce) {
-  .page-leaf.turn-next .pdf-front,
-  .page-leaf.turn-next .pdf-back,
-  .page-leaf.turn-prev .pdf-front,
-  .page-leaf.turn-prev .pdf-back,
-  .page-leaf.turn-next .page-shade,
-  .page-leaf.turn-prev .page-shade {
-    animation: none !important;
-  }
-  .page-leaf.turn-next .pdf-back,
-  .page-leaf.turn-prev .pdf-back { opacity: 1; }
-  .page-leaf.turn-next .pdf-front { opacity: 0; }
-}
 
 
 /* WhatsApp Status–style page taps */

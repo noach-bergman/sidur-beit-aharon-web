@@ -253,9 +253,11 @@
     }
   }
 
+
   /**
-   * Render pdfPage. If flipDir is 'next'|'prev' and motion is allowed,
-   * paint onto back canvas first, then run CSS sefer turn, then promote.
+   * WhatsApp Status–style page change:
+   * paint the new page off-screen first, then swap instantly.
+   * Never clears the visible page before the next one is ready (no black flash).
    */
   function renderPage(pdfPage, flipDir) {
     pdfPage = clamp(pdfPage, 1, PDF_PAGES);
@@ -271,61 +273,35 @@
 
     var front = frontCanvas();
     var back = backCanvas();
-    var leaf = pageLeaf();
     var loading = $('#reader-loading');
     var hasContent = front && front.width > 0;
-    var animate = flipDir && hasContent && !prefersReducedMotion() && leaf && back;
 
+    // Only show loading on the very first page (nothing on screen yet)
     if (!hasContent && loading) loading.classList.remove('hidden');
+    else if (loading) loading.classList.add('hidden');
 
-    var targetCanvas = animate ? back : front;
+    resetLeafClasses();
 
-    paintPage(targetCanvas, pdfPage).then(function () {
-      if (!animate) {
-        // Instant / first paint — also keep back in sync for future peeks
-        if (back && front && front !== targetCanvas) copyCanvas(front, back);
-        else if (back && targetCanvas === front) copyCanvas(front, back);
-        resetLeafClasses();
-        finishPending();
-        return;
-      }
+    // Always paint onto back while front stays visible
+    var paintTarget = (hasContent && back) ? back : front;
 
-      // Match back canvas CSS box to front so absolute stacking aligns
-      back.style.width = front.style.width;
-      back.style.height = front.style.height;
-
-      state.animating = true;
-      if (loading) loading.classList.add('hidden');
-
-      resetLeafClasses();
-      void leaf.offsetWidth; // reflow before adding turn class
-      leaf.classList.add(flipDir === 'next' ? 'turn-next' : 'turn-prev');
-
-      var done = false;
-      function onDone() {
-        if (done) return;
-        done = true;
-        leaf.removeEventListener('animationend', onAnimEnd);
-        // Promote back → front so current page stays visible without flash
+    paintPage(paintTarget, pdfPage).then(function () {
+      if (paintTarget === back && front) {
+        // Match size then instant promote — front never goes blank
+        back.style.width = front.style.width || back.style.width;
+        back.style.height = front.style.height || back.style.height;
         copyCanvas(back, front);
-        resetLeafClasses();
-        finishPending();
+      } else if (front && back) {
+        copyCanvas(front, back);
       }
-      function onAnimEnd(e) {
-        // Finish on first animationend from our layers
-        if (e.target !== front && e.target !== back && !(e.target && e.target.classList && e.target.classList.contains('page-shade'))) {
-          return;
-        }
-        onDone();
-      }
-      leaf.addEventListener('animationend', onAnimEnd);
-      setTimeout(onDone, FLIP_MS + 80);
+      resetLeafClasses();
+      if (loading) loading.classList.add('hidden');
+      finishPending();
     }).catch(function (err) {
       console.error(err);
-      var loadingEl = $('#reader-loading');
-      if (loadingEl) {
-        loadingEl.textContent = 'שגיאה בטעינת הדף';
-        loadingEl.classList.remove('hidden');
+      if (loading) {
+        loading.textContent = 'שגיאה בטעינת הדף';
+        loading.classList.remove('hidden');
       }
       state.rendering = false;
       state.animating = false;
@@ -337,11 +313,11 @@
   }
 
   function nextPage() {
-    if (state.pdfPage < PDF_PAGES) goTo(state.pdfPage + 1, 'next');
+    if (state.pdfPage < PDF_PAGES) goTo(state.pdfPage + 1);
   }
 
   function prevPage() {
-    if (state.pdfPage > 1) goTo(state.pdfPage - 1, 'prev');
+    if (state.pdfPage > 1) goTo(state.pdfPage - 1);
   }
 
   function openReader(pdfPage) {
@@ -539,7 +515,7 @@ function openToc() {
     setTimeout(function () { ensurePdf().catch(function () {}); }, 800);
 
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js?v=7').catch(function () {});
+      navigator.serviceWorker.register('./sw.js?v=8').catch(function () {});
     }
   }
 
