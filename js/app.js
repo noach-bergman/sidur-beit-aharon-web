@@ -367,9 +367,73 @@
     });
   }
 
+
+  var A2HS_KEY = 'sidur-bai-a2hs-used';
+
+  function isStandalone() {
+    return (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) ||
+      window.navigator.standalone === true;
+  }
+
+  function markA2HSUsed() {
+    try { localStorage.setItem(A2HS_KEY, '1'); } catch (e) {}
+  }
+
+  function a2hsAlreadyUsed() {
+    try { return localStorage.getItem(A2HS_KEY) === '1'; } catch (e) { return false; }
+  }
+
+  function setupA2HS() {
+    var btn = $('#btn-a2hs');
+    var modal = $('#a2hs-modal');
+    var done = $('#a2hs-done');
+    if (!btn || !modal) return;
+
+    // Hide forever if already installed as app, or user already used the button
+    if (isStandalone() || a2hsAlreadyUsed()) {
+      btn.classList.add('hidden');
+      return;
+    }
+    btn.classList.remove('hidden');
+
+    var deferredPrompt = null;
+    window.addEventListener('beforeinstallprompt', function (e) {
+      e.preventDefault();
+      deferredPrompt = e;
+    });
+
+    btn.addEventListener('click', function () {
+      // Android/Chrome: native install if available
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then(function () {
+          deferredPrompt = null;
+          markA2HSUsed();
+          btn.classList.add('hidden');
+          modal.classList.add('hidden');
+        });
+        return;
+      }
+      // iPhone / Safari: show instructions once, then dismiss permanently
+      modal.classList.remove('hidden');
+    });
+
+    function finishA2HS() {
+      markA2HSUsed();
+      btn.classList.add('hidden');
+      modal.classList.add('hidden');
+    }
+
+    if (done) done.addEventListener('click', finishA2HS);
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) finishA2HS();
+    });
+  }
+
   function init() {
     applyPrefs();
     bindUI();
+    setupA2HS();
     Promise.all([
       fetchJSON('./data/menus.json'),
       fetchJSON('./data/cities.json'),
