@@ -3,223 +3,169 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
-  <meta name="theme-color" content="#f6f0e4" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#16130f" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0f0f10" media="(prefers-color-scheme: dark)" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="סידור בא&quot;י" />
-  <meta name="description" content="סידור בית אהרן וישראל (סטולין · קרלין) — דפי הסידור המודפס" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="סידור" />
   <title>סידור בית אהרן וישראל</title>
-  <link rel="manifest" href="./manifest.webmanifest?v=9" />
+  <link rel="manifest" href="./manifest.webmanifest?v=10" />
   <link rel="icon" href="./icons/book.png" />
   <link rel="apple-touch-icon" href="./icons/icon-192.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=David+Libre:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./css/app.css?v=9" />
-  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/app.css?v=10" />
 </head>
 <body>
 
-  <!-- ══════════ HOME · שער ומפתח ══════════ -->
-  <section id="view-home" class="view">
-    <div class="page-column">
+<!-- ══════════ TODAY ══════════ -->
+<main id="view-today" class="view">
 
-      <!-- Title page (שער) -->
-      <header class="titlepage">
-        <div class="titlepage-rule" aria-hidden="true"></div>
+  <header class="today-head">
+    <p class="dow" id="t-dow">—</p>
+    <h1 class="hdate" id="t-hdate">—</h1>
+    <p class="greg" id="t-greg"></p>
+    <div class="badges" id="t-badges"></div>
+  </header>
 
-        <p class="imprint-top">נוסח בית אהרן וישראל</p>
-
-        <div class="cover-wrap">
-          <img src="./icons/tfilonHe.png" alt="" class="cover" width="157" height="270" />
-        </div>
-
-        <h1 class="book-title">
-          <span class="book-title-sm">סידור</span>
-          <span class="book-title-lg">בית אהרן וישראל</span>
-        </h1>
-
-        <div class="ornament" aria-hidden="true">
-          <svg viewBox="0 0 120 12" width="130" height="13" fill="none">
-            <path d="M2 6h38" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-            <path d="M80 6h38" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-            <path d="M60 1.5l4.2 4.5L60 10.5 55.8 6z" fill="currentColor"/>
-            <circle cx="47" cy="6" r="1.6" fill="currentColor"/>
-            <circle cx="73" cy="6" r="1.6" fill="currentColor"/>
-          </svg>
-        </div>
-
-        <p class="imprint">סטולין · קרלין</p>
-        <p class="imprint soft">דפי הסידור המודפס · שט״ו עמודים</p>
-
-        <button type="button" id="btn-open" class="primary-btn">
-          <span>פתיחת הסידור</span>
-        </button>
-        <button type="button" id="btn-a2hs" class="ghost-btn hidden">הוספה למסך הבית</button>
-      </header>
-
-      <!-- Resume -->
-      <button type="button" id="btn-resume" class="resume hidden">
-        <span class="resume-mark" aria-hidden="true">
-          <svg viewBox="0 0 16 20" width="14" height="18" fill="currentColor">
-            <path d="M2 0h12v20l-6-5-6 5z"/>
-          </svg>
-        </span>
-        <span class="resume-text">
-          <span class="resume-kicker">המשך מהמקום שהפסקת</span>
-          <span class="resume-title" id="resume-title">—</span>
-        </span>
-        <span class="resume-page" id="resume-page"></span>
-      </button>
-
-      <!-- Index -->
-      <nav class="index" aria-label="מפתח העניינים">
-        <h2 class="index-head">
-          <span class="rule" aria-hidden="true"></span>
-          <span>מפתח העניינים</span>
-          <span class="rule" aria-hidden="true"></span>
-        </h2>
-
-        <div class="search">
-          <svg class="search-icon" viewBox="0 0 20 20" width="17" height="17" aria-hidden="true">
-            <circle cx="9" cy="9" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M13.2 13.2L17 17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-          </svg>
-          <input type="search" id="toc-search" placeholder="חיפוש בתוכן…" autocomplete="off" aria-label="חיפוש בתוכן העניינים" />
-          <button type="button" id="search-clear" class="search-clear hidden" aria-label="נקה חיפוש">×</button>
-        </div>
-
-        <div class="segmented" role="tablist" aria-label="סינון לפי קבוצה">
-          <button type="button" class="seg is-active" data-filter="all" role="tab" aria-selected="true">הכל</button>
-          <button type="button" class="seg" data-filter="daily" role="tab" aria-selected="false">יום־יום</button>
-          <button type="button" class="seg" data-filter="moadim" role="tab" aria-selected="false">מועדים</button>
-          <button type="button" class="seg" data-filter="other" role="tab" aria-selected="false">אחר</button>
-        </div>
-
-        <ul class="toc" id="toc-list"></ul>
-        <p class="toc-empty hidden" id="toc-empty">לא נמצא ערך מתאים</p>
-      </nav>
-
-      <footer class="colophon">
-        <span class="colophon-mark" aria-hidden="true">❧</span>
-        <p>מקור הסריקה: <a href="https://stolin.info/stolin/SiddurBAV.pdf" rel="noopener" target="_blank">stolin.info · SiddurBAV.pdf</a></p>
-        <p class="soft">לשימוש אישי בתוכן הציבורי שסופק</p>
-      </footer>
-
-    </div>
+  <!-- Shabbat / Yom Tov notice, replaces the tefillot -->
+  <section class="notice hidden" id="t-notice">
+    <p id="t-notice-text"></p>
   </section>
 
-  <!-- ══════════ READER ══════════ -->
-  <section id="view-reader" class="view hidden" aria-label="קורא הסידור">
-
-    <div class="reader-head" id="reader-head">
-      <button type="button" id="btn-back" class="icon-btn" aria-label="חזרה למפתח">
-        <svg viewBox="0 0 20 20" width="19" height="19" fill="none" aria-hidden="true">
-          <path d="M3.5 5h13M3.5 10h13M3.5 15h9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-        </svg>
-      </button>
-      <h2 class="running-head" id="running-head">סידור בית אהרן וישראל</h2>
-      <button type="button" id="btn-goto" class="icon-btn" aria-label="מעבר לעמוד">
-        <svg viewBox="0 0 20 20" width="19" height="19" fill="none" aria-hidden="true">
-          <rect x="3" y="3.5" width="14" height="13" rx="1.6" stroke="currentColor" stroke-width="1.6"/>
-          <path d="M3 7.5h14M7.5 7.5v9" stroke="currentColor" stroke-width="1.6"/>
-        </svg>
-      </button>
-    </div>
-
-    <div id="page-stage" class="page-stage">
-      <div class="desk" aria-hidden="true"></div>
-      <div id="page-leaf" class="page-leaf">
-        <canvas id="pdf-canvas-next" class="pdf-layer pdf-back" aria-hidden="true"></canvas>
-        <canvas id="pdf-canvas" class="pdf-layer pdf-front"></canvas>
-        <div class="page-gutter" aria-hidden="true"></div>
-        <div class="page-edge" aria-hidden="true"></div>
-      </div>
-      <button type="button" id="tap-prev" class="tap-zone tap-prev" aria-label="עמוד קודם"></button>
-      <button type="button" id="tap-next" class="tap-zone tap-next" aria-label="עמוד הבא"></button>
-      <div id="reader-loading" class="reader-loading hidden">
-        <span class="spinner" aria-hidden="true"></span>
-        <span>טוען דף…</span>
-      </div>
-    </div>
-
-    <div id="reader-bar" class="reader-bar">
-      <div class="progress" aria-hidden="true"><span id="progress-fill"></span></div>
-      <div class="reader-bar-row">
-        <button type="button" id="btn-prev" class="nav-btn" aria-label="עמוד קודם">
-          <svg viewBox="0 0 20 20" width="20" height="20" fill="none" aria-hidden="true">
-            <path d="M7.5 4l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <div class="page-label" id="page-label">—</div>
-        <button type="button" id="btn-next" class="nav-btn" aria-label="עמוד הבא">
-          <svg viewBox="0 0 20 20" width="20" height="20" fill="none" aria-hidden="true">
-            <path d="M12.5 4l-6 6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-      </div>
-    </div>
+  <section id="t-prayers">
+    <button type="button" class="now-card" id="t-now">
+      <span class="now-label">עכשיו</span>
+      <span class="now-title" id="t-now-title">—</span>
+      <span class="now-page" id="t-now-page"></span>
+    </button>
+    <div class="chips" id="t-others"></div>
   </section>
 
-  <!-- ══════════ GOTO SHEET ══════════ -->
-  <div id="goto-sheet" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="goto-title">
-    <div class="modal-card">
-      <div class="modal-grip" aria-hidden="true"></div>
-      <h3 id="goto-title">מעבר לעמוד</h3>
+  <section class="block hidden" id="t-special-block">
+    <h2 class="block-title">היום</h2>
+    <ul class="rows" id="t-special"></ul>
+  </section>
 
-      <div class="goto-readout">
-        <span class="goto-heb" id="goto-heb">—</span>
-        <span class="goto-sub" id="goto-sub"></span>
-      </div>
+  <section class="block hidden" id="t-reminders-block">
+    <h2 class="block-title">בתפילה</h2>
+    <div class="chips quiet" id="t-reminders"></div>
+    <p class="fineprint">
+      תזכורות לפי המנהג הנפוץ — יש לנהוג כמנהג המקום.
+      <button type="button" class="linkish" data-page="304">מנהגים מרבותינו</button>
+    </p>
+  </section>
 
-      <input type="range" id="goto-range" class="goto-range" min="1" max="315" step="1" value="1" aria-label="בחירת עמוד" />
+  <nav class="quick">
+    <button type="button" class="quick-btn primary" id="btn-index">כל התוכן</button>
+    <button type="button" class="quick-btn" data-page="232">תהלים</button>
+    <button type="button" class="quick-btn" data-page="85">ברכת המזון</button>
+  </nav>
 
-      <form class="goto-form" id="goto-form">
-        <input type="text" id="goto-input" class="goto-input" inputmode="text" autocomplete="off"
-               placeholder="מספר עמוד — ק״ג או 103" aria-label="מספר עמוד" />
-        <button type="submit" class="goto-go">מעבר</button>
-      </form>
+  <footer class="foot">
+    <button type="button" class="linkish" id="btn-location">מיקום: <span id="t-loc">—</span></button>
+    <button type="button" class="linkish hidden" id="btn-a2hs">הוספה למסך הבית</button>
+  </footer>
+</main>
 
-      <button type="button" id="goto-cancel" class="modal-cancel">ביטול</button>
-    </div>
+<!-- ══════════ READER ══════════ -->
+<section id="view-reader" class="view hidden" aria-label="קורא הסידור">
+  <div class="rbar rbar-top">
+    <button type="button" id="btn-back" class="ibtn" aria-label="סגירה">
+      <svg viewBox="0 0 20 20" width="20" height="20" fill="none"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <h2 class="rtitle" id="running-head"></h2>
+    <button type="button" id="btn-goto" class="ibtn" aria-label="מעבר לעמוד">
+      <svg viewBox="0 0 20 20" width="20" height="20" fill="none"><path d="M4 6h12M4 10h12M4 14h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
   </div>
 
-  <!-- ══════════ A2HS ══════════ -->
-  <div id="a2hs-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="a2hs-title">
-    <div class="modal-card">
-      <div class="modal-grip" aria-hidden="true"></div>
-      <h3 id="a2hs-title">הוספה למסך הבית</h3>
-      <ol class="a2hs-steps">
-        <li>לחצו על <strong>שיתוף</strong> <span class="a2hs-share" aria-hidden="true">⎋</span> בתחתית Safari</li>
-        <li>גללו ובחרו <strong>הוסף למסך הבית</strong></li>
-        <li>לחצו <strong>הוסף</strong></li>
-      </ol>
-      <p class="modal-hint">אחרי זה הסידור ייפתח כמו אפליקציה, גם ללא חיבור לאינטרנט.</p>
-      <button type="button" id="a2hs-done" class="modal-primary">הבנתי / הוספתי</button>
+  <div id="page-stage" class="page-stage">
+    <div id="page-leaf" class="page-leaf">
+      <canvas id="pdf-canvas-next" class="pdf-layer pdf-back" aria-hidden="true"></canvas>
+      <canvas id="pdf-canvas" class="pdf-layer pdf-front"></canvas>
     </div>
+    <button type="button" id="tap-prev" class="tap-zone tap-prev" aria-label="עמוד קודם"></button>
+    <button type="button" id="tap-next" class="tap-zone tap-next" aria-label="עמוד הבא"></button>
+    <div id="reader-loading" class="rloading hidden"><span class="spin"></span></div>
   </div>
 
-  <script src="./js/app.js?v=9"></script>
+  <div class="rbar rbar-bottom">
+    <div class="progress"><span id="progress-fill"></span></div>
+    <button type="button" id="btn-prev" class="ibtn" aria-label="עמוד קודם">
+      <svg viewBox="0 0 20 20" width="20" height="20" fill="none"><path d="M7.5 4l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="rpage" id="page-label">—</div>
+    <button type="button" id="btn-next" class="ibtn" aria-label="עמוד הבא">
+      <svg viewBox="0 0 20 20" width="20" height="20" fill="none"><path d="M12.5 4l-6 6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+</section>
 
-  <script>
-  (function () {
-    if (!('serviceWorker' in navigator)) return;
-    navigator.serviceWorker.getRegistrations().then(function (regs) {
-      regs.forEach(function (r) {
-        if (r.active) r.active.postMessage('CLEAR_ALL');
-        r.update();
-      });
-    });
-    // Drop legacy localStorage keys from the old text reader
-    try {
-      Object.keys(localStorage).forEach(function (k) {
-        if (/page|ashkama|menus|sidur-bai-prefs|sidur-text/i.test(k) && !/sidur-bav-last-page|sidur-bai-a2hs/i.test(k)) {
-          localStorage.removeItem(k);
-        }
-      });
-    } catch (e) {}
-  })();
-  </script>
+<!-- ══════════ INDEX SHEET ══════════ -->
+<section id="sheet-index" class="fullsheet hidden" aria-label="תוכן העניינים">
+  <div class="fs-head">
+    <button type="button" class="ibtn" id="idx-close" aria-label="סגירה">
+      <svg viewBox="0 0 20 20" width="20" height="20" fill="none"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <h2>כל התוכן</h2>
+    <span class="ibtn-spacer"></span>
+  </div>
+  <div class="fs-controls">
+    <input type="search" id="idx-search" class="search" placeholder="חיפוש…" autocomplete="off" aria-label="חיפוש" />
+    <div class="segmented" id="idx-tabs">
+      <button type="button" class="seg is-on" data-filter="all">הכל</button>
+      <button type="button" class="seg" data-filter="daily">יום־יום</button>
+      <button type="button" class="seg" data-filter="moadim">מועדים</button>
+      <button type="button" class="seg" data-filter="other">אחר</button>
+    </div>
+  </div>
+  <ul class="rows scroller" id="idx-list"></ul>
+  <p class="empty hidden" id="idx-empty">לא נמצא</p>
+</section>
+
+<!-- ══════════ GOTO ══════════ -->
+<div id="sheet-goto" class="modal hidden" role="dialog" aria-modal="true">
+  <div class="card">
+    <h3>מעבר לעמוד</h3>
+    <div class="goto-read"><span id="goto-heb">—</span><small id="goto-sub"></small></div>
+    <input type="range" id="goto-range" min="1" max="315" step="1" value="1" aria-label="עמוד" />
+    <form id="goto-form" class="row-form">
+      <input type="text" id="goto-input" inputmode="text" autocomplete="off" placeholder="ק״ג או 103" aria-label="מספר עמוד" />
+      <button type="submit">מעבר</button>
+    </form>
+    <button type="button" class="ghost" id="goto-cancel">ביטול</button>
+  </div>
+</div>
+
+<!-- ══════════ LOCATION ══════════ -->
+<div id="sheet-loc" class="modal hidden" role="dialog" aria-modal="true">
+  <div class="card">
+    <h3>מיקום</h3>
+    <p class="cardnote">המיקום קובע את זמן השקיעה — ולכן איזו תפילה מוצגת ומתי מתחלף התאריך העברי.</p>
+    <button type="button" class="wide" id="loc-gps">אתר אותי</button>
+    <ul class="rows" id="loc-list"></ul>
+    <button type="button" class="ghost" id="loc-cancel">סגירה</button>
+  </div>
+</div>
+
+<!-- ══════════ A2HS ══════════ -->
+<div id="a2hs-modal" class="modal hidden" role="dialog" aria-modal="true">
+  <div class="card">
+    <h3>הוספה למסך הבית</h3>
+    <ol class="steps">
+      <li>לחצו על <strong>שיתוף</strong> בתחתית Safari</li>
+      <li>בחרו <strong>הוסף למסך הבית</strong></li>
+      <li>לחצו <strong>הוסף</strong></li>
+    </ol>
+    <button type="button" class="wide" id="a2hs-done">הבנתי</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+<script src="./js/vendor/hebcal.min.js?v=10"></script>
+<script src="./js/today.js?v=10"></script>
+<script src="./js/app.js?v=10"></script>
 </body>
 </html>

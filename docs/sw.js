@@ -1,10 +1,12 @@
 /* Service worker — printed book reader */
-const CACHE = 'sidur-bav-book-v9';
+const CACHE = 'sidur-bav-book-v10';
 const PRECACHE = [
   './',
   './index.html',
   './css/app.css',
   './js/app.js',
+  './js/today.js',
+  './js/vendor/hebcal.min.js',
   './manifest.webmanifest',
   './data/toc.json',
   './icons/book.png',
