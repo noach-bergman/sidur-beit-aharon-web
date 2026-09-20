@@ -528,8 +528,9 @@
       if (!$('#sheet-goto').classList.contains('hidden')) { if (e.key === 'Escape') closeGoto(); return; }
       if (!$('#sheet-index').classList.contains('hidden')) { if (e.key === 'Escape') closeIndex(); return; }
       if ($('#view-reader').classList.contains('hidden')) return;
-      if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextPage(); }
-      if (e.key === 'ArrowLeft') { e.preventDefault(); prevPage(); }
+      // RTL book: left goes forward, right goes back.
+      if (e.key === 'ArrowLeft' || e.key === ' ') { e.preventDefault(); nextPage(); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); prevPage(); }
       if (e.key === 'Escape') closeReader();
     });
 
@@ -544,7 +545,8 @@
       if (!t) return;
       var dx = t.clientX - x0, dy = t.clientY - y0;
       if (Math.abs(dx) < 70 || Math.abs(dx) < Math.abs(dy) * 1.2) return;
-      if (dx < 0) nextPage(); else prevPage();
+      // Sweeping the page rightward turns it forward, as in a bound sefer.
+      if (dx > 0) nextPage(); else prevPage();
     }, { passive: true });
 
     var rt;

@@ -319,8 +319,11 @@ button { font-family: inherit; }
   opacity: 0; visibility: hidden; pointer-events: none;
 }
 .tap-zone { position: absolute; top: 0; bottom: 0; width: 50%; border: 0; background: transparent; padding: 0; cursor: pointer; z-index: 8; }
-.tap-prev { left: 0; }
-.tap-next { right: 0; }
+/* A Hebrew sefer is bound on the RIGHT: you sweep the leaf rightward to go
+   forward, so the next page comes from the LEFT and the previous from the
+   right. This is the opposite of an English book — do not "fix" it. */
+.tap-next { left: 0; }
+.tap-prev { right: 0; }
 
 .rloading { position: absolute; inset: 0; z-index: 9; display: grid; place-items: center; background: rgba(0,0,0,.6); pointer-events: none; }
 .spin { width: 1.2rem; height: 1.2rem; border: 2px solid rgba(255,255,255,.25); border-top-color: #fff; border-radius: 50%; animation: spin .8s linear infinite; }
