@@ -1,5 +1,5 @@
 /* Service worker — printed book reader */
-const CACHE = 'sidur-bav-book-v12';
+const CACHE = 'sidur-bav-book-v13';
 const PRECACHE = [
   './',
   './index.html',
@@ -10,6 +10,7 @@ const PRECACHE = [
   './manifest.webmanifest',
   './data/toc.json',
   './data/menu.json',
+  './data/tehillim.json',
   './icons/book.png',
   './icons/icon-192.png',
   './icons/icon-512.png',
