@@ -29,7 +29,8 @@
     pdfDoc: null, pdfPage: 1, rendering: false,
     pendingPage: null, loadingPdf: null,
     location: null, plan: null, tickTimer: null,
-    menu: { categories: [] }, cat: null
+    menu: { categories: [] }, cat: null,
+    tehillim: null, chromeTimer: null
   };
 
   var $ = function (s) { return document.querySelector(s); };
@@ -406,6 +407,7 @@
       if (!live.length) return;
       var note = cat.items.length > 1 ? cat.items.length + ' סדרים' : null;
       list.appendChild(makeRow(categoryLabel(cat), note, null, function () {
+        if (cat.key === 'tehillim') { closeIndex(); openTehillim(); return; }
         if (live.length === 1 && cat.items.length === 1) {
           var e = tocByTitle(cat.items[0]);
           closeIndex(); openReader(e.pdfPage);
@@ -423,7 +425,8 @@
     var lbl = e.printedLabel ? gersh(e.printedLabel) : '';
     if (!e.pdfPage) return makeRow(e.title, e.note || 'חסר בסריקה', lbl, null);
     return makeRow(e.title, note, lbl, function () {
-      closeIndex(); openReader(e.pdfPage);
+      closeIndex();
+      if (e.section === 'tehillim') openTehillim(); else openReader(e.pdfPage);
     });
   }
 
@@ -450,11 +453,14 @@
     return state.loadingPdf;
   }
 
+  /** The page fills the whole screen; only the notch / home-bar insets are kept clear. */
   function stageSize() {
     var st = $('#page-stage');
+    if (!st) return { w: window.innerWidth, h: window.innerHeight };
+    var cs = getComputedStyle(st);
     return {
-      w: Math.max(120, (st ? st.clientWidth : window.innerWidth) - 8),
-      h: Math.max(120, (st ? st.clientHeight : window.innerHeight) - 8)
+      w: Math.max(120, st.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight)),
+      h: Math.max(120, st.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom))
     };
   }
 
@@ -495,7 +501,7 @@
     if (el) el.innerHTML = '<span class="heb">' + (lbl || '—') + '</span>' +
       '<span class="pos">' + pdfPage + '/' + PDF_PAGES + '</span>';
     var head = $('#running-head');
-    if (head) { var s = sectionFor(pdfPage); head.textContent = s ? s.title : ''; }
+    if (head) { var s = sectionFor(pdfPage); head.textContent = tehillimHead(pdfPage) || (s ? s.title : ''); }
     var fill = $('#progress-fill');
     if (fill) fill.style.width = ((pdfPage / PDF_PAGES) * 100).toFixed(2) + '%';
     var pv = $('#btn-prev'), nx = $('#btn-next');
@@ -540,18 +546,169 @@
   function nextPage() { if (state.pdfPage < PDF_PAGES) goTo(state.pdfPage + 1); }
   function prevPage() { if (state.pdfPage > 1) goTo(state.pdfPage - 1); }
 
+  /* Controls stay hidden so the page has the screen; a tap in the middle of
+     the page brings them up, and another tap (or turning the page) puts them
+     away. The edges of the page turn it, as before. */
+  function setChrome(on) {
+    clearTimeout(state.chromeTimer);
+    $('#view-reader').classList.toggle('chrome-on', on);
+  }
+  function toggleChrome() { setChrome(!$('#view-reader').classList.contains('chrome-on')); }
+
   function openReader(pdfPage) {
+    var wasOpen = !$('#view-reader').classList.contains('hidden');
     $('#view-reader').classList.remove('hidden');
     document.body.style.overflow = 'hidden';
+    if (!wasOpen) {
+      // show where you are for a moment, then get out of the way
+      setChrome(true);
+      state.chromeTimer = setTimeout(function () { setChrome(false); }, 1800);
+    }
     requestAnimationFrame(function () {
       requestAnimationFrame(function () { goTo(pdfPage || 14); });
     });
   }
   function closeReader() {
+    setChrome(false);
     $('#view-reader').classList.add('hidden');
     document.body.style.overflow = '';
     renderToday();
   }
+
+  /* ── tehillim: five books, 150 perakim ───────────── */
+
+  /** Perakim on a scanned page, as its running head names them. */
+  function perakimOn(pdfPage) {
+    var t = state.tehillim;
+    return (t && t.pages[String(pdfPage)]) || null;
+  }
+
+  /** PDF page on which a perek begins: the first page that names it. */
+  function perekPage(n) {
+    return state.tehillim ? state.tehillim.start[n] || null : null;
+  }
+
+  function bookOf(n) {
+    var books = state.tehillim ? state.tehillim.books : [];
+    for (var i = 0; i < books.length; i++) if (n >= books[i].from && n <= books[i].to) return books[i];
+    return null;
+  }
+
+  function perakimRange(list) {
+    var a = toHebNumeral(list[0]), b = toHebNumeral(list[list.length - 1]);
+    return list.length > 1 ? a + '–' + b : a;
+  }
+
+  /** e.g. "תהלים · ספר ראשון · א–ד" */
+  function tehillimHead(pdfPage) {
+    var list = perakimOn(pdfPage);
+    if (!list) return '';
+    var bk = bookOf(list[list.length - 1]);
+    return 'תהלים · ' + (bk ? bk.title + ' · ' : '') + perakimRange(list);
+  }
+
+  function prepTehillim(t) {
+    t.start = {};
+    Object.keys(t.pages).map(Number).sort(function (a, b) { return a - b; }).forEach(function (pg) {
+      t.pages[pg].forEach(function (n) { if (!t.start[n]) t.start[n] = pg; });
+    });
+    return t;
+  }
+
+  function renderTehillim() {
+    var t = state.tehillim;
+    var seg = $('#th-books'), list = $('#th-list');
+    seg.innerHTML = '';
+    list.innerHTML = '';
+    t.books.forEach(function (bk, i) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'seg';
+      b.textContent = 'ספר ' + gersh(toHebNumeral(i + 1));
+      b.onclick = function () { scrollToBook(i); };
+      seg.appendChild(b);
+
+      var sec = document.createElement('section');
+      sec.className = 'th-book';
+      sec.id = 'th-book-' + i;
+      var h = document.createElement('h3');
+      h.className = 'block-title';
+      h.textContent = bk.title;
+      var small = document.createElement('small');
+      small.textContent = 'פרקים ' + toHebNumeral(bk.from) + '–' + toHebNumeral(bk.to);
+      h.appendChild(small);
+      sec.appendChild(h);
+      var grid = document.createElement('div');
+      grid.className = 'th-grid';
+      for (var n = bk.from; n <= bk.to; n++) {
+        var pb = document.createElement('button');
+        pb.type = 'button';
+        pb.className = 'th-perek';
+        pb.dataset.perek = String(n);
+        pb.textContent = toHebNumeral(n);
+        pb.setAttribute('aria-label', 'פרק ' + toHebNumeral(n));
+        pb.onclick = (function (pg) {
+          return function () { closeTehillim(); openReader(pg); };
+        })(perekPage(n));
+        grid.appendChild(pb);
+      }
+      sec.appendChild(grid);
+      list.appendChild(sec);
+    });
+  }
+
+  function scrollToBook(i) {
+    var sc = $('#th-scroll'), sec = $('#th-book-' + i);
+    if (!sec) return;
+    sc.scrollTop += sec.getBoundingClientRect().top - sc.getBoundingClientRect().top;
+    markBook(i);
+  }
+
+  function markBook(i) {
+    $$('#th-books .seg').forEach(function (b, k) { b.classList.toggle('is-on', k === i); });
+  }
+
+  function onTehillimScroll() {
+    var sc = $('#th-scroll'), top = sc.getBoundingClientRect().top + 40, cur = 0;
+    var secs = $$('.th-book');
+    secs.forEach(function (sec, i) { if (sec.getBoundingClientRect().top <= top) cur = i; });
+    // the last, short book can never reach the top: at the bottom, it is the one you see
+    if (sc.scrollTop + sc.clientHeight >= sc.scrollHeight - 4) cur = secs.length - 1;
+    markBook(cur);
+  }
+
+  function lastPage() {
+    var n;
+    try { n = parseInt(localStorage.getItem(STORAGE_PAGE), 10); } catch (e) {}
+    return n || null;
+  }
+
+  function openTehillim() {
+    if (!state.tehillim) {                 // map not loaded: fall back to the start of the sefer
+      var pg = window.SiddurToday && window.SiddurToday.PAGES.tehillim;
+      if (pg) openReader(pg);
+      return;
+    }
+    if (!$('#th-list').children.length) renderTehillim();
+
+    // where you left off, if that was inside tehillim
+    var here = state.pdfPage && !$('#view-reader').classList.contains('hidden') ? state.pdfPage : lastPage();
+    var on = here ? perakimOn(here) : null;
+    $$('.th-perek').forEach(function (b) {
+      b.classList.toggle('is-here', !!on && on.indexOf(Number(b.dataset.perek)) !== -1);
+    });
+    var resume = $('#th-resume');
+    resume.classList.toggle('hidden', !on);
+    if (on) {
+      resume.textContent = 'המשך מפרק ' + perakimRange(on);
+      resume.onclick = function () { closeTehillim(); openReader(here); };
+    }
+
+    $('#sheet-tehillim').classList.remove('hidden');
+    if (on) scrollToBook(Math.max(0, state.tehillim.books.indexOf(bookOf(on[0]))));
+    else { $('#th-scroll').scrollTop = 0; markBook(0); }
+  }
+  function closeTehillim() { $('#sheet-tehillim').classList.add('hidden'); }
 
   /* ── goto ────────────────────────────────────────── */
 
@@ -640,15 +797,23 @@
       if (state.cat) { state.cat = null; renderMenu(); } else closeIndex();
     };
     $('#btn-back').onclick = closeReader;
-    $('#btn-goto').onclick = openGoto;
+    // inside tehillim the list button picks a perek instead of a folio
+    $('#btn-goto').onclick = function () { if (perakimOn(state.pdfPage)) openTehillim(); else openGoto(); };
     $('#btn-prev').onclick = prevPage;
     $('#btn-next').onclick = nextPage;
-    $('#tap-prev').onclick = function (e) { e.preventDefault(); prevPage(); };
-    $('#tap-next').onclick = function (e) { e.preventDefault(); nextPage(); };
+    $('#tap-prev').onclick = function (e) { e.preventDefault(); setChrome(false); prevPage(); };
+    $('#tap-next').onclick = function (e) { e.preventDefault(); setChrome(false); nextPage(); };
+    $('#tap-menu').onclick = function (e) { e.preventDefault(); toggleChrome(); };
+
+    $('#th-close').onclick = closeTehillim;
+    $('#th-scroll').addEventListener('scroll', onTehillimScroll, { passive: true });
+    $('#th-before').onclick = function () { closeTehillim(); openReader(state.tehillim.before); };
+    $('#th-after').onclick = function () { closeTehillim(); openReader(state.tehillim.after); };
 
     // resolved from the TOC, so these can never drift from the real pages
     $$('[data-key]').forEach(function (el) {
       el.onclick = function () {
+        if (el.dataset.key === 'tehillim') { openTehillim(); return; }
         var pg = window.SiddurToday && window.SiddurToday.PAGES[el.dataset.key];
         if (pg) openReader(pg);
       };
@@ -690,6 +855,10 @@
         if (e.key === 'Escape') $('#sheet-zmanim').classList.add('hidden');
         return;
       }
+      if (!$('#sheet-tehillim').classList.contains('hidden')) {
+        if (e.key === 'Escape') closeTehillim();
+        return;
+      }
       if (!$('#sheet-index').classList.contains('hidden')) {
         if (e.key === 'Escape') { if (state.cat) { state.cat = null; renderMenu(); } else closeIndex(); }
         return;
@@ -698,6 +867,7 @@
       // RTL book: left goes forward, right goes back.
       if (e.key === 'ArrowLeft' || e.key === ' ') { e.preventDefault(); nextPage(); }
       if (e.key === 'ArrowRight') { e.preventDefault(); prevPage(); }
+      if (e.key === 'Enter') { e.preventDefault(); toggleChrome(); }
       if (e.key === 'Escape') closeReader();
     });
 
@@ -713,6 +883,7 @@
       var dx = t.clientX - x0, dy = t.clientY - y0;
       if (Math.abs(dx) < 70 || Math.abs(dx) < Math.abs(dy) * 1.2) return;
       // Sweeping the page rightward turns it forward, as in a bound sefer.
+      setChrome(false);
       if (dx > 0) nextPage(); else prevPage();
     }, { passive: true });
 
@@ -773,6 +944,11 @@
       .then(function (m) { if (m) state.menu = m; })
       .catch(function () {});
 
+    fetch('./data/tehillim.json')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (t) { if (t) state.tehillim = prepTehillim(t); })
+      .catch(function () {});
+
     fetch('./data/toc.json')
       .then(function (r) { if (!r.ok) throw new Error('toc'); return r.json(); })
       .then(function (toc) {
@@ -789,7 +965,7 @@
       });
 
     setTimeout(function () { ensurePdf().catch(function () {}); }, 1000);
-    if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=10').catch(function () {});
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=13').catch(function () {});
   }
 
   document.addEventListener('DOMContentLoaded', init);

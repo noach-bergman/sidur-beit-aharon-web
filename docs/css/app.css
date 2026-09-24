@@ -260,16 +260,18 @@ button { font-family: inherit; }
 
 /* ─── READER ────────────────────────────────────────── */
 
+/* The page owns the whole screen. The bars float over it and stay out of
+   sight until you tap the middle of the page (see .chrome-on). */
 #view-reader {
   position: fixed;
   inset: 0;
   z-index: 20;
-  display: flex;
-  flex-direction: column;
-  background: #000;
+  background: #fff;
 }
 .rbar {
-  flex: none;
+  position: absolute;
+  inset-inline: 0;
+  z-index: 10;
   display: flex;
   align-items: center;
   gap: .3rem;
@@ -277,9 +279,13 @@ button { font-family: inherit; }
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   color: #ededf0;
+  transition: transform .22s cubic-bezier(.2,.7,.3,1), opacity .22s ease;
 }
-.rbar-top    { padding: calc(.4rem + var(--safe-top)) .4rem .4rem; }
-.rbar-bottom { position: relative; padding: .4rem .4rem calc(.4rem + var(--safe-bottom)); }
+.rbar-top    { top: 0;    padding: calc(.4rem + var(--safe-top)) .4rem .4rem; }
+.rbar-bottom { bottom: 0; padding: .4rem .4rem calc(.4rem + var(--safe-bottom)); }
+#view-reader:not(.chrome-on) .rbar { opacity: 0; pointer-events: none; }
+#view-reader:not(.chrome-on) .rbar-top    { transform: translateY(-100%); }
+#view-reader:not(.chrome-on) .rbar-bottom { transform: translateY(100%); }
 .rtitle {
   flex: 1; min-width: 0; margin: 0;
   text-align: center;
@@ -304,10 +310,11 @@ button { font-family: inherit; }
 .rpage .pos { color: #8d8d96; direction: ltr; unicode-bidi: isolate; margin-inline-start: .4rem; font-size: .8rem; }
 
 .page-stage {
-  position: relative; flex: 1; min-height: 0;
+  position: absolute; inset: 0;
   display: flex; align-items: center; justify-content: center;
+  padding: var(--safe-top) 0 var(--safe-bottom);
   overflow: hidden; touch-action: pan-y;
-  background: #000;
+  background: #fff;   /* the scan's own paper, so the page reads edge to edge */
 }
 .page-leaf {
   position: relative; z-index: 1;
@@ -322,7 +329,8 @@ button { font-family: inherit; }
   max-width: 100%; max-height: 100%;
   opacity: 0; visibility: hidden; pointer-events: none;
 }
-.tap-zone { position: absolute; top: 0; bottom: 0; width: 50%; border: 0; background: transparent; padding: 0; cursor: pointer; z-index: 8; }
+.tap-zone { position: absolute; top: 0; bottom: 0; width: 30%; border: 0; background: transparent; padding: 0; cursor: pointer; z-index: 8; }
+.tap-menu { left: 30%; right: 30%; width: auto; }
 /* A Hebrew sefer is bound on the RIGHT: you sweep the leaf rightward to go
    forward, so the next page comes from the LEFT and the previous from the
    right. This is the opposite of an English book — do not "fix" it. */
@@ -437,7 +445,6 @@ input[type="range"]::-moz-range-thumb {
 
 @media (min-width: 640px) {
   #view-today { padding-top: calc(3rem + var(--safe-top)); }
-  .page-stage { padding: 1rem; }
 }
 
 /* ─── menu & zmanim ─────────────────────────────────── */
@@ -450,3 +457,30 @@ input[type="range"]::-moz-range-thumb {
 }
 .scroller .fineprint { padding: 0 .2rem; }
 .scroller .rows .row-page { font-variant-numeric: tabular-nums; direction: ltr; unicode-bidi: isolate; }
+
+/* ─── tehillim ──────────────────────────────────────── */
+
+#th-books .seg { padding-inline: .1rem; }
+.th-extra { padding-top: .2rem; }
+.th-extra .chips { margin: 0 0 .2rem; }
+.th-resume { margin: 0 0 .6rem; background: var(--accent-bg); border-color: transparent; color: var(--accent); font-weight: 600; }
+.th-book { padding-top: 1.1rem; }
+.th-book .block-title { display: flex; justify-content: space-between; align-items: baseline; }
+.th-book .block-title small { font-size: .78rem; font-weight: 500; letter-spacing: 0; }
+.th-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(3.1rem, 1fr));
+  gap: .4rem;
+}
+.th-perek {
+  height: 2.9rem;
+  border: 1px solid var(--line);
+  border-radius: var(--r-s);
+  background: var(--card);
+  color: var(--ink);
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.th-perek:active { background: var(--bg-2); }
+.th-perek.is-here { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
