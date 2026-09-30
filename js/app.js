@@ -7,6 +7,7 @@
   var STORAGE_LOC = 'sidur-bav-location';
   var A2HS_KEY = 'sidur-bai-a2hs-used';
   var GEO_ASKED = 'sidur-bav-geo-asked';
+  var STORAGE_MARKS = 'sidur-bav-marks';
   var PDFJS_CDN = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/';
 
   var HEB_VALUES = {
@@ -30,7 +31,8 @@
     pendingPage: null, loadingPdf: null,
     location: null, plan: null, tickTimer: null,
     menu: { categories: [] }, cat: null,
-    tehillim: null, chromeTimer: null
+    tehillim: null, chromeTimer: null,
+    highlights: {}, marksOn: true
   };
 
   var $ = function (s) { return document.querySelector(s); };
@@ -190,7 +192,11 @@
     var p;
     try { p = window.SiddurToday.plan(new Date(), loc, state.location.il); }
     catch (e) { console.error(e); return; }
+    var prevRules = state.plan && JSON.stringify(state.plan.activeRules);
     state.plan = p;
+    // the day's marks change at sunset and dawn; repaint an open page
+    if (prevRules && prevRules !== JSON.stringify(p.activeRules) &&
+        !$('#view-reader').classList.contains('hidden')) renderPage(state.pdfPage);
 
     $('#t-dow').textContent = p.dayName;
     $('#t-hdate').textContent = p.hebrew;
@@ -476,8 +482,115 @@
       canvas.height = Math.floor(viewport.height);
       canvas.style.width = Math.floor(viewport.width / outputScale) + 'px';
       canvas.style.height = Math.floor(viewport.height / outputScale) + 'px';
-      return page.render({ canvasContext: ctx, viewport: viewport }).promise;
+      return page.render({ canvasContext: ctx, viewport: viewport }).promise.then(function () {
+        drawMarks(ctx, n, canvas.width, canvas.height, outputScale);
+      });
     });
+  }
+
+  /* ── day marks ───────────────────────────────────────
+     data/highlights.json lists passages whose recitation depends on the day,
+     each tied to a rule key from SiddurToday.activeRules(). The marks are
+     painted onto the page canvas itself, so they travel with page turns.
+       say    — said today: a soft gold wash, and a gold rule in the margin
+       strong — today's exact words among printed alternatives: deeper gold
+       skip   — not said today: the passage is faded back, with a grey rule */
+
+  function ruleHolds(rule, R) {
+    return rule.charAt(0) === '!' ? !R[rule.slice(1)] : !!R[rule];
+  }
+
+  function marksFor(pdfPage) {
+    var R = state.plan && state.plan.activeRules;
+    var list = state.highlights[pdfPage];
+    if (!R || !list || !state.marksOn) return [];
+    return list.filter(function (it) { return ruleHolds(it.rule, R); });
+  }
+
+  var MARK_ORDER = { skip: 0, say: 1, strong: 2 };
+
+  function drawMarks(ctx, pdfPage, W, H, dpr) {
+    var marks = marksFor(pdfPage).slice().sort(function (a, b) {
+      return MARK_ORDER[a.mode] - MARK_ORDER[b.mode];
+    });
+    var u = W / 520;              // one "point" at this render size
+    ctx.save();
+    marks.forEach(function (it) {
+      it.boxes.forEach(function (b) {
+        var x = b[0] * W, y = b[1] * H, w = b[2] * W, h = b[3] * H;
+        // a whole passage gets a rule in the outer (right) margin; a few
+        // words inside a line get a rounded wash and no rule
+        var passage = b[2] > 0.6;
+        if (it.mode === 'skip') {
+          ctx.globalCompositeOperation = 'source-over';
+          ctx.fillStyle = 'rgba(255,255,255,.62)';
+          if (passage) ctx.fillRect(x, y, w, h); else { roundRect(ctx, x, y, w, h, 2.5 * u); ctx.fill(); }
+          ctx.fillStyle = 'rgba(120,120,128,.55)';
+          if (passage) ctx.fillRect(x + w + 2.5 * u, y + u, 1.6 * u, h - 2 * u);
+        } else if (it.mode === 'say') {
+          ctx.globalCompositeOperation = 'multiply';
+          ctx.fillStyle = 'rgba(236,196,98,.30)';
+          if (passage) ctx.fillRect(x, y, w, h); else { roundRect(ctx, x, y, w, h, 2.5 * u); ctx.fill(); }
+          ctx.globalCompositeOperation = 'source-over';
+          ctx.fillStyle = 'rgba(184,134,30,.9)';
+          if (passage) ctx.fillRect(x + w + 2.5 * u, y + u, 2 * u, h - 2 * u);
+        } else {
+          ctx.globalCompositeOperation = 'multiply';
+          ctx.fillStyle = 'rgba(232,160,40,.42)';
+          roundRect(ctx, x, y, w, h, 2.5 * u);
+          ctx.fill();
+          ctx.globalCompositeOperation = 'source-over';
+          ctx.fillStyle = 'rgba(176,112,10,.95)';
+          ctx.fillRect(x + u, y + h - 1.1 * u, w - 2 * u, 1.1 * u);
+        }
+      });
+    });
+    ctx.restore();
+  }
+
+  function roundRect(ctx, x, y, w, h, r) {
+    r = Math.min(r, w / 2, h / 2);
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+
+  /** The small note under the page naming what is marked on it. */
+  function updateMarksNote(pdfPage) {
+    var el = $('#marks-note');
+    if (!el) return;
+    var R = state.plan && state.plan.activeRules;
+    var any = (state.highlights[pdfPage] || []).filter(function (it) { return R && ruleHolds(it.rule, R); });
+    if (!any.length) { el.classList.add('hidden'); return; }
+    el.classList.remove('hidden');
+    el.classList.toggle('off', !state.marksOn);
+    if (!state.marksOn) { el.innerHTML = '<span class="mk-dot"></span>הצגת הסימון לפי היום'; return; }
+    var say = [], skip = [];
+    any.forEach(function (it) {
+      var bucket = it.mode === 'skip' ? skip : say;
+      if (bucket.indexOf(it.label) < 0) bucket.push(it.label);
+    });
+    var html = '';
+    if (say.length) html += '<span class="mk-dot"></span><b>היום:</b> ' + esc(say.slice(0, 3).join(' · '));
+    if (skip.length) html += (html ? '<span class="mk-sep"></span>' : '') +
+      '<span class="mk-dot mk-skip"></span>' + esc(skip.slice(0, 2).join(' · '));
+    el.innerHTML = html;
+  }
+
+  function esc(t) {
+    return String(t).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+
+  function toggleMarks() {
+    state.marksOn = !state.marksOn;
+    try { localStorage.setItem(STORAGE_MARKS, state.marksOn ? 'on' : 'off'); } catch (e) {}
+    renderPage(state.pdfPage);
   }
 
   function copyCanvas(src, dst) {
@@ -516,6 +629,7 @@
     state.pdfPage = pdfPage;
     try { localStorage.setItem(STORAGE_PAGE, String(pdfPage)); } catch (e) {}
     updateLabel(pdfPage);
+    updateMarksNote(pdfPage);
 
     var front = $('#pdf-canvas'), back = $('#pdf-canvas-next'), loading = $('#reader-loading');
     var hasContent = front && front.width > 0;
@@ -804,6 +918,7 @@
     $('#tap-prev').onclick = function (e) { e.preventDefault(); setChrome(false); prevPage(); };
     $('#tap-next').onclick = function (e) { e.preventDefault(); setChrome(false); nextPage(); };
     $('#tap-menu').onclick = function (e) { e.preventDefault(); toggleChrome(); };
+    $('#marks-note').onclick = function (e) { e.preventDefault(); toggleMarks(); };
 
     $('#th-close').onclick = closeTehillim;
     $('#th-scroll').addEventListener('scroll', onTehillimScroll, { passive: true });
@@ -944,6 +1059,18 @@
       .then(function (m) { if (m) state.menu = m; })
       .catch(function () {});
 
+    try { state.marksOn = localStorage.getItem(STORAGE_MARKS) !== 'off'; } catch (e) {}
+    fetch('./data/highlights.json')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (h) {
+        if (!h) return;
+        var byPage = {};
+        (h.items || []).forEach(function (it) { (byPage[it.page] = byPage[it.page] || []).push(it); });
+        state.highlights = byPage;
+        if (!$('#view-reader').classList.contains('hidden')) renderPage(state.pdfPage);
+      })
+      .catch(function () {});
+
     fetch('./data/tehillim.json')
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (t) { if (t) state.tehillim = prepTehillim(t); })
@@ -965,7 +1092,7 @@
       });
 
     setTimeout(function () { ensurePdf().catch(function () {}); }, 1000);
-    if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=13').catch(function () {});
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=14').catch(function () {});
   }
 
   document.addEventListener('DOMContentLoaded', init);

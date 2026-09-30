@@ -341,6 +341,34 @@ button { font-family: inherit; }
 .spin { width: 1.2rem; height: 1.2rem; border: 2px solid rgba(255,255,255,.25); border-top-color: #fff; border-radius: 50%; animation: spin .8s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
+/* Day marks: a quiet note naming what is marked on this page. Tapping it
+   turns the marks off and on. It sits above the page, below the bars. */
+.marks-note {
+  position: absolute; z-index: 9;
+  left: 50%; bottom: calc(.7rem + var(--safe-bottom));
+  transform: translateX(-50%);
+  max-width: calc(100% - 2rem);
+  display: inline-flex; align-items: center; gap: .4rem;
+  padding: .38rem .8rem;
+  border: 0; border-radius: 999px;
+  background: rgba(28,24,16,.78);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: #f3ead6;
+  font: inherit; font-size: .78rem; line-height: 1.2;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  box-shadow: 0 2px 10px rgba(0,0,0,.18);
+  cursor: pointer;
+  transition: bottom .22s cubic-bezier(.2,.7,.3,1), opacity .2s ease;
+}
+.marks-note b { font-weight: 600; color: #f0cf7e; }
+.marks-note.off { opacity: .7; }
+.mk-dot { flex: none; width: .45rem; height: .45rem; border-radius: 50%; background: #d9a93a; }
+.mk-dot.mk-skip { background: #9a9aa3; }
+.marks-note.off .mk-dot { background: transparent; box-shadow: inset 0 0 0 1.5px #d9a93a; }
+.mk-sep { flex: none; width: 1px; height: .8rem; background: rgba(255,255,255,.25); }
+#view-reader.chrome-on .marks-note { bottom: calc(4rem + var(--safe-bottom)); }
+
 /* ─── FULL-SCREEN SHEET (index) ─────────────────────── */
 
 .fullsheet {
