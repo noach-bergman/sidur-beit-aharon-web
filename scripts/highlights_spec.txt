@@ -1,0 +1,204 @@
+# id|page|segments|mode|rule|label
+H3-akeida|10|17-31|skip|cholHamoed|חוה״מ: עד והארץ אזכור
+H3-akeida|11|1-4|skip|cholHamoed|חוה״מ: עד והארץ אזכור
+H3-vetechaper|17|8|skip|cholHamoed|חוה״מ: מדלגים ותכפר
+H2-ata-seter|19|15:0.43-0.87|skip|cholHamoed|חוה״מ: מדלגים אתה סתר
+H3-veata|20|12,13:0.30-0.91|skip|cholHamoed|חוה״מ: מדלגים ועתה בעונותינו
+E2-kaddish|23|9:0.10-0.25,10:0.83-0.91,20:0.65-0.79|say|aseret|עשי״ת
+H1-vehu-rachum|25|7t:0.10-0.54,7b,8:0.79-0.91|skip|cholHamoed|חוה״מ: אין אומרים והוא רחום
+H4-letoda|27|19-21|skip|noMizmorLetoda|אין אומרים מזמור לתודה
+H4-letoda|28|1-2|skip|noMizmorLetoda|אין אומרים מזמור לתודה
+H1-vehu-rachum|28|15:0.10-0.61,16:0.26-0.91|skip|cholHamoed|חוה״מ: אין אומרים והוא רחום
+E3-mimaamakim|36|1-6|say|aseret|עשי״ת: שיר המעלות ממעמקים
+E2-kaddish|36|12:0.14-0.45|say|aseret|עשי״ת
+E1-zachreinu|42|13|say|aseret|עשי״ת: זכרנו לחיים
+C1-geshem|42|18:0.37-0.85|say|winter|משיב הרוח ומוריד הגשם
+C1-tal|42|18:0.19-0.37|say|summer|מוריד הטל
+E1-mi-chamocha|43|1|say|aseret|עשי״ת: מי כמוך
+E1-hamelech|43|11:0.10-0.30,12|say|aseret|עשי״ת: המלך הקדוש
+F1-aneinu-shatz|44|1-7|say|fast|עננו (ש״ץ)
+C2-winter|44|13-17|say|talUmatar|ותן טל ומטר לברכה
+C2-summer|44|18-21|say|noTalUmatar|ברכנו — ותן ברכה
+E1-mishpat|45|3:0.10-0.30,6|say|aseret|עשי״ת: במשפט · המלך המשפט
+D1-yaaleh|47|3-12|say|yaaleh|יעלה ויבוא
+D1-yaaleh-rc|47|8:0.62-0.84,9:0.62-0.84|strong|roshChodesh|ראש החדש הזה
+D1-yaaleh-pesach|47|8:0.38-0.61,9:0.38-0.61|strong|cholHamoedPesach|חג המצות הזה
+D1-yaaleh-sukkot|47|8:0.12-0.36,9:0.12-0.36|strong|cholHamoedSukkot|חג הסכות הזה
+G1-al-hanisim|48|1-4|say|alHanisim|על הנסים
+G1-chanukah|48|5-20:0.46-0.91|say|chanukah|על הנסים — חנוכה
+G1-purim|48|5-20:0.09-0.46|say|purim|על הנסים — פורים
+E1-vechtov|48|23|say|aseret|עשי״ת: וכתוב לחיים
+E1-besefer|50|4-6|say|aseret|עשי״ת: בספר חיים
+E1-oseh|50|23:0.60-0.74|say|aseret|עשי״ת
+D4-rc-order|50|28-29|say|rcOrCholHamoed|סדר ר״ח וחוה״מ
+G2-chanukah-order|50|30-31|say|chanukah|סדר חנוכה
+B1-tachanun|51|8-30|skip|noTachanun|אין אומרים תחנון היום
+B1-tachanun|52|1-27|skip|noTachanun|אין אומרים תחנון היום
+B6-selichot|52|28-34|say|selichot|סליחות לבה״ב ושובבי״ם
+B6-selichot|52|28-34|skip|!selichot|אין אומרים סליחות היום
+B6-selichot|53|1-28|say|selichot|סליחות לבה״ב ושובבי״ם
+B6-selichot|53|1-28|skip|!selichot|אין אומרים סליחות היום
+B6-selichot|54|1-26|say|selichot|סליחות לבה״ב ושובבי״ם
+B6-selichot|54|1-26|skip|!selichot|אין אומרים סליחות היום
+B6-shovavim|54|27-28|say|shovavim|לשובבי״ם
+B6-selichot|55|1-4|say|selichot|סליחות לבה״ב ושובבי״ם
+B6-selichot|55|1-4|skip|!selichot|אין אומרים סליחות היום
+E4-avinu|55|5-30|say|avinuMalkeinu|אבינו מלכנו
+E4-avinu|55|5-30|skip|!avinuMalkeinu|אין אומרים אבינו מלכנו היום
+E4-chadesh|55|9:0.640-0.713|strong|aseret|חדש
+F2-barech|55|9:0.530-0.637|strong|avinuMalkeinuFast|ברך
+E4-kotvenu|55|25-29:0.537-0.709|strong|aseret|כתבנו בספר
+F2-zochreinu|55|25-29:0.405-0.535|strong|avinuMalkeinuFast|זכרנו ל
+E4-avinu|56|1-24|say|avinuMalkeinu|אבינו מלכנו
+E4-avinu|56|1-24|skip|!avinuMalkeinu|אין אומרים אבינו מלכנו היום
+A2-vehu-rachum|56|25-28|say|longTachanun|שני וחמישי: והוא רחום
+A2-vehu-rachum|57|all|say|longTachanun|שני וחמישי: והוא רחום
+A2-vehu-rachum|58|all|say|longTachanun|שני וחמישי: והוא רחום
+A2-vehu-rachum|59|all|say|longTachanun|שני וחמישי: והוא רחום
+A2-vehu-rachum|60|all|say|longTachanun|שני וחמישי: והוא רחום
+A2-vehu-rachum|56|25-28|skip|!longTachanun|והוא רחום — רק בשני וחמישי
+A2-vehu-rachum|57|all|skip|!longTachanun|והוא רחום — רק בשני וחמישי
+A2-vehu-rachum|58|all|skip|!longTachanun|והוא רחום — רק בשני וחמישי
+A2-vehu-rachum|59|all|skip|!longTachanun|והוא רחום — רק בשני וחמישי
+A2-vehu-rachum|60|all|skip|!longTachanun|והוא רחום — רק בשני וחמישי
+B1-tachanun|61|all|skip|noTachanun|אין אומרים תחנון היום
+E2-kaddish|62|6:0.33-0.62|say|aseret|עשי״ת
+A3-el-erech|62|8-15|say|elErechApayim|שני וחמישי: אל ארך אפים
+A3-el-erech|62|8-15|skip|noElErechApayim|אין אומרים אל ארך אפים
+A4-torah|62|16-18|say|torahReading|קריאת התורה
+C3-ledavid|62|19-31|say|leDavid|לדוד ה׳ אורי
+A4-torah|63|1-13|say|torahReading|קריאת התורה
+E5-shir|63|3,14-30|say|aseret|עשי״ת: שיר למעלות וי״ג מדות
+A4-torah|64|all|say|torahReading|קריאת התורה
+A4-torah|65|12-16|say|torahReading|קריאת התורה
+A5-yehi-ratzon|65|17-30|say|monThuTachanun|שני וחמישי: יהי רצון
+B3-lamnatzeach|66|17-25|skip|noLamnatzeach|אין אומרים למנצח היום
+E2-kaddish|68|9:0.14-0.46,16:0.66-0.80|say|aseret|עשי״ת
+A4-torah|68|18-32|say|torahReading|הכנסת ספר תורה
+B4-tefila-ledavid|69|3-18|skip|noTachanun|אין אומרים תפלה לדוד היום
+B5-beit-yaakov|69|19-30|skip|noElErechApayimDay|אין אומרים בית יעקב היום
+B5-beit-yaakov|70|1-2|skip|noElErechApayimDay|אין אומרים בית יעקב היום
+A1-shir-0|70|3-13|say|dow0|שיר של יום — ראשון
+A1-shir-1|70|14-31|say|dow1|שיר של יום — שני
+H1-vehu-rachum|67|8:0.10-0.80,9:0.51-0.91|skip|cholHamoed|חוה״מ: אין אומרים והוא רחום
+A1-shir-2|71|1-8|say|dow2|שיר של יום — שלישי
+A1-shir-3|71|9-28|say|dow3|שיר של יום — רביעי
+A1-shir-4|71|29-31|say|dow4|שיר של יום — חמישי
+A1-shir-4|72|1-11|say|dow4|שיר של יום — חמישי
+A1-shir-5|72|12-18|say|dow5|שיר של יום — ששי
+E2-kaddish|72|25:0.33-0.62,28:0.65-0.80|say|aseret|עשי״ת
+H2-ata-seter|73|27:0.09-0.36,28:0.53-0.91|skip|cholHamoed|חוה״מ: מדלגים אתה סתר
+E2-kaddish|74|14:0.29-0.53,23:0.65-0.80|say|aseret|עשי״ת
+E2-kaddish|75|22:0.33-0.62,25:0.65-0.80|say|aseret|עשי״ת
+I4-parnasa|78|2-7|skip|shabbat|בשבת אין אומרים התפלות על הפרנסה
+I4-parnasa|79|13-25|skip|shabbat|בשבת אין אומרים התפלות על הפרנסה
+I2-chol-psukim|81|2-6|skip|shabbatOrYomTov|פסוקים אלו אומרים רק בחול
+G1-al-hanisim|82|14-17|say|alHanisim|על הנסים
+G1-chanukah|82|18-26:0.44-0.91|say|chanukah|על הנסים — חנוכה
+G1-purim|82|18-26:0.09-0.44|say|purim|על הנסים — פורים
+G1-chanukah|83|1-6:0.44-0.91|say|chanukah|על הנסים — חנוכה
+G1-purim|83|1-6:0.09-0.44|say|purim|על הנסים — פורים
+I1-retzeh|83|20-24|say|shabbat|רצה והחליצנו
+D1-yaaleh|83|25-27|say|yaalehBentching|יעלה ויבוא
+D1-yaaleh|84|1-6|say|yaalehBentching|יעלה ויבוא
+D1-yaaleh-rc|84|2:0.71-0.91|strong|roshChodesh|ראש החדש הזה
+D1-yaaleh-pesach|84|2:0.45-0.70|strong|pesach|חג המצות הזה
+D1-yaaleh-shavuot|84|2:0.09-0.44|strong|shavuot|חג השבועות הזה
+D1-yaaleh-sukkot|84|3:0.68-0.91|strong|sukkot|חג הסכות הזה
+D1-yaaleh-shmini|84|3:0.33-0.67|strong|shminiAtzeret|שמיני עצרת החג הזה
+D1-yaaleh-rh|84|3:0.08-0.32|strong|roshHashana|הזכרון הזה
+I1-harachaman-shabbat|85|20|say|shabbat|הרחמן לשבת
+D2-harachaman-rc|85|21|say|roshChodesh|הרחמן לר״ח
+I3-harachaman-yt|85|22-24|say|yomTov|הרחמן ליו״ט
+I3-harachaman-rh|85|25|say|roshHashana|הרחמן לר״ה
+I3-harachaman-sukkot|86|1-2|say|sukkot|הרחמן לסוכות
+G3-harachaman-nisim|86|3-4|say|chanukahOrPurim|אם שכח על הנסים
+D3-magdil|86|5:0.113-0.250|strong|magdil|בחול: מגדיל
+D3-magdol|86|6:0.374-0.461|strong|magdol|מגדול
+I1-meein-shabbat|87|20|say|shabbat|מעין שלש: לשבת
+I3-meein-yt|87|21|say|yomTovOrCholHamoed|מעין שלש: ליו״ט וחוה״מ
+I3-meein-rh|87|22|say|roshHashana|מעין שלש: לר״ה
+D2-meein-rc|87|23|say|roshChodesh|מעין שלש: לר״ח
+C5-ilanot|89|17-20|say|nisan|ברכת האילנות — בחודש ניסן
+A10-ketoret|92|5:0.08-0.31,6-7|skip|erevShabbatOrYT|ער״ש: עד כדי שתהא עזה
+A9-ata-seter|92|11:0.44-0.91|skip|noAtaSeterMincha|מדלגים אתה סתר
+E2-kaddish|93|13:0.33-0.62|say|aseret|עשי״ת
+F3-fast-torah|93|15|say|fast|תענית ציבור: קריאת ויחל
+E1-zachreinu|93|22|say|aseret|עשי״ת: זכרנו לחיים
+C1-geshem|93|25:0.45-0.85|say|winter|משיב הרוח ומוריד הגשם
+C1-tal|93|25:0.18-0.45|say|summer|מוריד הטל
+E1-mi-chamocha|93|30|say|aseret|עשי״ת: מי כמוך
+E1-hamelech|94|8:0.28-0.56|say|aseret|עשי״ת: המלך הקדוש
+F1-aneinu-shatz|94|18-23|say|fast|עננו (ש״ץ)
+C2-winter|94|27-30|say|talUmatar|ותן טל ומטר לברכה
+C2-summer|95|1-4|say|noTalUmatar|ברכנו — ותן ברכה
+E1-mishpat|95|10:0.33-0.56,11:0.53-0.84|say|aseret|עשי״ת: במשפט · המלך המשפט
+F4-nachem|95|24-30|say|tishaBav|ט׳ באב: נחם
+F4-nachem|96|30-31|say|tishaBav|ט׳ באב: נחם
+F1-aneinu|96|7-12|say|fast|עננו
+D1-yaaleh|96|18-27|say|yaaleh|יעלה ויבוא
+D1-yaaleh-rc|96|23-24:0.62-0.91|strong|roshChodesh|ראש החדש הזה
+D1-yaaleh-pesach|96|23-24:0.36-0.61|strong|cholHamoedPesach|חג המצות הזה
+D1-yaaleh-sukkot|96|23-24:0.09-0.35|strong|cholHamoedSukkot|חג הסכות הזה
+G1-al-hanisim|97|6-8|say|alHanisim|על הנסים
+G1-chanukah|97|9-21:0.38-0.91|say|chanukah|על הנסים — חנוכה
+G1-purim|97|9-21:0.09-0.38|say|purim|על הנסים — פורים
+E1-vechtov|97|23|say|aseret|עשי״ת: וכתוב לחיים
+F3-birkat-kohanim|98|1-7|say|fast|תענית ציבור: ברכת כהנים לש״ץ
+E1-besefer|98|13-14|say|aseret|עשי״ת: בספר חיים
+E1-oseh|98|29:0.64-0.80|say|aseret|עשי״ת
+B2-tachanun-mincha|99|6-31|skip|noTachanunMincha|אין אומרים תחנון במנחה היום
+E4-avinu|99|32-34|say|avinuMalkeinuMincha|אבינו מלכנו
+E4-avinu|99|32-34|skip|!avinuMalkeinuMincha|אין אומרים אבינו מלכנו היום
+B2-tachanun-mincha|100|1-11|skip|noTachanunMincha|אין אומרים תחנון במנחה היום
+E4-avinu|100|12-34|say|avinuMalkeinuMincha|אבינו מלכנו
+E4-avinu|100|12-34|skip|!avinuMalkeinuMincha|אין אומרים אבינו מלכנו היום
+B2-tachanun-mincha|101|1-7|skip|noTachanunMincha|אין אומרים תחנון במנחה היום
+E2-kaddish|101|14:0.70-0.91,20:0.72-0.91|say|aseret|עשי״ת
+C3-ledavid|101|23-35|say|leDavid|לדוד ה׳ אורי
+E2-kaddish|102|24:0.33-0.60,27:0.66-0.80|say|aseret|עשי״ת
+A6-motzash-start|103|4-6,7:0.72-0.91|skip|motzaeiShabbatOrYT|מוצ״ש: מתחילין ה׳ הושיעה
+E2-kaddish|103|18:0.33-0.56|say|aseret|עשי״ת
+H1-vehu-rachum|103|21-22|skip|cholHamoed|חוה״מ: אין אומרים והוא רחום
+E2-kaddish|106|14:0.33-0.53|say|aseret|עשי״ת
+E1-zachreinu|106|21|say|aseret|עשי״ת: זכרנו לחיים
+C1-geshem|106|24:0.44-0.83|say|winter|משיב הרוח ומוריד הגשם
+C1-tal|106|24:0.18-0.44|say|summer|מוריד הטל
+E1-mi-chamocha|107|1|say|aseret|עשי״ת: מי כמוך
+E1-hamelech|107|4:0.30-0.57|say|aseret|עשי״ת: המלך הקדוש
+A7-ata-chonen|107|5|skip|motzaeiShabbatOrYT|במוצ״ש אומרים אתה חוננתנו
+A7-ata-chonantanu|107|6-10|say|motzaeiShabbatOrYT|אתה חוננתנו
+A7-vechonenu|107|11:0.72-0.91|strong|motzaeiShabbatOrYT|וחננו
+C2-winter|107|23-31:0.50-0.91|say|talUmatar|ותן טל ומטר לברכה
+C2-summer|107|23-31:0.09-0.50|say|noTalUmatar|ברכנו — ותן ברכה
+E1-mishpat|108|6:0.33-0.56,7:0.53-0.84|say|aseret|עשי״ת: במשפט · המלך המשפט
+D1-yaaleh|109|1-10|say|yaaleh|יעלה ויבוא
+D1-yaaleh-rc|109|6-7:0.62-0.91|strong|roshChodesh|ראש החדש הזה
+D1-yaaleh-pesach|109|6-7:0.36-0.61|strong|cholHamoedPesach|חג המצות הזה
+D1-yaaleh-sukkot|109|6-7:0.09-0.35|strong|cholHamoedSukkot|חג הסכות הזה
+G1-al-hanisim|109|19-21|say|alHanisim|על הנסים
+G1-chanukah|109|22-34:0.46-0.91|say|chanukah|על הנסים — חנוכה
+G1-purim|109|22-34:0.09-0.46|say|purim|על הנסים — פורים
+E1-vechtov|110|2|say|aseret|עשי״ת: וכתוב לחיים
+E1-besefer|110|11-12|say|aseret|עשי״ת: בספר חיים
+E1-oseh|110|26:0.66-0.80|say|aseret|עשי״ת
+A8-vihi-noam|110|31-32|say|vihiNoam|מוצ״ש: ויהי נועם ואתה קדוש
+E2-kaddish|111|7:0.33-0.56|say|aseret|עשי״ת
+A8-vihi-noam|111|9-34|say|vihiNoam|מוצ״ש: ויהי נועם ואתה קדוש
+E2-kaddish|112|4:0.66-0.80,19:0.64-0.91,22:0.66-0.80|say|aseret|עשי״ת
+A8-vihi-noam|112|25-34|say|vihiNoam|מוצ״ש: ויהי נועם ואתה קדוש
+H5-mizmor-pesach|113|14-19|say|cholHamoedPesach|חוה״מ פסח: בצאת ישראל
+H5-mizmor-sukkot|113|20-26|say|cholHamoedSukkot|חוה״מ סוכות: שיר המעלות לדוד
+H5-mizmor-chanukah|113|27-34|say|chanukah|חנוכה: מזמור שיר חנוכת הבית
+E2-kaddish|114|12:0.33-0.56,15:0.66-0.80|say|aseret|עשי״ת
+C4-omer|114|18-28|say|omer|ספירת העומר
+C4-omer|115|all|say|omer|ספירת העומר
+C4-omer|116|all|say|omer|ספירת העומר
+C4-omer|117|all|say|omer|ספירת העומר
+C4-omer|118|all|say|omer|ספירת העומר
+A4-torah|62|16-18|skip|!torahReading|אין קריאת התורה היום
+A4-torah|63|1-13|skip|!torahReading|אין קריאת התורה היום
+A4-torah|64|all|skip|!torahReading|אין קריאת התורה היום
+A4-torah|65|12-16|skip|!torahReading|אין קריאת התורה היום
+A4-torah|68|18-32|skip|!torahReading|אין קריאת התורה היום
+A5-yehi-ratzon|65|17-30|skip|!monThuTachanun|יהי רצון — רק בשני וחמישי

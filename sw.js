@@ -1,5 +1,5 @@
 /* Service worker — printed book reader */
-const CACHE = 'sidur-bav-book-v13';
+const CACHE = 'sidur-bav-book-v14';
 const PRECACHE = [
   './',
   './index.html',
@@ -11,6 +11,7 @@ const PRECACHE = [
   './data/toc.json',
   './data/menu.json',
   './data/tehillim.json',
+  './data/highlights.json',
   './icons/book.png',
   './icons/icon-192.png',
   './icons/icon-512.png',
@@ -71,6 +72,7 @@ self.addEventListener('fetch', (event) => {
         url.pathname.endsWith('.css') ||
         url.pathname.endsWith('/') ||
         url.pathname.endsWith('toc.json') ||
+        url.pathname.endsWith('highlights.json') ||
         url.pathname.endsWith('manifest.webmanifest')
       );
       if (isShell) {
