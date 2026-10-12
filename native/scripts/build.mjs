@@ -2,12 +2,16 @@ import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { build } from 'esbuild';
+import { createHash } from 'node:crypto';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const source = path.resolve(root, '../docs');
 const output = path.resolve(root, 'www');
 const native = root;
 const modules = path.join(native, 'node_modules');
+const cropManifest = JSON.parse(await readFile(path.join(native, 'resources/page-crops.json'), 'utf8'));
+const pdfHash = createHash('sha256').update(await readFile(path.join(source, 'siddur.pdf'))).digest('hex');
+if (pdfHash !== cropManifest.pdfSha256) throw new Error('PDF changed: regenerate and verify the display-only margin map.');
 await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
 for (const file of ['index.html', 'css', 'js', 'data', 'icons', 'siddur.pdf']) {
@@ -44,11 +48,16 @@ html = html.replace(/  <link[^>]+(?:fonts\.googleapis\.com|fonts\.gstatic\.com)[
   .replace('https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js', './vendor/pdfjs/pdf.min.js')
   .replace('<script src="./js/app.js?v=18"></script>', '<script src="./js/native.js"></script>\n<script src="./js/app.js?v=18"></script>');
 await writeFile(path.join(output, 'index.html'), html);
-// Adapt resource loading only in the generated native bundle; never edit the source reader.
+// Adapt only the generated native bundle; keep the source reader and PDF intact.
 let app = await readFile(path.join(output, 'js/app.js'), 'utf8');
 app = app.replace("'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/'", "'./vendor/pdfjs/'")
   .replace('url: PDF_URL, disableAutoFetch:', 'url: PDF_URL, isEvalSupported: false, disableAutoFetch:')
   .replace("if (!('serviceWorker' in navigator)) return;", "if (window.Capacitor && window.Capacitor.isNativePlatform()) return;\n    if (!('serviceWorker' in navigator)) return;");
+const paintHook = "      var ctx = canvas.getContext('2d', { alpha: false });";
+if (app.split(paintHook).length !== 2) throw new Error('Reader paint hook changed; review native integration.');
+app = app.replace(paintHook, "      if (window.SiddurNativeReader) return window.SiddurNativeReader.paint(page, canvas, n, stageSize(), drawMarks);\n" + paintHook)
+  .replace('        back.style.width = front.style.width || back.style.width;\n', '')
+  .replace('        back.style.height = front.style.height || back.style.height;\n', '');
 await writeFile(path.join(output, 'js/app.js'), app);
 await mkdir(path.join(output, 'licenses'), { recursive: true });
 for (const [pkg, name] of [['pdfjs-dist', 'PDFjs'], ['@fontsource/heebo', 'Heebo'], ['@fontsource/frank-ruhl-libre', 'FrankRuhlLibre']]) {
