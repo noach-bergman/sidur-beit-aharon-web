@@ -3,7 +3,6 @@
 .native-app { -webkit-user-select: none; user-select: none; }
 .native-app input { -webkit-user-select: text; user-select: text; }
 .native-app #btn-goto { display: none !important; }
-.native-app #native-reader-original { width: 3rem; font-size: 12px; }
 
 /* A visible glass rim and soft reflected light, without the earlier gold glow. */
 .native-app #view-today .now-card,

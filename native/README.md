@@ -109,3 +109,9 @@ No public App Store submission or release has been started.
 - The English/Hebrew guide now teaches this gesture with a vertically moving hand and demonstrates revealing the controls.
 - Fourteen tests passed, including upward/downward classification, retaining horizontal turns, cancellation, multi-touch and synthetic-click suppression. Browser fixture checks dispatched touch sequences through the production handlers: up and down both restored `chrome-on` while the page stayed at 14; a horizontal sequence moved to 15 exactly once. The guide demonstration also restored the controls. Actual finger behavior on a physical iPhone remains for TestFlight acceptance.
 - Archive 8 passed signature verification and matches the tested native bundle, menu and unchanged PDF. The temporary gesture-test buttons are absent from the release.
+
+## Build 9: one fitted reading view - October 12, 2026
+
+- Removed the “מקור”/“התאמה” toggle entirely. All pages now always use the audited fitted frame; there is no smaller original-margin mode. The scanned PDF itself remains unchanged.
+- Removed both size-toggle tutorial steps and their saved-state plumbing. The guide now has ten steps, retaining automatic phone language, stable language buttons, choosing prayers, center-tap hiding, vertical-swipe revealing, page turns, returning home, additions and location.
+- All fourteen tests and content checks passed. Browser verification confirmed no original-size button, the correct fitted canvas, and a complete guide through the finish screen. Archive 9 passed signature verification and matches the tested bundle and unchanged PDF byte for byte.

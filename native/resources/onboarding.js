@@ -18,8 +18,6 @@ const steps = [
   {id:'fullscreen',target:()=>$('#tap-menu'),title:words('Read without the controls','קוראים במסך מלא'),body:words('Tap the middle of the page to hide the header and buttons. The prayer stays in the same place.','נגיעה באמצע העמוד מסתירה את הכותרת והכפתורים. התפילה נשארת באותו מקום.'),action:true,region:'center',reader:true},
   {id:'turn',target:()=>$('#tap-next'),title:words('Turn a page','מעבירים עמוד'),body:words('Swipe right to go forward, or tap the left edge. Swipe left or tap the right edge to go back—like a Hebrew book.','להמשך, החליקו ימינה או געו בשוליים השמאליים. לחזרה, החליקו שמאלה או געו בשוליים הימניים — כמו בספר עברי.'),action:true,region:'turn',reader:true},
   {id:'controls',target:()=>$('#tap-menu'),title:words('Bring the controls back','מחזירים את הכפתורים'),body:words('Swipe up or down anywhere on the page to bring the controls back. A tap in the middle also works.','החליקו למעלה או למטה על העמוד כדי להחזיר את הכפתורים. אפשר גם לגעת באמצע.'),action:true,gesture:'vertical',region:'center',reader:true},
-  {id:'original',target:()=>$('#native-reader-original'),title:words('Choose the page size','בוחרים את תצוגת העמוד'),body:words('The fitted view makes the text larger by reducing blank margins. “מקור” shows the original page with its wider margins.','התצוגה המותאמת מגדילה את הכתב באמצעות צמצום השוליים הריקים. ״מקור״ מציג את העמוד עם השוליים המקוריים.'),action:true,reader:true,chrome:true},
-  {id:'fitted',target:()=>$('#native-reader-original'),title:words('Return to the larger view','חוזרים לתצוגה המוגדלת'),body:words('Tap “התאמה” to return to the fitted page. No words are changed in either view.','לחצו על ״התאמה״ כדי לחזור לעמוד המותאם למסך. המילים נשארות זהות בשתי התצוגות.'),action:true,reader:true},
   {id:'home',target:()=>$('#btn-back'),title:words('Back to the gate','חוזרים למסך הבית'),body:words('The close button returns you to the home screen.','כפתור הסגירה מחזיר למסך הבית.'),action:true,reader:true},
   {id:'today',target:()=>$('#native-day-button')?.getClientRects().length?$('#native-day-button'):$('#t-panel'),title:words('Today’s additions','התוספות של היום'),body:words('Daily additions and reminders appear here. On busy days, “היום ותזכורות” opens the full list. In the reader, tap a day-marking note to show or hide its highlights.','כאן מופיעות התוספות והתזכורות של היום. ביום עמוס, ״היום ותזכורות״ פותח את הרשימה המלאה. בקורא אפשר לגעת בהערת הסימון כדי להציג או להסתיר את ההדגשות.')},
   {id:'location',target:()=>$('#btn-location'),title:words('Set your city','בוחרים מיקום'),body:words('Your city helps determine prayer times and the Hebrew date. Tap here to choose it.','המיקום משמש לקביעת זמני התפילה והתאריך העברי. לחצו כאן כדי לבחור עיר.'),action:true},
@@ -79,7 +77,7 @@ export function installOnboarding() {
     if(!await ready(()=>hooks?.ready(),token)){
       if(active&&token===generation){busy=false;root.querySelector('.guide-copy').textContent=T().retry;root.querySelector('.guide-primary').disabled=false;root.querySelector('.guide-primary').textContent=T().start;}return;
     }
-    if(!saved)saved=hooks.snapshot();hooks.home();window.SiddurNativeReader.setOriginalMode(false);busy=false;await show(0);
+    if(!saved)saved=hooks.snapshot();hooks.home();busy=false;await show(0);
   }
   function rectangle(s) {
     const el=s.highlight?.()||s.target();if(!el)return null;

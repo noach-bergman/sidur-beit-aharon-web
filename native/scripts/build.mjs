@@ -94,11 +94,10 @@ replaceOnce('    watchForUpdates();', `    watchForUpdates();
       snapshot: function () {
         var bookmark = null;
         try { bookmark = localStorage.getItem(STORAGE_PAGE); } catch (e) {}
-        return { page: state.pdfPage, bookmark: bookmark, original: window.SiddurNativeReader.originalMode() };
+        return { page: state.pdfPage, bookmark: bookmark };
       },
       restore: function (saved) {
         state.pdfPage = saved.page;
-        window.SiddurNativeReader.setOriginalMode(saved.original);
         try {
           if (saved.bookmark === null) localStorage.removeItem(STORAGE_PAGE);
           else localStorage.setItem(STORAGE_PAGE, saved.bookmark);

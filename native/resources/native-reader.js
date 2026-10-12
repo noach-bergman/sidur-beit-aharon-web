@@ -3,31 +3,12 @@ import { installReaderGestures } from './reader-gestures.js';
 import { createPagePresenter } from './page-turn.js';
 
 export function installNativeReader() {
-  let original = false;
   let presenter;
-  const button = document.createElement('button');
-  button.type = 'button';
-  button.id = 'native-reader-original';
-  button.className = 'ibtn';
-  button.textContent = 'מקור';
-  button.setAttribute('aria-label', 'הצגת העמוד המקורי עם השוליים');
-  button.setAttribute('aria-pressed', 'false');
-  document.querySelector('#btn-goto').before(button);
-  button.addEventListener('click', () => {
-    original = !original;
-    button.textContent = original ? 'התאמה' : 'מקור';
-    button.setAttribute('aria-pressed', String(original));
-    button.setAttribute('aria-label', original ? 'התאמת העמוד למסך' : 'הצגת העמוד המקורי עם השוליים');
-    window.dispatchEvent(new Event('resize'));
-  });
-
   const revealControls = () => window.dispatchEvent(new Event('siddur-show-controls'));
   installReaderGestures(document.querySelector('#page-stage'), revealControls);
 
   window.SiddurNativeReader = {
     revealControls,
-    originalMode: () => original,
-    setOriginalMode(value) { if (original !== value) button.click(); },
     show(pageNumber, hooks) {
       if (!presenter) {
         const reader = document.querySelector('#view-reader');
@@ -53,7 +34,7 @@ export function installNativeReader() {
     },
     paint(page, canvas, pageNumber, size, drawMarks) {
       const base = page.getViewport({ scale: 1 });
-      const frame = original ? null : crops.pages[pageNumber];
+      const frame = crops.pages[pageNumber];
       const box = frame || { x: 0, y: 0, width: base.width, height: base.height };
       const scale = Math.min(size.w / box.width, size.h / box.height);
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
