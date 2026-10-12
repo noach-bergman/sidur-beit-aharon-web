@@ -1,7 +1,9 @@
 import crops from './page-crops.json';
+import { createPagePresenter } from './page-turn.js';
 
 export function installNativeReader() {
   let original = false;
+  let presenter;
   const button = document.createElement('button');
   button.type = 'button';
   button.id = 'native-reader-original';
@@ -18,7 +20,51 @@ export function installNativeReader() {
     window.dispatchEvent(new Event('resize'));
   });
 
+  // A swipe must not also generate a synthetic edge tap on iOS.
+  const stage = document.querySelector('#page-stage');
+  let touchStart = null, suppressClick = false;
+  stage.addEventListener('touchstart', event => {
+    suppressClick = false;
+    const t = event.touches[0];
+    touchStart = t ? [t.clientX, t.clientY] : null;
+  }, { capture: true, passive: true });
+  stage.addEventListener('touchend', event => {
+    const t = event.changedTouches[0];
+    if (!touchStart || !t) return;
+    const dx = t.clientX - touchStart[0], dy = t.clientY - touchStart[1];
+    suppressClick = Math.abs(dx) >= 70 && Math.abs(dx) >= Math.abs(dy) * 1.2;
+    touchStart = null;
+  }, { capture: true, passive: true });
+  stage.addEventListener('click', event => {
+    if (suppressClick) {
+      suppressClick = false; event.preventDefault(); event.stopImmediatePropagation();
+    }
+  }, true);
+
   window.SiddurNativeReader = {
+    show(pageNumber, hooks) {
+      if (!presenter) {
+        const reader = document.querySelector('#view-reader');
+        const loader = document.querySelector('#reader-loading');
+        presenter = createPagePresenter({
+          ...hooks,
+          front: document.querySelector('#pdf-canvas'),
+          back: document.querySelector('#pdf-canvas-next'),
+          visible: () => !reader.classList.contains('hidden'),
+          loading(on, error) {
+            if (error) loader.innerHTML = '<span style="color:#fff">שגיאה בטעינת הדף</span>';
+            else loader.innerHTML = '<span class="spin"></span>';
+            loader.classList.toggle('hidden', !on);
+          }
+        });
+      }
+      return presenter.request(pageNumber);
+    },
+    close() {
+      presenter?.close();
+      document.querySelector('#running-head').textContent = '';
+      document.querySelector('#page-label').textContent = '';
+    },
     paint(page, canvas, pageNumber, size, drawMarks) {
       const base = page.getViewport({ scale: 1 });
       const frame = original ? null : crops.pages[pageNumber];

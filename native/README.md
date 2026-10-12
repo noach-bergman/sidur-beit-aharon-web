@@ -1,6 +1,6 @@
 # iPhone app
 
-Isolated Capacitor iPhone package for the redesigned siddur. Bundle ID: `com.noachbergman.siddurbeitaharon`. Version 1.0.0, build 3. The website in `docs/` remains the source of the interface; native adaptations are generated into ignored `www/` and `ios/App/App/public/` directories.
+Isolated Capacitor iPhone package for the redesigned siddur. Bundle ID: `com.noachbergman.siddurbeitaharon`. Version 1.0.0, build 4. The website in `docs/` remains the source of the interface; native adaptations are generated into ignored `www/` and `ios/App/App/public/` directories.
 
 The printed PDF and all prayer/calendar data are copied byte for byte. PDF.js 3.11.174 and the Hebrew fonts are bundled locally. Only native resource paths, native geolocation, installed-app UI, and service-worker registration are adapted. GPS is optional; denied location falls back to the existing manual city selection. There is no background location tracking or app analytics.
 
@@ -11,13 +11,13 @@ cd native
 npm ci
 npm run sync
 node scripts/verify.mjs
-xcodebuild -project ios/App/App.xcodeproj -scheme App -configuration Release -destination 'generic/platform=iOS' -archivePath build/Siddur-3.xcarchive -derivedDataPath build/DerivedData -allowProvisioningUpdates archive
+xcodebuild -project ios/App/App.xcodeproj -scheme App -configuration Release -destination 'generic/platform=iOS' -archivePath build/Siddur-4-book.xcarchive -derivedDataPath build/DerivedData -allowProvisioningUpdates archive
 ```
 
 For TestFlight, create the matching app record in the owner's App Store Connect account, then upload with:
 
 ```sh
-xcodebuild -exportArchive -archivePath build/Siddur-3.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath build/upload-3 -allowProvisioningUpdates
+xcodebuild -exportArchive -archivePath build/Siddur-4-book.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath build/upload-4-book -allowProvisioningUpdates
 ```
 
 Increment the build number before subsequent uploads. An archive or successful upload does not itself mean Apple processing or internal TestFlight availability has completed; verify those in App Store Connect. No public App Store release is part of this workflow.
@@ -53,3 +53,14 @@ Build 2 sized each page from every detected scan mark and all highlight bounds. 
 - The measurement script audits every excluded pixel darker than 254. Outside the frame, only isolated scanner marks up to 8 pixels wide/high and 32 pixels in area are accepted, plus the visually inspected scan-edge streak on page 314. An unexpected larger component fails generation. The original PDF and all prayer/calendar/highlight data remain byte-identical. Highlight wash over blank paper is clipped to the reading frame; it no longer dictates the zoom.
 - Visual review covered contact sheets for all 315 final frames and full-size exceptions. The reported pages 16, 19 and 20, plus adjacent pages 15-21, were compared for alignment. In the iPhone simulator, pages 14-20 turn with stable framing and the original-margin toggle still works.
 - Content verification checks that all ordinary frames have identical dimensions and all fitted pages share one aspect ratio. The Simulator build passed. Physical-device acceptance remains for the testers.
+
+- Build 3 upload succeeded at 10:28 AM. A subsequent request for page animation is included in build 4 below.
+
+## Build 4: page movement and stable reader controls - October 12, 2026
+
+- A 520 ms cylindrical paper curl follows Hebrew reading direction. The scanned front bends into a shaded fold with a blank paper reverse; going backward lays the previous sheet back down. Only a temporary canvas leaf moves; the header and footer remain stationary. Reduce Motion disables page movement.
+- Controls no longer auto-hide on edge taps or swipes, or on a timer after opening. The center tap still shows/hides controls explicitly. The centered title has a fixed allocation, separate from the action buttons.
+- Labels, highlights note and saved reading position commit after the new page is painted and the movement finishes. Rendering is serialized, rapid requests retain the final destination, and closing cancels movement without allowing an old render to overwrite a reopened prayer. Swipes suppress their synthetic edge click to avoid double turns.
+- Eight focused tests passed: commit timing, rapid forward navigation, reversing during movement, close/reopen during paint, close during movement, render failure/recovery, same-page resize and reduced motion. Run `node --test tests/page-turn.test.mjs` from `native`.
+- A browser fixture using the production renderer paused the real paper curl at 260 ms. At 393×852 the header rectangle remained `[0, 0, 393, 54.3984375]` before, during and after the turn; the page label updated only after completion. Reverse turns and preserving hidden controls were checked. QA pause controls exist only in an ignored fixture, not the bundled app.
+- Simulator build passed. The dedicated iPhone simulator displayed pages 14 and 15 with the centered header retained after the page turn. Physical-device motion performance remains for the testers.

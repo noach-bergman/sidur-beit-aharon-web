@@ -58,6 +58,25 @@ if (app.split(paintHook).length !== 2) throw new Error('Reader paint hook change
 app = app.replace(paintHook, "      if (window.SiddurNativeReader) return window.SiddurNativeReader.paint(page, canvas, n, stageSize(), drawMarks);\n" + paintHook)
   .replace('        back.style.width = front.style.width || back.style.width;\n', '')
   .replace('        back.style.height = front.style.height || back.style.height;\n', '');
+// Native reader presentation hooks; original website source stays unchanged.
+function replaceOnce(before, after) {
+  if (app.split(before).length !== 2) throw new Error(`Native hook changed: ${before.slice(0, 70)}`);
+  app = app.replace(before, after);
+}
+replaceOnce('    pdfPage = clamp(pdfPage, 1, PDF_PAGES);', `    pdfPage = clamp(pdfPage, 1, PDF_PAGES);
+    if (window.SiddurNativeReader) return window.SiddurNativeReader.show(pdfPage, {
+      state: state, paint: paintPage, copy: copyCanvas,
+      commit: function (n) {
+        updateLabel(n); updateMarksNote(n);
+        try { localStorage.setItem(STORAGE_PAGE, String(n)); } catch (e) {}
+      }
+    });`);
+replaceOnce('  function closeReader() {', '  function closeReader() {\n    if (window.SiddurNativeReader) window.SiddurNativeReader.close();');
+replaceOnce('      state.chromeTimer = setTimeout(function () { setChrome(false); }, 1800);', '      // Native controls stay where the reader left them until the center is tapped.');
+replaceOnce('e.preventDefault(); setChrome(false); prevPage();', 'e.preventDefault(); prevPage();');
+replaceOnce('e.preventDefault(); setChrome(false); nextPage();', 'e.preventDefault(); nextPage();');
+replaceOnce('      setChrome(false);\n      if (dx > 0) nextPage(); else prevPage();', '      if (dx > 0) nextPage(); else prevPage();');
+replaceOnce('if (!e.touches || !e.touches.length || state.rendering) return;', 'if (!e.touches || !e.touches.length) return;');
 await writeFile(path.join(output, 'js/app.js'), app);
 await mkdir(path.join(output, 'licenses'), { recursive: true });
 for (const [pkg, name] of [['pdfjs-dist', 'PDFjs'], ['@fontsource/heebo', 'Heebo'], ['@fontsource/frank-ruhl-libre', 'FrankRuhlLibre']]) {

@@ -57,3 +57,13 @@ html.native-app, .native-app body {
 .native-app #native-day-sheet .native-day-close { min-height: 44px; padding: 0 14px; border: 0; border-radius: 12px; background: #eee7db; color: #392b1d; font: inherit; }
 .native-app #native-day-sheet .chip { cursor: default; }
 .native-app #native-day-sheet button:focus-visible { outline: 2px solid #80643c; outline-offset: 2px; }
+
+/* The bars are outside the page animation and fade only on explicit toggling. */
+.native-app #view-reader .rbar { transform: none; transition: opacity .16s ease; }
+.native-app #view-reader .rbar-top { min-height: calc(3.4rem + var(--safe-top)); }
+.native-app #view-reader .rbar-top .rtitle { position: absolute; inset-inline: 6.2rem; }
+.native-app #view-reader #btn-back { margin-inline-end: auto; }
+.native-app #view-reader .page-leaf { isolation: isolate; }
+@media (prefers-reduced-motion: reduce) {
+  .native-app #view-reader .rbar, .native-app #view-reader .progress > span { transition: none; }
+}
