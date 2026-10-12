@@ -1,5 +1,5 @@
 /* Service worker — printed book reader */
-const CACHE = 'sidur-bav-book-v16';
+const CACHE = 'sidur-bav-book-v17';
 const PRECACHE = [
   './',
   './index.html',
@@ -77,7 +77,9 @@ self.addEventListener('fetch', (event) => {
       );
       if (isShell) {
         try {
-          const res = await fetch(req);
+          // ask the server every time, never the browser's 10-minute copy,
+          // so a new version shows up on the next open
+          const res = await fetch(req, { cache: 'no-cache' });
           if (res && res.ok) cache.put(req, res.clone()).catch(() => {});
           return res;
         } catch (e) {

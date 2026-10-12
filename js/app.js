@@ -757,6 +757,7 @@
     $('#view-reader').classList.add('hidden');
     document.body.style.overflow = '';
     renderToday();
+    reloadIfIdle();
   }
 
   /* ── tehillim: five books, 150 perakim ───────────── */
@@ -1163,7 +1164,30 @@
       });
 
     setTimeout(function () { ensurePdf().catch(function () {}); }, 1000);
-    if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=14').catch(function () {});
+    watchForUpdates();
+  }
+
+  /* A new version takes over the moment it is installed. Then reload, so
+     you see it — but never in the middle of a page you are davening from:
+     wait until you are back on the home screen. */
+  var updateReady = false;
+  function reloadIfIdle() {
+    if (updateReady && $('#view-reader').classList.contains('hidden')) location.reload();
+  }
+  function watchForUpdates() {
+    if (!('serviceWorker' in navigator)) return;
+    var hadController = !!navigator.serviceWorker.controller;
+    navigator.serviceWorker.addEventListener('controllerchange', function () {
+      if (!hadController) { hadController = true; return; }   // first install, nothing old on screen
+      updateReady = true;
+      reloadIfIdle();
+    });
+    navigator.serviceWorker.register('./sw.js').then(function (reg) {
+      // an app on the home screen resumes instead of reopening: look for a new version then too
+      document.addEventListener('visibilitychange', function () {
+        if (!document.hidden) reg.update().catch(function () {});
+      });
+    }).catch(function () {});
   }
 
   document.addEventListener('DOMContentLoaded', init);
