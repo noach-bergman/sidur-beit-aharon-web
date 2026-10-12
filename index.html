@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#0f0f10" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#fde4cf" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#2b1f22" media="(prefers-color-scheme: dark)" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="סידור" />
   <title>סידור בית אהרן וישראל</title>
-  <link rel="manifest" href="./manifest.webmanifest?v=13" />
+  <link rel="manifest" href="./manifest.webmanifest?v=14" />
   <link rel="icon" href="./icons/book.png" />
   <link rel="apple-touch-icon" href="./icons/icon-192.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./css/app.css?v=13" />
+  <link rel="stylesheet" href="./css/app.css?v=14" />
 </head>
 <body>
 
@@ -36,11 +36,15 @@
 
   <section id="t-prayers">
     <button type="button" class="now-card" id="t-now">
-      <span class="now-label">עכשיו</span>
-      <span class="now-title" id="t-now-title">—</span>
-      <span class="now-page" id="t-now-page"></span>
+      <span class="ico-tile" id="t-now-ico" aria-hidden="true"></span>
+      <span class="now-text">
+        <span class="now-label">עכשיו</span>
+        <span class="now-title" id="t-now-title">—</span>
+        <span class="now-page" id="t-now-page"></span>
+      </span>
+      <span class="chev" aria-hidden="true"></span>
     </button>
-    <div class="chips" id="t-others"></div>
+    <div class="tiles" id="t-others"></div>
   </section>
 
   <section class="block hidden" id="t-special-block">
@@ -58,10 +62,10 @@
   </section>
 
   <nav class="quick">
-    <button type="button" class="quick-btn primary" id="btn-index">לבחירת תפילה</button>
-    <button type="button" class="quick-btn" data-key="birchatHamazon">ברכת המזון</button>
-    <button type="button" class="quick-btn" data-key="tehillim">תהלים</button>
-    <button type="button" class="quick-btn" id="btn-zmanim">זמני היום</button>
+    <button type="button" class="quick-btn primary" id="btn-index"><span class="ico-tile" data-ico="siddur" aria-hidden="true"></span>לבחירת תפילה</button>
+    <button type="button" class="quick-btn" data-key="birchatHamazon"><span class="ico-tile" data-ico="mazon" aria-hidden="true"></span>ברכת המזון</button>
+    <button type="button" class="quick-btn" data-key="tehillim"><span class="ico-tile" data-ico="tehillim" aria-hidden="true"></span>תהלים</button>
+    <button type="button" class="quick-btn" id="btn-zmanim"><span class="ico-tile" data-ico="clock" aria-hidden="true"></span>זמני היום</button>
   </nav>
 
   <footer class="foot">
@@ -119,8 +123,10 @@
   <div class="fs-controls">
     <input type="search" id="idx-search" class="search" placeholder="חיפוש…" autocomplete="off" aria-label="חיפוש" />
   </div>
-  <ul class="rows scroller" id="idx-list"></ul>
-  <p class="empty hidden" id="idx-empty">לא נמצא</p>
+  <div class="scroller" id="idx-scroll">
+    <div class="groups" id="idx-list"></div>
+    <p class="empty hidden" id="idx-empty">לא נמצא</p>
+  </div>
 </section>
 
 <!-- ══════════ TEHILLIM ══════════ -->
@@ -202,8 +208,8 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
-<script src="./js/vendor/hebcal.min.js?v=13"></script>
-<script src="./js/today.js?v=13"></script>
-<script src="./js/app.js?v=13"></script>
+<script src="./js/vendor/hebcal.min.js?v=14"></script>
+<script src="./js/today.js?v=14"></script>
+<script src="./js/app.js?v=14"></script>
 </body>
 </html>

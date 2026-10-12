@@ -39,6 +39,48 @@
   var $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
   function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
 
+  /* Line icons for the outer screens (home, index, sheets). Never used on
+     the printed pages themselves. 24×24, drawn with currentColor. */
+  var ICON_PATHS = {
+    sunrise:  '<path d="M3 18h18M6.5 18a5.5 5.5 0 0 1 11 0M12 6v3M5.6 10.6l1.8 1.4M18.4 10.6l-1.8 1.4M9.5 4.5 12 2l2.5 2.5"/>',
+    sun:      '<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/>',
+    sunset:   '<path d="M3 18h18M6.5 18a5.5 5.5 0 0 1 11 0M12 3v6M9.5 6.5 12 9l2.5-2.5M4 21h16"/>',
+    moon:     '<path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/>',
+    stars:    '<path d="M18 15A7 7 0 0 1 9 6a7 7 0 1 0 9 9z"/><path d="M17 3.5l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6zM20.5 9l.4.9.9.4-.9.4-.4.9-.4-.9-.9-.4.9-.4z"/>',
+    bed:      '<path d="M3 19V6M3 15h18v4M21 15v-3a3 3 0 0 0-3-3h-7v6M7 11.5a1.5 1.5 0 1 0 0-.01"/>',
+    siddur:   '<path d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5C17 4.5 14 5 12 6.5zM12 6.5v13"/>',
+    tehillim: '<path d="M5 4.5h11a3 3 0 0 1 3 3v12H8a3 3 0 0 1-3-3z"/><path d="M5 16.5a3 3 0 0 1 3-3h11M9 8h6"/>',
+    mazon:    '<path d="M4 13h16a8 8 0 0 1-16 0zM12 5v4M8.5 6.5 9.5 9M15.5 6.5 14.5 9"/>',
+    cup:      '<path d="M7 3.5h10l-1 7a4 4 0 0 1-8 0zM12 14.5v5M8.5 20.5h7"/>',
+    leaf:     '<path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14zM5 19l7-7"/>',
+    road:     '<path d="M9 3 6 21M15 3l3 18M12 4v2.5M12 10.5v3M12 17.5V20"/>',
+    omer:     '<path d="M12 21V9M12 9c0-3 2-5 4-6 0 3-2 5-4 6zM12 9c0-3-2-5-4-6 0 3 2 5 4 6zM12 14c1-2.5 3.5-4 6-4-.5 2.5-3 4-6 4zM12 14c-1-2.5-3.5-4-6-4 .5 2.5 3 4 6 4z"/>',
+    candle:   '<path d="M12 3c1.3 1.5 1.8 2.6 1.8 3.4a1.8 1.8 0 0 1-3.6 0c0-.8.5-1.9 1.8-3.4zM9.5 10.5h5V21h-5zM6 21h12"/>',
+    scroll:   '<path d="M6 4.5h10a2.5 2.5 0 0 1 0 5H8M6 4.5a2.5 2.5 0 0 0 0 5h2v10h10a2.5 2.5 0 0 0 0-5M18 14.5H8M11 12h4"/>',
+    hourglass:'<path d="M6.5 3h11M6.5 21h11M7.5 3c0 5 9 5 9 9s-9 4-9 9M16.5 3c0 5-9 5-9 9s9 4 9 9"/>',
+    shofar:   '<path d="M3.5 6.5c4 0 6 2 9 5.5s6.5 6 8 6l-1 2.5c-3 0-6-2.5-9-6S6 9 3 9z"/>',
+    heart:    '<path d="M12 20s-7.5-4.5-7.5-10A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 7.5 3c0 5.5-7.5 10-7.5 10z"/>',
+    feather:  '<path d="M20 4c-8 0-13 5-13 12v4M7 16h6M9.5 12.5h6.5M20 4c0 7-4 12-11 12"/>',
+    clock:    '<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',
+    spark:    '<path d="M12 3.5l1.8 5.2 5.2 1.8-5.2 1.8-1.8 5.2-1.8-5.2-5.2-1.8 5.2-1.8z"/><path d="M19 16.5l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6z"/>',
+    pin:      '<path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/>',
+    chev:     '<path d="M14.5 6 8.5 12l6 6"/>'
+  };
+  function icon(name) {
+    return '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" ' +
+      'stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+      (ICON_PATHS[name] || ICON_PATHS.spark) + '</svg>';
+  }
+  /** Each tefillah of the day has its own hour of light, and its own icon. */
+  var TEFILLAH_ICON = { shacharit: 'sunrise', mincha: 'sunset', maariv: 'moon', shemaBed: 'stars' };
+  /** Index categories (data/menu.json keys). */
+  var CATEGORY_ICON = {
+    hashkama: 'sunrise', shacharit: 'sun', mincha: 'sunset', maariv: 'moon', shema: 'stars',
+    mazon: 'mazon', achrona: 'cup', nehenin: 'leaf', derech: 'road', omer: 'omer',
+    levana: 'moon', chanuka: 'candle', purim: 'scroll', taanit: 'hourglass', yamim: 'shofar',
+    chayim: 'heart', tosafot: 'feather', tehillim: 'tehillim', minhagim: 'scroll'
+  };
+
   /* ── Hebrew numerals ─────────────────────────────── */
 
   /* The scan does NOT map linearly onto the printed folios: four printed pages
@@ -228,7 +270,9 @@
       prayers.classList.remove('hidden');
       var now = p.tefillot.filter(function (t) { return t.current; })[0];
       $('#t-now-title').textContent = now.title;
-      $('#t-now-page').textContent = 'עמוד ' + pageLabel(now.page);
+      $('#t-now-page').textContent = pageLabel(now.page);
+      $('#t-now-ico').innerHTML = icon(TEFILLAH_ICON[now.key]);
+      $('#t-now').dataset.tef = now.key;
       $('#t-now').onclick = function () { openReader(now.page); };
 
       var others = $('#t-others');
@@ -236,8 +280,13 @@
       p.tefillot.filter(function (t) { return !t.current; }).forEach(function (t) {
         var b = document.createElement('button');
         b.type = 'button';
-        b.className = 'chip';
-        b.textContent = t.title;
+        b.className = 'tile';
+        b.dataset.tef = t.key;
+        b.innerHTML = '<span class="ico-tile">' + icon(TEFILLAH_ICON[t.key]) + '</span>' +
+          '<span class="tile-title"></span><span class="tile-page"></span>' +
+          '<span class="chev">' + icon('chev') + '</span>';
+        b.querySelector('.tile-title').textContent = t.title;
+        b.querySelector('.tile-page').textContent = pageLabel(t.page);
         b.onclick = function () { openReader(t.page); };
         others.appendChild(b);
       });
@@ -252,32 +301,8 @@
     if (specials.length) {
       sBlock.classList.remove('hidden');
       specials.forEach(function (s) {
-        var li = document.createElement('li');
-        var el = document.createElement(s.page ? 'button' : 'div');
-        el.className = 'row' + (s.page ? '' : ' static');
-        if (s.page) el.type = 'button';
-        var main = document.createElement('span');
-        main.className = 'row-main';
-        var t = document.createElement('span');
-        t.className = 'row-title';
-        t.textContent = s.title;
-        main.appendChild(t);
-        if (s.note) {
-          var n = document.createElement('span');
-          n.className = 'row-note';
-          n.textContent = s.note;
-          main.appendChild(n);
-        }
-        el.appendChild(main);
-        if (s.page) {
-          var pg = document.createElement('span');
-          pg.className = 'row-page';
-          pg.textContent = pageLabel(s.page);
-          el.appendChild(pg);
-          el.onclick = function () { openReader(s.page); };
-        }
-        li.appendChild(el);
-        sList.appendChild(li);
+        sList.appendChild(makeRow(s.title, s.note, s.page ? pageLabel(s.page) : null,
+          s.page ? function () { openReader(s.page); } : null, 'spark'));
       });
     } else {
       sBlock.classList.add('hidden');
@@ -332,10 +357,16 @@
     return cat.title;
   }
 
-  function makeRow(title, note, pageLbl, onClick) {
+  function makeRow(title, note, pageLbl, onClick, ico) {
     var el = document.createElement(onClick ? 'button' : 'div');
     el.className = 'row' + (onClick ? '' : ' static');
     if (onClick) el.type = 'button';
+    if (ico) {
+      var tile = document.createElement('span');
+      tile.className = 'ico-tile';
+      tile.innerHTML = icon(ico);
+      el.appendChild(tile);
+    }
     var main = document.createElement('span');
     main.className = 'row-main';
     var t = document.createElement('span');
@@ -355,7 +386,13 @@
       pg.textContent = pageLbl;
       el.appendChild(pg);
     }
-    if (onClick) el.onclick = onClick;
+    if (onClick) {
+      var ch = document.createElement('span');
+      ch.className = 'chev';
+      ch.innerHTML = icon('chev');
+      el.appendChild(ch);
+      el.onclick = onClick;
+    }
     var li = document.createElement('li');
     li.appendChild(el);
     return li;
@@ -368,10 +405,33 @@
     $('#idx-back').setAttribute('aria-label', drilled ? 'חזרה' : 'סגירה');
   }
 
+  /* The top level is grouped the way you reach for it: the daily
+     tefillot first, then brachot, special days, and the rest. */
+  var MENU_GROUPS = [
+    { title: 'תפילות יומיות',  keys: ['hashkama', 'shacharit', 'mincha', 'maariv', 'shema'] },
+    { title: 'ברכות',          keys: ['mazon', 'achrona', 'nehenin', 'derech'] },
+    { title: 'זמנים מיוחדים',  keys: ['omer', 'levana', 'chanuka', 'purim', 'taanit', 'yamim'] },
+    { title: 'ועוד',           keys: null }                       // everything not named above
+  ];
+
+  /** A titled white card of rows; returns the list to fill. */
+  function addGroup(parent, title) {
+    if (title) {
+      var h = document.createElement('h3');
+      h.className = 'block-title';
+      h.textContent = title;
+      parent.appendChild(h);
+    }
+    var ul = document.createElement('ul');
+    ul.className = 'rows';
+    parent.appendChild(ul);
+    return ul;
+  }
+
   function renderMenu() {
-    var list = $('#idx-list');
+    var box = $('#idx-list');
     var title = $('#idx-title');
-    list.innerHTML = '';
+    box.innerHTML = '';
     $('#idx-empty').classList.add('hidden');
 
     var q = normalize(state.query).toLowerCase();
@@ -379,6 +439,7 @@
     if (q) {                                   // flat search across everything
       title.textContent = 'חיפוש';
       setHeaderMode(false);
+      var list = addGroup(box, null);
       var hits = 0;
       (state.menu.categories || []).forEach(function (cat) {
         cat.items.forEach(function (t) {
@@ -397,32 +458,41 @@
       var cat = state.cat;
       title.textContent = categoryLabel(cat);
       setHeaderMode(true);
+      var l2 = addGroup(box, null);
       cat.items.forEach(function (t) {
         var e = tocByTitle(t);
-        if (e) list.appendChild(rowForEntry(e, null));
+        if (e) l2.appendChild(rowForEntry(e, null));
       });
       return;
     }
 
     title.textContent = 'לבחירת תפילה';        // level 1
     setHeaderMode(false);
-    (state.menu.categories || []).forEach(function (cat) {
-      var live = cat.items.filter(function (t) {
-        var e = tocByTitle(t); return e && e.pdfPage;
+    var cats = state.menu.categories || [];
+    var named = {};
+    MENU_GROUPS.forEach(function (g) { (g.keys || []).forEach(function (k) { named[k] = true; }); });
+    MENU_GROUPS.forEach(function (g) {
+      var inGroup = cats.filter(function (c) { return g.keys ? g.keys.indexOf(c.key) !== -1 : !named[c.key]; });
+      var ul = null;
+      inGroup.forEach(function (cat) {
+        var live = cat.items.filter(function (t) {
+          var e = tocByTitle(t); return e && e.pdfPage;
+        });
+        if (!live.length) return;
+        if (!ul) ul = addGroup(box, g.title);
+        var note = cat.items.length > 1 ? cat.items.length + ' סדרים' : null;
+        ul.appendChild(makeRow(categoryLabel(cat), note, null, function () {
+          if (cat.key === 'tehillim') { closeIndex(); openTehillim(); return; }
+          if (live.length === 1 && cat.items.length === 1) {
+            var e = tocByTitle(cat.items[0]);
+            closeIndex(); openReader(e.pdfPage);
+            return;
+          }
+          state.cat = cat;
+          renderMenu();
+          $('#idx-scroll').scrollTop = 0;
+        }, CATEGORY_ICON[cat.key] || 'siddur'));
       });
-      if (!live.length) return;
-      var note = cat.items.length > 1 ? cat.items.length + ' סדרים' : null;
-      list.appendChild(makeRow(categoryLabel(cat), note, null, function () {
-        if (cat.key === 'tehillim') { closeIndex(); openTehillim(); return; }
-        if (live.length === 1 && cat.items.length === 1) {
-          var e = tocByTitle(cat.items[0]);
-          closeIndex(); openReader(e.pdfPage);
-          return;
-        }
-        state.cat = cat;
-        renderMenu();
-        $('#idx-list').scrollTop = 0;
-      }));
     });
   }
 
@@ -906,6 +976,7 @@
   /* ── wiring ──────────────────────────────────────── */
 
   function bind() {
+    $$('[data-ico]').forEach(function (el) { el.innerHTML = icon(el.dataset.ico); });
     $('#btn-index').onclick = openIndex;
     $('#idx-back').onclick = function () {
       if (state.cat) { state.cat = null; renderMenu(); } else closeIndex();
@@ -1088,7 +1159,7 @@
         renderToday();   // page links were unknown until now
       })
       .catch(function () {
-        $('#idx-list').innerHTML = '<li class="empty">לא ניתן לטעון את התוכן.</li>';
+        $('#idx-list').innerHTML = '<p class="empty">לא ניתן לטעון את התוכן.</p>';
       });
 
     setTimeout(function () { ensurePdf().catch(function () {}); }, 1000);
