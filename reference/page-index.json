@@ -1,5 +1,11 @@
 {
-  "generatedAt": "2026-10-12T16:33:52.663Z",
+  "originalTextSource": {
+    "sourceCommit": "c41659659e02e85e1775fe26da7ce1364721bcd2",
+    "expandedPages": 19,
+    "rawResources": 425,
+    "index": "original-text-index.json"
+  },
+  "generatedAt": "2026-10-12T16:45:27.643Z",
   "pdfSha256": "95b89872ec9853d8257b1c61c9e5b57947d8fff25ab34591e23be959c7666697",
   "pdfPageCount": 315,
   "sequences": [

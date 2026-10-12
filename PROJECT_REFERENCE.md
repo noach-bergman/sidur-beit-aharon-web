@@ -50,6 +50,24 @@ Start here when investigating a missing prayer, incorrect page, framing issue, o
 
 All PDF indexes below are **1-based**. The PDF has 315 scanned pages; numbering restarts in Tehillim and Minhagim. Exact sequence rules are generated below. Printed 81-84 are absent between PDF pages 79 and 80. Inserting pages shifts later PDF indexes and must update every affected lookup, highlight, Tehillim map, crop and page count; do not merely insert a PDF and leave the app indexes unchanged.
 
+## Recovered original text app - 2026-10-12
+
+The GitHub history contains an earlier app with separate prayer data and working button/menu definitions. It was replaced by the PDF reader in commit `2fdd7ac79b3e4e7be7ef3a2dda064b09813f1ec0` on 2026-09-20, before the isolated redesign. The latest original text version immediately before that change is `c41659659e02e85e1775fe26da7ce1364721bcd2`.
+
+**Check this recovered source before assuming a missing scan means the prayer text is unavailable.** There are 19 expanded page files and 425 underlying text resources. The current remote `main` still uses the PDF version; these files are recovered from its history.
+
+- Exact historical copies: [reference/original-text-app/](reference/original-text-app/).
+- Provenance and SHA-256 for every recovered file: [PROVENANCE.json](reference/original-text-app/PROVENANCE.json).
+- Original buttons: [data/menus.json](reference/original-text-app/data/menus.json), with seven first-menu actions and sixteen prayer choices.
+- Original per-prayer index: [data/pages-index.json](reference/original-text-app/data/pages-index.json).
+- ברית מילה: [s_brit.json](reference/original-text-app/data/pages/s_brit.json), 33 blocks including the ceremony, עלינו לשבח and ברכת המזון לברית מילה.
+- שבע ברכות: [s_shevaBrachot.json](reference/original-text-app/data/pages/s_shevaBrachot.json), 8 blocks including wedding-meal Birkat Hamazon and Sheva Brachot. Do not equate this with the missing printed ברכות אירוסין ונשואין page without checking the actual content.
+- Other original screens include אשר יצר, תפילה לעת רצון, לוח יארצייט, settings, help and zmanim.
+- Raw converted resources: [data/texts.json](reference/original-text-app/data/texts.json). Recover original include/conditional intent here rather than guessing from a flattened text page.
+- Old renderer and preferences: [js/app.js](reference/original-text-app/js/app.js). Historical conversion: [scripts/convert_texts.py](reference/original-text-app/scripts/convert_texts.py).
+
+These are text resources, not the missing printed scans. Recovered files remain outside the app bundle and are byte-identical to Git history. The old generated prayer files say `weekday-default`; their converter simplified calendar conditions. Some resources contain include markers, alternative versions and encoded Divine Names. Verify presentation and conditional expansion before using them in the current app. Searches for the exact missing headings גאולה לברית, פדיון הבן and ברכות אירוסין did not find them in this text collection; this is not proof that every related passage is absent.
+
 ## Known missing pages and source search - 2026-10-12
 
 Confirmed visually: PDF page 79 is printed פ (80), ending פרשת המן / תפלה על הפרנסה. The next scan, PDF page 80, is printed פה (85), containing the continuation of סדר פדיון הבן and סדר נטילת ידים לסעודה. Printed פא-פד (81-84) were absent in the original baseline, before any redesign or crop work.
@@ -104,7 +122,7 @@ The full crop audit uses 120-DPI grayscale renders of all pages; see `native/scr
 
 ## Generated lookup indexes
 
-Generated 2026-10-12T16:33:52.663Z. PDF SHA-256: `95b89872ec9853d8257b1c61c9e5b57947d8fff25ab34591e23be959c7666697`.
+Generated 2026-10-12T16:45:27.643Z. PDF SHA-256: `95b89872ec9853d8257b1c61c9e5b57947d8fff25ab34591e23be959c7666697`.
 
 315 PDF pages; 66 indexed prayer/section entries; 19 menu categories. Machine-readable detail: [reference/page-index.json](reference/page-index.json). Nearest indexed headings below are navigation inferences, not OCR or a verified title for each individual scanned page.
 
@@ -187,6 +205,32 @@ Generated 2026-10-12T16:33:52.663Z. PDF SHA-256: `95b89872ec9853d8257b1c61c9e5b5
 | ספר תהלים | ספר תהלים | tehillim | ב / 2 | 233 | Available |
 | מנהגים מרבותינו הקדושים מסטולין קרלין | מנהגים ודינים | minhagim | ב / 2 | 305 | Available |
 | דינים למי שטעה בתפלת שמו״ע | מנהגים ודינים | minhagim | יב / 12 | 315 | Available |
+
+### Original text app pages and buttons
+
+Recovered historical source, not currently included in the native bundle. Raw resource lookup: [reference/original-text-index.json](reference/original-text-index.json).
+
+| Original button / page | Resource | Expanded blocks | Exact file |
+| --- | --- | --- | --- |
+| השכמת הבוקר | s_ashkama | 29 | reference/original-text-app/data/pages/s_ashkama.json |
+| שחרית | s_shacharit | 94 | reference/original-text-app/data/pages/s_shacharit.json |
+| מנחה | s_mincha | 24 | reference/original-text-app/data/pages/s_mincha.json |
+| ערבית | s_arvit | 51 | reference/original-text-app/data/pages/s_arvit.json |
+| קריאת שמע שעל המיטה | s_mita | 12 | reference/original-text-app/data/pages/s_mita.json |
+| ברכת המזון | s_mazon | 4 | reference/original-text-app/data/pages/s_mazon.json |
+| מעין שלוש | s_shalosh | 19 | reference/original-text-app/data/pages/s_shalosh.json |
+| שבע ברכות | s_shevaBrachot | 8 | reference/original-text-app/data/pages/s_shevaBrachot.json |
+| סדר ברית מילה | s_brit | 33 | reference/original-text-app/data/pages/s_brit.json |
+| ברכות הנהנין | s_nefashot | 12 | reference/original-text-app/data/pages/s_nefashot.json |
+| אשר יצר | s_yatzar | 1 | reference/original-text-app/data/pages/s_yatzar.json |
+| תפילת הדרך | s_derech | 1 | reference/original-text-app/data/pages/s_derech.json |
+| תפילות והוספות | s_tfilot | 15 | reference/original-text-app/data/pages/s_tfilot.json |
+| קידוש לבנה | s_levana | 11 | reference/original-text-app/data/pages/s_levana.json |
+| ספירת העומר | s_omer | 7 | reference/original-text-app/data/pages/s_omer.json |
+| הדלקת נרות חנוכה ומזמורים | s_nerot | 8 | reference/original-text-app/data/pages/s_nerot.json |
+| עזרה | help | 33 | reference/original-text-app/data/pages/help.json |
+| תפילה לעת רצון | tzahal | 172 | reference/original-text-app/data/pages/tzahal.json |
+| לוח יארצייט | yortzait | 41 | reference/original-text-app/data/pages/yortzait.json |
 
 ### Every scanned page
 

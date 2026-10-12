@@ -1,0 +1,2284 @@
+{
+  "sourceCommit": "c41659659e02e85e1775fe26da7ce1364721bcd2",
+  "pages": [
+    {
+      "id": "1",
+      "title": "השכמת הבוקר",
+      "entry": "s_ashkama",
+      "chars": 25374,
+      "blocks": 29,
+      "file": "pages/s_ashkama.json"
+    },
+    {
+      "id": "2",
+      "title": "שחרית",
+      "entry": "s_shacharit",
+      "chars": 77970,
+      "blocks": 94,
+      "file": "pages/s_shacharit.json"
+    },
+    {
+      "id": "3",
+      "title": "מנחה",
+      "entry": "s_mincha",
+      "chars": 24366,
+      "blocks": 24,
+      "file": "pages/s_mincha.json"
+    },
+    {
+      "id": "4",
+      "title": "ערבית",
+      "entry": "s_arvit",
+      "chars": 43896,
+      "blocks": 51,
+      "file": "pages/s_arvit.json"
+    },
+    {
+      "id": "5",
+      "title": "קריאת שמע שעל המיטה",
+      "entry": "s_mita",
+      "chars": 9732,
+      "blocks": 12,
+      "file": "pages/s_mita.json"
+    },
+    {
+      "id": "6",
+      "title": "ברכת המזון",
+      "entry": "s_mazon",
+      "chars": 6174,
+      "blocks": 4,
+      "file": "pages/s_mazon.json"
+    },
+    {
+      "id": "7",
+      "title": "מעין שלוש",
+      "entry": "s_shalosh",
+      "chars": 1245,
+      "blocks": 19,
+      "file": "pages/s_shalosh.json"
+    },
+    {
+      "id": "8",
+      "title": "שבע ברכות",
+      "entry": "s_shevaBrachot",
+      "chars": 7096,
+      "blocks": 8,
+      "file": "pages/s_shevaBrachot.json"
+    },
+    {
+      "id": "9",
+      "title": "סדר ברית מילה",
+      "entry": "s_brit",
+      "chars": 12920,
+      "blocks": 33,
+      "file": "pages/s_brit.json"
+    },
+    {
+      "id": "10",
+      "title": "ברכות הנהנין",
+      "entry": "s_nefashot",
+      "chars": 901,
+      "blocks": 12,
+      "file": "pages/s_nefashot.json"
+    },
+    {
+      "id": "11",
+      "title": "אשר יצר",
+      "entry": "s_yatzar",
+      "chars": 360,
+      "blocks": 1,
+      "file": "pages/s_yatzar.json"
+    },
+    {
+      "id": "12",
+      "title": "תפילת הדרך",
+      "entry": "s_derech",
+      "chars": 647,
+      "blocks": 1,
+      "file": "pages/s_derech.json"
+    },
+    {
+      "id": "13",
+      "title": "תפילות והוספות",
+      "entry": "s_tfilot",
+      "chars": 14970,
+      "blocks": 15,
+      "file": "pages/s_tfilot.json"
+    },
+    {
+      "id": "14",
+      "title": "קידוש לבנה",
+      "entry": "s_levana",
+      "chars": 7284,
+      "blocks": 11,
+      "file": "pages/s_levana.json"
+    },
+    {
+      "id": "15a",
+      "title": "ספירת העומר",
+      "entry": "s_omer",
+      "chars": 2505,
+      "blocks": 7,
+      "file": "pages/s_omer.json"
+    },
+    {
+      "id": "15b",
+      "title": "הדלקת נרות חנוכה ומזמורים",
+      "entry": "s_nerot",
+      "chars": 2451,
+      "blocks": 8,
+      "file": "pages/s_nerot.json"
+    },
+    {
+      "id": "help",
+      "title": "עזרה",
+      "entry": "help",
+      "chars": 7889,
+      "blocks": 33,
+      "file": "pages/help.json"
+    },
+    {
+      "id": "tzahal",
+      "title": "תפילה לעת רצון",
+      "entry": "tzahal",
+      "chars": 56687,
+      "blocks": 172,
+      "file": "pages/tzahal.json"
+    },
+    {
+      "id": "yortzait",
+      "title": "לוח יארצייט",
+      "entry": "yortzait",
+      "chars": 11740,
+      "blocks": 41,
+      "file": "pages/yortzait.json"
+    }
+  ],
+  "resources": [
+    {
+      "key": "t__149",
+      "characters": 575,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_musaf",
+      "characters": 1605,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "em_mita",
+      "characters": 8,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "hallel11",
+      "characters": 120,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_hallel5",
+      "characters": 22,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_18_1sma",
+      "characters": 387,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t_122",
+      "characters": 567,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "ashrei1",
+      "characters": 553,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t__124",
+      "characters": 490,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_18_14m",
+      "characters": 258,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_kadishDerabanan",
+      "characters": 1035,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_zochrenu",
+      "characters": 113,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_18_4a",
+      "characters": 148,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_yaalePesach",
+      "characters": 50,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_slicotbahab",
+      "characters": 2757,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_mazon2",
+      "characters": 795,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_migdol",
+      "characters": 95,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t100",
+      "characters": 377,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_chonenu",
+      "characters": 47,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_mizmorSucot",
+      "characters": 27,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_havdala1",
+      "characters": 62,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_hallel",
+      "characters": 342,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t_42",
+      "characters": 1129,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_veataKadosh",
+      "characters": 2333,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_kadoshNormal",
+      "characters": 41,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "shovvim",
+      "characters": 616,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_halfKadish",
+      "characters": 507,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t_85",
+      "characters": 830,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "shirLamaalotmizmurim",
+      "characters": 435,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "hallel2",
+      "characters": 459,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_pasha",
+      "characters": 21,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "maozTzur",
+      "characters": 1353,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t__123",
+      "characters": 352,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_leelaAyt",
+      "characters": 125,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "testfile",
+      "characters": 8,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_nerot",
+      "characters": 9,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_derech",
+      "characters": 647,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "hallel3",
+      "characters": 663,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_18_18a",
+      "characters": 882,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_mazon",
+      "characters": 581,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "shiratHayam",
+      "characters": 1995,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "ana",
+      "characters": 48,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_18_10sma",
+      "characters": 194,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_jerusalemNormal",
+      "characters": 45,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_18_11sma",
+      "characters": 212,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_minchaTora",
+      "characters": 3830,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_shacharit",
+      "characters": 21571,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_harachamanHA",
+      "characters": 55,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_18_7sma",
+      "characters": 180,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "kipurkatan3",
+      "characters": 39,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_ashkama",
+      "characters": 11,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_kdushaHoshanaRaba",
+      "characters": 1336,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_mizmorPurim",
+      "characters": 26,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_slicotbahab2",
+      "characters": 23,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "kipurkatan2",
+      "characters": 16559,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_chonantanu",
+      "characters": 459,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_kerachem_av",
+      "characters": 279,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t_107",
+      "characters": 2562,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_kadoshAyt",
+      "characters": 50,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "hallel8",
+      "characters": 270,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t19",
+      "characters": 1153,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t123",
+      "characters": 397,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "hallel12",
+      "characters": 474,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t_84",
+      "characters": 1111,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_toraIn",
+      "characters": 1412,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "shirThu",
+      "characters": 1078,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_mizmorChanuka",
+      "characters": 26,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_mizmorim0",
+      "characters": 58,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_kadishShalemNoTitkabal",
+      "characters": 668,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "eicha",
+      "characters": 13011,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "hallel4",
+      "characters": 420,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_harachamanRH",
+      "characters": 81,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_kadishTitkabal",
+      "characters": 779,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "em_levana",
+      "characters": 10,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_yaale2",
+      "characters": 255,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "gotfunavram",
+      "characters": 989,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t112",
+      "characters": 702,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t51",
+      "characters": 1485,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "minchaHaftara",
+      "characters": 2002,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "aneimzmirot",
+      "characters": 2687,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_shalosh",
+      "characters": 1310,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_aleinu1",
+      "characters": 748,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_18_8sma_shatz",
+      "characters": 231,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "uvaLezion",
+      "characters": 67,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_minchaEnd18",
+      "characters": 1513,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "shirHamaalot",
+      "characters": 503,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t_123",
+      "characters": 567,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_mincha",
+      "characters": 10,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "musafPesach3",
+      "characters": 341,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_omer",
+      "characters": 8,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_yaaleRHB",
+      "characters": 51,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_slicotbahab1",
+      "characters": 42,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t_102",
+      "characters": 1798,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_vidui13midot",
+      "characters": 1417,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_musaf3r",
+      "characters": 2914,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "em_nerot",
+      "characters": 9,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_slichot_tevet",
+      "characters": 5387,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_arvitMizmor",
+      "characters": 122,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "lemantzion",
+      "characters": 208,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_tfilot",
+      "characters": 14970,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_harachamanSucot",
+      "characters": 172,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_shaloshPesach",
+      "characters": 50,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_akeda",
+      "characters": 1123,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "em_omer",
+      "characters": 8,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_18_4sm",
+      "characters": 109,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_mazon4",
+      "characters": 547,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "mizmorim",
+      "characters": 5,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "shirTue",
+      "characters": 522,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_slicotbahab3",
+      "characters": 23,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "yortzait",
+      "characters": 11740,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "musafSucot3",
+      "characters": 4,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_18_17sma",
+      "characters": 414,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "hallel1",
+      "characters": 483,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_toraOut",
+      "characters": 2614,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "apayim",
+      "characters": 757,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_levana",
+      "characters": 10,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_musafKdushaHoshanaRaba",
+      "characters": 1255,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "em_arvit",
+      "characters": 9,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t99",
+      "characters": 762,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "shirSun",
+      "characters": 714,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_jerusalemTB",
+      "characters": 830,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_18_6sma",
+      "characters": 161,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t_98",
+      "characters": 640,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "hashemMalach",
+      "characters": 379,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "em_mincha",
+      "characters": 10,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t144",
+      "characters": 1234,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_18_14sa",
+      "characters": 245,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "em_tfilot",
+      "characters": 10,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_18_15sma",
+      "characters": 195,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "em_ashkama",
+      "characters": 11,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_winterWind",
+      "characters": 47,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_kdusha",
+      "characters": 471,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_18_3sma",
+      "characters": 119,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "kolbruey1",
+      "characters": 1219,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_ashkama",
+      "characters": 16624,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_lawAyt",
+      "characters": 78,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t_134",
+      "characters": 200,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_shirTue",
+      "characters": 103,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "hallel7",
+      "characters": 127,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_hallel2",
+      "characters": 118,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "help",
+      "characters": 7889,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "oseShalomNormal",
+      "characters": 100,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "tishaaBeavHaftara",
+      "characters": 5048,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_mazon",
+      "characters": 9,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "em_nefashot",
+      "characters": 12,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "hoshienu",
+      "characters": 442,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "hoshanaraba",
+      "characters": 1071,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t_30",
+      "characters": 840,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t94",
+      "characters": 1492,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "em_brit",
+      "characters": 8,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "haleluyahs3",
+      "characters": 890,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t133",
+      "characters": 323,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "minchaRead",
+      "characters": 2097,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "adonOlam",
+      "characters": 568,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_omer",
+      "characters": 1556,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_18_16m",
+      "characters": 355,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t119_1",
+      "characters": 5845,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "toda",
+      "characters": 344,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "shirWed",
+      "characters": 1542,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "shma2",
+      "characters": 1090,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t_31",
+      "characters": 840,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_mita",
+      "characters": 6451,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t47",
+      "characters": 692,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "hllelagadol",
+      "characters": 1416,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_slichot_end_tachanun",
+      "characters": 4194,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "avelKorach",
+      "characters": 1369,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_yaale2B",
+      "characters": 248,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "shirShelYom",
+      "characters": 136,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "shehecheyanu",
+      "characters": 108,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t_43",
+      "characters": 516,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_miChamocha",
+      "characters": 72,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "vaaniZot",
+      "characters": 204,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "ashrei3SH",
+      "characters": 462,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t96",
+      "characters": 1002,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_18_2sma",
+      "characters": 481,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "ana6",
+      "characters": 66,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "tzahal",
+      "characters": 3009,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_mizmorim4",
+      "characters": 2086,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "kipurkatan1",
+      "characters": 3583,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_18_13sma",
+      "characters": 377,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_mincha",
+      "characters": 1214,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_yaaleRH",
+      "characters": 50,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t122",
+      "characters": 622,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "adirbimlucha",
+      "characters": 1329,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t149",
+      "characters": 641,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t119",
+      "characters": 47,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t95",
+      "characters": 796,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "korbanotRH",
+      "characters": 672,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "zmirot",
+      "characters": 189,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_tfilin",
+      "characters": 4514,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t_86",
+      "characters": 1287,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "hallel5",
+      "characters": 622,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_simShalom",
+      "characters": 382,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "em_yatzar",
+      "characters": 10,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "haleluyahs1",
+      "characters": 700,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "betYaakov",
+      "characters": 1141,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_seter",
+      "characters": 71,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "ana1",
+      "characters": 66,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_mazon5",
+      "characters": 628,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t97",
+      "characters": 888,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "ana4",
+      "characters": 68,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "odechol",
+      "characters": 161,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_shirSun",
+      "characters": 101,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_shaloshSucot",
+      "characters": 50,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_veataKadosh",
+      "characters": 2301,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_toraMiddle",
+      "characters": 176,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_aleinu2",
+      "characters": 770,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t72",
+      "characters": 1475,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_brit",
+      "characters": 8,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_shalosh",
+      "characters": 11,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_mizmorim5",
+      "characters": 1385,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "avorcho",
+      "characters": 357,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_mazon1",
+      "characters": 503,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t102",
+      "characters": 1921,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "lamnatzeach",
+      "characters": 665,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_hoshanot1",
+      "characters": 1014,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_vaanenu",
+      "characters": 943,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_yatzar",
+      "characters": 360,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "ashrei2",
+      "characters": 492,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_hallel13",
+      "characters": 367,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_musafPesach1",
+      "characters": 39,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_18_5sma",
+      "characters": 167,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_nefashot",
+      "characters": 901,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_lawNormal",
+      "characters": 93,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "em_mazon",
+      "characters": 9,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_shirMon",
+      "characters": 112,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_hoshanaRabaHoshanotStart",
+      "characters": 4438,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "em_shacharit",
+      "characters": 13,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_yatzar",
+      "characters": 10,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_slichot_end",
+      "characters": 4571,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_mazon6",
+      "characters": 845,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_doctor",
+      "characters": 264,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_mazon3",
+      "characters": 775,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "em_shalosh",
+      "characters": 11,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "ashrei",
+      "characters": 29,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_shirShelYom",
+      "characters": 196,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_nefashot",
+      "characters": 12,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "purim1",
+      "characters": 14,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "motzaeishabat",
+      "characters": 25179,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t119_2",
+      "characters": 4949,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_musafPesach2",
+      "characters": 21,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_arvit1",
+      "characters": 1078,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_kave",
+      "characters": 3211,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t98",
+      "characters": 711,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "haleluyahs2",
+      "characters": 1237,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "kohanim",
+      "characters": 34,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t_79",
+      "characters": 1138,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "oseShalomAyt",
+      "characters": 109,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "haleluyahs",
+      "characters": 88,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t92",
+      "characters": 1070,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_kipur",
+      "characters": 5521,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "hallel10",
+      "characters": 418,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "tishaaBeavTfilinMessage",
+      "characters": 147,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_nisimHanuka",
+      "characters": 1056,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "ticanto",
+      "characters": 863,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t__33",
+      "characters": 1303,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_mizmorim2+3",
+      "characters": 146,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_mazon8",
+      "characters": 172,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_brit",
+      "characters": 5921,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_shacharitTachanun",
+      "characters": 1761,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "ashreiSH",
+      "characters": 31,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "vihiNoam",
+      "characters": 1163,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_korbanot2",
+      "characters": 117,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_hoshanot5",
+      "characters": 1056,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "kolbruey",
+      "characters": 134,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_yaale1",
+      "characters": 393,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_end18",
+      "characters": 1490,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_elErechApayim",
+      "characters": 379,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_derech",
+      "characters": 10,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_hoshanot6",
+      "characters": 1118,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_magdil",
+      "characters": 141,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_yaaleSucotB",
+      "characters": 51,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_musafSucot1",
+      "characters": 41,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "tzahal1",
+      "characters": 94,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "akeda",
+      "characters": 2511,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_musaf",
+      "characters": 1394,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_toraayt",
+      "characters": 1405,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_mazon7",
+      "characters": 201,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_musafSucot2",
+      "characters": 21,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_18_9sma",
+      "characters": 60,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_18_19musabf",
+      "characters": 496,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_winterBracha",
+      "characters": 334,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "haleluyahs5",
+      "characters": 389,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_hallel6",
+      "characters": 25,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "chazantoraout",
+      "characters": 391,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t136",
+      "characters": 1561,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "ana2",
+      "characters": 66,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_18_8sma",
+      "characters": 250,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_18_12sma",
+      "characters": 313,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_anenuYachid",
+      "characters": 518,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "13_midot",
+      "characters": 378,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_tfilot",
+      "characters": 10,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "hallel9",
+      "characters": 843,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "shma",
+      "characters": 25,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_minchaTishaaBeav",
+      "characters": 80,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_mazon9",
+      "characters": 454,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "haleluyahs6",
+      "characters": 262,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t16",
+      "characters": 851,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "ashrei3",
+      "characters": 448,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_18_16sa",
+      "characters": 332,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "besamim",
+      "characters": 131,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_shirThu",
+      "characters": 102,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "akeda2",
+      "characters": 1509,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t91",
+      "characters": 1056,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t_83",
+      "characters": 1111,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_arvit",
+      "characters": 9,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t103",
+      "characters": 1508,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t101",
+      "characters": 711,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_mizmorim1",
+      "characters": 124,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t_87",
+      "characters": 1287,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "shirFri",
+      "characters": 367,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_arvit",
+      "characters": 3848,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_leelaNormal",
+      "characters": 110,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_shirFri",
+      "characters": 101,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_hoshanaRabaHoshanotEnding",
+      "characters": 1243,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_avinuMalkenu",
+      "characters": 2677,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_zimun",
+      "characters": 558,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t21",
+      "characters": 980,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_musafKdusha",
+      "characters": 293,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t93",
+      "characters": 415,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_musafRH",
+      "characters": 1708,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_shabbat",
+      "characters": 11318,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "veurachum",
+      "characters": 101,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t_108",
+      "characters": 2562,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_slichot_tammuz",
+      "characters": 5546,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_shaloshRH",
+      "characters": 57,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "shma3",
+      "characters": 580,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "alacol",
+      "characters": 892,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_hoshanaRabaHoshanotMiddle",
+      "characters": 13118,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t111",
+      "characters": 688,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_talit",
+      "characters": 1658,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_yaaleSucot",
+      "characters": 50,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_hoshanaRabaHoshanotmessege",
+      "characters": 65,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_aleinu",
+      "characters": 41,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "lamnatzeachBinginot",
+      "characters": 504,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_toraYehiRatzon",
+      "characters": 1048,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_tachanunMonThu",
+      "characters": 6684,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_hallel4",
+      "characters": 23,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_18_18sm",
+      "characters": 1357,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_uchtov",
+      "characters": 54,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t107",
+      "characters": 2742,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_minchaTachanun",
+      "characters": 3229,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_slichot_ester",
+      "characters": 6467,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_musafRH",
+      "characters": 1707,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_besefer",
+      "characters": 218,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_tfilin1",
+      "characters": 227,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "kadishnigun",
+      "characters": 19,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_avinuMalkenu",
+      "characters": 2790,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_havdala",
+      "characters": 993,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_18_19sm",
+      "characters": 515,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "mazonrh",
+      "characters": 361,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_mizmorim2",
+      "characters": 126,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "shirMon",
+      "characters": 963,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_korbanot3",
+      "characters": 159,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "todayAna",
+      "characters": 65,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "shirLamaalot",
+      "characters": 451,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_hoshanot4",
+      "characters": 1023,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "kohanim1",
+      "characters": 1332,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "avelMichtam",
+      "characters": 819,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "kohanim2",
+      "characters": 352,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t90",
+      "characters": 1292,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t33",
+      "characters": 1430,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_nisimPurim",
+      "characters": 649,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_chonantanu",
+      "characters": 450,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "chazantoraouthr",
+      "characters": 533,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "ana3",
+      "characters": 66,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t104",
+      "characters": 2492,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_mizmorPesach",
+      "characters": 27,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "britPsukimEI",
+      "characters": 354,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_nerot",
+      "characters": 1327,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_mita",
+      "characters": 8,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t_22",
+      "characters": 2181,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t124",
+      "characters": 552,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_summerBracha",
+      "characters": 290,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_hoshanot2",
+      "characters": 987,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_hoshanot3",
+      "characters": 1091,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "hallel6",
+      "characters": 459,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_mizmorim3",
+      "characters": 136,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t_135",
+      "characters": 200,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_besefer",
+      "characters": 168,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_noam",
+      "characters": 50,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "ana7",
+      "characters": 76,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_korbanot",
+      "characters": 10975,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_korbanotminha",
+      "characters": 4094,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "fire",
+      "characters": 98,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "mazonShirHamaalot",
+      "characters": 0,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_shacharitTachanun2",
+      "characters": 1446,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "kabalatshabat",
+      "characters": 15371,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_l_melech",
+      "characters": 484,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_kadishDerabanansh",
+      "characters": 1032,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "barchu",
+      "characters": 99,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_toraIn1",
+      "characters": 16,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "kolbruey3",
+      "characters": 214,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_kadishYatom",
+      "characters": 655,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "ester",
+      "characters": 26456,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_levana",
+      "characters": 4985,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "musafTfilinMessage",
+      "characters": 28,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_shevaBrachot",
+      "characters": 16,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "hoshanarabakadish",
+      "characters": 795,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_shevaBrachot",
+      "characters": 2372,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "ana5",
+      "characters": 58,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_shirWed",
+      "characters": 101,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_baruchHashem",
+      "characters": 1897,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "haleluyahs4",
+      "characters": 580,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_yaalePesachB",
+      "characters": 51,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "em_derech",
+      "characters": 10,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_summerTal",
+      "characters": 25,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "lulav",
+      "characters": 1174,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_hoshanot",
+      "characters": 1837,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "shma1",
+      "characters": 515,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "tishaaBeavTzorkiMessage",
+      "characters": 123,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "t_23",
+      "characters": 2181,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_hallel3",
+      "characters": 56,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_mizmorim6",
+      "characters": 5074,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "shovvim1",
+      "characters": 43,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "a_shacharit",
+      "characters": 13,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "s_anenuChazan",
+      "characters": 568,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "em_shevaBrachot",
+      "characters": 16,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "ledavid",
+      "characters": 1229,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "kolbruey2",
+      "characters": 1565,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "specials/a_kipur",
+      "characters": 5526,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "specials/eicha",
+      "characters": 13011,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "specials/a_ester",
+      "characters": 2750,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "specials/s_kipur",
+      "characters": 5521,
+      "file": "original-text-app/data/texts.json"
+    },
+    {
+      "key": "specials/ester",
+      "characters": 26456,
+      "file": "original-text-app/data/texts.json"
+    }
+  ]
+}

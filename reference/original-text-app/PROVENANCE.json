@@ -1,0 +1,153 @@
+{
+  "repository": "https://github.com/noach-bergman/sidur-beit-aharon-web",
+  "sourceCommit": "c41659659e02e85e1775fe26da7ce1364721bcd2",
+  "removedByCommit": "2fdd7ac79b3e4e7be7ef3a2dda064b09813f1ec0",
+  "purpose": "Historical source recovered byte-for-byte for investigation; not bundled into the current app.",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "2f6c4755ed7eaaa92de1f080951d031628b59e0b23c71fa9cd0f5756ad1848d3",
+      "bytes": 4235
+    },
+    {
+      "path": "css/app.css",
+      "sha256": "35c91c4c516022fea39eb26a945ff8f5aceb8dec7c2735f622af70d2f3a98dd7",
+      "bytes": 8413
+    },
+    {
+      "path": "data/cities.json",
+      "sha256": "534ade5b62f979727cf029e25ca31e4fbdb3ddab7fe1b6eebf0a480a6db5adeb",
+      "bytes": 40424
+    },
+    {
+      "path": "data/menus.json",
+      "sha256": "31d76327f8a10d2df4a5706369cac21c80bd74bdbae4ef61b6526a4a6b3b4c7e",
+      "bytes": 2673
+    },
+    {
+      "path": "data/pages-index.json",
+      "sha256": "bc17a15f2422916d69f9f9ed9ec7c57060e996ca08946560eb49de830e5f8d58",
+      "bytes": 3010
+    },
+    {
+      "path": "data/pages/help.json",
+      "sha256": "b157ceaa6254be355d476b76d6515d184dba0bf5fc3ff1450999a06a652796ad",
+      "bytes": 28907
+    },
+    {
+      "path": "data/pages/s_arvit.json",
+      "sha256": "7aaa63f6654bbde36336dcb1a3f632551bdfe016781e139cf42b6ceec9f94af8",
+      "bytes": 163744
+    },
+    {
+      "path": "data/pages/s_ashkama.json",
+      "sha256": "99b21a62fa7de0bfa7702fc8ddf25cc8c10e094aee8f6f20e9fd57f07867e11e",
+      "bytes": 94989
+    },
+    {
+      "path": "data/pages/s_brit.json",
+      "sha256": "e8916f8db1ee046d2545b8b3c9049b8f1d5b09c8d4e1dc1239f8d10b74cb565e",
+      "bytes": 48511
+    },
+    {
+      "path": "data/pages/s_derech.json",
+      "sha256": "efe88aa8c379e861898c91645ae95f93ac7e63a65710aacb4d1217d912ea5385",
+      "bytes": 2555
+    },
+    {
+      "path": "data/pages/s_levana.json",
+      "sha256": "74b7671b304546152d67ec844d83ab75bca2bed968a510c15adaf3969355690f",
+      "bytes": 27374
+    },
+    {
+      "path": "data/pages/s_mazon.json",
+      "sha256": "6220b6111c159cb855cd5b8371f647c717334ce0be42604508b503ba7a71b02f",
+      "bytes": 23019
+    },
+    {
+      "path": "data/pages/s_mincha.json",
+      "sha256": "64c2fc8ae94f7b715802c151ad76ceef63d0730295a2cab9799b8eb26ffa3f5f",
+      "bytes": 90971
+    },
+    {
+      "path": "data/pages/s_mita.json",
+      "sha256": "c72ae9adb69cf95122a2447a65efc9139f2619cbb82894c778acae65cb003eb8",
+      "bytes": 36420
+    },
+    {
+      "path": "data/pages/s_nefashot.json",
+      "sha256": "8b84757d76b75b984278f3fa3422117860a6ce47ff62e3b756b4aa30ec456f74",
+      "bytes": 3581
+    },
+    {
+      "path": "data/pages/s_nerot.json",
+      "sha256": "88d1f09a6eeedede324de564c6e5ded1e3da70a75b265fce161081fbbae447dd",
+      "bytes": 9367
+    },
+    {
+      "path": "data/pages/s_omer.json",
+      "sha256": "7166ee3beba592b8f9dc3b33197874a8fff8b381f745a6aab9d69d91d6aa28fc",
+      "bytes": 9578
+    },
+    {
+      "path": "data/pages/s_shacharit.json",
+      "sha256": "f7085d3eb0ee392ec6d90f5f8ca23b7219e12a435be8ac4ecadbc6cc2294bc61",
+      "bytes": 291063
+    },
+    {
+      "path": "data/pages/s_shalosh.json",
+      "sha256": "d584fb1b71d5040da8dc5f11f47a9ef39f3c2f0a3133c6e11391f14c7cab3b42",
+      "bytes": 5057
+    },
+    {
+      "path": "data/pages/s_shevaBrachot.json",
+      "sha256": "cbd09bb5ec9d2a2edf1d6395615309f7cd4ab3e0789b9a146e15374f5e250c6d",
+      "bytes": 26538
+    },
+    {
+      "path": "data/pages/s_tfilot.json",
+      "sha256": "96e05d82b0b40d8aace7ae6710fd6320fa14a185a4fa4bc6628db9f82971ef8e",
+      "bytes": 56137
+    },
+    {
+      "path": "data/pages/s_yatzar.json",
+      "sha256": "b5864bd9ebe2dcf4fa96c11baa4af0d98f91c80a618280fcb56d63e23c32acff",
+      "bytes": 1451
+    },
+    {
+      "path": "data/pages/tzahal.json",
+      "sha256": "6398582a6c6f598740df79b44f9f3b324fb8d773fc00a465d8399c285f2e4bf3",
+      "bytes": 211428
+    },
+    {
+      "path": "data/pages/yortzait.json",
+      "sha256": "ed55855314bca9ece4cfda75e852043800b4713d4059e368dbe3ffbd66101631",
+      "bytes": 41582
+    },
+    {
+      "path": "data/texts.json",
+      "sha256": "83e9130fd31143d43fa6f26b1404cd3e5aa9df3e9d28499001ed611d7bc2beed",
+      "bytes": 1103530
+    },
+    {
+      "path": "index.html",
+      "sha256": "0d6431c1754113ad3b9d4fcdaee3afe812610c6feb7456bcf86eb202ab9f8062",
+      "bytes": 5904
+    },
+    {
+      "path": "js/app.js",
+      "sha256": "541c546cd90db496bfac47244df773796efdb1bb120d147e1d2728019b8720d8",
+      "bytes": 14569
+    },
+    {
+      "path": "js/zmanim.js",
+      "sha256": "b8574addd2ac3367bd0650e15f4fb7920dc2ccf3f88b8150ab6612288ecc9cb7",
+      "bytes": 7739
+    },
+    {
+      "path": "scripts/convert_texts.py",
+      "sha256": "22ea43e298493329188e27f6007998a417fdf46d62ac1058346cccd52564102a",
+      "bytes": 12475
+    }
+  ]
+}
