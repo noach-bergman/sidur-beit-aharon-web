@@ -1,0 +1,7854 @@
+{
+  "generatedAt": "2026-10-12T16:33:52.663Z",
+  "pdfSha256": "95b89872ec9853d8257b1c61c9e5b57947d8fff25ab34591e23be959c7666697",
+  "pdfPageCount": 315,
+  "sequences": [
+    {
+      "section": "main",
+      "pdfFrom": 3,
+      "pdfTo": 79,
+      "offset": 1
+    },
+    {
+      "section": "main",
+      "pdfFrom": 80,
+      "pdfTo": 230,
+      "offset": 5
+    },
+    {
+      "section": "tehillim",
+      "pdfFrom": 233,
+      "pdfTo": 302,
+      "offset": -231
+    },
+    {
+      "section": "minhagim",
+      "pdfFrom": 305,
+      "pdfTo": 315,
+      "offset": -303
+    }
+  ],
+  "missingPrintedPages": [
+    81,
+    82,
+    83,
+    84
+  ],
+  "prayers": [
+    {
+      "title": "סדר אלף בית",
+      "group": "daily",
+      "section": "main",
+      "pdfPage": 2,
+      "printed": 3,
+      "printedLabel": "ג",
+      "note": "עמוד ג׳ — באותו עמוד של התוכן והמפתח",
+      "menuCategories": [
+        "השכמת הבוקר"
+      ]
+    },
+    {
+      "title": "סדר השכמת הבוקר",
+      "group": "daily",
+      "section": "main",
+      "printed": 4,
+      "printedLabel": "ד",
+      "pdfPage": 3,
+      "menuCategories": [
+        "השכמת הבוקר"
+      ]
+    },
+    {
+      "title": "ברכות השחר",
+      "group": "daily",
+      "section": "main",
+      "printed": 5,
+      "printedLabel": "ה",
+      "pdfPage": 4,
+      "menuCategories": [
+        "השכמת הבוקר"
+      ]
+    },
+    {
+      "title": "אני מאמין",
+      "group": "daily",
+      "section": "main",
+      "printed": 8,
+      "printedLabel": "ח",
+      "pdfPage": 7,
+      "menuCategories": [
+        "השכמת הבוקר"
+      ]
+    },
+    {
+      "title": "פסוקים שאומרים עם הפעוטים",
+      "group": "daily",
+      "section": "main",
+      "printed": 12,
+      "printedLabel": "יב",
+      "pdfPage": 11,
+      "menuCategories": [
+        "השכמת הבוקר"
+      ]
+    },
+    {
+      "title": "סדר לבישת טלית גדול",
+      "group": "daily",
+      "section": "main",
+      "printed": 13,
+      "printedLabel": "יג",
+      "pdfPage": 12,
+      "menuCategories": [
+        "השכמת הבוקר"
+      ]
+    },
+    {
+      "title": "סדר הנחת תפילין",
+      "group": "daily",
+      "section": "main",
+      "printed": 14,
+      "printedLabel": "יד",
+      "pdfPage": 13,
+      "menuCategories": [
+        "השכמת הבוקר"
+      ]
+    },
+    {
+      "title": "תפלת שחרית",
+      "group": "daily",
+      "section": "main",
+      "printed": 15,
+      "printedLabel": "טו",
+      "pdfPage": 14,
+      "menuCategories": [
+        "שחרית"
+      ]
+    },
+    {
+      "title": "סליחות לבה״ב ושובבי״ם",
+      "group": "daily",
+      "section": "main",
+      "printed": 53,
+      "printedLabel": "נג",
+      "pdfPage": 52,
+      "menuCategories": [
+        "צומות וסליחות"
+      ]
+    },
+    {
+      "title": "ברכת הגומל",
+      "group": "daily",
+      "section": "main",
+      "printed": 66,
+      "printedLabel": "סו",
+      "pdfPage": 65,
+      "menuCategories": [
+        "שחרית"
+      ]
+    },
+    {
+      "title": "שש זכירות",
+      "group": "daily",
+      "section": "main",
+      "printed": 77,
+      "printedLabel": "עז",
+      "pdfPage": 76,
+      "menuCategories": [
+        "שחרית"
+      ]
+    },
+    {
+      "title": "פרשת היראה",
+      "group": "daily",
+      "section": "main",
+      "printed": 77,
+      "printedLabel": "עז",
+      "pdfPage": 76,
+      "menuCategories": [
+        "שחרית"
+      ]
+    },
+    {
+      "title": "פרשת התשובה",
+      "group": "daily",
+      "section": "main",
+      "printed": 78,
+      "printedLabel": "עח",
+      "pdfPage": 77,
+      "menuCategories": [
+        "שחרית"
+      ]
+    },
+    {
+      "title": "פרשת המן",
+      "group": "daily",
+      "section": "main",
+      "printed": 79,
+      "printedLabel": "עט",
+      "pdfPage": 78,
+      "menuCategories": [
+        "שחרית"
+      ]
+    },
+    {
+      "title": "ברכות אירוסין ונשואין",
+      "group": "daily",
+      "section": "main",
+      "printed": 81,
+      "printedLabel": "פא",
+      "pdfPage": null,
+      "note": "העמוד חסר בסריקה",
+      "menuCategories": [
+        "ברית, פדיון ונישואין"
+      ]
+    },
+    {
+      "title": "סדר ברית מילה",
+      "group": "daily",
+      "section": "main",
+      "printed": 82,
+      "printedLabel": "פב",
+      "pdfPage": null,
+      "note": "העמוד חסר בסריקה",
+      "menuCategories": [
+        "ברית, פדיון ונישואין"
+      ]
+    },
+    {
+      "title": "גאולה לברית מילה",
+      "group": "daily",
+      "section": "main",
+      "printed": 84,
+      "printedLabel": "פד",
+      "pdfPage": null,
+      "note": "העמוד חסר בסריקה",
+      "menuCategories": [
+        "ברית, פדיון ונישואין"
+      ]
+    },
+    {
+      "title": "סדר פדיון הבן",
+      "group": "daily",
+      "section": "main",
+      "printed": 84,
+      "printedLabel": "פד",
+      "pdfPage": 80,
+      "note": "תחילת הסדר בעמוד פ״ד החסר בסריקה; כאן ההמשך",
+      "menuCategories": [
+        "ברית, פדיון ונישואין"
+      ]
+    },
+    {
+      "title": "סדר נטילת ידים לסעודה",
+      "group": "daily",
+      "section": "main",
+      "printed": 85,
+      "printedLabel": "פה",
+      "pdfPage": 80,
+      "menuCategories": [
+        "ברכת המזון"
+      ]
+    },
+    {
+      "title": "ברכת המזון",
+      "group": "daily",
+      "section": "main",
+      "printed": 86,
+      "printedLabel": "פו",
+      "pdfPage": 81,
+      "menuCategories": [
+        "ברכת המזון"
+      ]
+    },
+    {
+      "title": "ברכות הנהנין",
+      "group": "daily",
+      "section": "main",
+      "printed": 91,
+      "printedLabel": "צא",
+      "pdfPage": 86,
+      "menuCategories": [
+        "ברכות הנהנין"
+      ]
+    },
+    {
+      "title": "ברכת מעין שלוש",
+      "group": "daily",
+      "section": "main",
+      "printed": 92,
+      "printedLabel": "צב",
+      "pdfPage": 87,
+      "menuCategories": [
+        "ברכה אחרונה ומעין שלוש"
+      ]
+    },
+    {
+      "title": "ברכה אחרונה",
+      "group": "daily",
+      "section": "main",
+      "printed": 93,
+      "printedLabel": "צג",
+      "pdfPage": 88,
+      "menuCategories": [
+        "ברכה אחרונה ומעין שלוש"
+      ]
+    },
+    {
+      "title": "ברכות הריח הראיה והשמיעה",
+      "group": "daily",
+      "section": "main",
+      "printed": 93,
+      "printedLabel": "צג",
+      "pdfPage": 88,
+      "menuCategories": [
+        "ברכות הנהנין"
+      ]
+    },
+    {
+      "title": "ברכת האילנות",
+      "group": "daily",
+      "section": "main",
+      "printed": 94,
+      "printedLabel": "צד",
+      "pdfPage": 89,
+      "menuCategories": [
+        "ברכות הנהנין"
+      ]
+    },
+    {
+      "title": "ברכות המצוות",
+      "group": "daily",
+      "section": "main",
+      "printed": 94,
+      "printedLabel": "צד",
+      "pdfPage": 89,
+      "menuCategories": [
+        "ברכות הנהנין"
+      ]
+    },
+    {
+      "title": "תפלת הדרך",
+      "group": "daily",
+      "section": "main",
+      "printed": 95,
+      "printedLabel": "צה",
+      "pdfPage": 90,
+      "menuCategories": [
+        "תפילת הדרך"
+      ]
+    },
+    {
+      "title": "תפלת מנחה לחול",
+      "group": "daily",
+      "section": "main",
+      "printed": 96,
+      "printedLabel": "צו",
+      "pdfPage": 91,
+      "menuCategories": [
+        "מנחה"
+      ]
+    },
+    {
+      "title": "תפלת ערבית לחול",
+      "group": "daily",
+      "section": "main",
+      "printed": 108,
+      "printedLabel": "קח",
+      "pdfPage": 103,
+      "menuCategories": [
+        "ערבית"
+      ]
+    },
+    {
+      "title": "ספירת העומר",
+      "group": "daily",
+      "section": "main",
+      "printed": 119,
+      "printedLabel": "קיט",
+      "pdfPage": 114,
+      "menuCategories": [
+        "ספירת העומר"
+      ]
+    },
+    {
+      "title": "קריאת שמע שעל המטה",
+      "group": "daily",
+      "section": "main",
+      "printed": 124,
+      "printedLabel": "קכד",
+      "pdfPage": 119,
+      "menuCategories": [
+        "קריאת שמע שעל המיטה"
+      ]
+    },
+    {
+      "title": "סדר קידוש לבנה",
+      "group": "daily",
+      "section": "main",
+      "printed": 128,
+      "printedLabel": "קכח",
+      "pdfPage": 123,
+      "menuCategories": [
+        "קידוש לבנה"
+      ]
+    },
+    {
+      "title": "סדר תפלת יום כיפור קטן",
+      "group": "daily",
+      "section": "main",
+      "printed": 131,
+      "printedLabel": "קלא",
+      "pdfPage": 126,
+      "menuCategories": [
+        "מנחה"
+      ]
+    },
+    {
+      "title": "סדר נטילת לולב",
+      "group": "moadim",
+      "section": "main",
+      "printed": 141,
+      "printedLabel": "קמא",
+      "pdfPage": 136,
+      "menuCategories": [
+        "ימים נוראים"
+      ]
+    },
+    {
+      "title": "סדר הלל",
+      "group": "moadim",
+      "section": "main",
+      "printed": 141,
+      "printedLabel": "קמא",
+      "pdfPage": 136,
+      "menuCategories": [
+        "שחרית"
+      ]
+    },
+    {
+      "title": "תפלת מוסף לראש חודש",
+      "group": "moadim",
+      "section": "main",
+      "printed": 145,
+      "printedLabel": "קמה",
+      "pdfPage": 140,
+      "menuCategories": [
+        "שחרית"
+      ]
+    },
+    {
+      "title": "סדר הדלקת נר חנוכה",
+      "group": "moadim",
+      "section": "main",
+      "printed": 151,
+      "printedLabel": "קנא",
+      "pdfPage": 146,
+      "menuCategories": [
+        "חנוכה"
+      ]
+    },
+    {
+      "title": "סדר מזמורים לחנוכה",
+      "group": "moadim",
+      "section": "main",
+      "printed": 152,
+      "printedLabel": "קנב",
+      "pdfPage": 147,
+      "menuCategories": [
+        "חנוכה"
+      ]
+    },
+    {
+      "title": "מעוז צור",
+      "group": "moadim",
+      "section": "main",
+      "printed": 161,
+      "printedLabel": "קסא",
+      "pdfPage": 156,
+      "menuCategories": [
+        "חנוכה"
+      ]
+    },
+    {
+      "title": "סדר ברכות המגילה",
+      "group": "moadim",
+      "section": "main",
+      "printed": 162,
+      "printedLabel": "קסב",
+      "pdfPage": 157,
+      "menuCategories": [
+        "פורים"
+      ]
+    },
+    {
+      "title": "זמירות לזאת חנוכה ופורים",
+      "group": "moadim",
+      "section": "main",
+      "printed": 163,
+      "printedLabel": "קסג",
+      "pdfPage": 158,
+      "menuCategories": [
+        "חנוכה"
+      ]
+    },
+    {
+      "title": "זמירות לסעודות ההילולא",
+      "group": "moadim",
+      "section": "main",
+      "printed": 164,
+      "printedLabel": "קסד",
+      "pdfPage": 159,
+      "menuCategories": [
+        "תפילות והוספות"
+      ]
+    },
+    {
+      "title": "שירים לל״ג בעומר",
+      "group": "moadim",
+      "section": "main",
+      "printed": 165,
+      "printedLabel": "קסה",
+      "pdfPage": 160,
+      "menuCategories": [
+        "תפילות והוספות"
+      ]
+    },
+    {
+      "title": "סדר התרת נדרים",
+      "group": "moadim",
+      "section": "main",
+      "printed": 168,
+      "printedLabel": "קסח",
+      "pdfPage": 163,
+      "menuCategories": [
+        "ימים נוראים"
+      ]
+    },
+    {
+      "title": "סדר תשליך",
+      "group": "moadim",
+      "section": "main",
+      "printed": 171,
+      "printedLabel": "קעא",
+      "pdfPage": 166,
+      "menuCategories": [
+        "ימים נוראים"
+      ]
+    },
+    {
+      "title": "סדר כפרות",
+      "group": "moadim",
+      "section": "main",
+      "printed": 172,
+      "printedLabel": "קעב",
+      "pdfPage": 167,
+      "menuCategories": [
+        "ימים נוראים"
+      ]
+    },
+    {
+      "title": "סליחות לעשרה בטבת",
+      "group": "moadim",
+      "section": "main",
+      "printed": 174,
+      "printedLabel": "קעד",
+      "pdfPage": 169,
+      "menuCategories": [
+        "צומות וסליחות"
+      ]
+    },
+    {
+      "title": "סליחות לתענית אסתר",
+      "group": "moadim",
+      "section": "main",
+      "printed": 182,
+      "printedLabel": "קפב",
+      "pdfPage": 177,
+      "menuCategories": [
+        "צומות וסליחות"
+      ]
+    },
+    {
+      "title": "סליחות לשבעה עשר בתמוז",
+      "group": "moadim",
+      "section": "main",
+      "printed": 186,
+      "printedLabel": "קפו",
+      "pdfPage": 181,
+      "menuCategories": [
+        "צומות וסליחות"
+      ]
+    },
+    {
+      "title": "סדר הפרשיות לשני וחמישי",
+      "group": "other",
+      "section": "main",
+      "printed": 190,
+      "printedLabel": "קצ",
+      "pdfPage": 185,
+      "menuCategories": [
+        "שחרית"
+      ]
+    },
+    {
+      "title": "קריאה לראש חודש",
+      "group": "other",
+      "section": "main",
+      "printed": 220,
+      "printedLabel": "רכ",
+      "pdfPage": 215,
+      "menuCategories": [
+        "שחרית"
+      ]
+    },
+    {
+      "title": "קריאה לחנוכה",
+      "group": "other",
+      "section": "main",
+      "printed": 221,
+      "printedLabel": "רכא",
+      "pdfPage": 216,
+      "menuCategories": [
+        "חנוכה"
+      ]
+    },
+    {
+      "title": "קריאה לפורים",
+      "group": "other",
+      "section": "main",
+      "printed": 224,
+      "printedLabel": "רכד",
+      "pdfPage": 219,
+      "menuCategories": [
+        "פורים"
+      ]
+    },
+    {
+      "title": "קריאה לתענית ציבור",
+      "group": "other",
+      "section": "main",
+      "printed": 225,
+      "printedLabel": "רכה",
+      "pdfPage": 220,
+      "menuCategories": [
+        "צומות וסליחות"
+      ]
+    },
+    {
+      "title": "הפטרה לתענית ציבור",
+      "group": "other",
+      "section": "main",
+      "printed": 226,
+      "printedLabel": "רכו",
+      "pdfPage": 221,
+      "menuCategories": [
+        "צומות וסליחות"
+      ]
+    },
+    {
+      "title": "מי שברך לחולה וליולדת",
+      "group": "other",
+      "section": "main",
+      "printed": 227,
+      "printedLabel": "רכז",
+      "pdfPage": 222,
+      "menuCategories": [
+        "תפילות והוספות"
+      ]
+    },
+    {
+      "title": "אל מלא להזכרת נשמות",
+      "group": "other",
+      "section": "main",
+      "printed": 228,
+      "printedLabel": "רכח",
+      "pdfPage": 223,
+      "menuCategories": [
+        "תפילות והוספות"
+      ]
+    },
+    {
+      "title": "סדר קבלת תענית",
+      "group": "other",
+      "section": "main",
+      "printed": 229,
+      "printedLabel": "רכט",
+      "pdfPage": 224,
+      "menuCategories": [
+        "צומות וסליחות"
+      ]
+    },
+    {
+      "title": "סדר הפרשת תרומות ומעשרות",
+      "group": "other",
+      "section": "main",
+      "printed": 229,
+      "printedLabel": "רכט",
+      "pdfPage": 224,
+      "menuCategories": [
+        "תפילות והוספות"
+      ]
+    },
+    {
+      "title": "סדר ברכת החמה",
+      "group": "other",
+      "section": "main",
+      "printed": 230,
+      "printedLabel": "רל",
+      "pdfPage": 225,
+      "menuCategories": [
+        "תפילות והוספות"
+      ]
+    },
+    {
+      "title": "פסוקים לשמות אנשים",
+      "group": "other",
+      "section": "main",
+      "printed": 232,
+      "printedLabel": "רלב",
+      "pdfPage": 227,
+      "menuCategories": [
+        "תפילות והוספות"
+      ]
+    },
+    {
+      "title": "תפלת בית המדרש",
+      "group": "other",
+      "section": "main",
+      "printed": 235,
+      "printedLabel": "רלה",
+      "pdfPage": 230,
+      "menuCategories": [
+        "תפילות והוספות"
+      ]
+    },
+    {
+      "title": "לוח קביעת השנים",
+      "group": "other",
+      "section": "main",
+      "pdfPage": 231,
+      "note": "עמוד ללא מספור",
+      "menuCategories": [
+        "תפילות והוספות"
+      ]
+    },
+    {
+      "title": "ספר תהלים",
+      "group": "other",
+      "section": "tehillim",
+      "pdfPage": 233,
+      "printed": 2,
+      "printedLabel": "ב",
+      "menuCategories": [
+        "ספר תהלים"
+      ]
+    },
+    {
+      "title": "מנהגים מרבותינו הקדושים מסטולין קרלין",
+      "group": "other",
+      "section": "minhagim",
+      "pdfPage": 305,
+      "printed": 2,
+      "printedLabel": "ב",
+      "menuCategories": [
+        "מנהגים ודינים"
+      ]
+    },
+    {
+      "title": "דינים למי שטעה בתפלת שמו״ע",
+      "group": "other",
+      "section": "minhagim",
+      "pdfPage": 315,
+      "printed": 12,
+      "printedLabel": "יב",
+      "menuCategories": [
+        "מנהגים ודינים"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "pdfPage": 1,
+      "section": "unnumbered",
+      "printed": null,
+      "special": "שער / cover",
+      "starts": [],
+      "nearestIndexedHeading": null,
+      "tehillimChapters": [],
+      "crop": {
+        "x": 0,
+        "y": -54.900000000000034,
+        "width": 468,
+        "height": 777.6,
+        "kind": "cover"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 2,
+      "section": "unnumbered",
+      "printed": null,
+      "special": "תוכן ומפתח / contents",
+      "starts": [
+        "סדר אלף בית"
+      ],
+      "nearestIndexedHeading": null,
+      "tehillimChapters": [],
+      "crop": {
+        "x": 34.682755,
+        "y": 30.575936,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 3,
+      "section": "main",
+      "printed": 4,
+      "special": null,
+      "starts": [
+        "סדר השכמת הבוקר"
+      ],
+      "nearestIndexedHeading": "סדר השכמת הבוקר",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 34.2,
+        "y": 14.379447,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 4,
+      "section": "main",
+      "printed": 5,
+      "special": null,
+      "starts": [
+        "ברכות השחר"
+      ],
+      "nearestIndexedHeading": "ברכות השחר",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 44.1,
+        "y": 14.9895,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 5,
+      "section": "main",
+      "printed": 6,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ברכות השחר",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 33.841232,
+        "y": 15.578591,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 6,
+      "section": "main",
+      "printed": 7,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ברכות השחר",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 42.9,
+        "y": 16.777734,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 7,
+      "section": "main",
+      "printed": 8,
+      "special": null,
+      "starts": [
+        "אני מאמין"
+      ],
+      "nearestIndexedHeading": "אני מאמין",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 32.941463,
+        "y": 17.4,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 8,
+      "section": "main",
+      "printed": 9,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "אני מאמין",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 44.7,
+        "y": 14.978906,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 9,
+      "section": "main",
+      "printed": 10,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "אני מאמין",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 34.441078,
+        "y": 18.582306,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 10,
+      "section": "main",
+      "printed": 11,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "אני מאמין",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 45.3,
+        "y": 15.578475,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "H3-akeida",
+          "rule": "cholHamoed",
+          "label": "חוה״מ: עד והארץ אזכור"
+        }
+      ]
+    },
+    {
+      "pdfPage": 11,
+      "section": "main",
+      "printed": 12,
+      "special": null,
+      "starts": [
+        "פסוקים שאומרים עם הפעוטים"
+      ],
+      "nearestIndexedHeading": "פסוקים שאומרים עם הפעוטים",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 33.541309,
+        "y": 19.2,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "H3-akeida",
+          "rule": "cholHamoed",
+          "label": "חוה״מ: עד והארץ אזכור"
+        }
+      ]
+    },
+    {
+      "pdfPage": 12,
+      "section": "main",
+      "printed": 13,
+      "special": null,
+      "starts": [
+        "סדר לבישת טלית גדול"
+      ],
+      "nearestIndexedHeading": "סדר לבישת טלית גדול",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 45.6,
+        "y": 19.2,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 13,
+      "section": "main",
+      "printed": 14,
+      "special": null,
+      "starts": [
+        "סדר הנחת תפילין"
+      ],
+      "nearestIndexedHeading": "סדר הנחת תפילין",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 33.841232,
+        "y": 18,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 14,
+      "section": "main",
+      "printed": 15,
+      "special": null,
+      "starts": [
+        "תפלת שחרית"
+      ],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 45,
+        "y": 17.394311,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 15,
+      "section": "main",
+      "printed": 16,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 34.141155,
+        "y": 15.594633,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 16,
+      "section": "main",
+      "printed": 17,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 42.3,
+        "y": 13.789874,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 17,
+      "section": "main",
+      "printed": 18,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 36.421846,
+        "y": 16.183592,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "H3-vetechaper",
+          "rule": "cholHamoed",
+          "label": "חוה״מ: מדלגים ותכפר"
+        }
+      ]
+    },
+    {
+      "pdfPage": 18,
+      "section": "main",
+      "printed": 19,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 42.3,
+        "y": 19.2,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 19,
+      "section": "main",
+      "printed": 20,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 36.840462,
+        "y": 17.377245,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "H2-ata-seter",
+          "rule": "cholHamoed",
+          "label": "חוה״מ: מדלגים אתה סתר"
+        }
+      ]
+    },
+    {
+      "pdfPage": 20,
+      "section": "main",
+      "printed": 21,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 42.3,
+        "y": 21.59356,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "H3-veata",
+          "rule": "cholHamoed",
+          "label": "חוה״מ: מדלגים ועתה בעונותינו"
+        }
+      ]
+    },
+    {
+      "pdfPage": 21,
+      "section": "main",
+      "printed": 22,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 35.340847,
+        "y": 17.377245,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 22,
+      "section": "main",
+      "printed": 23,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 45,
+        "y": 18.6,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 23,
+      "section": "main",
+      "printed": 24,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 34.382005,
+        "y": 15,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "E2-kaddish",
+          "rule": "aseret",
+          "label": "עשי״ת"
+        }
+      ]
+    },
+    {
+      "pdfPage": 24,
+      "section": "main",
+      "printed": 25,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 43.915367,
+        "y": 18,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 25,
+      "section": "main",
+      "printed": 26,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 31.5,
+        "y": 17.394311,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "H1-vehu-rachum",
+          "rule": "cholHamoed",
+          "label": "חוה״מ: אין אומרים והוא רחום"
+        }
+      ]
+    },
+    {
+      "pdfPage": 26,
+      "section": "main",
+      "printed": 27,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 45.53799,
+        "y": 17.377184,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 27,
+      "section": "main",
+      "printed": 28,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 31.624865,
+        "y": 16.194526,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "H4-letoda",
+          "rule": "noMizmorLetoda",
+          "label": "אין אומרים מזמור לתודה"
+        }
+      ]
+    },
+    {
+      "pdfPage": 28,
+      "section": "main",
+      "printed": 29,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 44.638222,
+        "y": 15.6,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "H4-letoda",
+          "rule": "noMizmorLetoda",
+          "label": "אין אומרים מזמור לתודה"
+        },
+        {
+          "id": "H1-vehu-rachum",
+          "rule": "cholHamoed",
+          "label": "חוה״מ: אין אומרים והוא רחום"
+        }
+      ]
+    },
+    {
+      "pdfPage": 29,
+      "section": "main",
+      "printed": 30,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 30.72556,
+        "y": 16.783271,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 30,
+      "section": "main",
+      "printed": 31,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 45.95134,
+        "y": 17.988429,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 31,
+      "section": "main",
+      "printed": 32,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 28.8,
+        "y": 17.994219,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 32,
+      "section": "main",
+      "printed": 33,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 43.853505,
+        "y": 15.6,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 33,
+      "section": "main",
+      "printed": 34,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 28.926279,
+        "y": 14.9895,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 34,
+      "section": "main",
+      "printed": 35,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 44.276439,
+        "y": 14.389659,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 35,
+      "section": "main",
+      "printed": 36,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 30.367423,
+        "y": 17.4,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 36,
+      "section": "main",
+      "printed": 37,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 46.91305,
+        "y": 14.4,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "E3-mimaamakim",
+          "rule": "aseret",
+          "label": "עשי״ת: שיר המעלות ממעמקים"
+        },
+        {
+          "id": "E2-kaddish",
+          "rule": "aseret",
+          "label": "עשי״ת"
+        }
+      ]
+    },
+    {
+      "pdfPage": 37,
+      "section": "main",
+      "printed": 38,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 29.468351,
+        "y": 18.6,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 38,
+      "section": "main",
+      "printed": 39,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 45.3,
+        "y": 12,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 39,
+      "section": "main",
+      "printed": 40,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 29.342165,
+        "y": 15.6,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 40,
+      "section": "main",
+      "printed": 41,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 46.613282,
+        "y": 18.594081,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 41,
+      "section": "main",
+      "printed": 42,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 32.523488,
+        "y": 20.981019,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 42,
+      "section": "main",
+      "printed": 43,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 47.637206,
+        "y": 13.794928,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "E1-zachreinu",
+          "rule": "aseret",
+          "label": "עשי״ת: זכרנו לחיים"
+        },
+        {
+          "id": "C1-geshem",
+          "rule": "winter",
+          "label": "משיב הרוח ומוריד הגשם"
+        },
+        {
+          "id": "C1-tal",
+          "rule": "summer",
+          "label": "מוריד הטל"
+        }
+      ]
+    },
+    {
+      "pdfPage": 43,
+      "section": "main",
+      "printed": 44,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 29.768041,
+        "y": 17.976816,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "E1-mi-chamocha",
+          "rule": "aseret",
+          "label": "עשי״ת: מי כמוך"
+        },
+        {
+          "id": "E1-hamelech",
+          "rule": "aseret",
+          "label": "עשי״ת: המלך הקדוש"
+        }
+      ]
+    },
+    {
+      "pdfPage": 44,
+      "section": "main",
+      "printed": 45,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 45.113721,
+        "y": 14.4,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "F1-aneinu-shatz",
+          "rule": "fast",
+          "label": "עננו (ש״ץ)"
+        },
+        {
+          "id": "C2-winter",
+          "rule": "talUmatar",
+          "label": "ותן טל ומטר לברכה"
+        },
+        {
+          "id": "C2-summer",
+          "rule": "noTalUmatar",
+          "label": "ברכנו — ותן ברכה"
+        }
+      ]
+    },
+    {
+      "pdfPage": 45,
+      "section": "main",
+      "printed": 46,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 32.164657,
+        "y": 17.994204,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "E1-mishpat",
+          "rule": "aseret",
+          "label": "עשי״ת: במשפט · המלך המשפט"
+        }
+      ]
+    },
+    {
+      "pdfPage": 46,
+      "section": "main",
+      "printed": 47,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 45.475819,
+        "y": 16.794388,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 47,
+      "section": "main",
+      "printed": 48,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 32.582021,
+        "y": 19.8,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "D1-yaaleh",
+          "rule": "yaaleh",
+          "label": "יעלה ויבוא"
+        },
+        {
+          "id": "D1-yaaleh-rc",
+          "rule": "roshChodesh",
+          "label": "ראש החדש הזה"
+        },
+        {
+          "id": "D1-yaaleh-pesach",
+          "rule": "cholHamoedPesach",
+          "label": "חג המצות הזה"
+        },
+        {
+          "id": "D1-yaaleh-sukkot",
+          "rule": "cholHamoedSukkot",
+          "label": "חג הסכות הזה"
+        }
+      ]
+    },
+    {
+      "pdfPage": 48,
+      "section": "main",
+      "printed": 49,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 44.153196,
+        "y": 18.6,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "G1-al-hanisim",
+          "rule": "alHanisim",
+          "label": "על הנסים"
+        },
+        {
+          "id": "G1-chanukah",
+          "rule": "chanukah",
+          "label": "על הנסים — חנוכה"
+        },
+        {
+          "id": "G1-purim",
+          "rule": "purim",
+          "label": "על הנסים — פורים"
+        },
+        {
+          "id": "E1-vechtov",
+          "rule": "aseret",
+          "label": "עשי״ת: וכתוב לחיים"
+        }
+      ]
+    },
+    {
+      "pdfPage": 49,
+      "section": "main",
+      "printed": 50,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 33.363415,
+        "y": 19.775528,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 50,
+      "section": "main",
+      "printed": 51,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 44.752577,
+        "y": 18,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "E1-besefer",
+          "rule": "aseret",
+          "label": "עשי״ת: בספר חיים"
+        },
+        {
+          "id": "E1-oseh",
+          "rule": "aseret",
+          "label": "עשי״ת"
+        },
+        {
+          "id": "D4-rc-order",
+          "rule": "rcOrCholHamoed",
+          "label": "סדר ר״ח וחוה״מ"
+        },
+        {
+          "id": "G2-chanukah-order",
+          "rule": "chanukah",
+          "label": "סדר חנוכה"
+        }
+      ]
+    },
+    {
+      "pdfPage": 51,
+      "section": "main",
+      "printed": 52,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת שחרית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 33.063726,
+        "y": 17.982627,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "B1-tachanun",
+          "rule": "noTachanun",
+          "label": "אין אומרים תחנון היום"
+        }
+      ]
+    },
+    {
+      "pdfPage": 52,
+      "section": "main",
+      "printed": 53,
+      "special": null,
+      "starts": [
+        "סליחות לבה״ב ושובבי״ם"
+      ],
+      "nearestIndexedHeading": "סליחות לבה״ב ושובבי״ם",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 41.516512,
+        "y": 18,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "B1-tachanun",
+          "rule": "noTachanun",
+          "label": "אין אומרים תחנון היום"
+        },
+        {
+          "id": "B6-selichot",
+          "rule": "selichot",
+          "label": "סליחות לבה״ב ושובבי״ם"
+        },
+        {
+          "id": "B6-selichot",
+          "rule": "!selichot",
+          "label": "אין אומרים סליחות היום"
+        }
+      ]
+    },
+    {
+      "pdfPage": 53,
+      "section": "main",
+      "printed": 54,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סליחות לבה״ב ושובבי״ם",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 34.262484,
+        "y": 17.982627,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "B6-selichot",
+          "rule": "selichot",
+          "label": "סליחות לבה״ב ושובבי״ם"
+        },
+        {
+          "id": "B6-selichot",
+          "rule": "!selichot",
+          "label": "אין אומרים סליחות היום"
+        }
+      ]
+    },
+    {
+      "pdfPage": 54,
+      "section": "main",
+      "printed": 55,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סליחות לבה״ב ושובבי״ם",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 46.2,
+        "y": 25.192916,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "B6-selichot",
+          "rule": "selichot",
+          "label": "סליחות לבה״ב ושובבי״ם"
+        },
+        {
+          "id": "B6-selichot",
+          "rule": "!selichot",
+          "label": "אין אומרים סליחות היום"
+        },
+        {
+          "id": "B6-shovavim",
+          "rule": "shovavim",
+          "label": "לשובבי״ם"
+        }
+      ]
+    },
+    {
+      "pdfPage": 55,
+      "section": "main",
+      "printed": 56,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סליחות לבה״ב ושובבי״ם",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 33.962794,
+        "y": 22.793345,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "B6-selichot",
+          "rule": "selichot",
+          "label": "סליחות לבה״ב ושובבי״ם"
+        },
+        {
+          "id": "B6-selichot",
+          "rule": "!selichot",
+          "label": "אין אומרים סליחות היום"
+        },
+        {
+          "id": "E4-avinu",
+          "rule": "avinuMalkeinu",
+          "label": "אבינו מלכנו"
+        },
+        {
+          "id": "E4-avinu",
+          "rule": "!avinuMalkeinu",
+          "label": "אין אומרים אבינו מלכנו היום"
+        },
+        {
+          "id": "E4-chadesh",
+          "rule": "aseret",
+          "label": "חדש"
+        },
+        {
+          "id": "F2-barech",
+          "rule": "avinuMalkeinuFast",
+          "label": "ברך"
+        },
+        {
+          "id": "E4-kotvenu",
+          "rule": "aseret",
+          "label": "כתבנו בספר"
+        },
+        {
+          "id": "F2-zochreinu",
+          "rule": "avinuMalkeinuFast",
+          "label": "זכרנו ל"
+        }
+      ]
+    },
+    {
+      "pdfPage": 56,
+      "section": "main",
+      "printed": 57,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סליחות לבה״ב ושובבי״ם",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 42,
+        "y": 15.589228,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "E4-avinu",
+          "rule": "avinuMalkeinu",
+          "label": "אבינו מלכנו"
+        },
+        {
+          "id": "E4-avinu",
+          "rule": "!avinuMalkeinu",
+          "label": "אין אומרים אבינו מלכנו היום"
+        },
+        {
+          "id": "A2-vehu-rachum",
+          "rule": "longTachanun",
+          "label": "שני וחמישי: והוא רחום"
+        },
+        {
+          "id": "A2-vehu-rachum",
+          "rule": "!longTachanun",
+          "label": "והוא רחום — רק בשני וחמישי"
+        }
+      ]
+    },
+    {
+      "pdfPage": 57,
+      "section": "main",
+      "printed": 58,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סליחות לבה״ב ושובבי״ם",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 30.066831,
+        "y": 16.183592,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "A2-vehu-rachum",
+          "rule": "longTachanun",
+          "label": "שני וחמישי: והוא רחום"
+        },
+        {
+          "id": "A2-vehu-rachum",
+          "rule": "!longTachanun",
+          "label": "והוא רחום — רק בשני וחמישי"
+        }
+      ]
+    },
+    {
+      "pdfPage": 58,
+      "section": "main",
+      "printed": 59,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סליחות לבה״ב ושובבי״ם",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 42.6,
+        "y": 19.8,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "A2-vehu-rachum",
+          "rule": "longTachanun",
+          "label": "שני וחמישי: והוא רחום"
+        },
+        {
+          "id": "A2-vehu-rachum",
+          "rule": "!longTachanun",
+          "label": "והוא רחום — רק בשני וחמישי"
+        }
+      ]
+    },
+    {
+      "pdfPage": 59,
+      "section": "main",
+      "printed": 60,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סליחות לבה״ב ושובבי״ם",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 31.565278,
+        "y": 19.193989,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "A2-vehu-rachum",
+          "rule": "longTachanun",
+          "label": "שני וחמישי: והוא רחום"
+        },
+        {
+          "id": "A2-vehu-rachum",
+          "rule": "!longTachanun",
+          "label": "והוא רחום — רק בשני וחמישי"
+        }
+      ]
+    },
+    {
+      "pdfPage": 60,
+      "section": "main",
+      "printed": 61,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סליחות לבה״ב ושובבי״ם",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 43.8,
+        "y": 16.777554,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "A2-vehu-rachum",
+          "rule": "longTachanun",
+          "label": "שני וחמישי: והוא רחום"
+        },
+        {
+          "id": "A2-vehu-rachum",
+          "rule": "!longTachanun",
+          "label": "והוא רחום — רק בשני וחמישי"
+        }
+      ]
+    },
+    {
+      "pdfPage": 61,
+      "section": "main",
+      "printed": 62,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סליחות לבה״ב ושובבי״ם",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 27.42677,
+        "y": 17.994204,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "B1-tachanun",
+          "rule": "noTachanun",
+          "label": "אין אומרים תחנון היום"
+        }
+      ]
+    },
+    {
+      "pdfPage": 62,
+      "section": "main",
+      "printed": 63,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סליחות לבה״ב ושובבי״ם",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 43.314397,
+        "y": 14.389659,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "E2-kaddish",
+          "rule": "aseret",
+          "label": "עשי״ת"
+        },
+        {
+          "id": "A3-el-erech",
+          "rule": "elErechApayim",
+          "label": "שני וחמישי: אל ארך אפים"
+        },
+        {
+          "id": "A3-el-erech",
+          "rule": "noElErechApayim",
+          "label": "אין אומרים אל ארך אפים"
+        },
+        {
+          "id": "A4-torah",
+          "rule": "torahReading",
+          "label": "קריאת התורה"
+        },
+        {
+          "id": "C3-ledavid",
+          "rule": "leDavid",
+          "label": "לדוד ה׳ אורי"
+        },
+        {
+          "id": "A4-torah",
+          "rule": "!torahReading",
+          "label": "אין קריאת התורה היום"
+        }
+      ]
+    },
+    {
+      "pdfPage": 63,
+      "section": "main",
+      "printed": 64,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סליחות לבה״ב ושובבי״ם",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 27.542406,
+        "y": 14.994741,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "A4-torah",
+          "rule": "torahReading",
+          "label": "קריאת התורה"
+        },
+        {
+          "id": "E5-shir",
+          "rule": "aseret",
+          "label": "עשי״ת: שיר למעלות וי״ג מדות"
+        },
+        {
+          "id": "A4-torah",
+          "rule": "!torahReading",
+          "label": "אין קריאת התורה היום"
+        }
+      ]
+    },
+    {
+      "pdfPage": 64,
+      "section": "main",
+      "printed": 65,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סליחות לבה״ב ושובבי״ם",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 45.475337,
+        "y": 15.6,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "A4-torah",
+          "rule": "torahReading",
+          "label": "קריאת התורה"
+        },
+        {
+          "id": "A4-torah",
+          "rule": "!torahReading",
+          "label": "אין קריאת התורה היום"
+        }
+      ]
+    },
+    {
+      "pdfPage": 65,
+      "section": "main",
+      "printed": 66,
+      "special": null,
+      "starts": [
+        "ברכת הגומל"
+      ],
+      "nearestIndexedHeading": "ברכת הגומל",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 25.685596,
+        "y": 19.193989,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "A4-torah",
+          "rule": "torahReading",
+          "label": "קריאת התורה"
+        },
+        {
+          "id": "A5-yehi-ratzon",
+          "rule": "monThuTachanun",
+          "label": "שני וחמישי: יהי רצון"
+        },
+        {
+          "id": "A4-torah",
+          "rule": "!torahReading",
+          "label": "אין קריאת התורה היום"
+        },
+        {
+          "id": "A5-yehi-ratzon",
+          "rule": "!monThuTachanun",
+          "label": "יהי רצון — רק בשני וחמישי"
+        }
+      ]
+    },
+    {
+      "pdfPage": 66,
+      "section": "main",
+      "printed": 67,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ברכת הגומל",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 45.237584,
+        "y": 9.595683,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "B3-lamnatzeach",
+          "rule": "noLamnatzeach",
+          "label": "אין אומרים למנצח היום"
+        }
+      ]
+    },
+    {
+      "pdfPage": 67,
+      "section": "main",
+      "printed": 68,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ברכת הגומל",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 26.470556,
+        "y": 14.994741,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "H1-vehu-rachum",
+          "rule": "cholHamoed",
+          "label": "חוה״מ: אין אומרים והוא רחום"
+        }
+      ]
+    },
+    {
+      "pdfPage": 68,
+      "section": "main",
+      "printed": 69,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ברכת הגומל",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 47.4,
+        "y": 11.381439,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "E2-kaddish",
+          "rule": "aseret",
+          "label": "עשי״ת"
+        },
+        {
+          "id": "A4-torah",
+          "rule": "torahReading",
+          "label": "הכנסת ספר תורה"
+        },
+        {
+          "id": "A4-torah",
+          "rule": "!torahReading",
+          "label": "אין קריאת התורה היום"
+        }
+      ]
+    },
+    {
+      "pdfPage": 69,
+      "section": "main",
+      "printed": 70,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ברכת הגומל",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 26.642639,
+        "y": 13.784879,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "B4-tefila-ledavid",
+          "rule": "noTachanun",
+          "label": "אין אומרים תפלה לדוד היום"
+        },
+        {
+          "id": "B5-beit-yaakov",
+          "rule": "noElErechApayimDay",
+          "label": "אין אומרים בית יעקב היום"
+        }
+      ]
+    },
+    {
+      "pdfPage": 70,
+      "section": "main",
+      "printed": 71,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ברכת הגומל",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 44.450961,
+        "y": 16.183504,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "B5-beit-yaakov",
+          "rule": "noElErechApayimDay",
+          "label": "אין אומרים בית יעקב היום"
+        },
+        {
+          "id": "A1-shir-0",
+          "rule": "dow0",
+          "label": "שיר של יום — ראשון"
+        },
+        {
+          "id": "A1-shir-1",
+          "rule": "dow1",
+          "label": "שיר של יום — שני"
+        }
+      ]
+    },
+    {
+      "pdfPage": 71,
+      "section": "main",
+      "printed": 72,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ברכת הגומל",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 25.685596,
+        "y": 18,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "A1-shir-2",
+          "rule": "dow2",
+          "label": "שיר של יום — שלישי"
+        },
+        {
+          "id": "A1-shir-3",
+          "rule": "dow3",
+          "label": "שיר של יום — רביעי"
+        },
+        {
+          "id": "A1-shir-4",
+          "rule": "dow4",
+          "label": "שיר של יום — חמישי"
+        }
+      ]
+    },
+    {
+      "pdfPage": 72,
+      "section": "main",
+      "printed": 73,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ברכת הגומל",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 46.137351,
+        "y": 14.4,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "A1-shir-4",
+          "rule": "dow4",
+          "label": "שיר של יום — חמישי"
+        },
+        {
+          "id": "A1-shir-5",
+          "rule": "dow5",
+          "label": "שיר של יום — ששי"
+        },
+        {
+          "id": "E2-kaddish",
+          "rule": "aseret",
+          "label": "עשי״ת"
+        }
+      ]
+    },
+    {
+      "pdfPage": 73,
+      "section": "main",
+      "printed": 74,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ברכת הגומל",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 29.88342,
+        "y": 16.194526,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "H2-ata-seter",
+          "rule": "cholHamoed",
+          "label": "חוה״מ: מדלגים אתה סתר"
+        }
+      ]
+    },
+    {
+      "pdfPage": 74,
+      "section": "main",
+      "printed": 75,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ברכת הגומל",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 47.337039,
+        "y": 17.982486,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "E2-kaddish",
+          "rule": "aseret",
+          "label": "עשי״ת"
+        }
+      ]
+    },
+    {
+      "pdfPage": 75,
+      "section": "main",
+      "printed": 76,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ברכת הגומל",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 26.884974,
+        "y": 19.8,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "E2-kaddish",
+          "rule": "aseret",
+          "label": "עשי״ת"
+        }
+      ]
+    },
+    {
+      "pdfPage": 76,
+      "section": "main",
+      "printed": 77,
+      "special": null,
+      "starts": [
+        "שש זכירות",
+        "פרשת היראה"
+      ],
+      "nearestIndexedHeading": "שש זכירות",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 45.237584,
+        "y": 17.382857,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 77,
+      "section": "main",
+      "printed": 78,
+      "special": null,
+      "starts": [
+        "פרשת התשובה"
+      ],
+      "nearestIndexedHeading": "פרשת התשובה",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 28.867169,
+        "y": 21.580645,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 78,
+      "section": "main",
+      "printed": 79,
+      "special": null,
+      "starts": [
+        "פרשת המן"
+      ],
+      "nearestIndexedHeading": "פרשת המן",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 45.649714,
+        "y": 12.585445,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "I4-parnasa",
+          "rule": "shabbat",
+          "label": "בשבת אין אומרים התפלות על הפרנסה"
+        }
+      ]
+    },
+    {
+      "pdfPage": 79,
+      "section": "main",
+      "printed": 80,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "פרשת המן",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 28.74187,
+        "y": 16.194526,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "I4-parnasa",
+          "rule": "shabbat",
+          "label": "בשבת אין אומרים התפלות על הפרנסה"
+        }
+      ]
+    },
+    {
+      "pdfPage": 80,
+      "section": "main",
+      "printed": 85,
+      "special": null,
+      "starts": [
+        "סדר פדיון הבן",
+        "סדר נטילת ידים לסעודה"
+      ],
+      "nearestIndexedHeading": "סדר פדיון הבן",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 40.377503,
+        "y": 24.579144,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 81,
+      "section": "main",
+      "printed": 86,
+      "special": null,
+      "starts": [
+        "ברכת המזון"
+      ],
+      "nearestIndexedHeading": "ברכת המזון",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 31.623502,
+        "y": 22.773452,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "I2-chol-psukim",
+          "rule": "shabbatOrYomTov",
+          "label": "פסוקים אלו אומרים רק בחול"
+        }
+      ]
+    },
+    {
+      "pdfPage": 82,
+      "section": "main",
+      "printed": 87,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ברכת המזון",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 44.750649,
+        "y": 17.4,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "G1-al-hanisim",
+          "rule": "alHanisim",
+          "label": "על הנסים"
+        },
+        {
+          "id": "G1-chanukah",
+          "rule": "chanukah",
+          "label": "על הנסים — חנוכה"
+        },
+        {
+          "id": "G1-purim",
+          "rule": "purim",
+          "label": "על הנסים — פורים"
+        }
+      ]
+    },
+    {
+      "pdfPage": 83,
+      "section": "main",
+      "printed": 88,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ברכת המזון",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 31.682029,
+        "y": 19.787786,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "G1-chanukah",
+          "rule": "chanukah",
+          "label": "על הנסים — חנוכה"
+        },
+        {
+          "id": "G1-purim",
+          "rule": "purim",
+          "label": "על הנסים — פורים"
+        },
+        {
+          "id": "I1-retzeh",
+          "rule": "shabbat",
+          "label": "רצה והחליצנו"
+        },
+        {
+          "id": "D1-yaaleh",
+          "rule": "yaalehBentching",
+          "label": "יעלה ויבוא"
+        }
+      ]
+    },
+    {
+      "pdfPage": 84,
+      "section": "main",
+      "printed": 89,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ברכת המזון",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 39.955636,
+        "y": 19.181935,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "D1-yaaleh",
+          "rule": "yaalehBentching",
+          "label": "יעלה ויבוא"
+        },
+        {
+          "id": "D1-yaaleh-rc",
+          "rule": "roshChodesh",
+          "label": "ראש החדש הזה"
+        },
+        {
+          "id": "D1-yaaleh-pesach",
+          "rule": "pesach",
+          "label": "חג המצות הזה"
+        },
+        {
+          "id": "D1-yaaleh-shavuot",
+          "rule": "shavuot",
+          "label": "חג השבועות הזה"
+        },
+        {
+          "id": "D1-yaaleh-sukkot",
+          "rule": "sukkot",
+          "label": "חג הסכות הזה"
+        },
+        {
+          "id": "D1-yaaleh-shmini",
+          "rule": "shminiAtzeret",
+          "label": "שמיני עצרת החג הזה"
+        },
+        {
+          "id": "D1-yaaleh-rh",
+          "rule": "roshHashana",
+          "label": "הזכרון הזה"
+        }
+      ]
+    },
+    {
+      "pdfPage": 85,
+      "section": "main",
+      "printed": 90,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ברכת המזון",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 27.968104,
+        "y": 20.375165,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "I1-harachaman-shabbat",
+          "rule": "shabbat",
+          "label": "הרחמן לשבת"
+        },
+        {
+          "id": "D2-harachaman-rc",
+          "rule": "roshChodesh",
+          "label": "הרחמן לר״ח"
+        },
+        {
+          "id": "I3-harachaman-yt",
+          "rule": "yomTov",
+          "label": "הרחמן ליו״ט"
+        },
+        {
+          "id": "I3-harachaman-rh",
+          "rule": "roshHashana",
+          "label": "הרחמן לר״ה"
+        }
+      ]
+    },
+    {
+      "pdfPage": 86,
+      "section": "main",
+      "printed": 91,
+      "special": null,
+      "starts": [
+        "ברכות הנהנין"
+      ],
+      "nearestIndexedHeading": "ברכות הנהנין",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 41.576879,
+        "y": 18.57645,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "I3-harachaman-sukkot",
+          "rule": "sukkot",
+          "label": "הרחמן לסוכות"
+        },
+        {
+          "id": "G3-harachaman-nisim",
+          "rule": "chanukahOrPurim",
+          "label": "אם שכח על הנסים"
+        },
+        {
+          "id": "D3-magdil",
+          "rule": "magdil",
+          "label": "בחול: מגדיל"
+        },
+        {
+          "id": "D3-magdol",
+          "rule": "magdol",
+          "label": "מגדול"
+        }
+      ]
+    },
+    {
+      "pdfPage": 87,
+      "section": "main",
+      "printed": 92,
+      "special": null,
+      "starts": [
+        "ברכת מעין שלוש"
+      ],
+      "nearestIndexedHeading": "ברכת מעין שלוש",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 30.482653,
+        "y": 16.189071,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "I1-meein-shabbat",
+          "rule": "shabbat",
+          "label": "מעין שלש: לשבת"
+        },
+        {
+          "id": "I3-meein-yt",
+          "rule": "yomTovOrCholHamoed",
+          "label": "מעין שלש: ליו״ט וחוה״מ"
+        },
+        {
+          "id": "I3-meein-rh",
+          "rule": "roshHashana",
+          "label": "מעין שלש: לר״ה"
+        },
+        {
+          "id": "D2-meein-rc",
+          "rule": "roshChodesh",
+          "label": "מעין שלש: לר״ח"
+        }
+      ]
+    },
+    {
+      "pdfPage": 88,
+      "section": "main",
+      "printed": 93,
+      "special": null,
+      "starts": [
+        "ברכה אחרונה",
+        "ברכות הריח הראיה והשמיעה"
+      ],
+      "nearestIndexedHeading": "ברכה אחרונה",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 41.515798,
+        "y": 18.594112,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 89,
+      "section": "main",
+      "printed": 94,
+      "special": null,
+      "starts": [
+        "ברכת האילנות",
+        "ברכות המצוות"
+      ],
+      "nearestIndexedHeading": "ברכת האילנות",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 28.083901,
+        "y": 13.779875,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "C5-ilanot",
+          "rule": "nisan",
+          "label": "ברכת האילנות — בחודש ניסן"
+        }
+      ]
+    },
+    {
+      "pdfPage": 90,
+      "section": "main",
+      "printed": 95,
+      "special": null,
+      "starts": [
+        "תפלת הדרך"
+      ],
+      "nearestIndexedHeading": "תפלת הדרך",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 42.476411,
+        "y": 19.181935,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 91,
+      "section": "main",
+      "printed": 96,
+      "special": null,
+      "starts": [
+        "תפלת מנחה לחול"
+      ],
+      "nearestIndexedHeading": "תפלת מנחה לחול",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 26.584681,
+        "y": 19.2,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 92,
+      "section": "main",
+      "printed": 97,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת מנחה לחול",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 44.513463,
+        "y": 17.988429,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "A10-ketoret",
+          "rule": "erevShabbatOrYT",
+          "label": "ער״ש: עד כדי שתהא עזה"
+        },
+        {
+          "id": "A9-ata-seter",
+          "rule": "noAtaSeterMincha",
+          "label": "מדלגים אתה סתר"
+        }
+      ]
+    },
+    {
+      "pdfPage": 93,
+      "section": "main",
+      "printed": 98,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת מנחה לחול",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 25.085462,
+        "y": 17.388643,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "E2-kaddish",
+          "rule": "aseret",
+          "label": "עשי״ת"
+        },
+        {
+          "id": "F3-fast-torah",
+          "rule": "fast",
+          "label": "תענית ציבור: קריאת ויחל"
+        },
+        {
+          "id": "E1-zachreinu",
+          "rule": "aseret",
+          "label": "עשי״ת: זכרנו לחיים"
+        },
+        {
+          "id": "C1-geshem",
+          "rule": "winter",
+          "label": "משיב הרוח ומוריד הגשם"
+        },
+        {
+          "id": "C1-tal",
+          "rule": "summer",
+          "label": "מוריד הטל"
+        },
+        {
+          "id": "E1-mi-chamocha",
+          "rule": "aseret",
+          "label": "עשי״ת: מי כמוך"
+        }
+      ]
+    },
+    {
+      "pdfPage": 94,
+      "section": "main",
+      "printed": 99,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת מנחה לחול",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 44.937662,
+        "y": 13.195049,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "E1-hamelech",
+          "rule": "aseret",
+          "label": "עשי״ת: המלך הקדוש"
+        },
+        {
+          "id": "F1-aneinu-shatz",
+          "rule": "fast",
+          "label": "עננו (ש״ץ)"
+        },
+        {
+          "id": "C2-winter",
+          "rule": "talUmatar",
+          "label": "ותן טל ומטר לברכה"
+        }
+      ]
+    },
+    {
+      "pdfPage": 95,
+      "section": "main",
+      "printed": 100,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת מנחה לחול",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 26.584681,
+        "y": 15.578591,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "C2-summer",
+          "rule": "noTalUmatar",
+          "label": "ברכנו — ותן ברכה"
+        },
+        {
+          "id": "E1-mishpat",
+          "rule": "aseret",
+          "label": "עשי״ת: במשפט · המלך המשפט"
+        },
+        {
+          "id": "F4-nachem",
+          "rule": "tishaBav",
+          "label": "ט׳ באב: נחם"
+        }
+      ]
+    },
+    {
+      "pdfPage": 96,
+      "section": "main",
+      "printed": 101,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת מנחה לחול",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 44.81323,
+        "y": 16.189071,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "F4-nachem",
+          "rule": "tishaBav",
+          "label": "ט׳ באב: נחם"
+        },
+        {
+          "id": "F1-aneinu",
+          "rule": "fast",
+          "label": "עננו"
+        },
+        {
+          "id": "D1-yaaleh",
+          "rule": "yaaleh",
+          "label": "יעלה ויבוא"
+        },
+        {
+          "id": "D1-yaaleh-rc",
+          "rule": "roshChodesh",
+          "label": "ראש החדש הזה"
+        },
+        {
+          "id": "D1-yaaleh-pesach",
+          "rule": "cholHamoedPesach",
+          "label": "חג המצות הזה"
+        },
+        {
+          "id": "D1-yaaleh-sukkot",
+          "rule": "cholHamoedSukkot",
+          "label": "חג הסכות הזה"
+        }
+      ]
+    },
+    {
+      "pdfPage": 97,
+      "section": "main",
+      "printed": 102,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת מנחה לחול",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 25.742425,
+        "y": 18.57645,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "G1-al-hanisim",
+          "rule": "alHanisim",
+          "label": "על הנסים"
+        },
+        {
+          "id": "G1-chanukah",
+          "rule": "chanukah",
+          "label": "על הנסים — חנוכה"
+        },
+        {
+          "id": "G1-purim",
+          "rule": "purim",
+          "label": "על הנסים — פורים"
+        },
+        {
+          "id": "E1-vechtov",
+          "rule": "aseret",
+          "label": "עשי״ת: וכתוב לחיים"
+        }
+      ]
+    },
+    {
+      "pdfPage": 98,
+      "section": "main",
+      "printed": 103,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת מנחה לחול",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 42.952519,
+        "y": 14.379336,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "F3-birkat-kohanim",
+          "rule": "fast",
+          "label": "תענית ציבור: ברכת כהנים לש״ץ"
+        },
+        {
+          "id": "E1-besefer",
+          "rule": "aseret",
+          "label": "עשי״ת: בספר חיים"
+        },
+        {
+          "id": "E1-oseh",
+          "rule": "aseret",
+          "label": "עשי״ת"
+        }
+      ]
+    },
+    {
+      "pdfPage": 99,
+      "section": "main",
+      "printed": 104,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת מנחה לחול",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 26.1,
+        "y": 18,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "B2-tachanun-mincha",
+          "rule": "noTachanunMincha",
+          "label": "אין אומרים תחנון במנחה היום"
+        },
+        {
+          "id": "E4-avinu",
+          "rule": "avinuMalkeinuMincha",
+          "label": "אבינו מלכנו"
+        },
+        {
+          "id": "E4-avinu",
+          "rule": "!avinuMalkeinuMincha",
+          "label": "אין אומרים אבינו מלכנו היום"
+        }
+      ]
+    },
+    {
+      "pdfPage": 100,
+      "section": "main",
+      "printed": 105,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת מנחה לחול",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 46.737195,
+        "y": 19.775593,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "B2-tachanun-mincha",
+          "rule": "noTachanunMincha",
+          "label": "אין אומרים תחנון במנחה היום"
+        },
+        {
+          "id": "E4-avinu",
+          "rule": "avinuMalkeinuMincha",
+          "label": "אבינו מלכנו"
+        },
+        {
+          "id": "E4-avinu",
+          "rule": "!avinuMalkeinuMincha",
+          "label": "אין אומרים אבינו מלכנו היום"
+        }
+      ]
+    },
+    {
+      "pdfPage": 101,
+      "section": "main",
+      "printed": 106,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת מנחה לחול",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 27.841877,
+        "y": 19.787786,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "B2-tachanun-mincha",
+          "rule": "noTachanunMincha",
+          "label": "אין אומרים תחנון במנחה היום"
+        },
+        {
+          "id": "E2-kaddish",
+          "rule": "aseret",
+          "label": "עשי״ת"
+        },
+        {
+          "id": "C3-ledavid",
+          "rule": "leDavid",
+          "label": "לדוד ה׳ אורי"
+        }
+      ]
+    },
+    {
+      "pdfPage": 102,
+      "section": "main",
+      "printed": 107,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת מנחה לחול",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 48.110661,
+        "y": 19.793898,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "E2-kaddish",
+          "rule": "aseret",
+          "label": "עשי״ת"
+        }
+      ]
+    },
+    {
+      "pdfPage": 103,
+      "section": "main",
+      "printed": 108,
+      "special": null,
+      "starts": [
+        "תפלת ערבית לחול"
+      ],
+      "nearestIndexedHeading": "תפלת ערבית לחול",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 24.84266,
+        "y": 20.375165,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "A6-motzash-start",
+          "rule": "motzaeiShabbatOrYT",
+          "label": "מוצ״ש: מתחילין ה׳ הושיעה"
+        },
+        {
+          "id": "E2-kaddish",
+          "rule": "aseret",
+          "label": "עשי״ת"
+        },
+        {
+          "id": "H1-vehu-rachum",
+          "rule": "cholHamoed",
+          "label": "חוה״מ: אין אומרים והוא רחום"
+        }
+      ]
+    },
+    {
+      "pdfPage": 104,
+      "section": "main",
+      "printed": 109,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת ערבית לחול",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 45.175007,
+        "y": 20.375165,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 105,
+      "section": "main",
+      "printed": 110,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת ערבית לחול",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 27.841877,
+        "y": 20.993684,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 106,
+      "section": "main",
+      "printed": 111,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת ערבית לחול",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 46.074538,
+        "y": 19.188,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "E2-kaddish",
+          "rule": "aseret",
+          "label": "עשי״ת"
+        },
+        {
+          "id": "E1-zachreinu",
+          "rule": "aseret",
+          "label": "עשי״ת: זכרנו לחיים"
+        },
+        {
+          "id": "C1-geshem",
+          "rule": "winter",
+          "label": "משיב הרוח ומוריד הגשם"
+        },
+        {
+          "id": "C1-tal",
+          "rule": "summer",
+          "label": "מוריד הטל"
+        }
+      ]
+    },
+    {
+      "pdfPage": 107,
+      "section": "main",
+      "printed": 112,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת ערבית לחול",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 27.541956,
+        "y": 18.6,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "E1-mi-chamocha",
+          "rule": "aseret",
+          "label": "עשי״ת: מי כמוך"
+        },
+        {
+          "id": "E1-hamelech",
+          "rule": "aseret",
+          "label": "עשי״ת: המלך הקדוש"
+        },
+        {
+          "id": "A7-ata-chonen",
+          "rule": "motzaeiShabbatOrYT",
+          "label": "במוצ״ש אומרים אתה חוננתנו"
+        },
+        {
+          "id": "A7-ata-chonantanu",
+          "rule": "motzaeiShabbatOrYT",
+          "label": "אתה חוננתנו"
+        },
+        {
+          "id": "A7-vechonenu",
+          "rule": "motzaeiShabbatOrYT",
+          "label": "וחננו"
+        },
+        {
+          "id": "C2-winter",
+          "rule": "talUmatar",
+          "label": "ותן טל ומטר לברכה"
+        },
+        {
+          "id": "C2-summer",
+          "rule": "noTalUmatar",
+          "label": "ברכנו — ותן ברכה"
+        }
+      ]
+    },
+    {
+      "pdfPage": 108,
+      "section": "main",
+      "printed": 113,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת ערבית לחול",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 42.176567,
+        "y": 19.181984,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "E1-mishpat",
+          "rule": "aseret",
+          "label": "עשי״ת: במשפט · המלך המשפט"
+        }
+      ]
+    },
+    {
+      "pdfPage": 109,
+      "section": "main",
+      "printed": 114,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת ערבית לחול",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 31.141017,
+        "y": 18.6,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "D1-yaaleh",
+          "rule": "yaaleh",
+          "label": "יעלה ויבוא"
+        },
+        {
+          "id": "D1-yaaleh-rc",
+          "rule": "roshChodesh",
+          "label": "ראש החדש הזה"
+        },
+        {
+          "id": "D1-yaaleh-pesach",
+          "rule": "cholHamoedPesach",
+          "label": "חג המצות הזה"
+        },
+        {
+          "id": "D1-yaaleh-sukkot",
+          "rule": "cholHamoedSukkot",
+          "label": "חג הסכות הזה"
+        },
+        {
+          "id": "G1-al-hanisim",
+          "rule": "alHanisim",
+          "label": "על הנסים"
+        },
+        {
+          "id": "G1-chanukah",
+          "rule": "chanukah",
+          "label": "על הנסים — חנוכה"
+        },
+        {
+          "id": "G1-purim",
+          "rule": "purim",
+          "label": "על הנסים — פורים"
+        }
+      ]
+    },
+    {
+      "pdfPage": 110,
+      "section": "main",
+      "printed": 115,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת ערבית לחול",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 43.076099,
+        "y": 19.793865,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "E1-vechtov",
+          "rule": "aseret",
+          "label": "עשי״ת: וכתוב לחיים"
+        },
+        {
+          "id": "E1-besefer",
+          "rule": "aseret",
+          "label": "עשי״ת: בספר חיים"
+        },
+        {
+          "id": "E1-oseh",
+          "rule": "aseret",
+          "label": "עשי״ת"
+        },
+        {
+          "id": "A8-vihi-noam",
+          "rule": "vihiNoam",
+          "label": "מוצ״ש: ויהי נועם ואתה קדוש"
+        }
+      ]
+    },
+    {
+      "pdfPage": 111,
+      "section": "main",
+      "printed": 116,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת ערבית לחול",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 29.524453,
+        "y": 20.375165,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "E2-kaddish",
+          "rule": "aseret",
+          "label": "עשי״ת"
+        },
+        {
+          "id": "A8-vihi-noam",
+          "rule": "vihiNoam",
+          "label": "מוצ״ש: ויהי נועם ואתה קדוש"
+        }
+      ]
+    },
+    {
+      "pdfPage": 112,
+      "section": "main",
+      "printed": 117,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת ערבית לחול",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 40.077659,
+        "y": 18.576323,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "E2-kaddish",
+          "rule": "aseret",
+          "label": "עשי״ת"
+        },
+        {
+          "id": "A8-vihi-noam",
+          "rule": "vihiNoam",
+          "label": "מוצ״ש: ויהי נועם ואתה קדוש"
+        }
+      ]
+    },
+    {
+      "pdfPage": 113,
+      "section": "main",
+      "printed": 118,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת ערבית לחול",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 31.922578,
+        "y": 17.988429,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "H5-mizmor-pesach",
+          "rule": "cholHamoedPesach",
+          "label": "חוה״מ פסח: בצאת ישראל"
+        },
+        {
+          "id": "H5-mizmor-sukkot",
+          "rule": "cholHamoedSukkot",
+          "label": "חוה״מ סוכות: שיר המעלות לדוד"
+        },
+        {
+          "id": "H5-mizmor-chanukah",
+          "rule": "chanukah",
+          "label": "חנוכה: מזמור שיר חנוכת הבית"
+        }
+      ]
+    },
+    {
+      "pdfPage": 114,
+      "section": "main",
+      "printed": 119,
+      "special": null,
+      "starts": [
+        "ספירת העומר"
+      ],
+      "nearestIndexedHeading": "ספירת העומר",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 44.151273,
+        "y": 19.187935,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "E2-kaddish",
+          "rule": "aseret",
+          "label": "עשי״ת"
+        },
+        {
+          "id": "C4-omer",
+          "rule": "omer",
+          "label": "ספירת העומר"
+        },
+        {
+          "id": "C4-omer-1",
+          "rule": "omerDay1",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-2",
+          "rule": "omerDay2",
+          "label": "הספירה של הלילה"
+        }
+      ]
+    },
+    {
+      "pdfPage": 115,
+      "section": "main",
+      "printed": 120,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספירת העומר",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 30.42375,
+        "y": 20.387571,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "C4-omer",
+          "rule": "omer",
+          "label": "ספירת העומר"
+        },
+        {
+          "id": "C4-omer-3",
+          "rule": "omerDay3",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-4",
+          "rule": "omerDay4",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-5",
+          "rule": "omerDay5",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-6",
+          "rule": "omerDay6",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-7",
+          "rule": "omerDay7",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-8",
+          "rule": "omerDay8",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-9",
+          "rule": "omerDay9",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-10",
+          "rule": "omerDay10",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-11",
+          "rule": "omerDay11",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-12",
+          "rule": "omerDay12",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-13",
+          "rule": "omerDay13",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-14",
+          "rule": "omerDay14",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-15",
+          "rule": "omerDay15",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-16",
+          "rule": "omerDay16",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-17",
+          "rule": "omerDay17",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-18",
+          "rule": "omerDay18",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-19",
+          "rule": "omerDay19",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-20",
+          "rule": "omerDay20",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-21",
+          "rule": "omerDay21",
+          "label": "הספירה של הלילה"
+        }
+      ]
+    },
+    {
+      "pdfPage": 116,
+      "section": "main",
+      "printed": 121,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספירת העומר",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 42.652831,
+        "y": 19.187935,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "C4-omer",
+          "rule": "omer",
+          "label": "ספירת העומר"
+        },
+        {
+          "id": "C4-omer-22",
+          "rule": "omerDay22",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-23",
+          "rule": "omerDay23",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-24",
+          "rule": "omerDay24",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-25",
+          "rule": "omerDay25",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-26",
+          "rule": "omerDay26",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-27",
+          "rule": "omerDay27",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-28",
+          "rule": "omerDay28",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-29",
+          "rule": "omerDay29",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-30",
+          "rule": "omerDay30",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-31",
+          "rule": "omerDay31",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-32",
+          "rule": "omerDay32",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-33",
+          "rule": "omerDay33",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-34",
+          "rule": "omerDay34",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-35",
+          "rule": "omerDay35",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-36",
+          "rule": "omerDay36",
+          "label": "הספירה של הלילה"
+        }
+      ]
+    },
+    {
+      "pdfPage": 117,
+      "section": "main",
+      "printed": 122,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספירת העומר",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 25.327734,
+        "y": 19.2,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "C4-omer",
+          "rule": "omer",
+          "label": "ספירת העומר"
+        },
+        {
+          "id": "C4-omer-37",
+          "rule": "omerDay37",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-38",
+          "rule": "omerDay38",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-39",
+          "rule": "omerDay39",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-40",
+          "rule": "omerDay40",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-41",
+          "rule": "omerDay41",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-42",
+          "rule": "omerDay42",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-43",
+          "rule": "omerDay43",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-44",
+          "rule": "omerDay44",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-45",
+          "rule": "omerDay45",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-46",
+          "rule": "omerDay46",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-47",
+          "rule": "omerDay47",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-48",
+          "rule": "omerDay48",
+          "label": "הספירה של הלילה"
+        },
+        {
+          "id": "C4-omer-49",
+          "rule": "omerDay49",
+          "label": "הספירה של הלילה"
+        }
+      ]
+    },
+    {
+      "pdfPage": 118,
+      "section": "main",
+      "printed": 123,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספירת העומר",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 43.675787,
+        "y": 22.8,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": [
+        {
+          "id": "C4-omer",
+          "rule": "omer",
+          "label": "ספירת העומר"
+        }
+      ]
+    },
+    {
+      "pdfPage": 119,
+      "section": "main",
+      "printed": 124,
+      "special": null,
+      "starts": [
+        "קריאת שמע שעל המטה"
+      ],
+      "nearestIndexedHeading": "קריאת שמע שעל המטה",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 27.725859,
+        "y": 18.588214,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 120,
+      "section": "main",
+      "printed": 125,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "קריאת שמע שעל המטה",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 44.450961,
+        "y": 18.6,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 121,
+      "section": "main",
+      "printed": 126,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "קריאת שמע שעל המטה",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 26.826562,
+        "y": 16.783271,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 122,
+      "section": "main",
+      "printed": 127,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "קריאת שמע שעל המטה",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 42.352177,
+        "y": 16.783226,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 123,
+      "section": "main",
+      "printed": 128,
+      "special": null,
+      "starts": [
+        "סדר קידוש לבנה"
+      ],
+      "nearestIndexedHeading": "סדר קידוש לבנה",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 24.970326,
+        "y": 18,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 124,
+      "section": "main",
+      "printed": 129,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר קידוש לבנה",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 46.611094,
+        "y": 17.388643,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 125,
+      "section": "main",
+      "printed": 130,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר קידוש לבנה",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 23.343051,
+        "y": 17.988429,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 126,
+      "section": "main",
+      "printed": 131,
+      "special": null,
+      "starts": [
+        "סדר תפלת יום כיפור קטן"
+      ],
+      "nearestIndexedHeading": "סדר תפלת יום כיפור קטן",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 47.336793,
+        "y": 10.795468,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 127,
+      "section": "main",
+      "printed": 132,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר תפלת יום כיפור קטן",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 22.443286,
+        "y": 14.389687,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 128,
+      "section": "main",
+      "printed": 133,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר תפלת יום כיפור קטן",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 44.937419,
+        "y": 13.195049,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 129,
+      "section": "main",
+      "printed": 134,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר תפלת יום כיפור קטן",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 25.442503,
+        "y": 12.585484,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 130,
+      "section": "main",
+      "printed": 135,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר תפלת יום כיפור קטן",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 45,
+        "y": 18.582258,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 131,
+      "section": "main",
+      "printed": 136,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר תפלת יום כיפור קטן",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 24.542738,
+        "y": 17.4,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 132,
+      "section": "main",
+      "printed": 137,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר תפלת יום כיפור קטן",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 46.5,
+        "y": 13.779712,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 133,
+      "section": "main",
+      "printed": 138,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר תפלת יום כיפור קטן",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 25.742425,
+        "y": 15.583871,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 134,
+      "section": "main",
+      "printed": 139,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר תפלת יום כיפור קטן",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 44.037653,
+        "y": 18.576259,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 135,
+      "section": "main",
+      "printed": 140,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר תפלת יום כיפור קטן",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 27.242034,
+        "y": 19.793865,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 136,
+      "section": "main",
+      "printed": 141,
+      "special": null,
+      "starts": [
+        "סדר נטילת לולב",
+        "סדר הלל"
+      ],
+      "nearestIndexedHeading": "סדר נטילת לולב",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 49.009219,
+        "y": 18.576323,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 137,
+      "section": "main",
+      "printed": 142,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר נטילת לולב",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 23.642973,
+        "y": 20.393758,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 138,
+      "section": "main",
+      "printed": 143,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר נטילת לולב",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 44.637497,
+        "y": 13.180144,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 139,
+      "section": "main",
+      "printed": 144,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר נטילת לולב",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 25.869387,
+        "y": 15.594619,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 140,
+      "section": "main",
+      "printed": 145,
+      "special": null,
+      "starts": [
+        "תפלת מוסף לראש חודש"
+      ],
+      "nearestIndexedHeading": "תפלת מוסף לראש חודש",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 41.338357,
+        "y": 17.976753,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 141,
+      "section": "main",
+      "printed": 146,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת מוסף לראש חודש",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 29.341486,
+        "y": 16.794404,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 142,
+      "section": "main",
+      "printed": 147,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת מוסף לראש חודש",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 39.838748,
+        "y": 18.588087,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 143,
+      "section": "main",
+      "printed": 148,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת מוסף לראש חודש",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 32.640626,
+        "y": 18.582258,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 144,
+      "section": "main",
+      "printed": 149,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת מוסף לראש חודש",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 43.313672,
+        "y": 21,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 145,
+      "section": "main",
+      "printed": 150,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "תפלת מוסף לראש חודש",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 27.48376,
+        "y": 23.386464,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 146,
+      "section": "main",
+      "printed": 151,
+      "special": null,
+      "starts": [
+        "סדר הדלקת נר חנוכה"
+      ],
+      "nearestIndexedHeading": "סדר הדלקת נר חנוכה",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 42.651864,
+        "y": 16.2,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 147,
+      "section": "main",
+      "printed": 152,
+      "special": null,
+      "starts": [
+        "סדר מזמורים לחנוכה"
+      ],
+      "nearestIndexedHeading": "סדר מזמורים לחנוכה",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 28.8,
+        "y": 19.181935,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 148,
+      "section": "main",
+      "printed": 153,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר מזמורים לחנוכה",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 41.87624,
+        "y": 17.976691,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 149,
+      "section": "main",
+      "printed": 154,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר מזמורים לחנוכה",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 25.926588,
+        "y": 20.38129,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 150,
+      "section": "main",
+      "printed": 155,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר מזמורים לחנוכה",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 43.075614,
+        "y": 12.595144,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 151,
+      "section": "main",
+      "printed": 156,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר מזמורים לחנוכה",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 25.926588,
+        "y": 14.394834,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 152,
+      "section": "main",
+      "printed": 157,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר מזמורים לחנוכה",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 41.453116,
+        "y": 15.578417,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 153,
+      "section": "main",
+      "printed": 158,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר מזמורים לחנוכה",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 27.541956,
+        "y": 14.984194,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 154,
+      "section": "main",
+      "printed": 159,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר מזמורים לחנוכה",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 42.713412,
+        "y": 16.188983,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 155,
+      "section": "main",
+      "printed": 160,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר מזמורים לחנוכה",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 26.284386,
+        "y": 16.783226,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 156,
+      "section": "main",
+      "printed": 161,
+      "special": null,
+      "starts": [
+        "מעוז צור"
+      ],
+      "nearestIndexedHeading": "מעוז צור",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 44.274987,
+        "y": 12.6,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 157,
+      "section": "main",
+      "printed": 162,
+      "special": null,
+      "starts": [
+        "סדר ברכות המגילה"
+      ],
+      "nearestIndexedHeading": "סדר ברכות המגילה",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 23.528471,
+        "y": 13.195049,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 158,
+      "section": "main",
+      "printed": 163,
+      "special": null,
+      "starts": [
+        "זמירות לזאת חנוכה ופורים"
+      ],
+      "nearestIndexedHeading": "זמירות לזאת חנוכה ופורים",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 44.4,
+        "y": 14.4,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 159,
+      "section": "main",
+      "printed": 164,
+      "special": null,
+      "starts": [
+        "זמירות לסעודות ההילולא"
+      ],
+      "nearestIndexedHeading": "זמירות לסעודות ההילולא",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 24.727529,
+        "y": 14.978906,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 160,
+      "section": "main",
+      "printed": 165,
+      "special": null,
+      "starts": [
+        "שירים לל״ג בעומר"
+      ],
+      "nearestIndexedHeading": "שירים לל״ג בעומר",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 48.3,
+        "y": 13.185081,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 161,
+      "section": "main",
+      "printed": 166,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "שירים לל״ג בעומר",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 22.2,
+        "y": 17.394296,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 162,
+      "section": "main",
+      "printed": 167,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "שירים לל״ג בעומר",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 47.7,
+        "y": 11.386054,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 163,
+      "section": "main",
+      "printed": 168,
+      "special": null,
+      "starts": [
+        "סדר התרת נדרים"
+      ],
+      "nearestIndexedHeading": "סדר התרת נדרים",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 22.143141,
+        "y": 12.580576,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 164,
+      "section": "main",
+      "printed": 169,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר התרת נדרים",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 46.973577,
+        "y": 14.389631,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 165,
+      "section": "main",
+      "printed": 170,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר התרת נדרים",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 24,
+        "y": 19.181935,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 166,
+      "section": "main",
+      "printed": 171,
+      "special": null,
+      "starts": [
+        "סדר תשליך"
+      ],
+      "nearestIndexedHeading": "סדר תשליך",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 47.873107,
+        "y": 12.585405,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 167,
+      "section": "main",
+      "printed": 172,
+      "special": null,
+      "starts": [
+        "סדר כפרות"
+      ],
+      "nearestIndexedHeading": "סדר כפרות",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 21.374081,
+        "y": 17.377184,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 168,
+      "section": "main",
+      "printed": 173,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר כפרות",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 43.137888,
+        "y": 14.994712,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 169,
+      "section": "main",
+      "printed": 174,
+      "special": null,
+      "starts": [
+        "סליחות לעשרה בטבת"
+      ],
+      "nearestIndexedHeading": "סליחות לעשרה בטבת",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 27.068136,
+        "y": 16.2,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 170,
+      "section": "main",
+      "printed": 175,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סליחות לעשרה בטבת",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 43.6753,
+        "y": 16.194496,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 171,
+      "section": "main",
+      "printed": 176,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סליחות לעשרה בטבת",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 26.825882,
+        "y": 16.788827,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 172,
+      "section": "main",
+      "printed": 177,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סליחות לעשרה בטבת",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 42.6,
+        "y": 14.978849,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 173,
+      "section": "main",
+      "printed": 178,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סליחות לעשרה בטבת",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 28.083446,
+        "y": 18.594081,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 174,
+      "section": "main",
+      "printed": 179,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סליחות לעשרה בטבת",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 43.737731,
+        "y": 17.982581,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 175,
+      "section": "main",
+      "printed": 180,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סליחות לעשרה בטבת",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 26.884073,
+        "y": 17.982581,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 176,
+      "section": "main",
+      "printed": 181,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סליחות לעשרה בטבת",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 37.2,
+        "y": 19.775528,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 177,
+      "section": "main",
+      "printed": 182,
+      "special": null,
+      "starts": [
+        "סליחות לתענית אסתר"
+      ],
+      "nearestIndexedHeading": "סליחות לתענית אסתר",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 31.681567,
+        "y": 14.994726,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 178,
+      "section": "main",
+      "printed": 183,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סליחות לתענית אסתר",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 41.153429,
+        "y": 17.976691,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 179,
+      "section": "main",
+      "printed": 184,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סליחות לתענית אסתר",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 30.841095,
+        "y": 19.181935,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 180,
+      "section": "main",
+      "printed": 185,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סליחות לתענית אסתר",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 39.538827,
+        "y": 16.777554,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 181,
+      "section": "main",
+      "printed": 186,
+      "special": null,
+      "starts": [
+        "סליחות לשבעה עשר בתמוז"
+      ],
+      "nearestIndexedHeading": "סליחות לשבעה עשר בתמוז",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 28.866258,
+        "y": 16.788827,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 182,
+      "section": "main",
+      "printed": 187,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סליחות לשבעה עשר בתמוז",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 40.853742,
+        "y": 19.175827,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 183,
+      "section": "main",
+      "printed": 188,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סליחות לשבעה עשר בתמוז",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 30,
+        "y": 18.588183,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 184,
+      "section": "main",
+      "printed": 189,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סליחות לשבעה עשר בתמוז",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 44.449987,
+        "y": 15,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 185,
+      "section": "main",
+      "printed": 190,
+      "special": null,
+      "starts": [
+        "סדר הפרשיות לשני וחמישי"
+      ],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 25.6847,
+        "y": 18,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 186,
+      "section": "main",
+      "printed": 191,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 43.612706,
+        "y": 12.585405,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 187,
+      "section": "main",
+      "printed": 192,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 24.128,
+        "y": 16.8,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 188,
+      "section": "main",
+      "printed": 193,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 43.6753,
+        "y": 13.180144,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 189,
+      "section": "main",
+      "printed": 194,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 25.5,
+        "y": 16.183548,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 190,
+      "section": "main",
+      "printed": 195,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 43.251239,
+        "y": 10.790927,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 191,
+      "section": "main",
+      "printed": 196,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 25.6847,
+        "y": 15.583871,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 192,
+      "section": "main",
+      "printed": 197,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 46.37389,
+        "y": 13.8,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 193,
+      "section": "main",
+      "printed": 198,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 23.172203,
+        "y": 15.589257,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 194,
+      "section": "main",
+      "printed": 199,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 45.174517,
+        "y": 13.784757,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 195,
+      "section": "main",
+      "printed": 200,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 24.670639,
+        "y": 15.583871,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 196,
+      "section": "main",
+      "printed": 201,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 45.174517,
+        "y": 15,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 197,
+      "section": "main",
+      "printed": 202,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 24.78517,
+        "y": 17.394296,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 198,
+      "section": "main",
+      "printed": 203,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 47.873107,
+        "y": 16.183459,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 199,
+      "section": "main",
+      "printed": 204,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 22.2,
+        "y": 18,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 200,
+      "section": "main",
+      "printed": 205,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 43.075614,
+        "y": 15,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 201,
+      "section": "main",
+      "printed": 206,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 27.242034,
+        "y": 19.8,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 202,
+      "section": "main",
+      "printed": 207,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 43.5,
+        "y": 13.185081,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 203,
+      "section": "main",
+      "printed": 208,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 26.342269,
+        "y": 17.382903,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 204,
+      "section": "main",
+      "printed": 209,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 39.777337,
+        "y": 16.783226,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 205,
+      "section": "main",
+      "printed": 210,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 29.582663,
+        "y": 16.189042,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 206,
+      "section": "main",
+      "printed": 211,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 42.238123,
+        "y": 16.788767,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 207,
+      "section": "main",
+      "printed": 212,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 29.165945,
+        "y": 18,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 208,
+      "section": "main",
+      "printed": 213,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 36.358435,
+        "y": 14.389631,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 209,
+      "section": "main",
+      "printed": 214,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 32.76219,
+        "y": 17.982581,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 210,
+      "section": "main",
+      "printed": 215,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 40.853742,
+        "y": 16.188983,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 211,
+      "section": "main",
+      "printed": 216,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 30.241252,
+        "y": 19.8,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 212,
+      "section": "main",
+      "printed": 217,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 41.7,
+        "y": 14.384432,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 213,
+      "section": "main",
+      "printed": 218,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 28.741643,
+        "y": 18.6,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 214,
+      "section": "main",
+      "printed": 219,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר הפרשיות לשני וחמישי",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 41.4,
+        "y": 15.6,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 215,
+      "section": "main",
+      "printed": 220,
+      "special": null,
+      "starts": [
+        "קריאה לראש חודש"
+      ],
+      "nearestIndexedHeading": "קריאה לראש חודש",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 30.541173,
+        "y": 19.181935,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 216,
+      "section": "main",
+      "printed": 221,
+      "special": null,
+      "starts": [
+        "קריאה לחנוכה"
+      ],
+      "nearestIndexedHeading": "קריאה לחנוכה",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 45,
+        "y": 14.4,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 217,
+      "section": "main",
+      "printed": 222,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "קריאה לחנוכה",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 26.042347,
+        "y": 15.583871,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 218,
+      "section": "main",
+      "printed": 223,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "קריאה לחנוכה",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 43.550926,
+        "y": 14.4,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 219,
+      "section": "main",
+      "printed": 224,
+      "special": null,
+      "starts": [
+        "קריאה לפורים"
+      ],
+      "nearestIndexedHeading": "קריאה לפורים",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 26.169074,
+        "y": 17.382903,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 220,
+      "section": "main",
+      "printed": 225,
+      "special": null,
+      "starts": [
+        "קריאה לתענית ציבור"
+      ],
+      "nearestIndexedHeading": "קריאה לתענית ציבור",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 42.238123,
+        "y": 11.4,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 221,
+      "section": "main",
+      "printed": 226,
+      "special": null,
+      "starts": [
+        "הפטרה לתענית ציבור"
+      ],
+      "nearestIndexedHeading": "הפטרה לתענית ציבור",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 26.768449,
+        "y": 15.583871,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 222,
+      "section": "main",
+      "printed": 227,
+      "special": null,
+      "starts": [
+        "מי שברך לחולה וליולדת"
+      ],
+      "nearestIndexedHeading": "מי שברך לחולה וליולדת",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 42.6,
+        "y": 11.395347,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 223,
+      "section": "main",
+      "printed": 228,
+      "special": null,
+      "starts": [
+        "אל מלא להזכרת נשמות"
+      ],
+      "nearestIndexedHeading": "אל מלא להזכרת נשמות",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 29.041565,
+        "y": 16.783226,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 224,
+      "section": "main",
+      "printed": 229,
+      "special": null,
+      "starts": [
+        "סדר קבלת תענית",
+        "סדר הפרשת תרומות ומעשרות"
+      ],
+      "nearestIndexedHeading": "סדר קבלת תענית",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 46.8,
+        "y": 14.394806,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 225,
+      "section": "main",
+      "printed": 230,
+      "special": null,
+      "starts": [
+        "סדר ברכת החמה"
+      ],
+      "nearestIndexedHeading": "סדר ברכת החמה",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 26.042347,
+        "y": 16.194511,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 226,
+      "section": "main",
+      "printed": 231,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "סדר ברכת החמה",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 43.8,
+        "y": 12.580523,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 227,
+      "section": "main",
+      "printed": 232,
+      "special": null,
+      "starts": [
+        "פסוקים לשמות אנשים"
+      ],
+      "nearestIndexedHeading": "פסוקים לשמות אנשים",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 25.6275,
+        "y": 14.394834,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 228,
+      "section": "main",
+      "printed": 233,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "פסוקים לשמות אנשים",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 43.2,
+        "y": 16.8,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 229,
+      "section": "main",
+      "printed": 234,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "פסוקים לשמות אנשים",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 27.66751,
+        "y": 19.193973,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 230,
+      "section": "main",
+      "printed": 235,
+      "special": null,
+      "starts": [
+        "תפלת בית המדרש"
+      ],
+      "nearestIndexedHeading": "תפלת בית המדרש",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 46.673734,
+        "y": 16.177986,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 231,
+      "section": "unnumbered",
+      "printed": null,
+      "special": "לוח / table",
+      "starts": [
+        "לוח קביעת השנים"
+      ],
+      "nearestIndexedHeading": null,
+      "tehillimChapters": [],
+      "crop": {
+        "x": 9.577471,
+        "y": 31.921187,
+        "width": 418.987588,
+        "height": 696.163992,
+        "kind": "wide"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 232,
+      "section": "unnumbered",
+      "printed": null,
+      "special": "שער תהלים / Tehillim cover",
+      "starts": [],
+      "nearestIndexedHeading": null,
+      "tehillimChapters": [],
+      "crop": {
+        "x": 39,
+        "y": 34.782334,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 233,
+      "section": "tehillim",
+      "printed": 2,
+      "special": null,
+      "starts": [
+        "ספר תהלים"
+      ],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 29.824219,
+        "y": 21,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 234,
+      "section": "tehillim",
+      "printed": 3,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "crop": {
+        "x": 44.151273,
+        "y": 16.777554,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 235,
+      "section": "tehillim",
+      "printed": 4,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "crop": {
+        "x": 28.5,
+        "y": 21.59356,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 236,
+      "section": "tehillim",
+      "printed": 5,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "crop": {
+        "x": 41.876723,
+        "y": 16.777554,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 237,
+      "section": "tehillim",
+      "printed": 6,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "crop": {
+        "x": 31.2,
+        "y": 19.175957,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 238,
+      "section": "tehillim",
+      "printed": 7,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "crop": {
+        "x": 43.851584,
+        "y": 18.576259,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 239,
+      "section": "tehillim",
+      "printed": 8,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        17,
+        18
+      ],
+      "crop": {
+        "x": 28.383745,
+        "y": 19.793882,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 240,
+      "section": "tehillim",
+      "printed": 9,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        18,
+        19,
+        20
+      ],
+      "crop": {
+        "x": 37.678908,
+        "y": 16.183504,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 241,
+      "section": "tehillim",
+      "printed": 10,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        20,
+        21,
+        22
+      ],
+      "crop": {
+        "x": 32.340704,
+        "y": 19.781662,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 242,
+      "section": "tehillim",
+      "printed": 11,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "crop": {
+        "x": 43.375943,
+        "y": 20.387471,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 243,
+      "section": "tehillim",
+      "printed": 12,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        25,
+        26,
+        27
+      ],
+      "crop": {
+        "x": 30,
+        "y": 25.171664,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 244,
+      "section": "tehillim",
+      "printed": 13,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "crop": {
+        "x": 41.576879,
+        "y": 12.6,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 245,
+      "section": "tehillim",
+      "printed": 14,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        30,
+        31,
+        32
+      ],
+      "crop": {
+        "x": 28.383745,
+        "y": 16.183592,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 246,
+      "section": "tehillim",
+      "printed": 15,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        32,
+        33,
+        34
+      ],
+      "crop": {
+        "x": 42.353143,
+        "y": 16.183504,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 247,
+      "section": "tehillim",
+      "printed": 16,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        34,
+        35
+      ],
+      "crop": {
+        "x": 31.2,
+        "y": 19.793882,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 248,
+      "section": "tehillim",
+      "printed": 17,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        36,
+        37
+      ],
+      "crop": {
+        "x": 46.249091,
+        "y": 15,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 249,
+      "section": "tehillim",
+      "printed": 18,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        37,
+        38,
+        39
+      ],
+      "crop": {
+        "x": 26.284837,
+        "y": 15.583914,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 250,
+      "section": "tehillim",
+      "printed": 19,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        39,
+        40,
+        41
+      ],
+      "crop": {
+        "x": 44.575319,
+        "y": 17.377306,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 251,
+      "section": "tehillim",
+      "printed": 20,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        41,
+        42,
+        43,
+        44
+      ],
+      "crop": {
+        "x": 26.342494,
+        "y": 19.188,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 252,
+      "section": "tehillim",
+      "printed": 21,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        44,
+        45
+      ],
+      "crop": {
+        "x": 43.375943,
+        "y": 17.994188,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 253,
+      "section": "tehillim",
+      "printed": 22,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        45,
+        46,
+        47,
+        48
+      ],
+      "crop": {
+        "x": 27,
+        "y": 19.781662,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 254,
+      "section": "tehillim",
+      "printed": 23,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        48,
+        49,
+        50
+      ],
+      "crop": {
+        "x": 42.776255,
+        "y": 13.789874,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 255,
+      "section": "tehillim",
+      "printed": 24,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        50,
+        51,
+        52
+      ],
+      "crop": {
+        "x": 28.925603,
+        "y": 17.982627,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 256,
+      "section": "tehillim",
+      "printed": 25,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        53,
+        54,
+        55
+      ],
+      "crop": {
+        "x": 45.774694,
+        "y": 13.779767,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 257,
+      "section": "tehillim",
+      "printed": 26,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        55,
+        56,
+        57,
+        58
+      ],
+      "crop": {
+        "x": 26.527471,
+        "y": 14.4,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 258,
+      "section": "tehillim",
+      "printed": 27,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        58,
+        59,
+        60
+      ],
+      "crop": {
+        "x": 43.375943,
+        "y": 14.4,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 259,
+      "section": "tehillim",
+      "printed": 28,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "crop": {
+        "x": 26.469662,
+        "y": 16.178104,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 260,
+      "section": "tehillim",
+      "printed": 29,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        64,
+        65,
+        66
+      ],
+      "crop": {
+        "x": 43.851584,
+        "y": 15.6,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 261,
+      "section": "tehillim",
+      "printed": 30,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        66,
+        67,
+        68
+      ],
+      "crop": {
+        "x": 30.065922,
+        "y": 17.4,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 262,
+      "section": "tehillim",
+      "printed": 31,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        68,
+        69
+      ],
+      "crop": {
+        "x": 46.674226,
+        "y": 16.788797,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 263,
+      "section": "tehillim",
+      "printed": 32,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        69,
+        70,
+        71
+      ],
+      "crop": {
+        "x": 25.385306,
+        "y": 18,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 264,
+      "section": "tehillim",
+      "printed": 33,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        71,
+        72,
+        73
+      ],
+      "crop": {
+        "x": 42.538286,
+        "y": 15.589228,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 265,
+      "section": "tehillim",
+      "printed": 34,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        73,
+        74
+      ],
+      "crop": {
+        "x": 30.482653,
+        "y": 20.4,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 266,
+      "section": "tehillim",
+      "printed": 35,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        74,
+        75,
+        76,
+        77
+      ],
+      "crop": {
+        "x": 45.475337,
+        "y": 14.994712,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 267,
+      "section": "tehillim",
+      "printed": 36,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        77,
+        78
+      ],
+      "crop": {
+        "x": 28.867169,
+        "y": 18.576386,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 268,
+      "section": "tehillim",
+      "printed": 37,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        78,
+        79
+      ],
+      "crop": {
+        "x": 41.4,
+        "y": 13.784798,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 269,
+      "section": "tehillim",
+      "printed": 38,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        79,
+        80,
+        81
+      ],
+      "crop": {
+        "x": 34.021634,
+        "y": 15.6,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 270,
+      "section": "tehillim",
+      "printed": 39,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        81,
+        82,
+        83,
+        84
+      ],
+      "crop": {
+        "x": 43.552859,
+        "y": 21.587074,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 271,
+      "section": "tehillim",
+      "printed": 40,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        84,
+        85,
+        86
+      ],
+      "crop": {
+        "x": 30.541403,
+        "y": 20.981019,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 272,
+      "section": "tehillim",
+      "printed": 41,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        86,
+        87,
+        88,
+        89
+      ],
+      "crop": {
+        "x": 37.8,
+        "y": 19.187935,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 273,
+      "section": "tehillim",
+      "printed": 42,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        89
+      ],
+      "crop": {
+        "x": 34.920934,
+        "y": 21.6,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 274,
+      "section": "tehillim",
+      "printed": 43,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        90,
+        91,
+        92
+      ],
+      "crop": {
+        "x": 43.852549,
+        "y": 19.8,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 275,
+      "section": "tehillim",
+      "printed": 44,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        92,
+        93,
+        94
+      ],
+      "crop": {
+        "x": 31.323735,
+        "y": 22.8,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 276,
+      "section": "tehillim",
+      "printed": 45,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        94,
+        95,
+        96,
+        97
+      ],
+      "crop": {
+        "x": 41.638758,
+        "y": 17.377184,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 277,
+      "section": "tehillim",
+      "printed": 46,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        97,
+        98,
+        99,
+        100,
+        101
+      ],
+      "crop": {
+        "x": 31.2,
+        "y": 20.4,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 278,
+      "section": "tehillim",
+      "printed": 47,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        101,
+        102,
+        103
+      ],
+      "crop": {
+        "x": 41.338836,
+        "y": 17.988366,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 279,
+      "section": "tehillim",
+      "printed": 48,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        103,
+        104
+      ],
+      "crop": {
+        "x": 33.3,
+        "y": 20.38134,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 280,
+      "section": "tehillim",
+      "printed": 49,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        104,
+        105
+      ],
+      "crop": {
+        "x": 44.813953,
+        "y": 15,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 281,
+      "section": "tehillim",
+      "printed": 50,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        105,
+        106
+      ],
+      "crop": {
+        "x": 30.54163,
+        "y": 16.2,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 282,
+      "section": "tehillim",
+      "printed": 51,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        106,
+        107
+      ],
+      "crop": {
+        "x": 43.253169,
+        "y": 19.175892,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 283,
+      "section": "tehillim",
+      "printed": 52,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        107,
+        108,
+        109
+      ],
+      "crop": {
+        "x": 30.066831,
+        "y": 21.574309,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 284,
+      "section": "tehillim",
+      "printed": 53,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        109,
+        110,
+        111,
+        112
+      ],
+      "crop": {
+        "x": 42.95348,
+        "y": 13.794942,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 285,
+      "section": "tehillim",
+      "printed": 54,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        112,
+        113,
+        114,
+        115
+      ],
+      "crop": {
+        "x": 29.88342,
+        "y": 13.794955,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 286,
+      "section": "tehillim",
+      "printed": 55,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        116,
+        117,
+        118
+      ],
+      "crop": {
+        "x": 43.8,
+        "y": 16.183504,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 287,
+      "section": "tehillim",
+      "printed": 56,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        118,
+        119
+      ],
+      "crop": {
+        "x": 31.082798,
+        "y": 18.582306,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 288,
+      "section": "tehillim",
+      "printed": 57,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        119
+      ],
+      "crop": {
+        "x": 46.8,
+        "y": 16.2,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 289,
+      "section": "tehillim",
+      "printed": 58,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        119
+      ],
+      "crop": {
+        "x": 28.568383,
+        "y": 20.38134,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 290,
+      "section": "tehillim",
+      "printed": 59,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        119,
+        120
+      ],
+      "crop": {
+        "x": 44.813953,
+        "y": 11.4,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 291,
+      "section": "tehillim",
+      "printed": 60,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        121,
+        122,
+        123,
+        124,
+        125
+      ],
+      "crop": {
+        "x": 28.868072,
+        "y": 15.589257,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 292,
+      "section": "tehillim",
+      "printed": 61,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        126,
+        127,
+        128,
+        129,
+        130
+      ],
+      "crop": {
+        "x": 44.514186,
+        "y": 16.794388,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 293,
+      "section": "tehillim",
+      "printed": 62,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        131,
+        132,
+        133,
+        134,
+        135
+      ],
+      "crop": {
+        "x": 31.624186,
+        "y": 21,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 294,
+      "section": "tehillim",
+      "printed": 63,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        135,
+        136,
+        137
+      ],
+      "crop": {
+        "x": 46.013023,
+        "y": 11.4,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 295,
+      "section": "tehillim",
+      "printed": 64,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        137,
+        138,
+        139
+      ],
+      "crop": {
+        "x": 28.742096,
+        "y": 16.183592,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 296,
+      "section": "tehillim",
+      "printed": 65,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        140,
+        141,
+        142
+      ],
+      "crop": {
+        "x": 42.9,
+        "y": 15.578417,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 297,
+      "section": "tehillim",
+      "printed": 66,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        143,
+        144,
+        145
+      ],
+      "crop": {
+        "x": 32.941009,
+        "y": 17.982627,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 298,
+      "section": "tehillim",
+      "printed": 67,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        145,
+        146,
+        147
+      ],
+      "crop": {
+        "x": 43.915367,
+        "y": 19.2,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 299,
+      "section": "tehillim",
+      "printed": 68,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [
+        147,
+        148,
+        149,
+        150
+      ],
+      "crop": {
+        "x": 32.882323,
+        "y": 20.375098,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 300,
+      "section": "tehillim",
+      "printed": 69,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 42.23884,
+        "y": 16.788767,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 301,
+      "section": "tehillim",
+      "printed": 70,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 34.081703,
+        "y": 22.17381,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 302,
+      "section": "tehillim",
+      "printed": 71,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "ספר תהלים",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 43.915367,
+        "y": 15.594604,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 303,
+      "section": "unnumbered",
+      "printed": null,
+      "special": "עמוד ללא מספור / unnumbered page",
+      "starts": [],
+      "nearestIndexedHeading": null,
+      "tehillimChapters": [],
+      "crop": {
+        "x": 32.312201,
+        "y": 11.9835,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 304,
+      "section": "unnumbered",
+      "printed": null,
+      "special": "שער מנהגים / Minhagim cover",
+      "starts": [],
+      "nearestIndexedHeading": null,
+      "tehillimChapters": [],
+      "crop": {
+        "x": 33.588247,
+        "y": 49.358629,
+        "width": 400.702887,
+        "height": 665.783258,
+        "kind": "wide"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 305,
+      "section": "minhagim",
+      "printed": 2,
+      "special": null,
+      "starts": [
+        "מנהגים מרבותינו הקדושים מסטולין קרלין"
+      ],
+      "nearestIndexedHeading": "מנהגים מרבותינו הקדושים מסטולין קרלין",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 35.340619,
+        "y": 12.595157,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 306,
+      "section": "minhagim",
+      "printed": 3,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "מנהגים מרבותינו הקדושים מסטולין קרלין",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 43.438531,
+        "y": 20.993616,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 307,
+      "section": "minhagim",
+      "printed": 4,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "מנהגים מרבותינו הקדושים מסטולין קרלין",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 33.24116,
+        "y": 19.181935,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 308,
+      "section": "minhagim",
+      "printed": 5,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "מנהגים מרבותינו הקדושים מסטולין קרלין",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 41.638995,
+        "y": 11.381389,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 309,
+      "section": "minhagim",
+      "printed": 6,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "מנהגים מרבותינו הקדושים מסטולין קרלין",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 33,
+        "y": 10.790976,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 310,
+      "section": "minhagim",
+      "printed": 7,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "מנהגים מרבותינו הקדושים מסטולין קרלין",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 41.51722,
+        "y": 18.6,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 311,
+      "section": "minhagim",
+      "printed": 8,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "מנהגים מרבותינו הקדושים מסטולין קרלין",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 33.841005,
+        "y": 16.2,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 312,
+      "section": "minhagim",
+      "printed": 9,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "מנהגים מרבותינו הקדושים מסטולין קרלין",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 45.9,
+        "y": 15,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 313,
+      "section": "minhagim",
+      "printed": 10,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "מנהגים מרבותינו הקדושים מסטולין קרלין",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 29.642088,
+        "y": 14.994712,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 314,
+      "section": "minhagim",
+      "printed": 11,
+      "special": null,
+      "starts": [],
+      "nearestIndexedHeading": "מנהגים מרבותינו הקדושים מסטולין קרלין",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 45.836689,
+        "y": 10.191143,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    },
+    {
+      "pdfPage": 315,
+      "section": "minhagim",
+      "printed": 12,
+      "special": null,
+      "starts": [
+        "דינים למי שטעה בתפלת שמו״ע"
+      ],
+      "nearestIndexedHeading": "דינים למי שטעה בתפלת שמו״ע",
+      "tehillimChapters": [],
+      "crop": {
+        "x": 19.2,
+        "y": 12,
+        "width": 390,
+        "height": 648,
+        "kind": "reading"
+      },
+      "highlights": []
+    }
+  ]
+}

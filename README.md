@@ -1,5 +1,7 @@
 # סידור בית אהרן וישראל — PWA (ספר מודפס)
 
+Project troubleshooting and complete page/prayer map: [PROJECT_REFERENCE.md](PROJECT_REFERENCE.md).
+
 אפליקציית ווב (Progressive Web App) שמציגה את **דפי הסידור המודפס** של  
 **סידור בית אהרן וישראל** (סטולין · קרלין) כמחליף־עמודים בסגנון ספר.
 
