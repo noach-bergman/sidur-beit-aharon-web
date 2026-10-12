@@ -1,0 +1,180 @@
+/* Exterior-only design. The printed reader and its controls retain app.css. */
+html { background: #f7f3e9; }
+#view-today, .fullsheet, #sheet-loc, #a2hs-modal {
+  --ink: #392b1d;
+  --ink-2: #655440;
+  --ink-3: #776550;
+  --gold: #b69862;
+  --gold-deep: #7e6137;
+  --line: rgba(141, 112, 66, .2);
+  --bg: #faf7ef;
+  --bg-2: #f2ecdf;
+  --card: #faf8f2;
+  --pill: #f8f4eb;
+  --accent-ink: #7e6137;
+  color: var(--ink);
+  color-scheme: light;
+}
+#view-today {
+  display: block;
+  padding: 0;
+  overflow: auto;
+  background: #f7f3e9;
+  overscroll-behavior: contain;
+}
+.gate-shell {
+  --gate-width: min(100vw, 580px);
+  position: relative;
+  isolation: isolate;
+  width: var(--gate-width);
+  display: flex;
+  flex-direction: column;
+  height: 100svh;
+  min-height: 800px;
+  margin-inline: auto;
+  padding: calc(var(--gate-width) * .285 + var(--safe-top))
+    calc(var(--gate-width) * .205)
+    calc(var(--gate-width) * .155 + var(--safe-bottom));
+}
+.gate-shell > * { flex: none; }
+.gate-shell::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: var(--safe-top) 0 var(--safe-bottom);
+  pointer-events: none;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 0;
+  border-image-source: url('../assets/siddur-gate.png');
+  border-image-slice: 400 220 340 fill;
+  border-image-width: calc(var(--gate-width) * .390625)
+    calc(var(--gate-width) * .214844)
+    calc(var(--gate-width) * .332031);
+  border-image-repeat: stretch;
+}
+#view-today .today-head { display: flex; flex-direction: column; margin: 0 0 20px; }
+#view-today .masthead { display: block; order: -1; padding: 0; color: var(--ink); }
+#view-today .mast-title { font-size: 20px; line-height: 1.4; font-weight: 700; text-shadow: none; }
+#view-today .mast-sub {
+  display: block;
+  margin: 3px 0 18px;
+  color: var(--ink);
+  font-size: clamp(33px, 8.7vw, 51px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -.035em;
+}
+#view-today .mast-sub span { display: block; }
+#view-today .flourish { display: none; }
+#view-today .topbar {
+  margin: 0;
+  padding: 10px 0 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink-2);
+  gap: 3px 7px;
+}
+#view-today .dow, #view-today .hdate { font-family: var(--font); font-size: 11px; font-weight: 500; opacity: 1; }
+#view-today .greg { font-size: 10px; opacity: .85; }
+#view-today .badges { gap: 4px 9px; margin-top: 5px; }
+#view-today .badge { border: 0; background: none; padding: 0; font-size: 11px; font-weight: 400; color: var(--ink-2); }
+#view-today .ico-tile, #view-today .chev,
+.fullsheet .ico-tile, .fullsheet .chev { display: none; }
+/* Quiet glass: a translucent face, one fine edge, no glow or thick bevel. */
+#view-today .now-card, #view-today .tile, #view-today .quick-btn,
+.fullsheet .rows > li > .row, .fullsheet .th-perek, .fullsheet .seg,
+.fullsheet .chips .chip, .fullsheet .th-resume,
+#sheet-loc .row, #sheet-loc .wide, #a2hs-modal .wide {
+  color: var(--ink);
+  border: 1px solid rgba(150, 128, 91, .24);
+  background: linear-gradient(150deg, rgba(255,255,255,.62), rgba(255,255,255,.22));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.8), 0 2px 6px rgba(74, 51, 20, .035);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  transition: background .15s ease, border-color .15s ease;
+}
+#view-today .now-card { min-height: 104px; padding: 13px 8px; border-radius: 15px; }
+#view-today .now-text { text-shadow: none; }
+#view-today .now-label { font-size: 11px; font-weight: 400; color: var(--ink-2); }
+#view-today .now-title { font-size: 34px; font-weight: 700; line-height: 1.2; }
+#view-today .now-page { font-size: 11px; color: var(--ink-2); }
+#view-today .tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; margin-top: 9px; }
+#view-today .tile { min-height: 58px; padding: 7px 3px; border-radius: 11px; }
+#view-today .tile-title { font-size: 14px; font-family: var(--serif); font-weight: 700; white-space: normal; line-height: 1.2; }
+#view-today .tile.long .tile-title { font-size: 13px; }
+#view-today .tile-page { font-size: 9px; font-weight: 400; margin-top: 4px; color: var(--ink-2); }
+#view-today .quick { gap: 8px 7px; margin-top: 9px; }
+#view-today .quick-btn { min-height: 48px; padding: 7px 3px; border-radius: 11px; font-size: 13px; font-weight: 500; }
+#view-today .quick-btn.primary { order: -1; min-height: 46px; font-family: var(--serif); font-size: 20px; font-weight: 700; background: rgba(245,240,228,.65); }
+#view-today .now-card:active, #view-today .tile:active, #view-today .quick-btn:active,
+.fullsheet button.row:active, .fullsheet .th-perek:active, .fullsheet .seg:active {
+  transform: none;
+  background: #eee6d7;
+  border-color: #a88c5b;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.6);
+}
+#view-today button:focus-visible, .fullsheet button:focus-visible,
+.fullsheet input:focus-visible, #sheet-loc button:focus-visible,
+#a2hs-modal button:focus-visible { outline: 2px solid #80643c; outline-offset: 3px; }
+#view-today .panel {
+  margin: 19px 0 0;
+  padding: 0;
+  min-height: 70px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #d4c5ac transparent;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+#view-today .panel:not(:has(.block:not(.hidden))) { display: none; }
+#view-today .panel .block { margin: 0 0 14px; }
+#view-today .panel .block-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 6px;
+  color: var(--ink-2);
+  font-size: 11px;
+  font-weight: 400;
+  text-align: center;
+}
+#view-today .block-title::before, #view-today .block-title::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+#view-today .panel .rows > li > .row { min-height: 45px; padding: 6px 2px; gap: 5px; }
+#view-today .panel .row-title { font-size: 13px; font-weight: 500; }
+#view-today .panel .row-note, #view-today .panel .row-page { font-size: 10px; font-weight: 400; color: var(--ink-2); }
+#view-today .panel .chips.quiet { justify-content: center; gap: 5px; }
+#view-today .panel .chips.quiet .chip { padding: 4px 7px; border: 1px solid var(--line); background: transparent; font-size: 10px; font-weight: 400; }
+#view-today .panel .fineprint { display: block; font-size: 10px; line-height: 1.7; text-align: center; }
+#view-today .foot { flex-wrap: wrap; justify-content: center; gap: 2px 12px; margin: 15px 0 0; padding: 0; font-size: 10px; }
+#view-today .foot button { min-height: 30px; text-decoration: none; }
+#view-today .notice { border: 1px solid var(--line); background: rgba(255,255,255,.45); box-shadow: none; }
+/* Selection sheets share the restrained material; the reader is excluded. */
+.fullsheet { background: #faf7ef; }
+.fullsheet .fs-head { color: var(--ink); background: rgba(255,255,255,.5); border-bottom: 1px solid var(--line); padding-block: calc(14px + var(--safe-top)) 14px; }
+.fullsheet .fs-head h2 { font-size: 26px; }
+.fullsheet .fs-head .ibtn { color: var(--ink-2); background: rgba(139,113,69,.06); }
+.fullsheet .fs-controls, .fullsheet .scroller { width: 100%; max-width: 640px; margin-inline: auto; }
+.fullsheet .search { border: 1px solid var(--line); background: rgba(255,255,255,.65); border-radius: 12px; }
+.fullsheet .block-title { background: none; color: var(--ink-2); font-family: var(--serif); font-size: 20px; font-weight: 500; }
+.fullsheet .row, .fullsheet .rows.grid .row { min-height: 64px; border-radius: 12px; }
+.fullsheet .row-title, .fullsheet .rows.grid .row-title { font-size: 16px; font-weight: 500; }
+.fullsheet .row-note, .fullsheet .row-page { color: var(--ink-2); font-weight: 400; }
+.fullsheet .seg.is-on, .fullsheet .th-perek.is-here { background: #eae0cf; color: var(--ink); border-color: #a88c5b; }
+#sheet-loc .card, #a2hs-modal .card { background: #faf7ef; border-top: 1px solid var(--line); }
+@media (min-width: 640px) {
+  #view-today { padding-block: 20px; }
+  .gate-shell { height: calc(100svh - 40px); min-height: 980px; }
+  #view-today .today-head { margin-bottom: 26px; }
+  #view-today .now-card { min-height: 120px; }
+  #view-today .tile-title { font-size: 17px; }
+  #view-today .tile.long .tile-title { font-size: 15px; }
+  #view-today .quick-btn { font-size: 15px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #view-today *, .fullsheet * { transition: none !important; }
+}

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
-  <meta name="theme-color" content="#6a4216" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#24170b" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f7f3e9" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#f7f3e9" media="(prefers-color-scheme: dark)" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="סידור" />
@@ -16,11 +16,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Frank+Ruhl+Libre:wght@700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./css/app.css?v=18" />
+  <link rel="stylesheet" href="./css/gate.css?v=1" />
 </head>
 <body>
 
 <!-- ══════════ TODAY ══════════ -->
 <main id="view-today" class="view">
+  <div class="gate-shell">
 
   <header class="today-head">
     <div class="topbar">
@@ -31,7 +33,7 @@
     <div class="masthead">
       <h2 class="mast-title">סידור</h2>
       <svg class="flourish" viewBox="0 0 280 24" aria-hidden="true"><path d="M30 12h220" stroke="currentColor" stroke-width="1.6"/><path d="M14 12l8-6 8 6-8 6zM250 12l8-6 8 6-8 6zM134 12l6-5 6 5-6 5z" fill="currentColor"/><path d="M118 12c0-5 8-7 12-3M162 12c0-5-8-7-12-3M118 12c0 5 8 7 12 3M162 12c0 5-8 7-12 3" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
-      <p class="mast-sub">בית אהרן וישראל</p>
+      <p class="mast-sub"><span>בית אהרן</span><span>וישראל</span></p>
     </div>
     <div class="badges" id="t-badges"></div>
   </header>
@@ -81,6 +83,7 @@
     <button type="button" class="linkish" id="btn-location">מיקום: <span id="t-loc">—</span></button>
     <button type="button" class="linkish hidden" id="btn-a2hs">הוספה למסך הבית</button>
   </footer>
+  </div>
 </main>
 
 <!-- ══════════ READER ══════════ -->

@@ -1,0 +1,5 @@
+{
+  "generator": "Built-in image_gen",
+  "purpose": "Decorative gate background for exterior UI only",
+  "prompt": "Edit the provided siddur gate app preview into a PRODUCTION DECORATIVE BACKGROUND ASSET only. Keep exactly the exquisite warm antique-gold full-height architectural gate, crown, blank twin tablets, foliage, horizontal lintel, tall columns, plinths and bottom steps. REMOVE ALL TEXT AND ALL UI from the entire central area: title, date, dividers, symbols, buttons, cards, footer, EVERYTHING except architecture. Interior must be smooth blank warm ivory #faf7ef, no markings. No letters anywhere. Keep original proportions and portrait framing at 1024x1536: full crown above lintel, long columns down sides, bases near bottom. Keep thin margin and no cropped ornaments. Preserve refined matte gold detail and highlights from input. Center is a broad clean blank rectangle, smoothly filled ivory, so real HTML buttons can be layered inside later. Opaque ivory background, not transparent. This is an asset extraction, do not redesign gate, no new symbols, no cards, no text."
+}
