@@ -126,80 +126,133 @@ button { font-family: inherit; }
 /* Pinned to the four edges of the screen. (100vh/100dvh fall short in an
    app on the iPhone home screen and leave a strip at the bottom.) */
 #view-today {
-  --gutter: max(1rem, calc((100vw - 28rem) / 2));   /* a phone-width column on wider screens */
+  --edge: max(.3rem, calc((100vw - 30rem) / 2));   /* a phone-width gate on wider screens */
   position: fixed;
   inset: 0;
-  padding: 0 var(--gutter) calc(.35rem + var(--safe-bottom));
+  padding: var(--safe-top) var(--edge) var(--safe-bottom);
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 #view-today > * { flex: none; }
 
-.today-head { margin-bottom: .55rem; }
-.topbar {
-  margin-inline: calc(-1 * var(--gutter));
-  padding: calc(.45rem + var(--safe-top)) 1rem .45rem;
+/* ── the gate ── */
+
+.gate-top { text-align: center; }
+.pediment { display: block; width: min(20rem, 96%); height: auto; margin: .2rem auto -.15rem; }
+.ped-ribbon { fill: var(--card); stroke: var(--gold); stroke-width: 1.3; stroke-linejoin: round; }
+.ped-text { fill: var(--gold-deep); font-family: var(--serif); font-size: 12px; font-weight: 700; direction: rtl; }
+.ped-luach { fill: var(--card); stroke: var(--gold-deep); stroke-width: 1.4; }
+.ped-lines { stroke: var(--gold); stroke-width: 1.1; stroke-linecap: round; }
+.ped-crown { fill: var(--gold); }
+
+/* the beam over the gate, with the pasuk of the three houses */
+.cornice {
+  position: relative;
+  margin-inline: -.1rem;
+  padding: .28rem .4rem;
   background: var(--brown);
-  border-bottom: 3px solid var(--gold);
+  border-block: 2px solid var(--gold);
+  border-radius: 4px;
+  box-shadow: 0 2px 0 var(--brown-line);
+  color: var(--on-brown);
+  font-family: var(--serif);
+  font-size: min(.74rem, 3.05vw);
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/* a row of small gold ornaments under the beam */
+.frieze {
+  height: .55rem;
+  margin: .12rem .5rem 0;
+  background:
+    radial-gradient(circle, var(--gold) 0 1.6px, transparent 2.2px) center / 11px 100% repeat-x,
+    linear-gradient(var(--gold), var(--gold)) bottom / 100% 1px no-repeat;
+  opacity: .8;
+}
+
+/* inside the gate: two pillars at the sides, everything else between them */
+.gate-body {
+  position: relative;
+  flex: 1 1 auto !important;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.15rem;
+}
+.gate-body > * { flex: none; }
+.pillar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: .7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+.pillar-r { right: .1rem; }
+.pillar-l { left: .1rem; }
+.pillar i { display: block; flex: none; }
+.pillar .cap, .pillar .plinth {
+  width: 1.05rem;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--gold-deep), #f1cd73 40%, var(--gold) 65%, var(--gold-deep));
+}
+.pillar .cap { height: .75rem; border-bottom: 2px solid var(--brown-line); box-shadow: 0 -2px 0 var(--gold) inset; }
+.pillar .plinth { height: 1rem; border-top: 2px solid var(--brown-line); }
+.pillar .shaft {
+  flex: 1 1 auto;
+  width: 100%;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 2px, rgba(90, 55, 10, .22) 2px 3px),
+    linear-gradient(90deg, var(--gold-deep), #f3d27e 38%, var(--gold) 62%, var(--gold-deep));
+}
+
+.masthead { text-align: center; padding-top: .35rem; }
+.mast-pre {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ink-2);
+}
+.mast-title {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--ink);
+  text-shadow: 1px 2px 0 rgba(155, 102, 10, .2);
+}
+.dateline {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   justify-content: center;
-  column-gap: .55rem;
-  color: var(--on-brown);
+  column-gap: .45rem;
+  margin-top: .15rem;
+  color: var(--gold-deep);
 }
-.dow {
-  margin: 0;
-  font-size: .85rem;
-  font-weight: 500;
-  opacity: .85;
-}
-.hdate {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: 1.22rem;
-  font-weight: 700;
-  line-height: 1.3;
-}
-.greg {
-  margin: 0;
-  font-size: .72rem;
-  opacity: .7;
-  direction: ltr;
-  unicode-bidi: isolate;
-}
+.dow { font-size: .82rem; font-weight: 600; }
+.hdate { margin: 0; font-family: var(--serif); font-size: 1.05rem; font-weight: 700; line-height: 1.3; }
+.greg { font-size: .72rem; color: var(--ink-3); direction: ltr; unicode-bidi: isolate; }
 
-.masthead { text-align: center; padding-top: .45rem; color: var(--gold); }
-.mast-title {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: 2.6rem;
-  font-weight: 900;
-  line-height: 1;
-  color: var(--ink);
-  text-shadow: 2px 2px 0 rgba(155, 102, 10, .22);
-}
-.flourish { display: block; width: 10rem; height: auto; margin: .2rem auto 0; }
-.mast-sub {
-  margin: .1rem 0 0;
-  font-family: var(--serif);
-  font-size: .95rem;
-  font-weight: 700;
-  color: var(--ink-2);
-}
-
-.badges { display: flex; flex-wrap: wrap; justify-content: center; gap: .3rem; margin-top: .4rem; }
+.badges { display: flex; flex-wrap: wrap; justify-content: center; gap: .3rem; margin-top: .3rem; }
 .badges:empty { display: none; }
 .badge {
-  padding: .1rem .6rem;
+  padding: .08rem .6rem;
   border: 1.5px solid var(--gold);
   border-radius: 999px;
   background: var(--pill);
   color: var(--gold-deep);
-  font-size: .76rem;
+  font-size: .74rem;
   font-weight: 700;
 }
+.masthead + .notice, .masthead + #t-prayers { margin-top: .55rem; }
 
 /* the one thing you came for: the big gold button */
 .now-card {
@@ -254,7 +307,7 @@ button { font-family: inherit; }
 }
 .tile .ico-tile, .tile .chev { display: none; }
 .tile-title { font-size: 1.04rem; font-weight: 700; line-height: 1.25; white-space: nowrap; }
-.tile.long .tile-title { font-size: .9rem; }   /* ק״ש שעל המטה on one line */
+.tile.long .tile-title { font-size: .86rem; }   /* ק״ש שעל המטה on one line */
 .tile-page { font-size: .74rem; font-weight: 600; color: var(--gold-deep); }
 
 .chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .7rem; }
@@ -418,6 +471,7 @@ button { font-family: inherit; }
   flex: 1 1 auto !important;      /* down to the foot of the screen */
   min-height: 0;
   margin-top: .75rem;
+  margin-bottom: .5rem;
   padding: .15rem .8rem .5rem;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -456,24 +510,29 @@ button { font-family: inherit; }
 .panel .chips.quiet .chip { padding: .2rem .65rem; font-size: .8rem; }
 .panel .fineprint { margin-top: .4rem; font-size: .7rem; line-height: 1.5; text-align: right; }
 
+/* the base of the gate */
 .foot {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  margin-top: auto;               /* always at the foot of the screen */
-  padding: .45rem .2rem 0;
+  margin-top: 0;
+  padding: .4rem .7rem .3rem;
+  border-top: 3px double var(--gold);
+  background:
+    repeating-linear-gradient(90deg, transparent 0 14px, rgba(155, 102, 10, .12) 14px 15px) bottom / 100% .35rem no-repeat,
+    var(--cream);
+  border-radius: 4px 4px 0 0;
   font-size: .76rem;
   color: var(--ink-3);
 }
 .foot .linkish { color: var(--ink-3); }
 
-/* When today's details do not fit, the top steps back, one step at a
+/* When today's details do not fit, the gate gives up room, one step at a
    time, until they do (fitHome() in app.js adds these classes). */
-.fit-1 .mast-title { font-size: 2.1rem; }
-.fit-1 .flourish, .fit-1 .mast-sub { display: none; }
-.fit-1 .masthead { padding-top: .3rem; }
-.fit-2 .masthead { display: none; }
-.fit-2 .today-head { margin-bottom: .45rem; }
+.fit-1 .mast-pre, .fit-1 .frieze { display: none; }
+.fit-1 .mast-title { font-size: 1.55rem; }
+.fit-2 .pediment { display: none; }
+.fit-2 .cornice { margin-top: .3rem; }
 .fit-3 .now-card { padding-block: .35rem; }
 .fit-3 .now-title { font-size: 1.35rem; }
 .fit-3 .tile { min-height: 2.75rem; padding-block: .2rem; }
@@ -704,9 +763,6 @@ input[type="range"]::-moz-range-thumb {
   font: inherit; cursor: pointer;
 }
 
-@media (min-width: 640px) {
-  .topbar { border-radius: 0 0 18px 18px; }
-}
 
 /* ─── zmanim ────────────────────────────────────────── */
 
