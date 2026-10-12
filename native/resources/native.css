@@ -132,3 +132,18 @@ html.native-app, .native-app body {
 .guide-vertical-swipe .guide-hand { animation: guide-swipe 1.8s ease-in-out infinite; }
 @keyframes guide-swipe { 0%,100% { transform: translateY(18px); } 50% { transform: translateY(-24px); } }
 @media (prefers-reduced-motion: reduce) { .guide-vertical-swipe .guide-hand { animation: none; } }
+
+/* The menus share the home screen's glass face and engraved gold frame. */
+.native-app :is(.fullsheet,.modal) button.row,
+.native-app .fullsheet :is(.th-perek,.seg) {
+  position: relative; border: 1px solid rgba(151,111,52,.62);
+  background: linear-gradient(145deg,rgba(255,255,255,.86),rgba(255,255,255,.37) 46%,rgba(241,233,215,.42));
+  box-shadow: inset 0 1.5px 0 #fffffffa,inset 0 -1px 0 #ae94692b,0 3px 9px #4e3a1d17;
+  -webkit-backdrop-filter: blur(14px) saturate(1.12); backdrop-filter: blur(14px) saturate(1.12);
+}
+.native-app :is(.fullsheet,.modal) button.row::after,
+.native-app .fullsheet :is(.th-perek,.seg)::after {
+  content:'';position:absolute;inset:3px;border-radius:inherit;border:.5px solid rgba(184,145,84,.58);pointer-events:none;box-shadow:inset 0 1px 0 #fffbed;
+}
+
+.native-app .fullsheet :is(.seg.is-on,.th-perek.is-here) { background: #eee3cb; border-color: #80633d; }

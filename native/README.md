@@ -116,3 +116,16 @@ No public App Store submission or release has been started.
 - Removed both size-toggle tutorial steps and their saved-state plumbing. The guide now has ten steps, retaining automatic phone language, stable language buttons, choosing prayers, center-tap hiding, vertical-swipe revealing, page turns, returning home, additions and location.
 - All fourteen tests and content checks passed. Browser verification confirmed no original-size button, the correct fitted canvas, and a complete guide through the finish screen. Archive 9 passed signature verification and matches the tested bundle and unchanged PDF byte for byte.
 - Build 9 upload succeeded at 12:01 PM. App Store Connect confirms it is Processing. Builds 6, 7 and 8 are already Testing in the existing `testers` group with two invites. Build 9's post-processing availability on the testers' phones is not yet verified. No public submission was made.
+
+## Build 10: matching interior buttons, PDF reader retained - October 12, 2026
+
+- The owner clarified that “original” means the PDF-based GitHub app supplied for the redesign (`e911ca18956de46467a590b518146a1a5d0fd334`), not the earlier Java/text application in Git history.
+- An attempted text-reader integration was removed before any archive or TestFlight upload. It was never shipped. The retained runtime is build 9's PDF reader, guide, gestures, framing and original menu navigation.
+- Interior prayer-menu, chapter and book-selection buttons now share the home buttons' glass finish and fine gold trim. Selected book segments retain a visible gold selected state.
+- Fifteen tests and content checks passed, including a check against the transcribed printed contents. Browser inspection confirmed the original PDF page and menu, with no text-reader element or JavaScript errors. The original scan, calendar and highlight data remain unchanged. A subsequent review of the printed contents corrected one pre-existing wrong link: סדר אלף בית had pointed at the contents page; its printed page ג is absent, so it is now marked unavailable rather than opening an unrelated page. All other destinations were retained after visual review.
+
+## Build 11: final PDF-only interior styling - October 12, 2026
+
+- Retains build 10's PDF-only reader, matching glass/gold interior buttons and printed-contents audit. Selected Tehillim chapters now keep the same visible gold selected state as the selected book. Browser verification confirmed the selected chapters' background and legible text after opening a chapter and returning to the menu.
+- `Siddur-11.xcarchive` passed deep signature verification and matches the tested native assets, menu and index. The original PDF SHA-256 is unchanged. No historical text-reader code or text-prayer data is included in the archive.
+- Internal TestFlight upload succeeded at 1:11 PM New York time. Apple processing is pending confirmation. The rejected text-reader experiment was never uploaded in any build. No public App Store submission was made.

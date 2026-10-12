@@ -6,6 +6,7 @@ Start here when investigating a missing prayer, incorrect page, framing issue, o
 
 - Repository: https://github.com/noach-bergman/sidur-beit-aharon-web
 - Working branch: `codex/siddur-exterior-redesign`, in the `redesign/` worktree. The sibling `source/` checkout is the original baseline; do not edit or deploy it as part of the redesign.
+- **Owner clarification, 2026-10-12:** “original” means the PDF-based GitHub app at baseline `e911ca18956de46467a590b518146a1a5d0fd334`, which was supplied for this redesign. It does not mean the older Java/text app from repository history. Use PDF scans for prayer reading; do not activate the recovered text reader or substitute text for missing scans.
 - The owner wants the original prayer words preserved. Native framing is display-only. Do not recreate missing religious text from memory or substitute another edition without checking it.
 - `docs/` supplies the native build and GitHub Pages source. Root `data/`, `css/`, `js/`, `siddur.pdf` mirror the web version. Check both copies when modifying shared content.
 - Native changes do not automatically update the separately hosted Sites preview. The original site/main branch has not been deployed by this work.
@@ -48,13 +49,13 @@ Start here when investigating a missing prayer, incorrect page, framing issue, o
 
 ## Numbering: never use one global offset
 
-All PDF indexes below are **1-based**. The PDF has 315 scanned pages; numbering restarts in Tehillim and Minhagim. Exact sequence rules are generated below. Printed 81-84 are absent between PDF pages 79 and 80. Inserting pages shifts later PDF indexes and must update every affected lookup, highlight, Tehillim map, crop and page count; do not merely insert a PDF and leave the app indexes unchanged.
+All PDF indexes below are **1-based**. The PDF has 315 scanned pages; numbering restarts in Tehillim and Minhagim. Exact sequence rules are generated below. Printed 3 is absent before printed 4; printed 81-84 are absent between PDF pages 79 and 80. Inserting pages shifts later PDF indexes and must update every affected lookup, highlight, Tehillim map, crop and page count; do not merely insert a PDF and leave the app indexes unchanged.
 
 ## Recovered original text app - 2026-10-12
 
 The GitHub history contains an earlier app with separate prayer data and working button/menu definitions. It was replaced by the PDF reader in commit `2fdd7ac79b3e4e7be7ef3a2dda064b09813f1ec0` on 2026-09-20, before the isolated redesign. The latest original text version immediately before that change is `c41659659e02e85e1775fe26da7ce1364721bcd2`.
 
-**Check this recovered source before assuming a missing scan means the prayer text is unavailable.** There are 19 expanded page files and 425 underlying text resources. The current remote `main` still uses the PDF version; these files are recovered from its history.
+**Historical reference only. The owner explicitly rejected using this text version in the app; the required baseline is the later PDF app.** There are 19 expanded page files and 425 underlying text resources. The current remote `main` still uses the PDF version; these files are recovered from its history.
 
 - Exact historical copies: [reference/original-text-app/](reference/original-text-app/).
 - Provenance and SHA-256 for every recovered file: [PROVENANCE.json](reference/original-text-app/PROVENANCE.json).
@@ -68,11 +69,15 @@ The GitHub history contains an earlier app with separate prayer data and working
 
 These are text resources, not the missing printed scans. Recovered files remain outside the app bundle and are byte-identical to Git history. The old generated prayer files say `weekday-default`; their converter simplified calendar conditions. Some resources contain include markers, alternative versions and encoded Divine Names. Verify presentation and conditional expansion before using them in the current app. Searches for the exact missing headings גאולה לברית, פדיון הבן and ברכות אירוסין did not find them in this text collection; this is not proof that every related passage is absent.
 
+## Printed table-of-contents audit - 2026-10-12
+
+The printed `תוכן ומפתח` is PDF page 2. All 62 numbered main-section entries were read from this page and matched against the index. All 57 previously linked scan destinations were visually checked. One wrong link was corrected: `סדר אלף בית`, printed ג (3), had incorrectly pointed to the table of contents itself. Printed ג is absent; the first numbered scan is printed ד (4) at PDF page 3. The remaining destinations are retained, including several prayers starting halfway down a shared page. Audit evidence and the independently transcribed page numbers are in [reference/printed-contents-audit.json](reference/printed-contents-audit.json). The PDF bytes remain unchanged.
+
 ## Known missing pages and source search - 2026-10-12
 
 Confirmed visually: PDF page 79 is printed פ (80), ending פרשת המן / תפלה על הפרנסה. The next scan, PDF page 80, is printed פה (85), containing the continuation of סדר פדיון הבן and סדר נטילת ידים לסעודה. Printed פא-פד (81-84) were absent in the original baseline, before any redesign or crop work.
 
-Affected entries: ברכות אירוסין ונשואין, סדר ברית מילה, גאולה לברית מילה, and the opening of סדר פדיון הבן. The menu deliberately describes the absent scans rather than linking to an unrelated page.
+The opening alphabet page ג (3) is also absent. Affected entries: סדר אלף בית, ברכות אירוסין ונשואין, סדר ברית מילה, גאולה לברית מילה, and the opening of סדר פדיון הבן. The menu deliberately describes the absent scans rather than linking to an unrelated page.
 
 | Source checked | Result / next use |
 | --- | --- |
@@ -114,15 +119,15 @@ The full crop audit uses 120-DPI grayscale renders of all pages; see `native/scr
 
 - Bundle ID: `com.noachbergman.siddurbeitaharon`; App Store Connect app ID: `6821949673`.
 - [TestFlight](https://appstoreconnect.apple.com/apps/6821949673/testflight).
-- Latest recorded upload: 1.0.0 (9), `native/build/Siddur-9.xcarchive`; uploaded 2026-10-12 12:01 PM. Last recorded Apple status was Processing; this is a historical observation, not a current check.
-- Builds 6-8 were confirmed Testing in the existing two-person `testers` group. Physical-device acceptance of build 9 remains separate from compilation/browser checks.
+- Latest recorded upload: 1.0.0 (11), `native/build/Siddur-11.xcarchive`; uploaded 2026-10-12 1:11 PM New York time. Apple processing was pending confirmation at this record. Build 11 remains PDF-only; the historical text-reader experiment was removed before release.
+- Builds 6-8 were confirmed Testing in the existing two-person `testers` group. Physical-device acceptance of build 11 remains separate from compilation/browser checks.
 - Archives and temporary inspection PNGs are ignored local artifacts, not durable source references. Prefer the source paths and reproducible commands above.
 
 <!-- GENERATED INDEX START -->
 
 ## Generated lookup indexes
 
-Generated 2026-10-12T16:45:27.643Z. PDF SHA-256: `95b89872ec9853d8257b1c61c9e5b57947d8fff25ab34591e23be959c7666697`.
+Generated 2026-10-12T17:04:30.203Z. PDF SHA-256: `95b89872ec9853d8257b1c61c9e5b57947d8fff25ab34591e23be959c7666697`.
 
 315 PDF pages; 66 indexed prayer/section entries; 19 menu categories. Machine-readable detail: [reference/page-index.json](reference/page-index.json). Nearest indexed headings below are navigation inferences, not OCR or a verified title for each individual scanned page.
 
@@ -139,7 +144,7 @@ Generated 2026-10-12T16:45:27.643Z. PDF SHA-256: `95b89872ec9853d8257b1c61c9e5b5
 
 | Prayer / section | Menu group | Book section | Printed label / number | PDF page | Status / note |
 | --- | --- | --- | --- | --- | --- |
-| סדר אלף בית | השכמת הבוקר | main | ג / 3 | 2 | עמוד ג׳ — באותו עמוד של התוכן והמפתח |
+| סדר אלף בית | השכמת הבוקר | main | ג / 3 | — | העמוד חסר בסריקה |
 | סדר השכמת הבוקר | השכמת הבוקר | main | ד / 4 | 3 | Available |
 | ברכות השחר | השכמת הבוקר | main | ה / 5 | 4 | Available |
 | אני מאמין | השכמת הבוקר | main | ח / 8 | 7 | Available |
@@ -237,7 +242,7 @@ Recovered historical source, not currently included in the native bundle. Raw re
 | PDF page | Section | Printed number | Starts on this page | Nearest indexed heading (inferred) | Tehillim chapters | Frame kind | Highlight entries |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | unnumbered | — | שער / cover | — |  | cover | 0 |
-| 2 | unnumbered | — | סדר אלף בית | — |  | reading | 0 |
+| 2 | unnumbered | — | תוכן ומפתח / contents | — |  | reading | 0 |
 | 3 | main | 4 | סדר השכמת הבוקר | סדר השכמת הבוקר |  | reading | 0 |
 | 4 | main | 5 | ברכות השחר | ברכות השחר |  | reading | 0 |
 | 5 | main | 6 | — | ברכות השחר |  | reading | 0 |

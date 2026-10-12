@@ -37,6 +37,7 @@
     304
   ],
   "missingPrintedPages": [
+    3,
     81,
     82,
     83,
@@ -52,10 +53,10 @@
       "title": "סדר אלף בית",
       "group": "daily",
       "section": "main",
-      "pdfPage": 2,
+      "pdfPage": null,
       "printed": 3,
       "printedLabel": "ג",
-      "note": "עמוד ג׳ — באותו עמוד של התוכן והמפתח"
+      "note": "העמוד חסר בסריקה"
     },
     {
       "title": "סדר השכמת הבוקר",
