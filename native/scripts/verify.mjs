@@ -24,10 +24,19 @@ assert(!app.includes('back.style.width = front.style.width'), 'Page-specific cro
 const crops = JSON.parse(await readFile(path.join(native, 'resources/page-crops.json'), 'utf8'));
 assert.equal(crops.pdfSha256, createHash('sha256').update(await readFile(path.join(web, 'siddur.pdf'))).digest('hex'));
 assert.equal(Object.keys(crops.pages).length, 315);
+assert.equal(crops.schemaVersion, 2);
+assert.deepEqual(crops.frame, [390, 648]);
+let readingPages = 0;
 for (const box of Object.values(crops.pages)) {
-  assert(box.length === 4 && box.every(v => v >= 0 && v <= 1));
-  assert(box[2] > box[0] && box[3] > box[1]);
+  assert(['x', 'y', 'width', 'height'].every(key => Number.isFinite(box[key])));
+  assert(box.width > 0 && box.height > 0);
+  assert(Math.abs(box.height / box.width - 648 / 390) < 1e-7, 'All fitted pages share one display ratio');
+  if (box.kind === 'reading') {
+    assert.equal(box.width, 390); assert.equal(box.height, 648);
+    readingPages++;
+  }
 }
+assert.equal(readingPages, 312, 'Ordinary pages must keep identical magnification');
 assert(app.includes('plan(new Date(),'), 'No fixed-date QA fixture in release');
 await readFile(path.join(bundled, 'vendor/pdfjs/pdf.worker.min.js'));
 const config = JSON.parse(await readFile(path.join(native, 'capacitor.config.json'), 'utf8'));
