@@ -1,5 +1,5 @@
 /* Exterior-only design. The printed reader and its controls retain app.css. */
-html { background: #f7f3e9; }
+html { background: #fcf8ed; }
 #view-today, .fullsheet, #sheet-loc, #a2hs-modal {
   --ink: #392b1d;
   --ink-2: #655440;
@@ -19,7 +19,7 @@ html { background: #f7f3e9; }
   display: block;
   padding: 0;
   overflow: auto;
-  background: #f7f3e9;
+  background: #fcf8ed;
   overscroll-behavior: contain;
 }
 .gate-shell {
@@ -51,6 +51,10 @@ html { background: #f7f3e9; }
     calc(var(--gate-width) * .202931)
     calc(var(--gate-width) * .439684);
   border-image-repeat: stretch;
+  /* Blend only the blank paper at the image edges into the same full-screen
+     paper color; do not leave a separate safe-area band above or below it. */
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 4px, #000 calc(100% - 8px), transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 4px, #000 calc(100% - 8px), transparent);
 }
 #view-today .today-head { display: flex; flex-direction: column; margin: 0 0 10px; }
 #view-today .masthead { display: block; order: -1; padding: 0; color: var(--ink); }

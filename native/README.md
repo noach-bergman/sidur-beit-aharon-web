@@ -1,6 +1,6 @@
 # iPhone app
 
-Isolated Capacitor iPhone package for the redesigned siddur. Bundle ID: `com.noachbergman.siddurbeitaharon`. Version 1.0.0, build 4. The website in `docs/` remains the source of the interface; native adaptations are generated into ignored `www/` and `ios/App/App/public/` directories.
+Isolated Capacitor iPhone package for the redesigned siddur. Bundle ID: `com.noachbergman.siddurbeitaharon`. Version 1.0.0, build 5. The website in `docs/` remains the source of the interface; native adaptations are generated into ignored `www/` and `ios/App/App/public/` directories.
 
 The printed PDF and all prayer/calendar data are copied byte for byte. PDF.js 3.11.174 and the Hebrew fonts are bundled locally. Only native resource paths, native geolocation, installed-app UI, and service-worker registration are adapted. GPS is optional; denied location falls back to the existing manual city selection. There is no background location tracking or app analytics.
 
@@ -11,13 +11,13 @@ cd native
 npm ci
 npm run sync
 node scripts/verify.mjs
-xcodebuild -project ios/App/App.xcodeproj -scheme App -configuration Release -destination 'generic/platform=iOS' -archivePath build/Siddur-4-book.xcarchive -derivedDataPath build/DerivedData -allowProvisioningUpdates archive
+xcodebuild -project ios/App/App.xcodeproj -scheme App -configuration Release -destination 'generic/platform=iOS' -archivePath build/Siddur-5.xcarchive -derivedDataPath build/DerivedData -allowProvisioningUpdates archive
 ```
 
 For TestFlight, create the matching app record in the owner's App Store Connect account, then upload with:
 
 ```sh
-xcodebuild -exportArchive -archivePath build/Siddur-4-book.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath build/upload-4-book -allowProvisioningUpdates
+xcodebuild -exportArchive -archivePath build/Siddur-5.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath build/upload-5 -allowProvisioningUpdates
 ```
 
 Increment the build number before subsequent uploads. An archive or successful upload does not itself mean Apple processing or internal TestFlight availability has completed; verify those in App Store Connect. No public App Store release is part of this workflow.
@@ -65,3 +65,13 @@ Build 2 sized each page from every detected scan mark and all highlight bounds. 
 - A browser fixture using the production renderer paused the real paper curl at 260 ms. At 393×852 the header rectangle remained `[0, 0, 393, 54.3984375]` before, during and after the turn; the page label updated only after completion. Reverse turns and preserving hidden controls were checked. QA pause controls exist only in an ignored fixture, not the bundled app.
 - Simulator build passed. The dedicated iPhone simulator displayed pages 14 and 15 with the centered header retained after the page turn. Physical-device motion performance remains for the testers.
 - Final `Siddur-4-book.xcarchive` passed signature verification and matched the tested native JS/CSS and unchanged PDF byte for byte. Upload succeeded at 10:54 AM. App Store Connect subsequently confirmed **Build 4 Internal - Testing**, assigned to the existing `testers` group with two invites. Build 3 also processed successfully. No external beta or public release was submitted.
+
+## Build 5: crown detail and bottom-corner page turn - October 12, 2026
+
+- Removed the small cross at the top of the home gate's crown using a built-in image edit. Only its 29×36-pixel rectangle was transferred onto the original 887×1774 image: 1,040 changed pixels, with every pixel outside that rectangle verified identical. The existing app icon has a different, non-cross ornament and is unchanged. The corrected active asset is mirrored in `assets/` and `docs/assets/`.
+- The paper cylinder now tilts ten degrees, anchored at the lower-left corner. The page starts lifting from the bottom, bends diagonally toward the right binding and reverses naturally on backward navigation. The presenter, cancellation handling, fixed header and original PDF remain unchanged.
+- Nine tests passed, including the eight navigation/lifecycle checks and a geometry check across 101 animation positions at three iPhone widths. Early bending stays in the lower part of the page, and all sampled source polygons remain inside the original page with finite transforms.
+- Browser visual checks covered the early corner lift, midpoint, reverse motion and fixed header. The header's rectangle stayed `[0, 0, 393, 54.3984375]` while the page curled. The Simulator build passed; physical-device motion performance remains for the testers.
+- This update remains an internal TestFlight build. Public App Store submission was explicitly deferred by the owner; the export settings retain `testFlightInternalTestingOnly`.
+
+- Home paper, iOS web-view background and launch background now share `#fcf8ed`, sampled from the gate paper. A short fade on the artwork's blank top/bottom edges removes the hard safe-area seams without changing the gate ornaments.

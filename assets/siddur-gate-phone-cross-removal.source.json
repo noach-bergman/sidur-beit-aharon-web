@@ -1,0 +1,12 @@
+{
+  "generator": "Built-in image_gen",
+  "prompt": "Use case: precise-object-edit. Edit this exact existing production app background. Remove ONLY the tiny cross finial at the very top center of the crown (the small cross-shaped gold ornament around x=443 y=16..38 in the 887x1774 reference). End the crown cleanly with its existing small rounded gold base, without a cross, star, fleur-de-lis or any replacement symbol. Fill the area where the cross was with the identical warm ivory background. CRITICAL: keep everything else pixel-identical: crown below the tip, tablets, foliage, gate, column proportions and positions, ornaments, colors, texture, all empty interior space, bottom floor, image dimensions and framing. Do not redesign or enhance anything. This is a Jewish siddur app. No cross anywhere. No new text. Return the same full image with only this tiny top-center correction.",
+  "production": "Only the generated crown-tip rectangle was composited into the original. Every pixel outside this rectangle was verified identical.",
+  "rectangle": {
+    "x": 429,
+    "y": 8,
+    "width": 29,
+    "height": 36
+  },
+  "changedPixels": 1040
+}

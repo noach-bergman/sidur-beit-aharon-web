@@ -57,3 +57,23 @@ test('reduced motion disables page movement', () => {
   assert.equal(startPageTurn({animate(){throw new Error('must not animate');}}, {},1),null);
   delete globalThis.window;
 });
+
+test('corner curl starts at the bottom and keeps finite, bounded source geometry', async () => {
+  const { curlGeometry } = await import('../resources/page-curl-geometry.js');
+  for(const [w,h] of [[320,532],[393,652],[430,714]]) {
+    for(let step=0;step<=100;step++) {
+      const g=curlGeometry(w,h,step/100);
+      for(const p of [g.flat,g.back,...g.front,...g.reverse].filter(Boolean)) {
+        assert(p.matrix.every(Number.isFinite));
+        for(const [x,y] of p.polygon) {
+          assert(x>=-1e-7 && x<=w+1e-7 && y>=-1e-7 && y<=h+1e-7,'Source stays on the printed page');
+        }
+      }
+    }
+    const early=curlGeometry(w,h,.06);
+    const bent=[...early.front,...early.reverse,...(early.back?[early.back]:[])];
+    assert(bent.length>0);
+    assert(bent.every(p=>p.polygon.every(([,y])=>y>h*.4)),'Early motion belongs to the lower corner');
+    assert(early.flat.polygon.some(([x,y])=>x===0&&y===0),'Upper-left stays flat at the start');
+  }
+});

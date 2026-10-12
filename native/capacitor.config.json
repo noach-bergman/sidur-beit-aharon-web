@@ -2,11 +2,11 @@
   "appId": "com.noachbergman.siddurbeitaharon",
   "appName": "סידור בית אהרן",
   "webDir": "www",
-  "backgroundColor": "#f7f3e9",
+  "backgroundColor": "#fcf8ed",
   "ios": {
     "contentInset": "never",
     "scrollEnabled": false,
-    "backgroundColor": "#f7f3e9",
+    "backgroundColor": "#fcf8ed",
     "preferredContentMode": "mobile",
     "allowsLinkPreview": false
   }

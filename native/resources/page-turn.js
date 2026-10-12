@@ -1,6 +1,7 @@
-// A cylindrical paper fold. The next Hebrew page is revealed from the left;
-// its outgoing leaf bends toward the right binding. Reverse turns lay the
-// previous leaf back down. Text stays on the front; the paper reverse is blank.
+import { curlGeometry } from './page-curl-geometry.js';
+
+// The leaf lifts from its bottom-left corner toward the right binding.
+// Its scanned front bends over a diagonal cylinder; reverse turns lay it down.
 export function startPageTurn(front, back, direction) {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !front.animate) return null;
   const forward = direction > 0;
@@ -17,7 +18,6 @@ export function startPageTurn(front, back, direction) {
   front.parentElement.append(overlay);
   const ctx = overlay.getContext('2d');
   ctx.scale(dpr, dpr);
-  const radius = width * .115;
   const duration = 520;
   let raf = 0, ended = false;
 
@@ -25,47 +25,39 @@ export function startPageTurn(front, back, direction) {
     ctx.clearRect(0, 0, width, height + 2 * padding);
     if (progress <= 0) { ctx.drawImage(source, 0, padding, width, height); return; }
     if (progress >= 1) return;
-    const fold = progress * (width + Math.PI * radius);
-    const shadowX = fold - radius;
-    const shadow = ctx.createLinearGradient(shadowX - 18, 0, fold + 12, 0);
-    shadow.addColorStop(0, 'rgba(35,27,17,0)');
-    shadow.addColorStop(.32, 'rgba(35,27,17,.17)');
-    shadow.addColorStop(1, 'rgba(35,27,17,0)');
-    ctx.fillStyle = shadow;
-    ctx.fillRect(shadowX - 18, padding - 3, radius + 30, height + 6);
-    // The still-flat front of the outgoing leaf.
-    const flat = Math.min(width, Math.max(0, fold));
-    if (flat < width) ctx.drawImage(source, flat / width * source.width, 0,
-      (width-flat) / width * source.width, source.height, flat, padding, width-flat, height);
-    // Front half of the curl, textured with the actual scanned page. Thin
-    // vertical strips follow the cylinder rather than sliding the whole page.
-    const strips = 64, step = Math.PI / strips;
-    for (let i = 0; i < strips / 2; i++) {
-      const a0 = i * step, a1 = (i+1) * step;
-      const x0 = Math.max(0, fold-radius*a1), x1 = Math.min(width, fold-radius*a0);
-      if (x1 <= x0) continue;
-      const t0 = (fold-x1)/radius, t1 = (fold-x0)/radius;
-      const left = fold-radius*Math.sin(t1), right = fold-radius*Math.sin(t0);
-      const lift = (1-Math.cos((t0+t1)/2))*6;
-      ctx.drawImage(source, x0/width*source.width, 0, (x1-x0)/width*source.width, source.height,
-        left, padding-lift, Math.max(.1,right-left)+.35, height+2*lift);
-      ctx.fillStyle = `rgba(44,33,20,${.13*Math.sin((t0+t1)/2)})`;
-      ctx.fillRect(left,padding-lift,Math.max(.1,right-left)+.35,height+2*lift);
+    const geometry = curlGeometry(width, height, progress);
+    const point = (p, m) => [m[0]*p[0]+m[2]*p[1]+m[4],m[1]*p[0]+m[3]*p[1]+m[5]+padding];
+    function path(patch) {
+      ctx.beginPath();
+      patch.polygon.forEach((p,i)=>{const [x,y]=point(p,patch.matrix);if(i)ctx.lineTo(x,y);else ctx.moveTo(x,y);});
+      ctx.closePath();
     }
-    // The turned-over flat sheet, then its curved reverse (drawn on top).
-    const backWidth = Math.max(0, fold-Math.PI*radius);
-    ctx.fillStyle = '#fffefa';
-    ctx.fillRect(fold,padding-12,backWidth,height+24);
-    for (let i = strips-1; i >= strips/2; i--) {
-      const x0 = Math.max(0, fold-radius*(i+1)*step), x1 = Math.min(width, fold-radius*i*step);
-      if (x1 <= x0) continue;
-      const t0 = (fold-x1)/radius, t1 = (fold-x0)/radius;
-      const left = fold-radius*Math.sin(t0), right = fold-radius*Math.sin(t1);
-      const lift = (1-Math.cos((t0+t1)/2))*6;
-      const shade = Math.round(255 - 32*Math.pow(Math.sin((t0+t1)/2),4));
-      ctx.fillStyle = `rgb(${shade},${shade},${Math.max(0,shade-3)})`;
-      ctx.fillRect(left,padding-lift,Math.max(.1,right-left)+.5,height+2*lift);
+    function texture(patch) {
+      if(!patch) return;
+      ctx.save(); path(patch); ctx.clip();
+      const m=patch.matrix;
+      ctx.transform(m[0],m[1],m[2],m[3],m[4],m[5]+padding);
+      ctx.drawImage(source,0,0,width,height);
+      if(patch.shade) {ctx.fillStyle=`rgba(44,33,20,${.12*patch.shade})`;ctx.fillRect(0,0,width,height);}
+      ctx.restore();
     }
+    function paper(patch) {
+      if(!patch) return;
+      const shade=Math.round(255-32*Math.pow(patch.shade,4));
+      ctx.fillStyle=`rgb(${shade},${shade},${shade-3})`;
+      path(patch);ctx.fill();
+    }
+    const sh=geometry.shadow;
+    const shadow=ctx.createLinearGradient(sh.nx*sh.low,sh.originY+sh.ny*sh.low+padding,
+      sh.nx*sh.high,sh.originY+sh.ny*sh.high+padding);
+    shadow.addColorStop(0,'rgba(35,27,17,0)');
+    shadow.addColorStop(.32,'rgba(35,27,17,.17)');
+    shadow.addColorStop(1,'rgba(35,27,17,0)');
+    ctx.fillStyle=shadow;ctx.fillRect(0,padding,width,height);
+    texture(geometry.flat);
+    geometry.front.forEach(texture);
+    paper(geometry.back);
+    geometry.reverse.forEach(paper);
   }
   draw(forward ? 0 : 1);
   if (forward) { front.style.opacity='0'; back.style.visibility='visible'; back.style.opacity='1'; }
