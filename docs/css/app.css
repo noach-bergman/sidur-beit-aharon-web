@@ -117,71 +117,85 @@ button { font-family: inherit; }
 
 /* ─── TODAY ─────────────────────────────────────────── */
 
+/* The home screen is one screen, like an app: it never scrolls as a page.
+   The top is fixed in size; the box with the day's details at the bottom
+   takes whatever height is left, and scrolls inside itself only on a
+   heavy day on a small phone. */
+html, body { height: 100%; }
 #view-today {
   max-width: 30rem;
+  height: 100vh;
+  height: 100dvh;
   margin: 0 auto;
-  padding: 0 1.1rem calc(1.75rem + var(--safe-bottom));
+  padding: 0 1rem calc(.35rem + var(--safe-bottom));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
+#view-today > * { flex: none; }
 
-.today-head { margin-bottom: 1.1rem; }
+.today-head { margin-bottom: .55rem; }
 .topbar {
-  margin-inline: -1.1rem;
-  padding: calc(.8rem + var(--safe-top)) 1.1rem .85rem;
+  margin-inline: -1rem;
+  padding: calc(.45rem + var(--safe-top)) 1rem .45rem;
   background: var(--brown);
   border-bottom: 3px solid var(--gold);
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  column-gap: .55rem;
   color: var(--on-brown);
 }
 .dow {
   margin: 0;
-  font-size: .9rem;
+  font-size: .85rem;
   font-weight: 500;
   opacity: .85;
 }
 .hdate {
-  margin: .05rem 0 0;
+  margin: 0;
   font-family: var(--serif);
-  font-size: 1.6rem;
+  font-size: 1.22rem;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.3;
 }
 .greg {
-  margin: .15rem 0 0;
-  font-size: .78rem;
+  margin: 0;
+  font-size: .72rem;
   opacity: .7;
   direction: ltr;
   unicode-bidi: isolate;
 }
 
-.masthead { text-align: center; padding-top: 1rem; color: var(--gold); }
-.crown { display: block; width: 6.5rem; height: auto; margin: 0 auto -.2rem; }
+.masthead { text-align: center; padding-top: .45rem; color: var(--gold); }
 .mast-title {
   margin: 0;
   font-family: var(--serif);
-  font-size: 4.3rem;
+  font-size: 2.6rem;
   font-weight: 900;
-  line-height: 1.05;
+  line-height: 1;
   color: var(--ink);
-  text-shadow: 2px 3px 0 rgba(155, 102, 10, .22);
+  text-shadow: 2px 2px 0 rgba(155, 102, 10, .22);
 }
-.flourish { display: block; width: min(16rem, 80%); height: auto; margin: .15rem auto 0; }
+.flourish { display: block; width: 10rem; height: auto; margin: .2rem auto 0; }
 .mast-sub {
-  margin: .35rem 0 0;
+  margin: .1rem 0 0;
   font-family: var(--serif);
-  font-size: 1.2rem;
+  font-size: .95rem;
   font-weight: 700;
   color: var(--ink-2);
 }
 
-.badges { display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem; margin-top: .9rem; }
+.badges { display: flex; flex-wrap: wrap; justify-content: center; gap: .3rem; margin-top: .4rem; }
 .badges:empty { display: none; }
 .badge {
-  padding: .28rem .8rem;
+  padding: .1rem .6rem;
   border: 1.5px solid var(--gold);
   border-radius: 999px;
   background: var(--pill);
   color: var(--gold-deep);
-  font-size: .82rem;
+  font-size: .76rem;
   font-weight: 700;
 }
 
@@ -190,9 +204,9 @@ button { font-family: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: .9rem;
+  gap: .8rem;
   width: 100%;
-  padding: 1rem 1.1rem;
+  padding: .6rem 1rem;
   border: 2px solid var(--brown-line);
   border-radius: var(--r);
   background: var(--gold-fill);
@@ -202,43 +216,43 @@ button { font-family: inherit; }
   transition: transform .1s ease, box-shadow .1s ease;
 }
 .now-card:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--brown-line); }
-.now-card .ico-tile { width: 3rem; height: 3rem; background: rgba(255,255,255,.2); color: #fff; }
-.now-card .ico-tile svg { width: 26px; height: 26px; }
+.now-card .ico-tile { width: 2.5rem; height: 2.5rem; background: rgba(255,255,255,.2); color: #fff; }
+.now-card .ico-tile svg { width: 22px; height: 22px; }
 .now-card .chev { display: none; }
 .now-text { min-width: 0; text-align: center; text-shadow: 0 1px 1px rgba(80,45,0,.35); }
-.now-label { display: block; font-size: .82rem; font-weight: 600; opacity: .9; }
+.now-label { display: block; font-size: .75rem; font-weight: 600; opacity: .9; }
 .now-title {
   display: block;
   font-family: var(--serif);
-  font-size: 1.85rem;
+  font-size: 1.55rem;
   font-weight: 900;
   line-height: 1.15;
 }
-.now-page { display: block; margin-top: .1rem; font-size: .88rem; opacity: .92; }
+.now-page { display: block; font-size: .8rem; opacity: .92; }
 
 /* the other tefillot of the day: gold-framed buttons side by side */
 .tiles {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(6.3rem, 1fr));
-  gap: .55rem;
-  margin-top: .75rem;
+  gap: .5rem;
+  margin-top: .6rem;
 }
 .tile {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: .1rem;
-  min-height: 4.2rem;
-  padding: .55rem .4rem;
+  gap: 0;
+  min-height: 3.2rem;
+  padding: .35rem .4rem;
   border-radius: var(--r-s);
   font: inherit;
   text-align: center;
   cursor: pointer;
 }
 .tile .ico-tile, .tile .chev { display: none; }
-.tile-title { font-size: 1.08rem; font-weight: 700; line-height: 1.25; }
-.tile-page { font-size: .78rem; font-weight: 600; color: var(--gold-deep); }
+.tile-title { font-size: 1.04rem; font-weight: 700; line-height: 1.25; }
+.tile-page { font-size: .74rem; font-weight: 600; color: var(--gold-deep); }
 
 .chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .7rem; }
 .chip {
@@ -349,7 +363,7 @@ button { font-family: inherit; }
 }
 
 .notice {
-  padding: 1.1rem 1.2rem;
+  padding: .8rem 1rem;
   border: 2px solid var(--gold);
   border-radius: var(--r);
   background: var(--card);
@@ -368,46 +382,98 @@ button { font-family: inherit; }
 .quick {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: .55rem;
-  margin-top: .55rem;
+  gap: .5rem;
+  margin-top: .5rem;
 }
 .quick-btn {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: .25rem;
-  min-height: 4.4rem;
-  padding: .55rem .4rem;
+  gap: .1rem;
+  min-height: 3.4rem;
+  padding: .35rem .4rem;
   border-radius: var(--r-s);
-  font-size: 1rem;
+  font-size: .98rem;
   font-weight: 700;
   cursor: pointer;
 }
 .quick-btn .ico-tile { width: auto; height: auto; background: none; color: var(--gold-deep); }
-.quick-btn .ico-tile svg { width: 22px; height: 22px; }
+.quick-btn .ico-tile svg { width: 19px; height: 19px; }
 .quick-btn.primary {
   order: 1;
   grid-column: 1 / -1;
   flex-direction: row;
   gap: .5rem;
-  min-height: 3.3rem;
+  min-height: 2.75rem;
   background: var(--cream);
-  font-size: 1.06rem;
+  font-size: 1.02rem;
 }
-.quick-btn.primary .ico-tile svg { width: 20px; height: 20px; }
+
+/* the day's details: one framed box under the buttons */
+.panel {
+  flex: 0 1 auto !important;      /* as tall as today needs, shrinking (and scrolling) only when short of room */
+  min-height: 0;
+  margin-top: .75rem;
+  padding: .15rem .8rem .5rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 2px solid var(--gold);
+  border-radius: var(--r);
+  background: var(--card);
+  box-shadow: 0 3px 0 var(--gold-deep);
+}
+.panel:not(:has(.block:not(.hidden))) { visibility: hidden; }   /* nothing to say today */
+.panel .block { margin-top: 0; }
+.panel .block-title {
+  margin: .45rem 0 .15rem;
+  padding: 0;
+  background: none;
+  text-align: right;
+  font-size: .8rem;
+  letter-spacing: .02em;
+}
+.panel .rows { gap: 0; }
+.panel .rows > li + li { border-top: 1px solid var(--line); }
+.panel .rows > li > .row {
+  min-height: 2.6rem;
+  padding: .3rem .1rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  gap: .6rem;
+}
+.panel .rows > li > button.row:active { transform: none; box-shadow: none; background: var(--bg-2); }
+.panel .row .ico-tile { display: none; }
+.panel .row-title { font-size: .98rem; }
+.panel .row-note { font-size: .74rem; margin-top: 0; }
+.panel .row-page { font-size: .88rem; }
+.panel .chips.quiet { justify-content: flex-start; gap: .3rem; }
+.panel .chips.quiet .chip { padding: .2rem .65rem; font-size: .8rem; }
+.panel .fineprint { margin-top: .4rem; font-size: .7rem; line-height: 1.5; text-align: right; }
 
 .foot {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  margin-top: 1.4rem;
-  padding-top: .9rem;
-  border-top: 1px solid var(--line);
-  font-size: .8rem;
+  margin-top: auto;               /* always at the foot of the screen */
+  padding: .45rem .2rem 0;
+  font-size: .76rem;
   color: var(--ink-3);
 }
 .foot .linkish { color: var(--ink-3); }
+
+/* shorter phones (iPhone SE, Safari with its bars): the title steps back */
+@media (max-height: 720px) {
+  .mast-title { font-size: 2.1rem; }
+  .flourish, .mast-sub { display: none; }
+  .masthead { padding-top: .3rem; }
+}
+@media (max-height: 620px) {
+  .masthead { display: none; }
+  .today-head { margin-bottom: .45rem; }
+}
 
 /* ─── READER ────────────────────────────────────────── */
 
