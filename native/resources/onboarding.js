@@ -17,7 +17,7 @@ const steps = [
   {id:'prayer',target:()=>row('תפלת שחרית'),title:words('Open the printed page','פותחים את התפילה'),body:words('Tap the prayer name to open its original siddur page.','לחצו על שם התפילה כדי לפתוח את העמוד המקורי בסידור.'),action:true},
   {id:'fullscreen',target:()=>$('#tap-menu'),title:words('Read without the controls','קוראים במסך מלא'),body:words('Tap the middle of the page to hide the header and buttons. The prayer stays in the same place.','נגיעה באמצע העמוד מסתירה את הכותרת והכפתורים. התפילה נשארת באותו מקום.'),action:true,region:'center',reader:true},
   {id:'turn',target:()=>$('#tap-next'),title:words('Turn a page','מעבירים עמוד'),body:words('Swipe right to go forward, or tap the left edge. Swipe left or tap the right edge to go back—like a Hebrew book.','להמשך, החליקו ימינה או געו בשוליים השמאליים. לחזרה, החליקו שמאלה או געו בשוליים הימניים — כמו בספר עברי.'),action:true,region:'turn',reader:true},
-  {id:'controls',target:()=>$('#tap-menu'),title:words('Bring the controls back','מחזירים את הכפתורים'),body:words('Tap the middle again whenever you need the controls.','נוגעים שוב באמצע העמוד כדי להציג את הכפתורים.'),action:true,region:'center',reader:true},
+  {id:'controls',target:()=>$('#tap-menu'),title:words('Bring the controls back','מחזירים את הכפתורים'),body:words('Swipe up or down anywhere on the page to bring the controls back. A tap in the middle also works.','החליקו למעלה או למטה על העמוד כדי להחזיר את הכפתורים. אפשר גם לגעת באמצע.'),action:true,gesture:'vertical',region:'center',reader:true},
   {id:'original',target:()=>$('#native-reader-original'),title:words('Choose the page size','בוחרים את תצוגת העמוד'),body:words('The fitted view makes the text larger by reducing blank margins. “מקור” shows the original page with its wider margins.','התצוגה המותאמת מגדילה את הכתב באמצעות צמצום השוליים הריקים. ״מקור״ מציג את העמוד עם השוליים המקוריים.'),action:true,reader:true,chrome:true},
   {id:'fitted',target:()=>$('#native-reader-original'),title:words('Return to the larger view','חוזרים לתצוגה המוגדלת'),body:words('Tap “התאמה” to return to the fitted page. No words are changed in either view.','לחצו על ״התאמה״ כדי לחזור לעמוד המותאם למסך. המילים נשארות זהות בשתי התצוגות.'),action:true,reader:true},
   {id:'home',target:()=>$('#btn-back'),title:words('Back to the gate','חוזרים למסך הבית'),body:words('The close button returns you to the home screen.','כפתור הסגירה מחזיר למסך הבית.'),action:true,reader:true},
@@ -108,6 +108,7 @@ export function installOnboarding() {
     if(s.id==='category'||s.id==='prayer')s.target().scrollIntoView({block:'center',behavior:'instant'});
     base();root.innerHTML=`<button type="button" class="guide-spot" tabindex="-1" aria-hidden="true"><span class="guide-hand">${hand}</span></button><div class="guide-card"><div class="guide-meta"><span class="guide-progress"></span><button class="guide-switch" type="button"></button></div><h2 id="guide-title"></h2><p class="guide-copy"></p><div class="guide-actions"><button type="button" class="guide-skip"></button><button type="button" class="guide-primary"></button></div></div>`;
     root.dataset.step=s.id;
+    root.classList.toggle('guide-vertical-swipe', s.gesture === 'vertical');
     root.querySelector('.guide-progress').textContent=`${T().step} ${index+1} ${T().of} ${steps.length}`;
     root.querySelector('h2').textContent=s.title[language];root.querySelector('.guide-copy').textContent=s.body[language];
     root.querySelector('.guide-primary').textContent=s.action?T().try:T().next;
@@ -119,7 +120,8 @@ export function installOnboarding() {
   async function perform() {
     if(busy||!active)return;busy=true;const token=generation,s=steps[step];
     root.querySelector('.guide-primary').disabled=true;
-    if(s.action)s.target()?.click();
+    if(s.gesture === 'vertical')window.SiddurNativeReader.revealControls();
+    else if(s.action)s.target()?.click();
     // The original reader opens after two animation frames; let that request
     // start before waiting for its paint/turn to finish.
     await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));

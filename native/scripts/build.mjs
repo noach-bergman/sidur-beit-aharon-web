@@ -80,6 +80,9 @@ replaceOnce('if (!e.touches || !e.touches.length || state.rendering) return;', '
 replaceOnce("['mazon', 'achrona', 'nehenin', 'derech']", "['mazon', 'achrona', 'nehenin', 'derech', 'brit']");
 replaceOnce('      setTimeout(askGeolocation, 600);', '      window.SiddurNativeGuide.afterIntro(askGeolocation);');
 replaceOnce('    watchForUpdates();', `    watchForUpdates();
+    window.addEventListener('siddur-show-controls', function () {
+      if (!$('#view-reader').classList.contains('hidden')) setChrome(true);
+    });
     window.SiddurNativeGuide.configure({
       ready: function () { return state.toc && state.menu.categories.length; },
       idle: function () { return !state.rendering; },

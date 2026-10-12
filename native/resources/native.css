@@ -127,3 +127,9 @@ html.native-app, .native-app body {
 .guide-welcome h2 { min-height: 2.5em; }
 .guide-welcome .guide-copy { min-height: 4.65em; }
 .guide-actions .guide-primary { min-width: 112px; }
+
+/* Keep vertical drags in the reader, where they reveal its controls. */
+.native-app #page-stage { touch-action: none; overscroll-behavior: none; }
+.guide-vertical-swipe .guide-hand { animation: guide-swipe 1.8s ease-in-out infinite; }
+@keyframes guide-swipe { 0%,100% { transform: translateY(18px); } 50% { transform: translateY(-24px); } }
+@media (prefers-reduced-motion: reduce) { .guide-vertical-swipe .guide-hand { animation: none; } }

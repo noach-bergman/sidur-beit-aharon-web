@@ -1,4 +1,5 @@
 import crops from './page-crops.json';
+import { installReaderGestures } from './reader-gestures.js';
 import { createPagePresenter } from './page-turn.js';
 
 export function installNativeReader() {
@@ -20,28 +21,11 @@ export function installNativeReader() {
     window.dispatchEvent(new Event('resize'));
   });
 
-  // A swipe must not also generate a synthetic edge tap on iOS.
-  const stage = document.querySelector('#page-stage');
-  let touchStart = null, suppressClick = false;
-  stage.addEventListener('touchstart', event => {
-    suppressClick = false;
-    const t = event.touches[0];
-    touchStart = t ? [t.clientX, t.clientY] : null;
-  }, { capture: true, passive: true });
-  stage.addEventListener('touchend', event => {
-    const t = event.changedTouches[0];
-    if (!touchStart || !t) return;
-    const dx = t.clientX - touchStart[0], dy = t.clientY - touchStart[1];
-    suppressClick = Math.abs(dx) >= 70 && Math.abs(dx) >= Math.abs(dy) * 1.2;
-    touchStart = null;
-  }, { capture: true, passive: true });
-  stage.addEventListener('click', event => {
-    if (suppressClick) {
-      suppressClick = false; event.preventDefault(); event.stopImmediatePropagation();
-    }
-  }, true);
+  const revealControls = () => window.dispatchEvent(new Event('siddur-show-controls'));
+  installReaderGestures(document.querySelector('#page-stage'), revealControls);
 
   window.SiddurNativeReader = {
+    revealControls,
     originalMode: () => original,
     setOriginalMode(value) { if (original !== value) button.click(); },
     show(pageNumber, hooks) {

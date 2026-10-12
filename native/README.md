@@ -101,3 +101,11 @@ No public App Store submission or release has been started.
 - Browser measurements confirmed identical button rectangles in both languages at 393×852 (154.5×44 points each) and 320×568 (122×44 points each). The smaller screen keeps the complete introductory card visible without scrolling.
 - Final `Siddur-7-final.xcarchive` passed archive/signature checks and matched the tested native assets and original PDF. The earlier `Siddur-7.xcarchive` is an unuploaded intermediate; only the final archive is used for distribution.
 - Build 6 processed successfully and was confirmed Testing in the existing two-person internal testers group. Build 7 replaces it with this final placement correction. App Store submission remains deferred.
+
+## Build 8: vertical swipes reveal reader controls - October 12, 2026
+
+- An upward or downward one-finger swipe on the reading page reveals the fixed header/footer. This never hides already visible controls or changes the page. Center tapping remains available to hide/show controls; side taps and horizontal swipes retain Hebrew book navigation.
+- Vertical gestures use a 45-point threshold and a clear directional preference. They stop before the existing page-turn handler. Drag-generated synthetic clicks are suppressed so a swipe on an edge cannot also turn a page, or a swipe in the middle immediately hide the revealed controls. Canceled/multi-touch gestures do not trigger the new reveal action. The reading stage retains vertical touch handling instead of allowing browser panning.
+- The English/Hebrew guide now teaches this gesture with a vertically moving hand and demonstrates revealing the controls.
+- Fourteen tests passed, including upward/downward classification, retaining horizontal turns, cancellation, multi-touch and synthetic-click suppression. Browser fixture checks dispatched touch sequences through the production handlers: up and down both restored `chrome-on` while the page stayed at 14; a horizontal sequence moved to 15 exactly once. The guide demonstration also restored the controls. Actual finger behavior on a physical iPhone remains for TestFlight acceptance.
+- Archive 8 passed signature verification and matches the tested native bundle, menu and unchanged PDF. The temporary gesture-test buttons are absent from the release.
