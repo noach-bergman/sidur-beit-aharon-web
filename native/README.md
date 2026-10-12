@@ -75,3 +75,22 @@ Build 2 sized each page from every detected scan mark and all highlight bounds. 
 - This update remains an internal TestFlight build. Public App Store submission was explicitly deferred by the owner; the export settings retain `testFlightInternalTestingOnly`.
 
 - Home paper, iOS web-view background and launch background now share `#fcf8ed`, sampled from the gate paper. A short fade on the artwork's blank top/bottom edges removes the hard safe-area seams without changing the gate ornaments.
+
+## Build 6: first-launch guide, menu and icon - October 12, 2026
+
+- Added a 12-step hands-on introduction with a pointing hand, English and Hebrew text, Skip, and replay through the prayer menu's Help button. The initial language follows the phone's primary language (Hebrew locales use Hebrew; other languages use English). An explicit language switch persists. The tour demonstrates choosing a prayer, center-tap controls, Hebrew-direction page turns, original/fitted page size, returning home, daily additions and location choices. It restores the previous bookmark/view preference and defers the automatic location prompt until the introduction ends.
+- Removed the native reader's jump-to-page button and the corresponding tutorial steps. Return home to choose a different prayer. The source website reader stays unchanged.
+- Replaced the life-cycle category with “ברית, פדיון ונישואין”; healing and memorial prayers sit under “תפילות והוספות”. Every menu prayer entry is retained, including the existing disabled wedding-blessings entry whose page is absent from the source scan.
+- Used the owner's exact `Sidur-Master-1254.png` artwork as the app icon, resized proportionally to 1024×1024 with no alpha. Added a fine gold outer border and inset line to the existing home-screen glass buttons.
+- Eleven language/navigation/geometry tests and bundled-content checks passed. Browser walkthroughs covered both languages at 393×852 and 320×568, first-launch persistence, Help replay, Skip after changing page size, automatic English on a fresh origin, and removal of the page picker. No browser errors were recorded. The iPhone Simulator build passed and displayed the automatic English introduction. Device Hub input automation was unavailable, so the full gesture walkthrough was validated in the browser using the same production modules; physical-device acceptance remains with the testers.
+- Release archive 6 passed deep signature verification and matched the tested JS/CSS, gate artwork, menu and unchanged PDF byte for byte. Distribution remains internal TestFlight only.
+
+## App Store publication steps (not submitted)
+
+1. Finish testing the release on a real iPhone and confirm permission to distribute this siddur edition and its artwork.
+2. Prepare a new App Store-eligible archive. These beta archives use Apple's internal-only TestFlight option, which cannot be submitted for public distribution. See https://developer.apple.com/help/app-store-connect/test-a-beta-version/add-internal-testers .
+3. In App Store Connect, complete the listing: name, description, keywords, category, iPhone screenshots, support URL, privacy-policy URL, age rating, pricing and availability. Add the privacy-policy link inside the app as well, and accurately answer App Privacy for the app and its SDKs. See https://developer.apple.com/help/app-store-connect/manage-app-information/manage-app-privacy and https://developer.apple.com/app-store/review/guidelines/ .
+4. Select the eligible build, answer export-compliance/content-rights questions, and provide review contact information and notes explaining offline reading, daily prayer selection, prayer times, reminders and the optional location feature.
+5. Select manual release, then Add for Review and Submit for Review. After Apple approves, use Release This Version when ready. See https://developer.apple.com/help/app-store-connect/manage-submissions-to-app-review/submit-an-app and https://developer.apple.com/help/app-store-connect/manage-your-apps-availability/select-an-app-store-version-release-option .
+
+No public App Store submission or release has been started.

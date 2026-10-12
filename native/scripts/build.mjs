@@ -77,6 +77,31 @@ replaceOnce('e.preventDefault(); setChrome(false); prevPage();', 'e.preventDefau
 replaceOnce('e.preventDefault(); setChrome(false); nextPage();', 'e.preventDefault(); nextPage();');
 replaceOnce('      setChrome(false);\n      if (dx > 0) nextPage(); else prevPage();', '      if (dx > 0) nextPage(); else prevPage();');
 replaceOnce('if (!e.touches || !e.touches.length || state.rendering) return;', 'if (!e.touches || !e.touches.length) return;');
+replaceOnce("['mazon', 'achrona', 'nehenin', 'derech']", "['mazon', 'achrona', 'nehenin', 'derech', 'brit']");
+replaceOnce('      setTimeout(askGeolocation, 600);', '      window.SiddurNativeGuide.afterIntro(askGeolocation);');
+replaceOnce('    watchForUpdates();', `    watchForUpdates();
+    window.SiddurNativeGuide.configure({
+      ready: function () { return state.toc && state.menu.categories.length; },
+      idle: function () { return !state.rendering; },
+      chrome: function () { setChrome(true); },
+      home: function () {
+        closeReader(); closeIndex(); closeTehillim(); closeGoto();
+        $('#sheet-loc').classList.add('hidden');
+      },
+      snapshot: function () {
+        var bookmark = null;
+        try { bookmark = localStorage.getItem(STORAGE_PAGE); } catch (e) {}
+        return { page: state.pdfPage, bookmark: bookmark, original: window.SiddurNativeReader.originalMode() };
+      },
+      restore: function (saved) {
+        state.pdfPage = saved.page;
+        window.SiddurNativeReader.setOriginalMode(saved.original);
+        try {
+          if (saved.bookmark === null) localStorage.removeItem(STORAGE_PAGE);
+          else localStorage.setItem(STORAGE_PAGE, saved.bookmark);
+        } catch (e) {}
+      }
+    });`);
 await writeFile(path.join(output, 'js/app.js'), app);
 await mkdir(path.join(output, 'licenses'), { recursive: true });
 for (const [pkg, name] of [['pdfjs-dist', 'PDFjs'], ['@fontsource/heebo', 'Heebo'], ['@fontsource/frank-ruhl-libre', 'FrankRuhlLibre']]) {

@@ -2,6 +2,7 @@
 .native-app #btn-a2hs, .native-app #a2hs-modal { display: none !important; }
 .native-app { -webkit-user-select: none; user-select: none; }
 .native-app input { -webkit-user-select: text; user-select: text; }
+.native-app #btn-goto { display: none !important; }
 .native-app #native-reader-original { width: 3rem; font-size: 12px; }
 
 /* A visible glass rim and soft reflected light, without the earlier gold glow. */
@@ -66,4 +67,55 @@ html.native-app, .native-app body {
 .native-app #view-reader .page-leaf { isolation: isolate; }
 @media (prefers-reduced-motion: reduce) {
   .native-app #view-reader .rbar, .native-app #view-reader .progress > span { transition: none; }
+}
+
+/* First-launch instruction layer; the real controls remain visible beneath it. */
+.native-guide[hidden] { display: none !important; }
+.native-guide { position: fixed; inset: 0; z-index: 10000; overflow: hidden; color: #3f3020; font-family: Heebo, sans-serif; touch-action: manipulation; }
+.native-guide * { box-sizing: border-box; }
+.guide-dimmer { position: absolute; inset: 0; background: rgba(49,38,22,.44); }
+.guide-card { position: absolute; inset-inline: 16px; max-width: 390px; margin-inline: auto; padding: 20px; border: 1px solid #e1d0ad; border-radius: 24px; background: #fcf8ed; box-shadow: 0 12px 40px #30210f38, inset 0 1px #fff; }
+.guide-welcome { top: 50%; transform: translateY(-50%); }
+.guide-card-top { top: max(18px, calc(var(--safe-top, 0px) + 10px)); }
+.guide-card-bottom { bottom: max(18px, calc(var(--safe-bottom, 0px) + 10px)); }
+.guide-card h2 { margin: 12px 0 8px; font-size: 23px; line-height: 1.25; font-weight: 600; }
+.guide-copy { font-size: 15px; line-height: 1.55; margin: 0 0 18px; }
+.guide-eyebrow { font-size: 13px; color: #81613c; margin: 0; }
+.guide-meta, .guide-actions, .guide-languages { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.guide-progress { font-size: 12px; color: #79674f; }
+.guide-card button { min-height: 44px; border-radius: 13px; font: inherit; cursor: pointer; }
+.guide-primary { background: #80633d; color: white; border: 1px solid #735730; padding: 10px 22px; font-weight: 500 !important; }
+.guide-primary:disabled { opacity: .65; }
+.guide-skip, .guide-switch { background: transparent; border: 0; color: #725a3c; padding: 6px 4px; font-size: 13px !important; }
+.guide-welcome > button { display: block; width: 100%; }
+.guide-languages { margin: 22px 0 18px; }
+.guide-languages button { flex: 1; background: #fffcf7; border: 1px solid #d6c8b1; color: #574027; }
+.guide-languages button[aria-pressed=true] { border: 2px solid #80633d; background: #eee3ce; }
+.guide-spot { position: absolute; border: 2px solid #d7b16a; border-radius: 16px; background: transparent; box-shadow: 0 0 0 200vmax #31261670, 0 0 0 5px #fff6; padding: 0; pointer-events: auto; }
+.guide-hand { position: absolute; width: 35px; height: 44px; left: 50%; top: 60%; filter: drop-shadow(0 2px 3px #37210b66); animation: guide-tap 1.5s ease-in-out infinite; pointer-events: none; }
+.guide-hand svg { width: 100%; height: 100%; }
+.native-help { min-width: 44px; min-height: 44px; border: 0; border-radius: 12px; background: #eee7db; color: #654b2d; font: inherit; }
+.guide-card button:focus-visible { outline: 3px solid #a1824e; outline-offset: 3px; }
+@keyframes guide-tap { 0%,100% { transform: translate(0,3px); } 45%,65% { transform: translate(0,-5px) scale(.94); } }
+@media (max-height: 650px) { .guide-card { padding: 14px 16px; border-radius: 19px; } .guide-card h2 { font-size: 20px; margin-block: 6px; } .guide-copy { font-size: 13px; line-height: 1.45; margin-bottom: 10px; } .guide-languages { margin-block: 12px; } }
+@media (prefers-reduced-motion: reduce) { .guide-hand { animation: none; } }
+
+/* Fine engraved gold trim echoes the gate without changing the glass faces. */
+.native-app #view-today .now-card,
+.native-app #view-today .tile,
+.native-app #view-today .quick-btn,
+.native-app #view-today .panel .rows > li > button.row,
+.native-app #view-today #native-day-button {
+  position: relative;
+  border-color: rgba(151, 111, 52, .62);
+}
+.native-app #view-today .now-card::after,
+.native-app #view-today .tile::after,
+.native-app #view-today .quick-btn::after,
+.native-app #view-today .panel .rows > li > button.row::after,
+.native-app #view-today #native-day-button::after {
+  content: ''; position: absolute; inset: 3px; border-radius: inherit;
+  border: .5px solid rgba(184, 145, 84, .58);
+  box-shadow: inset 0 1px 0 rgba(255, 251, 237, .8);
+  pointer-events: none;
 }

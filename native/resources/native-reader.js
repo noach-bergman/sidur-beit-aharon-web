@@ -42,6 +42,8 @@ export function installNativeReader() {
   }, true);
 
   window.SiddurNativeReader = {
+    originalMode: () => original,
+    setOriginalMode(value) { if (original !== value) button.click(); },
     show(pageNumber, hooks) {
       if (!presenter) {
         const reader = document.querySelector('#view-reader');
