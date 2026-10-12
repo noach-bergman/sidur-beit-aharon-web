@@ -1,0 +1,28 @@
+{
+  "oldPages": 315,
+  "newPages": 315,
+  "samePageSignatures": 315,
+  "differences": [],
+  "newSha256": "8d2bac741c12e267be6d423b216ecd4b323fe0ab737ead695c8117c60c743860",
+  "checkedOn": "2026-10-12",
+  "source": "User-supplied PDF attachment, ACFrOgC_q_eNgwo3JMsUO2F1d5Jx8ot1OdyTP3R1PwGZuGgVQnpduU2kKZC7Ph96NRjKWeSQS9LhVTNW8rNbq4NvgDLTKNaECTdHQiek8Y0f0mkSplV3cTuUKpefZ6t8LkBT6oaBBDErcIqFDtfq.pdf",
+  "oldSha256": "95b89872ec9853d8257b1c61c9e5b57947d8fff25ab34591e23be959c7666697",
+  "comparison": "All 315 corresponding pages have identical drawing streams, compressed image streams and JBIG2 globals, media/crop boxes, rotation, and annotation counts. No embedded files. The different document hash does not supply different scanned pages.",
+  "visuallyVerified": [
+    {
+      "pdfPage": 79,
+      "printedPage": 80
+    },
+    {
+      "pdfPage": 80,
+      "printedPage": 85,
+      "heading": "סדר פדיון הבן"
+    },
+    {
+      "pdfPage": 81,
+      "printedPage": 86,
+      "heading": "סדר ברכת המזון"
+    }
+  ],
+  "outcome": "No application PDF, page mapping or framing changed; the provided file does not restore the missing printed pages."
+}

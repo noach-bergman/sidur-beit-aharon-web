@@ -45,7 +45,7 @@ Start here when investigating a missing prayer, incorrect page, framing issue, o
 - The jump-to-page control is hidden in the native reader. Close the reader to choose another prayer from Home.
 - The ten-step guide defaults to the phone language (Hebrew for `he`/`iw`, English otherwise). Explicit selection is remembered; language buttons keep their positions. Replay through `עזרה` in the prayer menu.
 - Guide storage: `siddur-guide-v1`, `siddur-guide-language`; bookmark: `sidur-bav-last-page`. Tour exit restores the bookmark.
-- The life-cycle category was replaced by `ברית, פדיון ונישואין`; healing/memorial entries are in `תפילות והוספות`.
+- The life-cycle heading was removed. The later `ברית, פדיון ונישואין` category was also removed because all its entries have missing opening pages. Healing/memorial entries remain in `תפילות והוספות`.
 
 ## Numbering: never use one global offset
 
@@ -77,7 +77,7 @@ The printed `תוכן ומפתח` is PDF page 2. All 62 numbered main-section en
 
 Confirmed visually: PDF page 79 is printed פ (80), ending פרשת המן / תפלה על הפרנסה. The next scan, PDF page 80, is printed פה (85), containing the continuation of סדר פדיון הבן and סדר נטילת ידים לסעודה. Printed פא-פד (81-84) were absent in the original baseline, before any redesign or crop work.
 
-The opening alphabet page ג (3) is also absent. Affected entries: סדר אלף בית, ברכות אירוסין ונשואין, סדר ברית מילה, גאולה לברית מילה, and the opening of סדר פדיון הבן. The menu deliberately describes the absent scans rather than linking to an unrelated page.
+The opening alphabet page ג (3) is also absent. Affected entries: סדר אלף בית, ברכות אירוסין ונשואין, סדר ברית מילה, גאולה לברית מילה, and the opening of סדר פדיון הבן. At the owner's request, all five affected entries were removed from the visible menu and search on 2026-10-12. This includes סדר פדיון הבן because its opening is absent even though the continuation is present. The printed-contents metadata remains intact for reference; no PDF pages or words were removed.
 
 | Source checked | Result / next use |
 | --- | --- |
@@ -88,6 +88,10 @@ The opening alphabet page ג (3) is also absent. Affected entries: סדר אלף
 | General title, PDF, English transliteration and HebrewBooks searches | No complete freely accessible matching scan found in the checked results. Older auctioned editions and the much longer השלם edition are not interchangeable. |
 
 Next useful source: scans of printed פא, פב, פג, פד from the same edition, requested from the publisher/community or a holder of that edition. Compare printed 80 and 85 before accepting replacement pages. Do not send messages or purchase books without the owner's instruction.
+
+## User-supplied replacement PDF check - 2026-10-12
+
+The owner supplied another PDF through a Google download filename beginning `ACFrOgC_q_eNgwo3JMs`. Its SHA-256 is `8d2bac741c12e267be6d423b216ecd4b323fe0ab737ead695c8117c60c743860`; file length 5,764,916 bytes. It also contains 315 pages. Every corresponding page matched the current PDF's drawing streams, compressed images and JBIG2 globals, dimensions, rotation and annotation counts. There are no embedded files. Fresh renders confirmed PDF 79 = printed פ (80), PDF 80 = printed פה (85), PDF 81 = printed פו (86), ברכת המזון. Thus it does not supply the missing printed פא-פד; no remapping or source replacement was made. Evidence: [reference/user-pdf-comparison-2026-10-12.json](reference/user-pdf-comparison-2026-10-12.json). Treat this as a check of this particular attachment, not a conclusion about a different future PDF.
 
 ## Verification and refresh
 
@@ -127,9 +131,9 @@ The full crop audit uses 120-DPI grayscale renders of all pages; see `native/scr
 
 ## Generated lookup indexes
 
-Generated 2026-10-12T17:04:30.203Z. PDF SHA-256: `95b89872ec9853d8257b1c61c9e5b57947d8fff25ab34591e23be959c7666697`.
+Generated 2026-10-12T17:20:03.720Z. PDF SHA-256: `95b89872ec9853d8257b1c61c9e5b57947d8fff25ab34591e23be959c7666697`.
 
-315 PDF pages; 66 indexed prayer/section entries; 19 menu categories. Machine-readable detail: [reference/page-index.json](reference/page-index.json). Nearest indexed headings below are navigation inferences, not OCR or a verified title for each individual scanned page.
+315 PDF pages; 66 indexed prayer/section entries; 18 menu categories. Machine-readable detail: [reference/page-index.json](reference/page-index.json). Nearest indexed headings below are navigation inferences, not OCR or a verified title for each individual scanned page.
 
 ### Numbering sequences
 
@@ -144,7 +148,7 @@ Generated 2026-10-12T17:04:30.203Z. PDF SHA-256: `95b89872ec9853d8257b1c61c9e5b5
 
 | Prayer / section | Menu group | Book section | Printed label / number | PDF page | Status / note |
 | --- | --- | --- | --- | --- | --- |
-| סדר אלף בית | השכמת הבוקר | main | ג / 3 | — | העמוד חסר בסריקה |
+| סדר אלף בית |  | main | ג / 3 | — | העמוד חסר בסריקה |
 | סדר השכמת הבוקר | השכמת הבוקר | main | ד / 4 | 3 | Available |
 | ברכות השחר | השכמת הבוקר | main | ה / 5 | 4 | Available |
 | אני מאמין | השכמת הבוקר | main | ח / 8 | 7 | Available |
@@ -158,10 +162,10 @@ Generated 2026-10-12T17:04:30.203Z. PDF SHA-256: `95b89872ec9853d8257b1c61c9e5b5
 | פרשת היראה | שחרית | main | עז / 77 | 76 | Available |
 | פרשת התשובה | שחרית | main | עח / 78 | 77 | Available |
 | פרשת המן | שחרית | main | עט / 79 | 78 | Available |
-| ברכות אירוסין ונשואין | ברית, פדיון ונישואין | main | פא / 81 | — | העמוד חסר בסריקה |
-| סדר ברית מילה | ברית, פדיון ונישואין | main | פב / 82 | — | העמוד חסר בסריקה |
-| גאולה לברית מילה | ברית, פדיון ונישואין | main | פד / 84 | — | העמוד חסר בסריקה |
-| סדר פדיון הבן | ברית, פדיון ונישואין | main | פד / 84 | 80 | תחילת הסדר בעמוד פ״ד החסר בסריקה; כאן ההמשך |
+| ברכות אירוסין ונשואין |  | main | פא / 81 | — | העמוד חסר בסריקה |
+| סדר ברית מילה |  | main | פב / 82 | — | העמוד חסר בסריקה |
+| גאולה לברית מילה |  | main | פד / 84 | — | העמוד חסר בסריקה |
+| סדר פדיון הבן |  | main | פד / 84 | 80 | תחילת הסדר בעמוד פ״ד החסר בסריקה; כאן ההמשך |
 | סדר נטילת ידים לסעודה | ברכת המזון | main | פה / 85 | 80 | Available |
 | ברכת המזון | ברכת המזון | main | פו / 86 | 81 | Available |
 | ברכות הנהנין | ברכות הנהנין | main | צא / 91 | 86 | Available |

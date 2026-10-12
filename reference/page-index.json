@@ -5,7 +5,7 @@
     "rawResources": 425,
     "index": "original-text-index.json"
   },
-  "generatedAt": "2026-10-12T17:04:30.203Z",
+  "generatedAt": "2026-10-12T17:20:03.720Z",
   "pdfSha256": "95b89872ec9853d8257b1c61c9e5b57947d8fff25ab34591e23be959c7666697",
   "pdfPageCount": 315,
   "sequences": [
@@ -50,9 +50,7 @@
       "printed": 3,
       "printedLabel": "ג",
       "note": "העמוד חסר בסריקה",
-      "menuCategories": [
-        "השכמת הבוקר"
-      ]
+      "menuCategories": []
     },
     {
       "title": "סדר השכמת הבוקר",
@@ -205,9 +203,7 @@
       "printedLabel": "פא",
       "pdfPage": null,
       "note": "העמוד חסר בסריקה",
-      "menuCategories": [
-        "ברית, פדיון ונישואין"
-      ]
+      "menuCategories": []
     },
     {
       "title": "סדר ברית מילה",
@@ -217,9 +213,7 @@
       "printedLabel": "פב",
       "pdfPage": null,
       "note": "העמוד חסר בסריקה",
-      "menuCategories": [
-        "ברית, פדיון ונישואין"
-      ]
+      "menuCategories": []
     },
     {
       "title": "גאולה לברית מילה",
@@ -229,9 +223,7 @@
       "printedLabel": "פד",
       "pdfPage": null,
       "note": "העמוד חסר בסריקה",
-      "menuCategories": [
-        "ברית, פדיון ונישואין"
-      ]
+      "menuCategories": []
     },
     {
       "title": "סדר פדיון הבן",
@@ -241,9 +233,7 @@
       "printedLabel": "פד",
       "pdfPage": 80,
       "note": "תחילת הסדר בעמוד פ״ד החסר בסריקה; כאן ההמשך",
-      "menuCategories": [
-        "ברית, פדיון ונישואין"
-      ]
+      "menuCategories": []
     },
     {
       "title": "סדר נטילת ידים לסעודה",

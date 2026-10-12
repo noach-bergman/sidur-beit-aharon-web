@@ -129,3 +129,7 @@ No public App Store submission or release has been started.
 - Retains build 10's PDF-only reader, matching glass/gold interior buttons and printed-contents audit. Selected Tehillim chapters now keep the same visible gold selected state as the selected book. Browser verification confirmed the selected chapters' background and legible text after opening a chapter and returning to the menu.
 - `Siddur-11.xcarchive` passed deep signature verification and matches the tested native assets, menu and index. The original PDF SHA-256 is unchanged. No historical text-reader code or text-prayer data is included in the archive.
 - Internal TestFlight upload succeeded at 1:11 PM New York time. Apple processing is pending confirmation. The rejected text-reader experiment was never uploaded in any build. No public App Store submission was made.
+
+## Unreleased menu cleanup - October 12, 2026
+
+At the owner's request, removed the visible buttons/search entries for סדר אלף בית, ברכות אירוסין ונשואין, סדר ברית מילה, גאולה לברית מילה, and סדר פדיון הבן. The last has only its continuation in the scan; its opening is absent. The now-empty ברית, פדיון ונישואין category was removed. Original PDF bytes and the full printed-contents reference remain intact. This source/preview change has not yet been uploaded to TestFlight.
