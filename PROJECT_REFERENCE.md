@@ -123,7 +123,7 @@ The full crop audit uses 120-DPI grayscale renders of all pages; see `native/scr
 
 - Bundle ID: `com.noachbergman.siddurbeitaharon`; App Store Connect app ID: `6821949673`.
 - [TestFlight](https://appstoreconnect.apple.com/apps/6821949673/testflight).
-- Latest recorded upload: 1.0.0 (12), `native/build/Siddur-12.xcarchive`; uploaded 2026-10-12 1:29 PM New York time. Apple processing was pending confirmation at this record. Build 12 removes all five entries with missing starting pages and remains PDF-only.
+- Latest recorded upload: 1.0.0 (12), `native/build/Siddur-12.xcarchive`; uploaded 2026-10-12 1:29 PM New York time. App Store Connect confirmed build 12 Testing in the existing two-person testers group. Build 12 removes all five entries with missing starting pages and remains PDF-only.
 - Builds 6-8 were confirmed Testing in the existing two-person `testers` group. Physical-device acceptance of build 12 remains separate from compilation/browser checks.
 - Archives and temporary inspection PNGs are ignored local artifacts, not durable source references. Prefer the source paths and reproducible commands above.
 
