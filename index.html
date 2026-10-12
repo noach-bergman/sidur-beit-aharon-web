@@ -9,13 +9,13 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="סידור" />
   <title>סידור בית אהרן וישראל</title>
-  <link rel="manifest" href="./manifest.webmanifest?v=16" />
+  <link rel="manifest" href="./manifest.webmanifest?v=17" />
   <link rel="icon" href="./icons/book.png" />
   <link rel="apple-touch-icon" href="./icons/icon-192.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Frank+Ruhl+Libre:wght@700;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./css/app.css?v=16" />
+  <link rel="stylesheet" href="./css/app.css?v=17" />
 </head>
 <body>
 
@@ -29,7 +29,6 @@
       <p class="greg" id="t-greg"></p>
     </div>
     <div class="masthead">
-      <svg class="crown" viewBox="0 0 120 22" aria-hidden="true"><path d="M8 15c14 0 18-9 30-9 8 0 10 6 16 6 4 0 6-4 6-7 0 3 2 7 6 7 6 0 8-6 16-6 12 0 16 9 30 9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="60" cy="17" r="2.4" fill="currentColor"/></svg>
       <h2 class="mast-title">סידור</h2>
       <svg class="flourish" viewBox="0 0 280 24" aria-hidden="true"><path d="M30 12h220" stroke="currentColor" stroke-width="1.6"/><path d="M14 12l8-6 8 6-8 6zM250 12l8-6 8 6-8 6zM134 12l6-5 6 5-6 5z" fill="currentColor"/><path d="M118 12c0-5 8-7 12-3M162 12c0-5-8-7-12-3M118 12c0 5 8 7 12 3M162 12c0 5-8 7-12 3" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
       <p class="mast-sub">בית אהרן וישראל</p>
@@ -62,19 +61,21 @@
     <button type="button" class="quick-btn" id="btn-zmanim"><span class="ico-tile" data-ico="clock" aria-hidden="true"></span>זמני היום</button>
   </nav>
 
-  <section class="block hidden" id="t-special-block">
-    <h2 class="block-title">היום</h2>
-    <ul class="rows" id="t-special"></ul>
-  </section>
+  <div class="panel" id="t-panel">
+    <section class="block hidden" id="t-special-block">
+      <h2 class="block-title">היום</h2>
+      <ul class="rows" id="t-special"></ul>
+    </section>
 
-  <section class="block hidden" id="t-reminders-block">
-    <h2 class="block-title">בתפילה</h2>
-    <div class="chips quiet" id="t-reminders"></div>
-    <p class="fineprint">
-      תזכורות לפי המנהג הנפוץ — יש לנהוג כמנהג המקום.
-      <button type="button" class="linkish" data-key="minhagim">מנהגים מרבותינו</button>
-    </p>
-  </section>
+    <section class="block hidden" id="t-reminders-block">
+      <h2 class="block-title">בתפילה</h2>
+      <div class="chips quiet" id="t-reminders"></div>
+      <p class="fineprint">
+        תזכורות לפי המנהג הנפוץ — יש לנהוג כמנהג המקום.
+        <button type="button" class="linkish" data-key="minhagim">מנהגים מרבותינו</button>
+      </p>
+    </section>
+  </div>
 
   <footer class="foot">
     <button type="button" class="linkish" id="btn-location">מיקום: <span id="t-loc">—</span></button>
@@ -216,8 +217,8 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
-<script src="./js/vendor/hebcal.min.js?v=16"></script>
-<script src="./js/today.js?v=16"></script>
-<script src="./js/app.js?v=16"></script>
+<script src="./js/vendor/hebcal.min.js?v=17"></script>
+<script src="./js/today.js?v=17"></script>
+<script src="./js/app.js?v=17"></script>
 </body>
 </html>
