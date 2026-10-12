@@ -94,3 +94,10 @@ Build 2 sized each page from every detected scan mark and all highlight bounds. 
 5. Select manual release, then Add for Review and Submit for Review. After Apple approves, use Release This Version when ready. See https://developer.apple.com/help/app-store-connect/manage-submissions-to-app-review/submit-an-app and https://developer.apple.com/help/app-store-connect/manage-your-apps-availability/select-an-app-store-version-release-option .
 
 No public App Store submission or release has been started.
+
+## Build 7: stable language controls - October 12, 2026
+
+- English/Hebrew switching now keeps the language choices in a fixed left-to-right order, with equal border widths and reserved introductory text space so neither button moves horizontally or vertically. Tutorial language/navigation control rows also retain their positions while instruction text follows the selected reading direction.
+- Browser measurements confirmed identical button rectangles in both languages at 393×852 (154.5×44 points each) and 320×568 (122×44 points each). The smaller screen keeps the complete introductory card visible without scrolling.
+- Final `Siddur-7-final.xcarchive` passed archive/signature checks and matched the tested native assets and original PDF. The earlier `Siddur-7.xcarchive` is an unuploaded intermediate; only the final archive is used for distribution.
+- Build 6 processed successfully and was confirmed Testing in the existing two-person internal testers group. Build 7 replaces it with this final placement correction. App Store submission remains deferred.

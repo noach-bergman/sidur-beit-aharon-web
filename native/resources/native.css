@@ -119,3 +119,11 @@ html.native-app, .native-app body {
   box-shadow: inset 0 1px 0 rgba(255, 251, 237, .8);
   pointer-events: none;
 }
+
+/* Changing language changes reading direction, not the controls' locations. */
+.guide-languages, .guide-meta, .guide-actions { direction: ltr; }
+.guide-languages button, .guide-actions button, .guide-meta > * { unicode-bidi: plaintext; }
+.guide-languages button { min-width: 0; border-width: 2px; }
+.guide-welcome h2 { min-height: 2.5em; }
+.guide-welcome .guide-copy { min-height: 4.65em; }
+.guide-actions .guide-primary { min-width: 112px; }
