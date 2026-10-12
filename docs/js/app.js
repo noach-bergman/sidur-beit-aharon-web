@@ -415,7 +415,7 @@
   ];
 
   /** A titled white card of rows; returns the list to fill. */
-  function addGroup(parent, title) {
+  function addGroup(parent, title, grid) {
     if (title) {
       var h = document.createElement('h3');
       h.className = 'block-title';
@@ -423,7 +423,7 @@
       parent.appendChild(h);
     }
     var ul = document.createElement('ul');
-    ul.className = 'rows';
+    ul.className = grid ? 'rows grid' : 'rows';
     parent.appendChild(ul);
     return ul;
   }
@@ -479,7 +479,7 @@
           var e = tocByTitle(t); return e && e.pdfPage;
         });
         if (!live.length) return;
-        if (!ul) ul = addGroup(box, g.title);
+        if (!ul) ul = addGroup(box, g.title, true);
         var note = cat.items.length > 1 ? cat.items.length + ' סדרים' : null;
         ul.appendChild(makeRow(categoryLabel(cat), note, null, function () {
           if (cat.key === 'tehillim') { closeIndex(); openTehillim(); return; }
