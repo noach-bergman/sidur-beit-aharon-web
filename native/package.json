@@ -1,0 +1,23 @@
+{
+  "name": "siddur-beit-aharon-iphone",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "sync": "npm run build && cap sync ios",
+    "open": "cap open ios"
+  },
+  "dependencies": {
+    "@capacitor/core": "8.5.3",
+    "@capacitor/ios": "8.5.3",
+    "@capacitor/geolocation": "^8.0.0",
+    "@fontsource/heebo": "^5.2.0",
+    "@fontsource/frank-ruhl-libre": "^5.2.0",
+    "pdfjs-dist": "3.11.174"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.5.3",
+    "esbuild": "^0.25.0"
+  }
+}

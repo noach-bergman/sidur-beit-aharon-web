@@ -1,0 +1,4 @@
+/* Installed-app-only behavior; website and reader styling remain independent. */
+.native-app #btn-a2hs, .native-app #a2hs-modal { display: none !important; }
+.native-app { -webkit-user-select: none; user-select: none; }
+.native-app input { -webkit-user-select: text; user-select: text; }

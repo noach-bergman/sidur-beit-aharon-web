@@ -1,0 +1,5 @@
+{
+  "generator": "Built-in image_gen",
+  "prompt": "Create a finished 1024x1024 square iOS app icon for a Hebrew siddur app named Beit Aharon Veyisrael. Full-bleed opaque warm ivory background, no rounded outer corners (iOS masks them), no mockup or phone. Centered elegant architectural Jewish siddur gate: two substantial short antique gold columns supporting a horizontal ornate lintel, with a small tasteful crown and blank paired tablets at top, inspired by an heirloom Hebrew prayer book title page. Clear premium recognizable silhouette at small icon sizes. Inside gate large dark espresso Hebrew word exactly 'סידור'. Refined matte champagne-gold low relief, minimal fine details, beautiful dignified sacred aesthetic. Gate occupies about 78% of square with comfortable margins. No moon, sun, clock, other functional icons, no cross, no extra text, no gradients to dark or glossy plastic. Sharp professionally rendered app icon, high contrast readable lettering, balanced proportions.",
+  "production": "App icon resized to Apple's required 1024 x 1024 dimensions."
+}
