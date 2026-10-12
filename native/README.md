@@ -130,6 +130,6 @@ No public App Store submission or release has been started.
 - `Siddur-11.xcarchive` passed deep signature verification and matches the tested native assets, menu and index. The original PDF SHA-256 is unchanged. No historical text-reader code or text-prayer data is included in the archive.
 - Internal TestFlight upload succeeded at 1:11 PM New York time. Apple processing is pending confirmation. The rejected text-reader experiment was never uploaded in any build. No public App Store submission was made.
 
-## Unreleased menu cleanup - October 12, 2026
+## Build 12: unavailable menu entries removed - October 12, 2026
 
-At the owner's request, removed the visible buttons/search entries for סדר אלף בית, ברכות אירוסין ונשואין, סדר ברית מילה, גאולה לברית מילה, and סדר פדיון הבן. The last has only its continuation in the scan; its opening is absent. The now-empty ברית, פדיון ונישואין category was removed. Original PDF bytes and the full printed-contents reference remain intact. This source/preview change has not yet been uploaded to TestFlight.
+At the owner's request, removed the visible buttons/search entries for סדר אלף בית, ברכות אירוסין ונשואין, סדר ברית מילה, גאולה לברית מילה, and סדר פדיון הבן. The last has only its continuation in the scan; its opening is absent. The now-empty ברית, פדיון ונישואין category was removed. Original PDF bytes and the full printed-contents reference remain intact. Build 12 was archived and uploaded successfully at 1:29 PM New York time. Fifteen tests and the content checks passed; the signed archive contains 61 available menu links and none of the five removed entries. The PDF is byte-identical to the original, and no historical text-reader data is included. Apple processing is pending confirmation.
