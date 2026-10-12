@@ -280,7 +280,7 @@
       p.tefillot.filter(function (t) { return !t.current; }).forEach(function (t) {
         var b = document.createElement('button');
         b.type = 'button';
-        b.className = 'tile';
+        b.className = 'tile' + (t.title.length > 8 ? ' long' : '');
         b.dataset.tef = t.key;
         b.innerHTML = '<span class="ico-tile">' + icon(TEFILLAH_ICON[t.key]) + '</span>' +
           '<span class="tile-title"></span><span class="tile-page"></span>' +
@@ -322,6 +322,17 @@
     } else {
       rBlock.classList.add('hidden');
     }
+    fitHome();
+  }
+
+  /** The home screen is one screen. If today's details do not fit in
+      their box, step the top back (see .fit-1…4 in app.css) until
+      they do. */
+  function fitHome() {
+    var v = $('#view-today'), pn = $('#t-panel');
+    if (!v || !pn) return;
+    v.classList.remove('fit-1', 'fit-2', 'fit-3', 'fit-4');
+    for (var i = 1; i <= 4 && pn.scrollHeight > pn.clientHeight + 1; i++) v.classList.add('fit-' + i);
   }
 
   /** Re-render when the current tefillah could have changed. */
@@ -977,6 +988,8 @@
   /* ── wiring ──────────────────────────────────────── */
 
   function bind() {
+    window.addEventListener('resize', fitHome);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitHome);
     $$('[data-ico]').forEach(function (el) { el.innerHTML = icon(el.dataset.ico); });
     $('#btn-index').onclick = openIndex;
     $('#idx-back').onclick = function () {

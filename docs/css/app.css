@@ -77,12 +77,14 @@ html, body {
   -webkit-text-size-adjust: 100%;
   overscroll-behavior-y: none;
 }
-body, .fullsheet {
+html, .fullsheet {
   background:
     var(--noise),
     radial-gradient(130% 90% at 50% 25%, var(--bg) 45%, var(--bg-edge) 100%);
   background-color: var(--bg);
 }
+html { min-height: 100%; }
+body { background: transparent; }
 
 .hidden { display: none !important; }
 button { font-family: inherit; }
@@ -121,13 +123,13 @@ button { font-family: inherit; }
    The top is fixed in size; the box with the day's details at the bottom
    takes whatever height is left, and scrolls inside itself only on a
    heavy day on a small phone. */
-html, body { height: 100%; }
+/* Pinned to the four edges of the screen. (100vh/100dvh fall short in an
+   app on the iPhone home screen and leave a strip at the bottom.) */
 #view-today {
-  max-width: 30rem;
-  height: 100vh;
-  height: 100dvh;
-  margin: 0 auto;
-  padding: 0 1rem calc(.35rem + var(--safe-bottom));
+  --gutter: max(1rem, calc((100vw - 28rem) / 2));   /* a phone-width column on wider screens */
+  position: fixed;
+  inset: 0;
+  padding: 0 var(--gutter) calc(.35rem + var(--safe-bottom));
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -136,7 +138,7 @@ html, body { height: 100%; }
 
 .today-head { margin-bottom: .55rem; }
 .topbar {
-  margin-inline: -1rem;
+  margin-inline: calc(-1 * var(--gutter));
   padding: calc(.45rem + var(--safe-top)) 1rem .45rem;
   background: var(--brown);
   border-bottom: 3px solid var(--gold);
@@ -251,7 +253,8 @@ html, body { height: 100%; }
   cursor: pointer;
 }
 .tile .ico-tile, .tile .chev { display: none; }
-.tile-title { font-size: 1.04rem; font-weight: 700; line-height: 1.25; }
+.tile-title { font-size: 1.04rem; font-weight: 700; line-height: 1.25; white-space: nowrap; }
+.tile.long .tile-title { font-size: .9rem; }   /* ק״ש שעל המטה on one line */
 .tile-page { font-size: .74rem; font-weight: 600; color: var(--gold-deep); }
 
 .chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .7rem; }
@@ -410,9 +413,9 @@ html, body { height: 100%; }
   font-size: 1.02rem;
 }
 
-/* the day's details: one framed box under the buttons */
+/* the day's details: one framed box from the buttons down to the foot of the screen */
 .panel {
-  flex: 0 1 auto !important;      /* as tall as today needs, shrinking (and scrolling) only when short of room */
+  flex: 1 1 auto !important;      /* down to the foot of the screen */
   min-height: 0;
   margin-top: .75rem;
   padding: .15rem .8rem .5rem;
@@ -464,16 +467,22 @@ html, body { height: 100%; }
 }
 .foot .linkish { color: var(--ink-3); }
 
-/* shorter phones (iPhone SE, Safari with its bars): the title steps back */
-@media (max-height: 720px) {
-  .mast-title { font-size: 2.1rem; }
-  .flourish, .mast-sub { display: none; }
-  .masthead { padding-top: .3rem; }
-}
-@media (max-height: 620px) {
-  .masthead { display: none; }
-  .today-head { margin-bottom: .45rem; }
-}
+/* When today's details do not fit, the top steps back, one step at a
+   time, until they do (fitHome() in app.js adds these classes). */
+.fit-1 .mast-title { font-size: 2.1rem; }
+.fit-1 .flourish, .fit-1 .mast-sub { display: none; }
+.fit-1 .masthead { padding-top: .3rem; }
+.fit-2 .masthead { display: none; }
+.fit-2 .today-head { margin-bottom: .45rem; }
+.fit-3 .now-card { padding-block: .35rem; }
+.fit-3 .now-title { font-size: 1.35rem; }
+.fit-3 .tile { min-height: 2.75rem; padding-block: .2rem; }
+.fit-3 .quick-btn { min-height: 2.9rem; padding-block: .2rem; }
+.fit-3 .quick-btn.primary { min-height: 2.4rem; }
+.fit-3 .panel { margin-top: .55rem; }
+.fit-4 .panel .fineprint { display: none; }
+.fit-4 .panel .rows > li > .row { min-height: 2.25rem; padding-block: .15rem; }
+.fit-4 .panel .block-title { margin-top: .3rem; }
 
 /* ─── READER ────────────────────────────────────────── */
 
