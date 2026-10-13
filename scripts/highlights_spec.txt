@@ -17,8 +17,8 @@ C1-tal|42|18:0.19-0.37|say|summer|מוריד הטל
 E1-mi-chamocha|43|1|say|aseret|עשי״ת: מי כמוך
 E1-hamelech|43|11:0.10-0.30,12|say|aseret|עשי״ת: המלך הקדוש
 F1-aneinu-shatz|44|1-7|say|fast|עננו (ש״ץ)
-C2-winter|44|13-17|say|talUmatar|ותן טל ומטר לברכה
-C2-summer|44|18-21|say|noTalUmatar|ברכנו — ותן ברכה
+C2-winter|44|13-17|say|talUmatar|ברך עלנו
+C2-summer|44|18-21|say|noTalUmatar|ברכנו
 E1-mishpat|45|3:0.10-0.30,6|say|aseret|עשי״ת: במשפט · המלך המשפט
 D1-yaaleh|47|3-12|say|yaaleh|יעלה ויבוא
 D1-yaaleh-rc|47|8:0.62-0.84,9:0.62-0.84|strong|roshChodesh|ראש החדש הזה
@@ -130,8 +130,8 @@ C1-tal|93|25:0.18-0.45|say|summer|מוריד הטל
 E1-mi-chamocha|93|30|say|aseret|עשי״ת: מי כמוך
 E1-hamelech|94|8:0.28-0.56|say|aseret|עשי״ת: המלך הקדוש
 F1-aneinu-shatz|94|18-23|say|fast|עננו (ש״ץ)
-C2-winter|94|27-30|say|talUmatar|ותן טל ומטר לברכה
-C2-summer|95|1-4|say|noTalUmatar|ברכנו — ותן ברכה
+C2-winter|94|27-30|say|talUmatar|ברך עלנו
+C2-summer|95|1-4|say|noTalUmatar|ברכנו
 E1-mishpat|95|10:0.33-0.56,11:0.53-0.84|say|aseret|עשי״ת: במשפט · המלך המשפט
 F4-nachem|95|24-30|say|tishaBav|ט׳ באב: נחם
 F4-nachem|96|30-31|say|tishaBav|ט׳ באב: נחם
@@ -169,8 +169,8 @@ E1-hamelech|107|4:0.30-0.57|say|aseret|עשי״ת: המלך הקדוש
 A7-ata-chonen|107|5|skip|motzaeiShabbatOrYT|במוצ״ש אומרים אתה חוננתנו
 A7-ata-chonantanu|107|6-10|say|motzaeiShabbatOrYT|אתה חוננתנו
 A7-vechonenu|107|11:0.72-0.91|strong|motzaeiShabbatOrYT|וחננו
-C2-winter|107|23-31:0.50-0.91|say|talUmatar|ותן טל ומטר לברכה
-C2-summer|107|23-31:0.09-0.50|say|noTalUmatar|ברכנו — ותן ברכה
+C2-winter|107|23-31:0.50-0.91|say|talUmatar|ברך עלנו
+C2-summer|107|23-31:0.09-0.50|say|noTalUmatar|ברכנו
 E1-mishpat|108|6:0.33-0.56,7:0.53-0.84|say|aseret|עשי״ת: במשפט · המלך המשפט
 D1-yaaleh|109|1-10|say|yaaleh|יעלה ויבוא
 D1-yaaleh-rc|109|6-7:0.62-0.91|strong|roshChodesh|ראש החדש הזה
