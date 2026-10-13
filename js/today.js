@@ -479,19 +479,8 @@
       }
     } catch (e) {}
 
-    /* ── reminders inside the tefillah ── */
-    var reminders = [];
-    if (has(evs, flags.ROSH_CHODESH) || has(evs, flags.CHOL_HAMOED) || isYomTov) reminders.push('יעלה ויבוא');
-    if (chanukahEv || descMatches(evs, /Purim/)) reminders.push('על הניסים');
-    if (has(evs, flags.MINOR_FAST) || has(evs, flags.MAJOR_FAST)) reminders.push('עננו');
-    reminders.push(saysGeshem(hd) ? 'משיב הרוח ומוריד הגשם' : 'מוריד הטל');
-    reminders.push(saysTalUmatar(hd, refDate, il) ? 'ברך עלינו' : 'ברכינו');
-    var nt = restricted ? null : noTachanun(hd);
-    if (nt) reminders.push('אין תחנון · ' + nt);
-    else if (dow === 5 && now >= minchaGedola) reminders.push('אין תחנון במנחה בערב שבת');
-    if (hd.getMonth() === MONTH.ELUL || (hd.getMonth() === MONTH.TISHREI && hd.getDate() <= 21)) {
-      reminders.push('לדוד ה׳ אורי');
-    }
+    /* Home reminder: show only the requested seasonal blessing name. */
+    var reminders = [saysTalUmatar(hd, refDate, il) ? 'ברך עלנו' : 'ברכנו'];
 
     return {
       hdate: hd,
