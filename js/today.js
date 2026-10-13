@@ -485,7 +485,7 @@
     if (chanukahEv || descMatches(evs, /Purim/)) reminders.push('על הניסים');
     if (has(evs, flags.MINOR_FAST) || has(evs, flags.MAJOR_FAST)) reminders.push('עננו');
     reminders.push(saysGeshem(hd) ? 'משיב הרוח ומוריד הגשם' : 'מוריד הטל');
-    reminders.push(saysTalUmatar(hd, refDate, il) ? 'ותן טל ומטר לברכה' : 'ותן ברכה');
+    reminders.push(saysTalUmatar(hd, refDate, il) ? 'ברך עלינו' : 'ברכינו');
     var nt = restricted ? null : noTachanun(hd);
     if (nt) reminders.push('אין תחנון · ' + nt);
     else if (dow === 5 && now >= minchaGedola) reminders.push('אין תחנון במנחה בערב שבת');
