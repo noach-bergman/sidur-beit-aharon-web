@@ -133,3 +133,11 @@ No public App Store submission or release has been started.
 ## Build 12: unavailable menu entries removed - October 12, 2026
 
 At the owner's request, removed the visible buttons/search entries for סדר אלף בית, ברכות אירוסין ונשואין, סדר ברית מילה, גאולה לברית מילה, and סדר פדיון הבן. The last has only its continuation in the scan; its opening is absent. The now-empty ברית, פדיון ונישואין category was removed. Original PDF bytes and the full printed-contents reference remain intact. Build 12 was archived and uploaded successfully at 1:29 PM New York time. Fifteen tests and the content checks passed; the signed archive contains 61 available menu links and none of the five removed entries. The PDF is byte-identical to the original, and no historical text-reader data is included. App Store Connect subsequently confirmed Build 12 Internal - Testing in the existing testers group with two invites.
+
+## Build 13: keep home text inside the gate - October 12, 2026
+
+The native home now reserves the gate's lower ornament and steps when deciding whether daily content fits (25% of gate width plus bottom safe area). It also refits when rendered labels, notices or location text change size. The existing compact layout and daily sheet keep the home fixed without clipping text.
+
+Validated the normal home and a synthetic five-item/four-reminder busy day at 320×568, 375×667 and 393×852, including simulated 62px/34px safe areas on the latter two. Verified daily sheet open/close and no home overflow in those cases. All 15 tests, content checks, release archive and deep signature verification passed. Archive JS/CSS/menu/PDF match the synced build; PDF SHA-256 remains `95b89872ec9853d8257b1c61c9e5b57947d8fff25ab34591e23be959c7666697`.
+
+Build 13 uploaded successfully at 4:30 PM New York time (`build/upload-13.log`, EXPORT SUCCEEDED); Apple reported processing. Post-processing availability in the internal group is not yet verified because the App Store Connect browser login expired. Physical-iPhone validation remains outstanding. No public release was submitted.

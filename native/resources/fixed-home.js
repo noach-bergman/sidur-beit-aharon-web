@@ -57,6 +57,7 @@ export function installFixedHome() {
   });
 
   function fits() {
+    // The shell inset includes the gate base, not just the screen safe area.
     const bottom = shell.getBoundingClientRect().bottom - parseFloat(getComputedStyle(shell).paddingBottom);
     return footer.getBoundingClientRect().bottom <= bottom + 1;
   }
@@ -86,6 +87,10 @@ export function installFixedHome() {
   for (const element of [home, ...panel.querySelectorAll('.block')]) {
     observer.observe(element, { attributes: true, attributeFilter: ['class'] });
   }
+  // Location names, prayer labels and notices can change after the initial
+  // calendar render. Refit when their rendered size changes as well.
+  const sizes = new ResizeObserver(schedule);
+  for (const element of [shell, ...shell.children]) sizes.observe(element);
   window.addEventListener('resize', schedule);
   window.visualViewport?.addEventListener('resize', schedule);
   document.fonts?.ready.then(schedule);

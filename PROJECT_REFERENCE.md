@@ -39,7 +39,7 @@ Start here when investigating a missing prayer, incorrect page, framing issue, o
 
 ## Current intended iPhone behavior
 
-- One fixed home screen, with full daily information available through the daily sheet when necessary.
+- One fixed home screen, with full daily information available through the daily sheet when necessary. Gate fitting reserves 25% of gate width plus the bottom safe area above the decorative base; `ResizeObserver` refits late-changing labels and location text. Layout checked at 320×568, 375×667, and 393×852, including simulated safe areas and a busy-day fixture.
 - All scanned pages use the audited fitted frame. The “מקור”/“התאמה” size toggle was removed in build 9.
 - Side taps / horizontal swipes turn pages in Hebrew book direction. Up/down swipes reveal controls. Center tapping still toggles them. Header/footer remain outside the page animation.
 - The jump-to-page control is hidden in the native reader. Close the reader to choose another prayer from Home.
