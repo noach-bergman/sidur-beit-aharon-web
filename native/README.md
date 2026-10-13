@@ -141,3 +141,10 @@ The native home now reserves the gate's lower ornament and steps when deciding w
 Validated the normal home and a synthetic five-item/four-reminder busy day at 320×568, 375×667 and 393×852, including simulated 62px/34px safe areas on the latter two. Verified daily sheet open/close and no home overflow in those cases. All 15 tests, content checks, release archive and deep signature verification passed. Archive JS/CSS/menu/PDF match the synced build; PDF SHA-256 remains `95b89872ec9853d8257b1c61c9e5b57947d8fff25ab34591e23be959c7666697`.
 
 Build 13 uploaded successfully at 4:30 PM New York time (`build/upload-13.log`, EXPORT SUCCEEDED); Apple reported processing. Post-processing availability in the internal group is not yet verified because the App Store Connect browser login expired. Physical-iPhone validation remains outstanding. No public release was submitted.
+
+
+## Build 14: corrected seasonal reader labels - October 12, 2026
+
+Uploaded at the owner's explicit request. The annotation note below the prayer page now uses exactly `ברכנו` and `ברך עלנו` for all six relevant annotations (PDF pages 44, 94, 95, 107). The other home reminders removed during an earlier misunderstanding are restored; the home seasonal names use the same spelling. The highlight specification and both generated data copies agree. Highlight geometry, activation rules and PDF bytes remain unchanged. Includes the build 13 gate clearance fix.
+
+All 15 tests, native content checks, release archive and deep signature verification passed. Archived JS/CSS/menu/highlight data match the synced output; the PDF retains SHA-256 `95b89872ec9853d8257b1c61c9e5b57947d8fff25ab34591e23be959c7666697`. Xcode confirmed `Upload succeeded` and `EXPORT SUCCEEDED` in `build/upload-14.log`. Apple reported processing; post-processing internal tester availability is not yet confirmed because the App Store Connect browser login expired. No external beta or public release was submitted.

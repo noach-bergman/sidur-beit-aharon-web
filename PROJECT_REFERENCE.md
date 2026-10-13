@@ -123,8 +123,8 @@ The full crop audit uses 120-DPI grayscale renders of all pages; see `native/scr
 
 - Bundle ID: `com.noachbergman.siddurbeitaharon`; App Store Connect app ID: `6821949673`.
 - [TestFlight](https://appstoreconnect.apple.com/apps/6821949673/testflight).
-- Latest recorded upload: 1.0.0 (12), `native/build/Siddur-12.xcarchive`; uploaded 2026-10-12 1:29 PM New York time. App Store Connect confirmed build 12 Testing in the existing two-person testers group. Build 12 removes all five entries with missing starting pages and remains PDF-only.
-- Builds 6-8 were confirmed Testing in the existing two-person `testers` group. Physical-device acceptance of build 12 remains separate from compilation/browser checks.
+- Latest recorded upload: 1.0.0 (14), `native/build/Siddur-14.xcarchive`; uploaded successfully on 2026-10-12 (`native/build/upload-14.log`, EXPORT SUCCEEDED). Reader annotation labels are now exactly `ברכנו` / `ברך עלנו`; the other home reminders are restored. Includes build 13 gate clearance fix. The original PDF is unchanged.
+- Apple reported build 14 processing. Post-processing availability is not yet verified because the App Store Connect browser session expired. Build 12 was previously confirmed Testing in the existing two-person internal `testers` group. Physical-device acceptance of build 14 remains separate from build and simulator checks.
 - Archives and temporary inspection PNGs are ignored local artifacts, not durable source references. Prefer the source paths and reproducible commands above.
 
 <!-- GENERATED INDEX START -->
