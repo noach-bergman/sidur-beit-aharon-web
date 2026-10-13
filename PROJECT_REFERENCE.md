@@ -10,7 +10,7 @@ Start here when investigating a missing prayer, incorrect page, framing issue, o
 - The owner wants the original prayer words preserved. Native framing is display-only. Do not recreate missing religious text from memory or substitute another edition without checking it.
 - `docs/` supplies the native build and GitHub Pages source. Root `data/`, `css/`, `js/`, `siddur.pdf` mirror the web version. Check both copies when modifying shared content.
 - Native changes do not automatically update the separately hosted Sites preview. The original site/main branch has not been deployed by this work.
-- Internal TestFlight updates were authorized. On 2026-10-13 the owner authorized preparation toward an unlisted App Store release, then required that the public seller name not be personal. The current membership is Individual and no registered organization exists yet, so publication is blocked on publisher identity. App Store listing metadata is saved as a draft with manual release; no App Review or unlisted request has been submitted. See `native/release/unlisted-release.txt`.
+- On 2026-10-13 the owner authorized an unlisted App Store release and accepted the personal seller name. Audience: Stolin Karlin, 100–500 people; a shareable link is sufficient, no login. PDF/artwork rights confirmed. Manual release must remain enabled until Apple approves unlisted distribution. Support uses the created Hide My Email alias; the owner approved its forwarding inbox and publication. See `native/release/unlisted-release.txt` for live submission status.
 
 ## Find the right file
 

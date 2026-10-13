@@ -1,20 +1,44 @@
 SIDDUR — UNLISTED APP STORE RELEASE
-Prepared October 13, 2026. Not submitted or released.
+Updated October 13, 2026. App Review and the unlisted-distribution request are submitted; the app is not released.
 
 Confirmed owner decisions
 - Distribution: unlisted, shareable link; no member login required.
-- Audience: a private community. Specific community name and expected audience size are not yet supplied.
+- Audience: Stolin Karlin community, 100–500 people.
 - Owner confirms permission to distribute both the PDF and artwork.
-- The public seller name must not be the owner's personal name. A new support email will be supplied. The owner confirms there is currently no registered organization.
+- Owner accepted his personal seller name on the existing Individual Apple membership.
+- Support alias: haptics.dolor.7g@icloud.com, label "siddur", created successfully in iCloud Hide My Email. Owner confirmed the existing forwarding inbox. Do not change global Hide My Email forwarding.
+- Owner approved public support/privacy pages using the alias behind the Contact Support button and explicitly approved publishing the Data Not Collected declaration.
+- Free pricing was stated as the working assumption, with no objection. Do not charge for the app without an explicit request.
 
-Current blockers
-1. Apple Developer membership was verified as Individual in the signed-in account. Individual memberships show the legal person's seller/developer name. An unlisted link does not hide it. Resolve an eligible organization membership and verify the displayed seller/developer name before releasing.
-2. App Store Connect sign-in was completed by the owner. The Hebrew description, keywords and review notes have been saved. Sign-in required is unchecked and Manually release this version is selected; all persisted after reload. The app remains Prepare for Submission with no selected build.
-3. Need the support email, final publisher identity, public support/privacy URLs, price and country availability, review contact details, community name/size, and final device testing confirmation.
-4. Privacy policy must also be reachable inside the app. No policy UI has been added yet; finalize contact/publisher information first.
+Current preparation
+- Build 15 (1.0.0) uploaded successfully as App Store eligible; selected in version 1.0 draft. Original internal-only export settings remain unchanged; use ExportOptions-AppStore.plist for the App Store.
+- Offline privacy/support view added to the prayer menu; PDF content unchanged. Alias only in bundled legal pages.
+- App Store Hebrew description, keywords, subtitle, Books category, content rights, review notes, copyright, support URL, privacy URL saved/prepared. Manual release remains selected and no sign-in is required.
+- App Privacy: Data Not Collected was approved by the owner and published. App Review validation accepted the submission.
+- Age questionnaire produced 13+ from infrequent alcohol, realistic violence and weapons references in the traditional text; all other content/capability answers none/no. No higher-age override. Saved.
+- Free pricing saved. Worldwide availability configured for all 175 countries/regions and future regions as permitted by Apple; owner explicitly requested worldwide availability. Mac and Vision Pro distribution disabled for this iPhone release.
+- Review contact uses the approved account name/phone and the support alias. The phone is only the private review contact, not the public support page.
+- Genuine simulator home screenshot (1206×2622) uploaded and accepted. Owner explicitly authorized simulator command-line capture after UI automation failed and enabled Chrome extension file access for the upload.
+- App Review submission succeeded at 10:59 AM New York time, October 13, 2026. Version 1.0, build 1.0.0 (15), status Waiting for Review. Submission ID d7cdcba4-d2e7-4ad7-b941-f74c7b957c71.
+- Review URL: https://appstoreconnect.apple.com/apps/6821949673/distribution/reviewsubmissions/details/d7cdcba4-d2e7-4ad7-b941-f74c7b957c71
+- Unlisted request submitted after App Review, with explicit owner approval of Apple's final terms. Apple displayed: Thank you for your submission. We'll review your request and contact you soon with a status update.
+- Request: Other (religious community), external community members, category Other (religious prayer book), personal unmanaged iPhones, worldwide. Numeric estimates use 500 users/devices (upper end of owner's 100–500 range), 1 informal community; prose explains the range and that it is not a registered organization.
+- Manual release remains enabled. Wait for BOTH App Review and Unlisted approval, verify Pricing and Availability says Unlisted, then manually release. Do not release while the app still says Public. No download link is live yet.
+
+Support hosting
+- Live: https://siddur-beit-aharon-support.yuda.chatgpt.site/
+- Privacy: https://siddur-beit-aharon-support.yuda.chatgpt.site/privacy.html
+- Public access explicitly approved after alias replacement. Meta noindex and robots disallow request no indexing; these are not access controls.
+- Email requires clicking Contact Support. It is a public forwarding alias, not a secret; the real address is not present in current public files.
+- Source: /Users/noach/Documents/siddur/support-site
+- Site project: appgprj_6ace3cc85dbc8191995bf9931494d12f
+- Live version: appgprj_6ace3cc85dbc8191995bf9931494d12f~appgver_5f9246f657d0819195e653fddd50bf7a
+- Deployed commit: ba84c5eedc8a0ff1bf65136c926f426986298539
+- Deployment: appgdep_6ace40c9313081918f1d8385294f28c2 (succeeded)
+- Simulator screenshot UI automation failed with noWindowsAvailable/invalid capture parameter. The owner explicitly authorized Apple simulator command-line tools; simctl captured the installed app successfully. Screenshot is at native/build/app-store-screenshots/home.png.
 
 Exact sequence
-1. If an eligible existing legal organization will publish, use Apple's organization enrollment or eligible individual-to-organization conversion. Conversion requires founder/cofounder status and a D-U-N-S number; do not invent an organization or alias. Verify seller and developer names with Apple, since changing an existing developer name is not a normal editable listing field.
+1. Use the existing Individual membership and personal seller name, explicitly accepted by the owner. No organization conversion is needed.
 2. Publish the support and privacy pages with the supplied contact. Add an accessible in-app privacy link. Finish testing and take genuine iPhone screenshots at the sizes required by App Store Connect.
 3. Complete the existing iOS 1.0.0 listing: name, subtitle, description, keywords, category, screenshots, support URL, privacy-policy URL, copyright, age-rating questionnaire, App Privacy answers, content rights, export compliance, review contact and pricing/territories. Some regional identity/trader declarations may require the owner's answers.
 4. Build the next unused build number with native/ExportOptions-AppStore.plist. The original ExportOptions.plist remains internal-TestFlight-only. Existing builds through 14 were internal-only and cannot be selected for App Review. An eligible upload alone does not publish the app.
@@ -34,4 +58,4 @@ Developer name rules: https://developer.apple.com/help/app-store-connect/create-
 Release options: https://developer.apple.com/help/app-store-connect/manage-your-apps-availability/select-an-app-store-version-release-option/
 Privacy: https://developer.apple.com/help/app-store-connect/manage-app-information/manage-app-privacy/
 
-Unlisted means anyone with a forwarded link can download the app. It is not member authentication. No automatic publication is authorized while the seller-name condition remains unresolved.
+Unlisted means anyone with a forwarded link can download the app. It is not member authentication. No automatic publication is authorized. Verify Unlisted approval before manual release.

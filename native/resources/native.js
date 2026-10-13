@@ -3,12 +3,14 @@ import { Geolocation } from '@capacitor/geolocation';
 import { installFixedHome } from './fixed-home.js';
 import { installNativeReader } from './native-reader.js';
 import { installOnboarding } from './onboarding.js';
+import { installPrivacy } from './privacy.js';
 
 if (Capacitor.isNativePlatform()) {
   document.documentElement.classList.add('native-app');
   document.addEventListener('DOMContentLoaded', installFixedHome);
   document.addEventListener('DOMContentLoaded', installNativeReader);
   document.addEventListener('DOMContentLoaded', installOnboarding);
+  document.addEventListener('DOMContentLoaded', installPrivacy);
   // Preserve the web app's one-shot location flow, backed by Core Location.
   Object.defineProperty(navigator, 'geolocation', {
     configurable: true,

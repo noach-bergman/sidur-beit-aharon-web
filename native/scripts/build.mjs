@@ -17,6 +17,7 @@ await mkdir(output, { recursive: true });
 for (const file of ['index.html', 'css', 'js', 'data', 'icons', 'siddur.pdf']) {
   await cp(path.join(source, file), path.join(output, file), { recursive: true });
 }
+await cp(path.join(native, 'resources/legal'), path.join(output, 'legal'), { recursive: true });
 await mkdir(path.join(output, 'assets'), { recursive: true });
 await cp(path.join(source, 'assets/siddur-gate-phone.png'), path.join(output, 'assets/siddur-gate-phone.png'));
 await mkdir(path.join(output, 'vendor/pdfjs'), { recursive: true });
