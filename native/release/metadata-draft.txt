@@ -1,0 +1,29 @@
+DRAFT APP STORE METADATA — NOT SUBMITTED
+
+Hebrew name: סידור בית אהרן וישראל
+Hebrew subtitle: תפילות, תהלים וזמני היום
+English name: Siddur Beit Aharon
+English subtitle: Prayers, Psalms and daily times
+Suggested primary category: Books (owner to confirm)
+
+Hebrew description
+סידור בית אהרן וישראל לקריאה נוחה באייפון, עם עמודי הסידור המקוריים.
+בחירת תפילה מהמסך הראשי, ניווט בין תפילות ופרקי תהלים, זמני היום לפי העיר או המיקום שנבחר, וסימונים עונתיים לפי לוח השנה העברי.
+עמודי הסידור והתכנים כלולים באפליקציה וזמינים לקריאה ללא חיבור לאינטרנט. ניתן לבחור עיר ידנית ללא הרשאת מיקום.
+מדריך שימוש ראשוני בעברית ובאנגלית מסביר כיצד לבחור תפילה, לדפדף ולהציג את הפקדים.
+יש לנהוג כמנהג המקום.
+
+English description
+Read the original scanned pages of Siddur Beit Aharon VeYisrael on your iPhone.
+Choose a prayer from the home screen, navigate prayer sections and Psalms, view daily prayer times, and see calendar-based seasonal annotations.
+The siddur pages and reading resources are bundled for offline use. Choose a city manually, or allow optional location access to calculate times on your device.
+A first-launch guide in Hebrew or English explains prayer selection, page navigation and reader controls.
+Follow your community's custom.
+
+Draft review notes
+This finished siddur app is intended for unlisted distribution to a private community. We are requesting unlisted distribution separately after submitting this version for App Review. No account or login is required; link sharing is acceptable to the owner. All PDF pages, fonts and calendar resources are bundled. Location is optional: the reviewer can deny location permission and choose a city manually. Tap a prayer to read the original scanned pages. Side taps or horizontal swipes change pages; a vertical swipe reveals controls. Close the reader to return home. The owner has confirmed permission to distribute the PDF and artwork.
+
+Unlisted-request audience wording (complete before submission)
+The app serves [COMMUNITY NAME], approximately [NUMBER] people. It provides access to the community's siddur edition and prayer navigation. The community wishes to distribute it directly to its members instead of making it discoverable in App Store searches. No organizational device management is required, and a shareable App Store link is sufficient. [CONFIRM WHO WILL RECEIVE THE LINK AND WHY PUBLIC DISCOVERY IS NOT APPROPRIATE.]
+
+Still required: final legal publisher/developer name, support email/URL, privacy-policy URL, copyright statement, price/countries, review contact, screenshots, community details. Do not submit placeholders.

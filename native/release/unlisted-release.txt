@@ -1,0 +1,37 @@
+SIDDUR — UNLISTED APP STORE RELEASE
+Prepared October 13, 2026. Not submitted or released.
+
+Confirmed owner decisions
+- Distribution: unlisted, shareable link; no member login required.
+- Audience: a private community. Specific community name and expected audience size are not yet supplied.
+- Owner confirms permission to distribute both the PDF and artwork.
+- The public seller name must not be the owner's personal name. A new support email will be supplied. The owner confirms there is currently no registered organization.
+
+Current blockers
+1. Apple Developer membership was verified as Individual in the signed-in account. Individual memberships show the legal person's seller/developer name. An unlisted link does not hide it. Resolve an eligible organization membership and verify the displayed seller/developer name before releasing.
+2. App Store Connect sign-in was completed by the owner. The Hebrew description, keywords and review notes have been saved. Sign-in required is unchecked and Manually release this version is selected; all persisted after reload. The app remains Prepare for Submission with no selected build.
+3. Need the support email, final publisher identity, public support/privacy URLs, price and country availability, review contact details, community name/size, and final device testing confirmation.
+4. Privacy policy must also be reachable inside the app. No policy UI has been added yet; finalize contact/publisher information first.
+
+Exact sequence
+1. If an eligible existing legal organization will publish, use Apple's organization enrollment or eligible individual-to-organization conversion. Conversion requires founder/cofounder status and a D-U-N-S number; do not invent an organization or alias. Verify seller and developer names with Apple, since changing an existing developer name is not a normal editable listing field.
+2. Publish the support and privacy pages with the supplied contact. Add an accessible in-app privacy link. Finish testing and take genuine iPhone screenshots at the sizes required by App Store Connect.
+3. Complete the existing iOS 1.0.0 listing: name, subtitle, description, keywords, category, screenshots, support URL, privacy-policy URL, copyright, age-rating questionnaire, App Privacy answers, content rights, export compliance, review contact and pricing/territories. Some regional identity/trader declarations may require the owner's answers.
+4. Build the next unused build number with native/ExportOptions-AppStore.plist. The original ExportOptions.plist remains internal-TestFlight-only. Existing builds through 14 were internal-only and cannot be selected for App Review. An eligible upload alone does not publish the app.
+5. In Pricing and Availability retain Public Distribution as Apple's starting route to Unlisted. Do not choose private Apple Business/School Manager distribution. In the version's release options select Manually release this version and save.
+6. Add review notes saying the finished app is intended for unlisted distribution. Select the eligible build; Add for Review; submit the completed app to App Review.
+7. After submission, complete Apple's separate Unlisted App Request using truthful audience details and the Apple app ID. Do not claim it is already submitted before that is true. Apple can decline the unlisted request.
+8. Wait for BOTH App Review approval and Unlisted approval. Verify Pricing and Availability actually says Unlisted. Only then release the version and share Apple's link. Never release while distribution remains Public.
+
+Links opened / reference
+App: https://appstoreconnect.apple.com/apps/6821949673/distribution
+Unlisted guide: https://developer.apple.com/support/unlisted-app-distribution/
+Unlisted request: https://developer.apple.com/contact/request/unlisted-app/
+Account: https://developer.apple.com/account/
+Conversion: https://developer.apple.com/contact/request/migrate-individual-account
+Account guidance: https://developer.apple.com/help/account/membership/updating-your-account-information/
+Developer name rules: https://developer.apple.com/help/app-store-connect/create-an-app-record/set-your-developer-name/
+Release options: https://developer.apple.com/help/app-store-connect/manage-your-apps-availability/select-an-app-store-version-release-option/
+Privacy: https://developer.apple.com/help/app-store-connect/manage-app-information/manage-app-privacy/
+
+Unlisted means anyone with a forwarded link can download the app. It is not member authentication. No automatic publication is authorized while the seller-name condition remains unresolved.

@@ -1,0 +1,22 @@
+DRAFT — FINAL PUBLISHER AND SUPPORT CONTACT REQUIRED BEFORE PUBLICATION
+Siddur Beit Aharon VeYisrael — Privacy Policy
+
+The current iPhone app reads its bundled siddur pages and calculates calendar information and prayer times on the device. It does not require an account and does not include advertising or a developer-operated analytics service.
+
+Optional location
+If you grant location permission, the app obtains your location to calculate local prayer times. The selected coordinates and location settings are saved locally on the device. The app code does not send those coordinates to the publisher's server. You can decline location permission and select a city manually. You can revoke location access in iPhone Settings; choose a city in the app to replace the saved coordinates.
+
+Saved preferences
+The app saves your last reading page, selected location, highlighting preference, guide completion and guide language locally so they can be restored. These preferences are not uploaded to a publisher-operated service. Deleting the app removes its local app data; device backup behavior is governed by your Apple settings.
+
+Support
+If you contact [SUPPORT EMAIL], your email provider and the publisher receive the information you choose to send so they can respond. Avoid sending sensitive information. [FINALIZE SUPPORT MAILBOX HANDLING AND RETENTION BEFORE PUBLICATION.]
+
+Apple and website services
+App Store downloads, optional Apple diagnostics and iCloud/device backups are governed by Apple's policies and your settings. Visiting the external support/privacy website may involve the hosting provider's standard server logs; identify that provider and its practices once hosting is selected.
+
+Contact
+[PUBLISHER LEGAL NAME]
+[SUPPORT EMAIL]
+
+Draft based on source inspection October 13, 2026: bundled native resources, localStorage preferences, on-device calendar calculations, optional Core Location, no observed app analytics/network submission code. Recheck after any service or SDK changes. App Privacy answers must describe the final shipping app and third-party partners; device-only processing is not data collection under Apple's App Privacy definition.
